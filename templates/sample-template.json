@@ -1,0 +1,75 @@
+[
+  {
+    "name": "m365-proxy-YOUR-SAMPLE-NAME",
+    "source": "pnp",
+    "title": "YOUR-SAMPLE-TITLE",
+    "shortDescription": "YOUR-SHORT-DESCRIPTION",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "longDescription": [
+      "YOUR-SHORT-DESCRIPTION"
+    ],
+    "creationDateTime": "2023-12-25",
+    "updateDateTime": "2023-12-31",
+    "products": [
+      "Microsoft 365 Developer Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/YOUR-SAMPLE-NAME/assets/YOUR-IMAGE-NAME-HERE",
+        "alt": "Microsoft 365 Developer Proxy simulating throttling on my-api"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://www.youtube.com/embed/FS-_0KENJkI",
+        "alt": "Microsoft 365 Developer Proxy throttling on my-api"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "YOUR-GITHUB-ACCOUNT",
+        "pictureUrl": "https://github.com/YOUR-GITHUB-ACCOUNT.png",
+        "name": "YOUR-NAME"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Microsoft 365 Developer Proxy",
+        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Microsoft 365 Developer Proxy to use a different configuration file.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations"
+      },
+      {
+        "name": "Plugin architecture",
+        "description": "Information about how to configure plugins for Microsoft 365 Developer Proxy",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Plugin-architecture"
+      }
+    ]
+  }
+]
