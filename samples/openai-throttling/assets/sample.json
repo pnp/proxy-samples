@@ -3,7 +3,7 @@
     "name": "pnp-openai-throttling",
     "source": "pnp",
     "title": "Simulate throttling of the OpenAI API",
-    "shortDescription": "Present and mocks to simulate throttling of the OpenAI API",
+    "shortDescription": "Presets and mocks to simulate throttling of the OpenAI API",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling",
     "longDescription": [
