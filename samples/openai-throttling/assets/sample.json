@@ -1,0 +1,81 @@
+[
+  {
+    "name": "pnp-openai-throttling",
+    "source": "pnp",
+    "title": "Simulate throttling of the OpenAI API",
+    "shortDescription": "Present and mocks to simulate throttling of the OpenAI API",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling",
+    "longDescription": [
+      "This sample contains a preset and mocks to simulate the throttling of the OpenAI API. As more and more applications use OpenAI API to use AI, it's important that developers can verify that their apps can properly handle cases when the API is throttled. Especially when the app is using lower-tier API plans, throttling is more likely to happen so validating the app's behavior is crucial to ensure great user experience. Using this preset you can simulate throttling of the OpenAI API and see how your app will handle it. The preset includes 3 different throttling scenarios: exceeded tokens per minute, exceeded number of requests per minute and service overload, which includes dynamic simulation of handling retry-after. Proxy will simulate throttling the API using one of these modes at random.",
+    ],
+    "creationDateTime": "2023-08-10",
+    "updateDateTime": "2023-08-10",
+    "products": [
+      "Microsoft 365 Developer Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/openai-throttling/assets/throttling-tokens.png",
+        "alt": "Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/openai-throttling/assets/throttling-requests.png",
+        "alt": "Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of requests per minute"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/openai-throttling/assets/throttling-overloaded.png",
+        "alt": "Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when the server is overloaded"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Microsoft 365 Developer Proxy",
+        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Microsoft 365 Developer Proxy to use a different configuration file.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations"
+      },
+      {
+        "name": "OpenAI API reference",
+        "description": "The OpenAI API reference documentation.",
+        "url": "https://platform.openai.com/docs/api-reference/introduction"
+      }
+    ]
+  }
+]

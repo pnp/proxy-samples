@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\m365-developer-proxy-plugins.dll"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\m365-developer-proxy-plugins.dll",
+      "configSection": "openAIAPI"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.openai.com/*"
+  ],
+  "openAIAPI": {
+    "errorsFile": "openai-errors.json"
+  },
+  "rate": 90,
+  "labelMode": "text",
+  "logLevel": "info"
+}
