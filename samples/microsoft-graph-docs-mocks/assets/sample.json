@@ -3,7 +3,7 @@
     "name": "m365-proxy-microsoft-graph-docs-mocks",
     "source": "pnp",
     "title": "Microsoft Graph mocks from Microsoft Graph API docs",
-    "shortDescription": "YOUR-SHORT-DESCRIPTION",
+    "shortDescription": "Mocks of the Microsoft Graph API based on request samples from Microsoft Graph API documentation",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-docs-mocks",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-docs-mocks",
     "longDescription": [
