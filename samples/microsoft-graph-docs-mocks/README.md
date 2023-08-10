@@ -8,6 +8,10 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 ![Microsoft 365 Developer Proxy simulating mocking Microsoft Graph API request to /users](assets/screenshot.png)
 
+## Compatibility
+
+![Microsoft 365 Developer Proxy v0.10](https://img.shields.io/badge/m365proxy-v0.10-green.svg)
+
 ## Contributors
 
 - [Waldek Mastykarz](https://github.com/waldekmastykarz)

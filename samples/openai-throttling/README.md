@@ -10,6 +10,10 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 ![Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
 
+## Compatibility
+
+![Microsoft 365 Developer Proxy v0.11.0-beta.1](https://img.shields.io/badge/m365proxy-v0.11.0--beta.1-green.svg)
+
 ## Contributors
 
 - [Waldek Mastykarz](https://github.com/waldekmastykarz)

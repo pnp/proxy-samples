@@ -26,6 +26,10 @@
       {
         "key": "PLUGIN",
         "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.10"
       }
     ],
     "thumbnails": [

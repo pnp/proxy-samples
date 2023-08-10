@@ -12,6 +12,10 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 ![Microsoft 365 Developer Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat](assets/500.png)
 ![Microsoft 365 Developer Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat](assets/502.png)
 
+## Compatibility
+
+![Microsoft 365 Developer Proxy v0.11.0-beta.1](https://img.shields.io/badge/m365proxy-v0.11.0--beta.1-green.svg)
+
 ## Contributors
 
 - [Waldek Mastykarz](https://github.com/waldekmastykarz)

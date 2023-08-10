@@ -23,6 +23,14 @@ Upload the image in a subfolder named `assets`. Use a resolution of 1920x1080.
 You can add multiple screenshots to help users understand your samples without having to download  and install it.
 -->
 
+## Compatibility
+
+<!--
+What's the minimal proxy version required to use this sample?
+-->
+
+![Microsoft 365 Developer Proxy v0.10](https://img.shields.io/badge/m365proxy-v0.10-green.svg)
+
 ## Contributors
 <!--
 We use this section to recognize and promote your contributions. Please provide one author per line -- even if you worked together on it.
