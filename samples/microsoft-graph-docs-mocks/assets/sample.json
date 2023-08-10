@@ -1,6 +1,6 @@
 [
   {
-    "name": "m365-proxy-microsoft-graph-docs-mocks",
+    "name": "pnp-m365-proxy-microsoft-graph-docs-mocks",
     "source": "pnp",
     "title": "Microsoft Graph mocks from Microsoft Graph API docs",
     "shortDescription": "Mocks of the Microsoft Graph API based on request samples from Microsoft Graph API documentation",
