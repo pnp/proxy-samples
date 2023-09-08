@@ -2,8 +2,8 @@
   {
     "name": "pnp-microsoft-graph-connector",
     "source": "pnp",
-    "title": "Simulate rate limiting on Microsoft Graph APIs",
-    "shortDescription": "Present simulate rate limiting on Microsoft Graph APIs",
+    "title": "Simulate creating a Microsoft Graph connector",
+    "shortDescription": "Mocks to simulate creating a Microsoft Graph connector",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "longDescription": [
