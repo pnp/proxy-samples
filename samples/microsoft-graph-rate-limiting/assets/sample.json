@@ -3,7 +3,7 @@
     "name": "pnp-microsoft-graph-rate-limiting",
     "source": "pnp",
     "title": "Simulate rate limiting on Microsoft Graph APIs",
-    "shortDescription": "Present simulate rate limiting on Microsoft Graph APIs",
+    "shortDescription": "Preset to simulate rate limiting on Microsoft Graph APIs",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-rate-limiting",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-rate-limiting",
     "longDescription": [
