@@ -3,7 +3,7 @@
     "name": "pnp-microsoft-graph-connector",
     "source": "pnp",
     "title": "Simulate creating a Microsoft Graph connector",
-    "shortDescription": "Mocks to simulate creating a Microsoft Graph connector",
+    "shortDescription": "This sample contains a Microsoft 365 Developer Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "longDescription": [

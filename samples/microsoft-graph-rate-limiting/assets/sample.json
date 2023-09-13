@@ -3,7 +3,7 @@
     "name": "pnp-microsoft-graph-rate-limiting",
     "source": "pnp",
     "title": "Simulate rate limiting on Microsoft Graph APIs",
-    "shortDescription": "Preset to simulate rate limiting on Microsoft Graph APIs",
+    "shortDescription": "This sample contains a preset to simulate rate limiting on Microsoft Graph APIs. Selected Microsoft Graph endpoints support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-rate-limiting",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-rate-limiting",
     "longDescription": [
