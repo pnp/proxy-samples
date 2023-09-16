@@ -1,0 +1,10 @@
+{
+  "responseCode": 403,
+  "responseHeaders": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "responseBody": {
+    "message": "You have exceeded a secondary rate limit and have been temporarily blocked from content creation. Please retry your request again later.",
+    "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits"
+  }
+}

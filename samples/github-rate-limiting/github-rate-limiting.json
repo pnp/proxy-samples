@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\m365-developer-proxy-plugins.dll",
+      "configSection": "rateLimiting"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.github.com/*"
+  ],
+  "rateLimiting": {
+    "headerLimit": "X-RateLimit-Limit",
+    "headerRemaining": "X-RateLimit-Remaining",
+    "headerReset": "X-RateLimit-Reset",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 3600,
+    "warningThresholdPercent": 0,
+    "rateLimit": 60,
+    "resetFormat": "UtcEpochSeconds",
+    "whenLimitExceeded": "Custom",
+    "customResponseFile": "github-rate-limit-exceeded.json"
+  },
+  "rate": 50,
+  "labelMode": "text",
+  "logLevel": "info"
+}
