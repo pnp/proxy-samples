@@ -1,0 +1,12 @@
+{
+  "responseCode": 429,
+  "responseHeaders": {
+    "content-type": "application/json; charset=utf-8",
+    "retry-after": "1"
+  },
+  "responseBody": {
+    "statusCode": 429,
+    "name": "rate_limit_exceeded",
+    "message": "Too many requests. You can only make 10 requests per second. See rate limit response headers for more information. Or contact support to increase rate limit."
+  }
+}

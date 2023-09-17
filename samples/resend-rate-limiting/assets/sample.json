@@ -1,0 +1,73 @@
+[
+  {
+    "name": "pnp-resend-rate-limiting",
+    "source": "pnp",
+    "title": "Simulate rate limiting on Resend APIs",
+    "shortDescription": "This sample contains a preset to simulate rate limiting on Resend APIs. Resend APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/resend-rate-limiting",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/resend-rate-limiting",
+    "longDescription": [
+      "This sample contains a preset to simulate rate limiting on Resend APIs. Resend APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling."
+    ],
+    "creationDateTime": "2023-09-17",
+    "updateDateTime": "2023-09-17",
+    "products": [
+      "Microsoft 365 Developer Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.12.0-beta.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/resend-rate-limiting/assets/screenshot.png",
+        "alt": "Microsoft 365 Developer Proxy simulating rate limiting on Resend APIs"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Microsoft 365 Developer Proxy",
+        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Microsoft 365 Developer Proxy to use a different configuration file.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations"
+      },
+      {
+        "name": "RateLimitingPlugin documentation",
+        "description": "The documentation of the RateLimitingPlugin for the Microsoft 365 Developer Proxy.",
+        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/RateLimitingPlugin"
+      },
+      {
+        "name": "Rate limiting",
+        "description": "Rate limiting documentation for Resend API",
+        "url": "https://resend.com/docs/api-reference/introduction#rate-limit"
+      }
+    ]
+  }
+]

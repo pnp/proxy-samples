@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\m365-developer-proxy-plugins.dll"
+    },
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\m365-developer-proxy-plugins.dll",
+      "configSection": "rateLimiting"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.resend.com/*"
+  ],
+  "rateLimiting": {
+    "headerLimit": "ratelimit-limit",
+    "headerRemaining": "ratelimit-remaining",
+    "headerReset": "ratelimit-reset",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 100,
+    "warningThresholdPercent": 0,
+    "rateLimit": 2,
+    "retryAfterSeconds": 1,
+    "whenLimitExceeded": "Custom",
+    "customResponseFile": "resend-rate-limit-exceeded.json"
+  },
+  "rate": 50,
+  "labelMode": "text",
+  "logLevel": "info"
+}
