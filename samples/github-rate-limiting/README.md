@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.12.0-beta.1](https://img.shields.io/badge/m365proxy-v0.12.0--beta.1-green.svg)
+![Microsoft 365 Developer Proxy v0.12.0-beta.2](https://img.shields.io/badge/m365proxy-v0.12.0--beta.2-green.svg)
 
 ## Contributors
 
