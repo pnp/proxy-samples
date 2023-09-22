@@ -20,6 +20,7 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 Version|Date|Comments
 -------|----|--------
+1.1|September 20, 2023|Updated mocks
 1.0|August 10, 2023|Initial release
 
 ## Minimal path to awesome
