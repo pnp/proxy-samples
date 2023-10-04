@@ -7,7 +7,7 @@
     "properties": {
       "name": {
         "type": "string",
-        "pattern": "m365-proxy-.*"
+        "pattern": "m365proxy-.*"
       },
       "version": {
         "type": "string"

@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-spfx",
+    "name": "pnp-m365proxy-spfx",
     "source": "pnp",
     "title": "Preset for SharePoint Framework solutions",
     "shortDescription": "This sample contains a preset for simulating Microsoft Graph and SharePoint API errors for use with SharePoint Framework solutions. It contains specific URL exclusion rules to ensure that the API behind the hosted SPFx workbench is not intercepted by the proxy.",

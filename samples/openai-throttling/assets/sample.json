@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-openai-throttling",
+    "name": "pnp-m365proxy-openai-throttling",
     "source": "pnp",
     "title": "Simulate throttling of the OpenAI API",
     "shortDescription": "This sample contains a preset and mocks to simulate the throttling of the OpenAI API. As more and more applications use OpenAI API to use AI, it's important that developers can verify that their apps can properly handle cases when the API is throttled. Especially when the app is using lower-tier API plans, throttling is more likely to happen so validating the app's behavior is crucial to ensure great user experience. Using this preset you can simulate throttling of the OpenAI API and see how your app will handle it. The preset includes 3 different throttling scenarios: exceeded tokens per minute, exceeded number of requests per minute and service overload, which includes dynamic simulation of handling retry-after. Proxy will simulate throttling the API using one of these modes at random.",

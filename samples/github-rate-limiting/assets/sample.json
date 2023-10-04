@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-github-rate-limiting",
+    "name": "pnp-m365proxy-github-rate-limiting",
     "source": "pnp",
     "title": "Simulate rate limiting on GitHub APIs",
     "shortDescription": "This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.",
