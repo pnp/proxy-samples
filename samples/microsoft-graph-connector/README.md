@@ -18,6 +18,7 @@ This sample contains a Microsoft 365 Developer Proxy mock file that simulates re
 
 Version|Date|Comments
 -------|----|--------
+1.0|October 5, 2023|Updated sample to use PATCH for creating the schema
 1.0|September 8, 2023|Initial release
 
 ## Minimal path to awesome
