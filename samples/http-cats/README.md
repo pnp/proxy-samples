@@ -4,17 +4,17 @@
 
 **Testing doesn't have to boring!**
 
-Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. When you test your app in the browser, and the Microsoft 365 Developer Proxy simulates an error, you will see a funny cat image instead of a boring error message. Have fun! 🐱
+Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. When you test your app in the browser, and the Dev Proxy simulates an error, you will see a funny cat image instead of a boring error message. Have fun! 🐱
 
 [HTTP cat](https://http.cat) pictures by Tomomi Imura.
 
-![Microsoft 365 Developer Proxy simulating the 429 Too Many Request error on Microsoft Graph with an image of a cat](assets/429.png)
-![Microsoft 365 Developer Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat](assets/500.png)
-![Microsoft 365 Developer Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat](assets/502.png)
+![Dev Proxy simulating the 429 Too Many Request error on Microsoft Graph with an image of a cat](assets/429.png)
+![Dev Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat](assets/500.png)
+![Dev Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat](assets/502.png)
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.11.0-beta.1](https://img.shields.io/badge/m365proxy-v0.11.0--beta.1-green.svg)
+![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
 
 ## Contributors
 
@@ -25,12 +25,13 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 Version|Date|Comments
 -------|----|--------
+1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|August 10, 2023|Initial release
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-cats) then unzip it)
-- Start Microsoft 365 Developer Proxy specifying the path to one of the config file, eg. `m365proxy --config-file http-cats-config.json`
+- Start Dev Proxy specifying the path to one of the config file, eg. `devproxy --config-file http-cats-config.json`
 
 ## Features
 
@@ -52,4 +53,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-http-cats)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-http-cats)

@@ -2,13 +2,13 @@
 
 ## Summary
 
-This sample contains a Microsoft 365 Developer Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy.
+This sample contains a Dev Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy.
 
-![Microsoft 365 Developer Proxy simulating rate limiting on Microsoft Graph APIs](assets/m365proxy-mock-nth-request-create-connector.png)
+![Dev Proxy simulating rate limiting on Microsoft Graph APIs](assets/devproxy-mock-nth-request-create-connector.png)
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.12.0-beta.1](https://img.shields.io/badge/m365proxy-v0.12.0--beta.1-green.svg)
+![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
 
 ## Contributors
 
@@ -18,13 +18,14 @@ This sample contains a Microsoft 365 Developer Proxy mock file that simulates re
 
 Version|Date|Comments
 -------|----|--------
+1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|October 5, 2023|Updated sample to use PATCH for creating the schema
 1.0|September 8, 2023|Initial release
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector) then unzip it)
-- Start Microsoft 365 Developer Proxy specifying the path to the mock file, eg. `m365proxy --mocks-file microsoft-graph-connector.json`
+- Start Dev Proxy specifying the path to the mock file, eg. `devproxy --mocks-file microsoft-graph-connector.json`
 
 ## Features
 
@@ -35,7 +36,7 @@ This mock file simulates Microsoft Graph API responses for:
 - checking the status of the schema provisioning operation
 - completing the schema provisioning operation with a success
 
-For more information about mocking requests see the [documentation](https://github.com/microsoft/m365-developer-proxy/wiki/Mock-responses).
+For more information about mocking requests see the [documentation](https://github.com/microsoft/dev-proxy/wiki/Mock-responses).
 
 ## Help
 
@@ -51,4 +52,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-microsoft-graph-connector)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-microsoft-graph-connector)

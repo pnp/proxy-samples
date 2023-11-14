@@ -1,14 +1,14 @@
-# Microsoft 365 Developer Proxy samples
+# Dev Proxy samples
 
-This repository contains presets and mocks for use with [Microsoft 365 Developer Proxy](https://aka.ms/m365/proxy).
+This repository contains presets and mocks for use with [Dev Proxy](https://aka.ms/devproxy).
 
-> We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Microsoft 365 Developer Proxy. If you use a configuration for a specific scenario or created mocks for an API, please share your work and help others!
+> We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Dev Proxy. If you use a configuration for a specific scenario or created mocks for an API, please share your work and help others!
 
 ## Have issues or questions?
 
 If you've got questions or experience an issue with any of the samples in this repo, please [create an issue](https://github.com/pnp/proxy-samples/issues/new).
 
-For questions related to the Microsoft 365 Developer Proxy itself, [create an issue in the Microsoft 365 Developer Proxy repo](https://aka.ms/m365/proxy/issue).
+For questions related to the Dev Proxy itself, [create an issue in the Dev Proxy repo](https://aka.ms/devproxy/issue).
 
 ## Authors
 

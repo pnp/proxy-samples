@@ -1,18 +1,18 @@
 [
   {
-    "name": "pnp-m365proxy-http-cats",
+    "name": "pnp-devproxy-http-cats",
     "source": "pnp",
     "title": "Simulate errors on Microsoft Graph with HTTP Cats",
-    "shortDescription": "Testing doesn't have to boring! Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. This preset contains images for the following HTTP status codes: 429, 500, 502, 503, 504 and 507. When you test your app in the browser, and the Microsoft 365 Developer Proxy returns one of these status codes, you will see a funny cat image instead of a boring error message. Have fun! 🐱 HTTP cat pictures by Tomomi Imura.",
+    "shortDescription": "Testing doesn't have to boring! Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. This preset contains images for the following HTTP status codes: 429, 500, 502, 503, 504 and 507. When you test your app in the browser, and the Dev Proxy returns one of these status codes, you will see a funny cat image instead of a boring error message. Have fun! 🐱 HTTP cat pictures by Tomomi Imura.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/http-cats",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-cats",
     "longDescription": [
-      "Testing doesn't have to boring! Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. This preset contains images for the following HTTP status codes: 429, 500, 502, 503, 504 and 507. When you test your app in the browser, and the Microsoft 365 Developer Proxy returns one of these status codes, you will see a funny cat image instead of a boring error message. Have fun! 🐱 HTTP cat pictures by Tomomi Imura."
+      "Testing doesn't have to boring! Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. This preset contains images for the following HTTP status codes: 429, 500, 502, 503, 504 and 507. When you test your app in the browser, and the Dev Proxy returns one of these status codes, you will see a funny cat image instead of a boring error message. Have fun! 🐱 HTTP cat pictures by Tomomi Imura."
     ],
     "creationDateTime": "2023-08-10",
-    "updateDateTime": "2023-08-10",
+    "updateDateTime": "2023-11-14",
     "products": [
-      "Microsoft 365 Developer Proxy",
+      "Dev Proxy",
       "Microsoft Graph"
     ],
     "metadata": [
@@ -30,7 +30,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.11.0-beta.1"
+        "value": "v0.13.0-beta.5"
       }
     ],
     "thumbnails": [
@@ -38,19 +38,19 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-cats/assets/429.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the 429 Too Many Request error on Microsoft Graph with an image of a cat"
+        "alt": "Dev Proxy simulating the 429 Too Many Request error on Microsoft Graph with an image of a cat"
       },
       {
         "type": "image",
         "order": 200,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-cats/assets/500.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat"
+        "alt": "Dev Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat"
       },
       {
         "type": "image",
         "order": 300,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-cats/assets/502.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat"
+        "alt": "Dev Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat"
       }
     ],
     "authors": [
@@ -67,19 +67,19 @@
     ],
     "references": [
       {
-        "name": "Get started with the Microsoft 365 Developer Proxy",
-        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
       },
       {
         "name": "Change mocks file",
-        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Change-mocks-file"
       },
       {
         "name": "Use preset configurations",
-        "description": "Instructions on how to configure the Microsoft 365 Developer Proxy to use a different configuration file.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations"
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Use-preset-configurations"
       },
       {
         "name": "HTTP Cat",

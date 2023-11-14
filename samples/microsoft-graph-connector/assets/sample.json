@@ -1,18 +1,18 @@
 [
   {
-    "name": "pnp-m365proxy-microsoft-graph-connector",
+    "name": "pnp-devproxy-microsoft-graph-connector",
     "source": "pnp",
     "title": "Simulate creating a Microsoft Graph connector",
-    "shortDescription": "This sample contains a Microsoft 365 Developer Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy.",
+    "shortDescription": "This sample contains a Dev Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector",
     "longDescription": [
-      "This sample contains a Microsoft 365 Developer Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy."
+      "This sample contains a Dev Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy."
     ],
     "creationDateTime": "2023-09-08",
-    "updateDateTime": "2023-10-05",
+    "updateDateTime": "2023-11-14",
     "products": [
-      "Microsoft 365 Developer Proxy",
+      "Dev Proxy",
       "Microsoft Graph"
     ],
     "metadata": [
@@ -30,33 +30,33 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.12.0-beta.1"
+        "value": "v0.13.0-beta.5"
       }
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/m365proxy-mock-nth-request-create-connector.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the response for creating a Microsoft Graph connector"
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/devproxy-mock-nth-request-create-connector.png",
+        "alt": "Dev Proxy simulating the response for creating a Microsoft Graph connector"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/m365proxy-mock-nth-request-create-schema.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the response for provisioning Microsoft Graph connector schema"
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/devproxy-mock-nth-request-create-schema.png",
+        "alt": "Dev Proxy simulating the response for provisioning Microsoft Graph connector schema"
       },
       {
         "type": "image",
         "order": 300,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/m365proxy-mock-nth-request-long-running-operation-first.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the first request to the long-running operation status endpoint"
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/devproxy-mock-nth-request-long-running-operation-first.png",
+        "alt": "Dev Proxy simulating the first request to the long-running operation status endpoint"
       },
       {
         "type": "image",
         "order": 400,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/m365proxy-mock-nth-request-long-running-operation-second.png",
-        "alt": "Microsoft 365 Developer Proxy simulating the second request to the long-running operation status endpoint"
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector/assets/devproxy-mock-nth-request-long-running-operation-second.png",
+        "alt": "Dev Proxy simulating the second request to the long-running operation status endpoint"
       }
     ],
     "authors": [
@@ -68,14 +68,14 @@
     ],
     "references": [
       {
-        "name": "Get started with the Microsoft 365 Developer Proxy",
-        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
       },
       {
         "name": "Mock responses",
-        "description": "Instructions on how to define mock responses in Microsoft 365 Developer Proxy",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Mock-responses"
+        "description": "Instructions on how to define mock responses in Dev Proxy",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Mock-responses"
       }
     ]
   }

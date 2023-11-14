@@ -6,11 +6,11 @@ This sample contains mocks for the Microsoft Graph API based on the Microsoft Gr
 
 Using these mocks, you can simulate calling Microsoft Graph API without having to connect to the actual service. This is useful for testing and development purposes. These mocks are also helpful when you want to demo time-sensitive functionality such as recently opened files, without having to generate activity on your tenant for Microsoft Graph to return the data.
 
-![Microsoft 365 Developer Proxy simulating mocking Microsoft Graph API request to /users](assets/screenshot.png)
+![Dev Proxy simulating mocking Microsoft Graph API request to /users](assets/screenshot.png)
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.10](https://img.shields.io/badge/m365proxy-v0.10-green.svg)
+![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
 
 ## Contributors
 
@@ -20,13 +20,14 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 Version|Date|Comments
 -------|----|--------
+1.2|November 14, 2023|Renamed to Dev Proxy
 1.1|September 20, 2023|Updated mocks
 1.0|August 10, 2023|Initial release
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-docs-mocks) then unzip it)
-- Start Microsoft 365 Developer Proxy specifying the path to one of the mock files, eg. `m365proxy --mocks-file graph-proxy-mocks.json`
+- Start Dev Proxy specifying the path to one of the mock files, eg. `devproxy --mocks-file graph-proxy-mocks.json`
 
 ## Features
 
@@ -52,4 +53,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-microsoft-graph-docs-mocks)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-microsoft-graph-docs-mocks)

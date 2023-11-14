@@ -2,13 +2,13 @@
 
 <!--
 This is how you want the sample to appear in the samples browser.
-When naming your sample, try to give it a friendly name that describes what it does. Avoid using terms like `Microsoft 365 Developer Proxy` and `sample` -- because that's what all the samples in this repo are all about.
+When naming your sample, try to give it a friendly name that describes what it does. Avoid using terms like `Dev Proxy` and `sample` -- because that's what all the samples in this repo are all about.
 
 GOOD 👍:
   Simulating throttling on Microsoft Graph
 BAD 👎:
   throttling-microsoft-graph
-  Preset to configure simulating throttling on Microsoft Graph using Microsoft 365 Developer Proxy
+  Preset to configure simulating throttling on Microsoft Graph using Dev Proxy
 -->
 
 ## Summary
@@ -29,7 +29,7 @@ You can add multiple screenshots to help users understand your samples without h
 What's the minimal proxy version required to use this sample?
 -->
 
-![Microsoft 365 Developer Proxy v0.10](https://img.shields.io/badge/m365proxy-v0.10-green.svg)
+![Dev Proxy v0.10](https://img.shields.io/badge/devproxy-v0.10-green.svg)
 
 ## Contributors
 <!--
@@ -62,9 +62,9 @@ As tempting as it may be, don't just use images to describe the steps. Let's be 
 
 We have basic documentation for using mocks, presets and plugins that you can reference on top of any additional steps that your sample needs:
 
-* [Change mocks file](https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file)
-* [Use preset configurations](https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations)
-* [Plugin architecture](https://github.com/microsoft/m365-developer-proxy/wiki/Plugin-architecture)
+* [Change mocks file](https://github.com/microsoft/dev-proxy/wiki/Change-mocks-file)
+* [Use preset configurations](https://github.com/microsoft/dev-proxy/wiki/Use-preset-configurations)
+* [Plugin architecture](https://github.com/microsoft/dev-proxy/wiki/Plugin-architecture)
 
 -->
 
@@ -75,7 +75,7 @@ We have basic documentation for using mocks, presets and plugins that you can re
 
 Extended description of the contents of the sample. Does it include presets, mocks, a plugin? What does it help the user achieve? What problem does it solve?
 
-Using this sample you can use the Microsoft 365 Developer Proxy to:
+Using this sample you can use the Dev Proxy to:
 
 * objective 1
 * objective 2
@@ -129,4 +129,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-YOUR-SOLUTION-NAME)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-YOUR-SOLUTION-NAME)

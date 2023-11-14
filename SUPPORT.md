@@ -1,6 +1,6 @@
 # Support Guidelines
 
-The Microsoft 365 Developer Proxy samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
+The Dev Proxy samples repository is maintained by the [Microsoft 365 and Power Platform community](https://aka.ms/m365pnp), who all volunteer their time.
 
 We track bugs, user questions, suggestions and sample requests through [GitHub issues](https://github.com/pnp/proxy-samples/issues).
 
@@ -12,7 +12,7 @@ Please help out as you can in response to issues and user questions.
 
 ## Have issues or questions?
 
-If you have questions about how to use Microsoft 365 Developer Proxy, submit an issue at [https://aka.ms/m365/proxy/issue](https://aka.ms/m365/proxy/issue).
+If you have questions about how to use Dev Proxy, submit an issue at [https://aka.ms/devproxy/issue](https://aka.ms/devproxy/issue).
 
 ### How to report a bug
 

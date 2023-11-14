@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-m365proxy-spfx",
+    "name": "pnp-devproxy-spfx",
     "source": "pnp",
     "title": "Preset for SharePoint Framework solutions",
     "shortDescription": "This sample contains a preset for simulating Microsoft Graph and SharePoint API errors for use with SharePoint Framework solutions. It contains specific URL exclusion rules to ensure that the API behind the hosted SPFx workbench is not intercepted by the proxy.",
@@ -10,9 +10,9 @@
       "This sample contains a preset for simulating Microsoft Graph and SharePoint API errors for use with SharePoint Framework solutions. It contains specific URL exclusion rules to ensure that the API behind the hosted SPFx workbench is not intercepted by the proxy."
     ],
     "creationDateTime": "2023-08-10",
-    "updateDateTime": "2023-08-10",
+    "updateDateTime": "2023-11-15",
     "products": [
-      "Microsoft 365 Developer Proxy",
+      "Dev Proxy",
       "SharePoint",
       "Microsoft Graph"
     ],
@@ -31,7 +31,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.11.0-beta.1"
+        "value": "v0.13.0-beta.5"
       }
     ],
     "thumbnails": [
@@ -39,7 +39,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/spfx/assets/screenshot.png",
-        "alt": "Microsoft 365 Developer Proxy simulating API errors for an SPFx solution"
+        "alt": "Dev Proxy simulating API errors for an SPFx solution"
       }
     ],
     "authors": [
@@ -51,14 +51,14 @@
     ],
     "references": [
       {
-        "name": "Get started with the Microsoft 365 Developer Proxy",
-        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
       },
       {
         "name": "Use preset configurations",
-        "description": "Instructions on how to configure the Microsoft 365 Developer Proxy to use a different configuration file.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Use-preset-configurations"
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Use-preset-configurations"
       }
     ]
   }

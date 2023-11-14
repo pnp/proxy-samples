@@ -1,6 +1,6 @@
 [
   {
-    "name": "pnp-m365proxy-microsoft-graph-sandbox-mocks",
+    "name": "pnp-devproxy-microsoft-graph-sandbox-mocks",
     "source": "pnp",
     "title": "Microsoft Graph mocks from Microsoft Graph API docs with sandbox data",
     "shortDescription": "This sample contains mocks for the Microsoft Graph API based on the Microsoft Graph API documentation. Mocks are created based on sample requests and responses included in the Microsoft Graph documentation. Mocks are extended with the data from sandbox, which is used by Microsoft Graph Explorer and other Microsoft's properties. Using these mocks, you can simulate calling Microsoft Graph API without having to connect to the actual service. This is useful for testing and development purposes. These mocks are also helpful when you want to demo time-sensitive functionality such as recently opened files, without having to generate activity on your tenant for Microsoft Graph to return the data. The sample contains three mock files: mocks for Microsoft Graph v1.0 endpoints (graph-v1_0-proxy-mocks.json), mocks for Microsoft Graph beta endpoints (graph-beta-proxy-mocks.json) and mocks combining both v1.0 and beta endpoints (graph-proxy-mocks.json).",
@@ -10,9 +10,9 @@
       "This sample contains mocks for the Microsoft Graph API based on the Microsoft Graph API documentation. Mocks are created based on sample requests and responses included in the Microsoft Graph documentation. Mocks are extended with the data from sandbox, which is used by Microsoft Graph Explorer and other Microsoft's properties. Using these mocks, you can simulate calling Microsoft Graph API without having to connect to the actual service. This is useful for testing and development purposes. These mocks are also helpful when you want to demo time-sensitive functionality such as recently opened files, without having to generate activity on your tenant for Microsoft Graph to return the data. The sample contains three mock files: mocks for Microsoft Graph v1.0 endpoints (graph-v1_0-proxy-mocks.json), mocks for Microsoft Graph beta endpoints (graph-beta-proxy-mocks.json) and mocks combining both v1.0 and beta endpoints (graph-proxy-mocks.json)."
     ],
     "creationDateTime": "2023-09-22",
-    "updateDateTime": "2023-09-22",
+    "updateDateTime": "2023-11-14",
     "products": [
-      "Microsoft 365 Developer Proxy",
+      "Dev Proxy",
       "Microsoft Graph"
     ],
     "metadata": [
@@ -30,7 +30,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.10"
+        "value": "v0.13.0-beta.5"
       }
     ],
     "thumbnails": [
@@ -38,7 +38,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-sandbox-mocks/assets/screenshot.png",
-        "alt": "Microsoft 365 Developer Proxy simulating mocking Microsoft Graph API request to /users"
+        "alt": "Dev Proxy simulating mocking Microsoft Graph API request to /users"
       }
     ],
     "authors": [
@@ -50,14 +50,14 @@
     ],
     "references": [
       {
-        "name": "Get started with the Microsoft 365 Developer Proxy",
-        "description": "The tutorial will introduce you to the Microsoft 365 Developer Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Get-started"
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
       },
       {
         "name": "Change mocks file",
-        "description": "Instructions on how to change the mocks file used by the Microsoft 365 Developer Proxy.",
-        "url": "https://github.com/microsoft/m365-developer-proxy/wiki/Change-mocks-file"
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://github.com/microsoft/dev-proxy/wiki/Change-mocks-file"
       }
     ]
   }

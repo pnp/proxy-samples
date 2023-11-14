@@ -13,7 +13,7 @@ Remember that this repository is maintained by community members who volunteer t
 
 Please do not open GitHub issues for general support questions as the GitHub list should be used for feature requests and bug reports. This way we can more easily track actual issues or bugs from the code and keep the general discussion separate from the actual code.
 
-If you have questions about how to use Microsoft 365 Developer Proxy, submit an issue at [https://aka.ms/m365/proxy/issue](https://aka.ms/m365/proxy/issue).
+If you have questions about how to use Dev Proxy, submit an issue at [https://aka.ms/devproxy/issue](https://aka.ms/devproxy/issue).
 
 ## Typos, Issues, Bugs and contributions
 

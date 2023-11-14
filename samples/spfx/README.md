@@ -4,11 +4,11 @@
 
 This sample contains a preset for simulating Microsoft Graph and SharePoint API errors for use with SharePoint Framework solutions. It contains specific URL exclusion rules to ensure that the API behind the hosted SPFx workbench is not intercepted by the proxy.
 
-![Microsoft 365 Developer Proxy simulating API errors for an SPFx solution](assets/screenshot.png)
+![Dev Proxy simulating API errors for an SPFx solution](assets/screenshot.png)
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.11.0-beta.1](https://img.shields.io/badge/m365proxy-v0.11.0--beta.1-green.svg)
+![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
 
 ## Contributors
 
@@ -18,16 +18,17 @@ This sample contains a preset for simulating Microsoft Graph and SharePoint API 
 
 Version|Date|Comments
 -------|----|--------
+1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|August 10, 2023|Initial release
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/spfx) then unzip it)
-- Start Microsoft 365 Developer Proxy specifying the path to one of the mock files, eg. `m365proxy --config-file spfx-config.json`
+- Start Dev Proxy specifying the path to one of the mock files, eg. `devproxy --config-file spfx-config.json`
 
 ## Features
 
-This preset contains the default Microsoft 365 Developer Proxy configuration extended with an exclusion of the pattern that matches APIs required by the hosted SharePoint Workbench so that they're not intercepted by the proxy and don't break the workbench.
+This preset contains the default Dev Proxy configuration extended with an exclusion of the pattern that matches APIs required by the hosted SharePoint Workbench so that they're not intercepted by the proxy and don't break the workbench.
 
 ## Help
 
@@ -43,4 +44,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-spfx)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-spfx)

@@ -8,11 +8,11 @@ As more and more applications use OpenAI API to use AI, it's important that deve
 
 Using this preset you can simulate throttling of the OpenAI API and see how your app will handle it.
 
-![Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
+![Dev Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
 
 ## Compatibility
 
-![Microsoft 365 Developer Proxy v0.11.0-beta.1](https://img.shields.io/badge/m365proxy-v0.11.0--beta.1-green.svg)
+![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
 
 ## Contributors
 
@@ -22,23 +22,24 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|August 10, 2023|Initial release
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-docs-mocks) then unzip it)
-- Start Microsoft 365 Developer Proxy specifying the path to one of the mock files, eg. `m365proxy --config-file openai-config.json`
+- Start Dev Proxy specifying the path to one of the mock files, eg. `devproxy --config-file openai-config.json`
 
 ## Features
 
 This preset includes configuration for simulating 3 different throttling scenarios:
 
 - exceeded tokens per minute
-  ![Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
+  ![Dev Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
 - exceeded number of requests per minute
-  ![Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when exceeded the number of requests per minute](assets/throttling-requests.png)
+  ![Dev Proxy simulating throttling of the OpenAI API when exceeded the number of requests per minute](assets/throttling-requests.png)
 - service overload, which includes dynamic simulation of handling retry-after
-  ![Microsoft 365 Developer Proxy simulating throttling of the OpenAI API when the server is overloaded](assets/throttling-overloaded.png)
+  ![Dev Proxy simulating throttling of the OpenAI API when the server is overloaded](assets/throttling-overloaded.png)
 
 Proxy will simulate throttling the API using one of these modes at random.
 
@@ -56,4 +57,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-m365proxy-openai-throttling)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-openai-throttling)
