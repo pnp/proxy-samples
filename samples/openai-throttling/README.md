@@ -1,4 +1,4 @@
-# Microsoft Graph mocks from Microsoft Graph API docs
+# Simulate throttling of the OpenAI API
 
 ## Summary
 
