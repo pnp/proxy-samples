@@ -20,6 +20,7 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 Version|Date|Comments
 -------|----|--------
+1.3|November 17, 2023|Updated mocks
 1.2|November 14, 2023|Renamed to Dev Proxy
 1.1|September 20, 2023|Updated mocks
 1.0|August 10, 2023|Initial release
