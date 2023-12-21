@@ -62,9 +62,9 @@ As tempting as it may be, don't just use images to describe the steps. Let's be 
 
 We have basic documentation for using mocks, presets and plugins that you can reference on top of any additional steps that your sample needs:
 
-* [Change mocks file](https://github.com/microsoft/dev-proxy/wiki/Change-mocks-file)
-* [Use preset configurations](https://github.com/microsoft/dev-proxy/wiki/Use-preset-configurations)
-* [Plugin architecture](https://github.com/microsoft/dev-proxy/wiki/Plugin-architecture)
+* [Change mocks file](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file)
+* [Use preset configurations](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations)
+* [Plugin architecture](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/plugin-architecture)
 
 -->
 

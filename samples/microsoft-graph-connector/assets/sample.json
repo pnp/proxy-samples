@@ -74,12 +74,12 @@
       {
         "name": "Get started with the Dev Proxy",
         "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
       },
       {
         "name": "Mock responses",
         "description": "Instructions on how to define mock responses in Dev Proxy",
-        "url": "https://github.com/microsoft/dev-proxy/wiki/Mock-responses"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses"
       }
     ]
   }

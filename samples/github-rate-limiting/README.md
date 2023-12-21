@@ -30,7 +30,7 @@ Version|Date|Comments
 
 This preset simulates rate limiting on GitHub APIs.
 
-For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://github.com/microsoft/dev-proxy/wiki/RateLimitingPlugin).
+For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin).
 
 ## Help
 

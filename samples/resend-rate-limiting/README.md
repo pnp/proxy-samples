@@ -31,7 +31,7 @@ Version|Date|Comments
 - simulate the 10 requests per second limit using the `resend-rate-limiting.json` preset
 - simulate the 100 emails per day limit using the `resend-rate-limiting-daily.json` preset
 
-For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://github.com/microsoft/dev-proxy/wiki/RateLimitingPlugin).
+For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin).
 
 ## Help
 

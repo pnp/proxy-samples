@@ -57,12 +57,12 @@
       {
         "name": "Get started with the Dev Proxy",
         "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
-        "url": "https://github.com/microsoft/dev-proxy/wiki/Get-started"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
       },
       {
         "name": "Use preset configurations",
         "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
-        "url": "https://github.com/microsoft/dev-proxy/wiki/Use-preset-configurations"
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
       }
     ]
   }

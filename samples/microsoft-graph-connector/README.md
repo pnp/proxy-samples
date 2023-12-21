@@ -36,7 +36,7 @@ This mock file simulates Microsoft Graph API responses for:
 - checking the status of the schema provisioning operation
 - completing the schema provisioning operation with a success
 
-For more information about mocking requests see the [documentation](https://github.com/microsoft/dev-proxy/wiki/Mock-responses).
+For more information about mocking requests see the [documentation](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses).
 
 ## Help
 
