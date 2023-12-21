@@ -10,7 +10,7 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 ![Dev Proxy simulating the 429 Too Many Request error on Microsoft Graph with an image of a cat](assets/429.png)
 ![Dev Proxy simulating the 500 Internal Server Error error on Microsoft Graph with an image of a cat](assets/500.png)
-![Dev Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat](assets/502.png)
+![Dev Proxy simulating the 503 Service Unavailable error on Microsoft Graph with an image of a cat](assets/503.png)
 
 ## Compatibility
 

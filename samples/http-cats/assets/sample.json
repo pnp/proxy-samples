@@ -53,8 +53,8 @@
       {
         "type": "image",
         "order": 300,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-cats/assets/502.png",
-        "alt": "Dev Proxy simulating the 502 Bad Gateway error on Microsoft Graph with an image of a cat"
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-cats/assets/503.png",
+        "alt": "Dev Proxy simulating the 503 Service Unavailable error on Microsoft Graph with an image of a cat"
       }
     ],
     "authors": [

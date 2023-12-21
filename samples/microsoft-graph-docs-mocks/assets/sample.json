@@ -42,7 +42,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-docs-mocks/assets/screenshot.png",
-        "alt": "Dev Proxy simulating mocking Microsoft Graph API request to /users"
+        "alt": "Dev Proxy simulating mocking Microsoft Graph API request to /applications"
       }
     ],
     "authors": [

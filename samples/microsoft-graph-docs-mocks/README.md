@@ -6,7 +6,7 @@ This sample contains mocks for the Microsoft Graph API based on the Microsoft Gr
 
 Using these mocks, you can simulate calling Microsoft Graph API without having to connect to the actual service. This is useful for testing and development purposes. These mocks are also helpful when you want to demo time-sensitive functionality such as recently opened files, without having to generate activity on your tenant for Microsoft Graph to return the data.
 
-![Dev Proxy simulating mocking Microsoft Graph API request to /users](assets/screenshot.png)
+![Dev Proxy simulating mocking Microsoft Graph API request to /applications](assets/screenshot.png)
 
 ## Compatibility
 
