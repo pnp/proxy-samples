@@ -17,6 +17,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "microsoft-graph-docs-mocks"
+      },
+      {
         "key": "PRESET",
         "value": "No"
       },

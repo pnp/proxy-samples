@@ -18,6 +18,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "spfx"
+      },
+      {
         "key": "PRESET",
         "value": "Yes"
       },

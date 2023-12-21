@@ -16,6 +16,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "openai-throttling"
+      },
+      {
         "key": "PRESET",
         "value": "Yes"
       },

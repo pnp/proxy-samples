@@ -17,6 +17,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "microsoft-graph-sandbox-mocks"
+      },
+      {
         "key": "PRESET",
         "value": "No"
       },

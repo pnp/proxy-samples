@@ -17,6 +17,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "microsoft-graph-connector"
+      },
+      {
         "key": "PRESET",
         "value": "No"
       },

@@ -17,6 +17,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "http-cats"
+      },
+      {
         "key": "PRESET",
         "value": "Yes"
       },

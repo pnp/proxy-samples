@@ -16,6 +16,10 @@
     ],
     "metadata": [
       {
+        "key": "SAMPLE ID",
+        "value": "resend-rate-limiting"
+      },
+      {
         "key": "PRESET",
         "value": "Yes"
       },
