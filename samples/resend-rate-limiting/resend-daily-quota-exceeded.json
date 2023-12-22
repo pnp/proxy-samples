@@ -1,10 +1,10 @@
 {
-  "responseCode": 429,
-  "responseHeaders": {
+  "statusCode": 429,
+  "headers": {
     "content-type": "application/json; charset=utf-8",
     "retry-after": "86400"
   },
-  "responseBody": {
+  "body": {
     "statusCode": 429,
     "name": "daily_quota_exceeded",
     "message": "You have reached your daily email sending quota."
