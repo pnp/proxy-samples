@@ -1,53 +1,53 @@
 {
-    "responses": [
-      {
-        "statusCode": 429,
-        "addDynamicRetryAfter": true,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/429.jpeg"
+  "responses": [
+    {
+      "statusCode": 429,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*",
+        "Retry-After": "@dynamic"
       },
-      {
-        "statusCode": 500,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/500.jpeg"
+      "body": "@http-cats/429.jpeg"
+    },
+    {
+      "statusCode": 500,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*"
       },
-      {
-        "statusCode": 502,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/502.jpeg"
+      "body": "@http-cats/500.jpeg"
+    },
+    {
+      "statusCode": 502,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*"
       },
-      {
-        "statusCode": 503,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/503.jpeg"
+      "body": "@http-cats/502.jpeg"
+    },
+    {
+      "statusCode": 503,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*"
       },
-      {
-        "statusCode": 504,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/504.jpeg"
+      "body": "@http-cats/503.jpeg"
+    },
+    {
+      "statusCode": 504,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*"
       },
-      {
-        "statusCode": 507,
-        "headers": {
-          "content-type": "image/jpeg",
-          "Access-Control-Allow-Origin": "*"
-        },
-        "body": "@http-cats/507.jpeg"
-      }
-    ]
-  }
+      "body": "@http-cats/504.jpeg"
+    },
+    {
+      "statusCode": 507,
+      "headers": {
+        "content-type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "body": "@http-cats/507.jpeg"
+    }
+  ]
+}

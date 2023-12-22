@@ -30,9 +30,9 @@
     },
     {
       "statusCode": 429,
-      "addDynamicRetryAfter": true,
       "headers": {
-        "content-type": "application/json; charset=utf-8"
+        "content-type": "application/json; charset=utf-8",
+        "Retry-After": "@dynamic"
       },
       "body": {
         "error": {

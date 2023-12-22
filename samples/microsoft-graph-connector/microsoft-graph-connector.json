@@ -1,57 +1,77 @@
 {
-  "responses": [
+  "mocks": [
     {
-      "url": "https://graph.microsoft.com/v1.0/external/connections",
-      "method": "POST",
-      "responseCode": 201,
-      "responseBody": {
-        "id": "contosohr",
-        "name": "Contoso HR",
-        "description": "Connection to index Contoso HR system",
-        "state": "ready"
-      }
-    },
-    {
-      "url": "https://graph.microsoft.com/v1.0/external/connections/*/schema",
-      "method": "PATCH",
-      "responseCode": 202,
-      "responseHeaders": {
-        "Location": "https://graph.microsoft.com/v1.0/external/connections/contosohr/operations/616bfeed-666f-4ce0-8cd9-058939010bfc"
-      }
-    },
-    {
-      "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
-      "method": "GET",
-      "nth": 0,
-      "responseCode": 200,
-      "responseBody": {
-        "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
-        "status": "failed",
-        "error": {
-          "message": "Server error, something went wrong"
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "body": {
+          "id": "contosohr",
+          "name": "Contoso HR",
+          "description": "Connection to index Contoso HR system",
+          "state": "ready"
         }
       }
     },
     {
-      "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
-      "method": "GET",
-      "nth": 2,
-      "responseCode": 200,
-      "responseBody": {
-        "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
-        "status": "completed",
-        "error": null
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/schema",
+        "method": "PATCH"
+      },
+      "response": {
+        "statusCode": 202,
+        "headers": {
+          "Location": "https://graph.microsoft.com/v1.0/external/connections/contosohr/operations/616bfeed-666f-4ce0-8cd9-058939010bfc"
+        }
       }
     },
     {
-      "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
-      "method": "GET",
-      "responseCode": 200,
-      "responseBody": {
-        "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
-        "status": "inprogress",
-        "error": null
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET",
+        "nth": 0
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "failed",
+          "error": {
+            "message": "Server error, something went wrong"
+          }
+        }
       }
-    }    
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET",
+        "nth": 2
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "completed",
+          "error": null
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://graph.microsoft.com/v1.0/external/connections/*/operations/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "body": {
+          "id": "1.neu.0278337E599FC8DBF5607ED12CF463E4.6410CCF8F6DB8758539FB58EB56BF8DC",
+          "status": "inprogress",
+          "error": null
+        }
+      }
+    }
   ]
 }
