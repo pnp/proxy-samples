@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll"
+    },
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll",
+      "configSection": "rateLimiting"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll",
+      "configSection": "mocksPlugin"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.postmarkapp.com/*"
+  ],
+  "rateLimiting": {
+    "headerLimit": "ratelimit-limit",
+    "headerRemaining": "ratelimit-remaining",
+    "headerReset": "ratelimit-reset",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 3600,
+    "warningThresholdPercent": 0,
+    "rateLimit": 3,
+    "retryAfterSeconds": 1,
+    "whenLimitExceeded": "Throttle"
+  },
+  "mocksPlugin": {
+    "mocksFile": "postmark-responses.json"
+  },
+  "rate": 50,
+  "labelMode": "text",
+  "logLevel": "info"
+}

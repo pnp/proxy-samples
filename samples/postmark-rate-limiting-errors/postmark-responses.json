@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.postmarkapp.com/email",
+        "method": "POST"
+      },
+      "response": {
+        "body": {
+          "ErrorCode": 0,
+          "Message": "OK",
+          "MessageID": "f69a6c98-250f-4072-9b51-8bb15b80b7b5",
+          "SubmittedAt": "2024-01-06T18:13:09.7930072Z",
+          "To": "mail@domain.com"
+        },
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-postmark-account": "308206",
+          "x-postmark-server": "12359503",
+          "x-ratelimit-remaining-second": "4999",
+          "x-ratelimit-limit-second": "5000",
+          "vary": "Origin"
+        }
+      }
+    }
+  ]
+}
