@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 7, 2024|Added new throttling error
 1.2|December 22, 2023|Updated to new format
 1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|August 10, 2023|Initial release
