@@ -22,9 +22,12 @@
       },
       "response": {
         "statusCode": 202,
-        "headers": {
-          "Location": "https://graph.microsoft.com/v1.0/external/connections/contosohr/operations/616bfeed-666f-4ce0-8cd9-058939010bfc"
-        }
+        "headers": [
+          {
+            "name": "Location",
+            "value": "https://graph.microsoft.com/v1.0/external/connections/contosohr/operations/616bfeed-666f-4ce0-8cd9-058939010bfc"
+          }
+        ]
       }
     },
     {

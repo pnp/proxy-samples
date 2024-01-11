@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 ## Compatibility
 
-![Dev Proxy v0.14.0-beta.4](https://img.shields.io/badge/devproxy-v0.14.0--beta.4-green.svg)
+![Dev Proxy v0.14.0-beta.6](https://img.shields.io/badge/devproxy-v0.14.0--beta.6-green.svg)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 11, 2024|Updated to new format
 1.2|December 22, 2023|Updated to new format
 1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|September 17, 2023|Initial release

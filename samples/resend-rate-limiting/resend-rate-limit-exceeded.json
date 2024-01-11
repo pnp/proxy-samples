@@ -1,9 +1,15 @@
 {
   "statusCode": 429,
-  "headers": {
-    "content-type": "application/json; charset=utf-8",
-    "retry-after": "1"
-  },
+  "headers": [
+    {
+      "name": "content-type",
+      "value": "application/json; charset=utf-8"
+    },
+    {
+      "name": "retry-after",
+      "value": "1"
+    }
+  ],
   "body": {
     "statusCode": 429,
     "name": "rate_limit_exceeded",

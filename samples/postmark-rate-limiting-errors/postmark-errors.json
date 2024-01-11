@@ -3,10 +3,16 @@
   "responses": [
     {
       "statusCode": 401,
-      "headers": {
-        "content-type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      },
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ],
       "body": {
         "ErrorCode": 10,
         "Message": "Request does not contain a valid Server token."
@@ -14,10 +20,16 @@
     },
     {
       "statusCode": 415,
-      "headers": {
-        "content-type": "application/problem+json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      },
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/problem+json; charset=utf-8"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ],
       "body": {
         "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
         "title": "Unsupported Media Type",
@@ -27,10 +39,16 @@
     },
     {
       "statusCode": 422,
-      "headers": {
-        "content-type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      },
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ],
       "body": {
         "ErrorCode": 402,
         "Message": "Invalid JSON"
@@ -38,10 +56,16 @@
     },
     {
       "statusCode": 429,
-      "headers": {
-        "content-type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*"
-      },
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ],
       "body": {
         "ErrorCode": 429,
         "Message": "Rate Limit Exceeded"

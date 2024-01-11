@@ -8,7 +8,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 ## Compatibility
 
-![Dev Proxy v0.14.0-beta.4](https://img.shields.io/badge/devproxy-v0.14.0--beta.4-green.svg)
+![Dev Proxy v0.14.0-beta.6](https://img.shields.io/badge/devproxy-v0.14.0--beta.6-green.svg)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 11, 2024|Updated to new format
 1.2|December 22, 2023|Updated to new format
 1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|October 5, 2023|Updated sample to use PATCH for creating the schema

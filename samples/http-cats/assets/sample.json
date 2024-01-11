@@ -10,7 +10,7 @@
       "Testing doesn't have to boring! Use this preset to return funny cat images when simulating erroneous HTTP status codes for Microsoft Graph. This preset contains images for the following HTTP status codes: 429, 500, 502, 503, 504 and 507. When you test your app in the browser, and the Dev Proxy returns one of these status codes, you will see a funny cat image instead of a boring error message. Have fun! 🐱 HTTP cat pictures by Tomomi Imura."
     ],
     "creationDateTime": "2023-08-10",
-    "updateDateTime": "2023-12-22",
+    "updateDateTime": "2024-01-11",
     "products": [
       "Dev Proxy",
       "Microsoft Graph"
@@ -34,7 +34,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.14.0-beta.4"
+        "value": "v0.14.0-beta.6"
       }
     ],
     "thumbnails": [

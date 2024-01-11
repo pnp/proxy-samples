@@ -10,7 +10,7 @@
       "This sample contains a preset to simulate rate limiting on Resend APIs. Resend APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling."
     ],
     "creationDateTime": "2023-09-17",
-    "updateDateTime": "2023-12-22",
+    "updateDateTime": "2024-01-11",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.14.0-beta.4"
+        "value": "v0.14.0-beta.6"
       }
     ],
     "thumbnails": [
