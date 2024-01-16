@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/orders",
+  "dataFile": "orderDetails-data.json",
+  "actions": [
+    {
+      "action": "getMany",
+      "url": "/{order-id}/details",
+      "query": "$.[?(@.OrderID == {order-id})]"
+    },
+    {
+      "action": "create",
+      "url": "/{order-id}/details"
+    },
+    {
+      "action": "merge",
+      "url": "/{order-id}/details/{product-id}",
+      "query": "$.[?(@.OrderID == {order-id} && @.ProductID == '{product-id}')]"
+    },
+    {
+      "action": "delete",
+      "url": "/{order-id}/details/{product-id}",
+      "query": "$.[?(@.OrderID == {order-id} && @.ProductID == '{product-id}')]"
+    }
+  ]
+}

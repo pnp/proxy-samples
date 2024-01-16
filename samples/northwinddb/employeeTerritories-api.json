@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/employees",
+  "dataFile": "employeeTerritories-data.json",
+  "actions": [
+    {
+      "action": "getMany",
+      "url": "/{employee-id}/territories",
+      "query": "$.[?(@.EmployeeID == {employee-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "delete",
+      "url": "/{employee-id}/territories/{territory-id}",
+      "query": "$.[?(@.EmployeeID == {employee-id} && @.TerritoryID == '{territory-id}')]"
+    }
+  ]
+}

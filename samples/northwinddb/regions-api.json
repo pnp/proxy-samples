@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/regions",
+  "dataFile": "regions-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{region-id}",
+      "query": "$.[?(@.RegionID == {region-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{region-id}",
+      "query": "$.[?(@.RegionID == {region-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{region-id}",
+      "query": "$.[?(@.RegionID == {region-id})]"
+    }
+  ]
+}

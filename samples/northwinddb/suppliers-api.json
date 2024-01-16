@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/suppliers",
+  "dataFile": "suppliers-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{supplier-id}",
+      "query": "$.[?(@.SupplierID == {supplier-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{supplier-id}",
+      "query": "$.[?(@.SupplierID == {supplier-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{supplier-id}",
+      "query": "$.[?(@.SupplierID == {supplier-id})]"
+    }
+  ]
+}

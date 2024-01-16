@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/categories",
+  "dataFile": "categories-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{category-id}",
+      "query": "$.[?(@.CategoryID == {category-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{category-id}",
+      "query": "$.[?(@.CategoryID == {category-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{category-id}",
+      "query": "$.[?(@.CategoryID == {category-id})]"
+    }
+  ]
+}

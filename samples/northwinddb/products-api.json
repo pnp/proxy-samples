@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/products",
+  "dataFile": "products-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    }
+  ]
+}

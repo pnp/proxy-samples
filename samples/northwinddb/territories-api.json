@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/territories",
+  "dataFile": "territories-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{territory-id}",
+      "query": "$.[?(@.TerritoryID == '{territory-id}')]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{territory-id}",
+      "query": "$.[?(@.TerritoryID == '{territory-id}')]"
+    },
+    {
+      "action": "delete",
+      "url": "/{territory-id}",
+      "query": "$.[?(@.TerritoryID == '{territory-id}')]"
+    }
+  ]
+}

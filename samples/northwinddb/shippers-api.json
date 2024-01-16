@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/shippers",
+  "dataFile": "shippers-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{shipper-id}",
+      "query": "$.[?(@.ShipperID == {shipper-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{shipper-id}",
+      "query": "$.[?(@.ShipperID == {shipper-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{shipper-id}",
+      "query": "$.[?(@.ShipperID == {shipper-id})]"
+    }
+  ]
+}

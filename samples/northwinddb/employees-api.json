@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/employees",
+  "dataFile": "employees-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{employee-id}",
+      "query": "$.[?(@.EmployeeID == {employee-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{employee-id}",
+      "query": "$.[?(@.EmployeeID == {employee-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{employee-id}",
+      "query": "$.[?(@.EmployeeID == {employee-id})]"
+    }
+  ]
+}

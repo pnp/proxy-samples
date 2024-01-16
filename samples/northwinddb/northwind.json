@@ -1,0 +1,107 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "categoriesApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "customersApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "employeeTerritoriesApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "employeesApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "orderDetailsApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "ordersApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "productsApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "regionsApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "shippersApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "suppliersApi"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "territoriesApi"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.northwind.com/*"
+  ],
+  "categoriesApi": {
+    "apiFile": "categories-api.json"
+  },
+  "customersApi": {
+    "apiFile": "customers-api.json"
+  },
+  "employeesApi": {
+    "apiFile": "employees-api.json"
+  },
+  "employeeTerritoriesApi": {
+    "apiFile": "employeeTerritories-api.json"
+  },
+  "orderDetailsApi": {
+    "apiFile": "orderDetails-api.json"
+  },
+  "ordersApi": {
+    "apiFile": "orders-api.json"
+  },
+  "productsApi": {
+    "apiFile": "products-api.json"
+  },
+  "regionsApi": {
+    "apiFile": "regions-api.json"
+  },
+  "shippersApi": {
+    "apiFile": "shippers-api.json"
+  },
+  "suppliersApi": {
+    "apiFile": "suppliers-api.json"
+  },
+  "territoriesApi": {
+    "apiFile": "territories-api.json"
+  }
+}
