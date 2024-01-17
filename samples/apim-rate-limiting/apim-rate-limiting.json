@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "rateLimiting"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "mocksPlugin"
+    }
+  ],
+  "urlsToWatch": [
+    "https://myapi.azure-api.net/*"
+  ],
+  "rateLimiting": {
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 90,
+    "warningThresholdPercent": 0,
+    "rateLimit": 3,
+    "whenLimitExceeded": "Custom",
+    "customResponseFile": "apim-throttle.json"
+  },
+  "mocksPlugin": {
+    "mocksFile": "apim-mocks.json"
+  }
+}

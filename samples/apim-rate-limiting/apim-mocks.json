@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://myapi.azure-api.net/*"
+      },
+      "response": {
+        "statusCode": 200
+      }
+    }
+  ]
+}

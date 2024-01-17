@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/ratelimitingplugin.schema.json",
+  "statusCode": 429,
+  "body": {
+    "statusCode": 429,
+    "message": "Rate limit is exceeded. Try again in a few seconds."
+  },
+  "headers": [
+    {
+      "name": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "name": "Retry-After",
+      "value": "@dynamic"
+    }
+  ]
+}
