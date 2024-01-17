@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 17, 2024|Updated plugin path
 1.2|January 11, 2024|Updated to new format
 1.2|December 22, 2023|Updated to new format
 1.1|November 14, 2023|Renamed to Dev Proxy

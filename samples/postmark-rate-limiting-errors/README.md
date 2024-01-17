@@ -19,6 +19,7 @@ This sample contains a preset to simulate rate limiting and random errors on Pos
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 17, 2024|Updated plugin path
 1.1|January 11, 2024|Updated to new format
 1.0|January 7, 2024|Initial release
 

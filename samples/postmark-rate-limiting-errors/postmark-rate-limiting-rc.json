@@ -4,18 +4,18 @@
     {
       "name": "RetryAfterPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
     },
     {
       "name": "RateLimitingPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
       "configSection": "rateLimiting"
     },
     {
       "name": "MockResponsePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
       "configSection": "mocksPlugin"
     }
   ],

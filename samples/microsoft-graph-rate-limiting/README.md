@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on Microsoft Graph APIs.
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 17, 2023|Updated plugin path
 1.1|November 14, 2023|Renamed to Dev Proxy
 1.0|August 10, 2023|Initial release
 

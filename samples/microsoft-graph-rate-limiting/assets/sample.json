@@ -10,7 +10,7 @@
       "This sample contains a preset to simulate rate limiting on Microsoft Graph APIs. Selected Microsoft Graph endpoints support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling."
     ],
     "creationDateTime": "2023-08-10",
-    "updateDateTime": "2023-11-14",
+    "updateDateTime": "2024-01-17",
     "products": [
       "Dev Proxy",
       "Microsoft Graph"

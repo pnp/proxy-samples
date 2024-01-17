@@ -4,7 +4,7 @@
     {
       "name": "GenericRandomErrorPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder\\plugins\\dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
       "configSection": "genericRandomErrorPlugin"
     }
   ],

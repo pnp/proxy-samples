@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 Version|Date|Comments
 -------|----|--------
+1.4|January 17, 2024|Updated plugin path
 1.3|January 11, 2024|Updated to new format
 1.2|December 22, 2023|Updated to new format
 1.1|November 14, 2023|Renamed to Dev Proxy
