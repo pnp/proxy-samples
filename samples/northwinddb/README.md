@@ -23,7 +23,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Get the preset using Dev Proxy by running `devproxy preset get northwinddb`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/northwind.json"`
+- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/northwinddb/northwind.json"`
 
 ## Features
 
