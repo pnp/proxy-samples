@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 ## Compatibility
 
-![Dev Proxy v0.14.0-beta.6](https://img.shields.io/badge/devproxy-v0.14.0--beta.6-green.svg)
+![Dev Proxy v0.14.0](https://img.shields.io/badge/devproxy-v0.14.0--beta.6-green.svg)
 
 ## Contributors
 
