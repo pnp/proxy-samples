@@ -10,7 +10,7 @@
       "This sample contains mocks for the Microsoft Graph API based on the Microsoft Graph API documentation. Mocks are created based on sample requests and responses included in the Microsoft Graph documentation. Mocks are extended with the data from sandbox, which is used by Microsoft Graph Explorer and other Microsoft's properties. Using these mocks, you can simulate calling Microsoft Graph API without having to connect to the actual service. This is useful for testing and development purposes. These mocks are also helpful when you want to demo time-sensitive functionality such as recently opened files, without having to generate activity on your tenant for Microsoft Graph to return the data. The sample contains three mock files: mocks for Microsoft Graph v1.0 endpoints (graph-v1_0-proxy-mocks.json), mocks for Microsoft Graph beta endpoints (graph-beta-proxy-mocks.json) and mocks combining both v1.0 and beta endpoints (graph-proxy-mocks.json)."
     ],
     "creationDateTime": "2023-09-22",
-    "updateDateTime": "2024-01-11",
+    "updateDateTime": "2024-01-25",
     "products": [
       "Dev Proxy",
       "Microsoft Graph"
@@ -34,7 +34,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.14.0"
+        "value": "v0.14.1"
       }
     ],
     "thumbnails": [

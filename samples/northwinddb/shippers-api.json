@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v1.0/crudapiplugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.14.1/crudapiplugin.schema.json",
   "baseUrl": "https://api.northwind.com/shippers",
   "dataFile": "shippers-data.json",
   "actions": [

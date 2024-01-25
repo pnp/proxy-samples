@@ -8,7 +8,7 @@ This sample contains a set of CRUD APIs based on the [Northwind database data](h
 
 ## Compatibility
 
-![Dev Proxy v0.14.0](https://img.shields.io/badge/devproxy-v0.14.0-green.svg)
+![Dev Proxy v0.14.1](https://img.shields.io/badge/devproxy-v0.14.1-green.svg)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a set of CRUD APIs based on the [Northwind database data](h
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 25, 2024|Updated schema version
 1.0|January 16, 2024|Initial release
 
 ## Minimal path to awesome

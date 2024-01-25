@@ -18,6 +18,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 25, 2024|Updated schema version
 1.0|January 24, 2024|Initial release
 
 ## Prerequisites
