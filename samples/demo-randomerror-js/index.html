@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+  <title></title>
+  <style>
+    body {
+      width: 40em;
+      margin: 1em auto;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-family: serif;
+      font-size: 3em;
+      font-weight: normal;
+      line-height: 0.9;
+      margin-top: 1em;
+    }
+
+    ul {
+      padding-left: 1em;
+    }
+
+    #byline {
+      font-style: italic;
+      font-size: 0.8em;
+      margin: -1em 0 2em 0;
+    }
+
+    #article {
+      margin-bottom: 2em;
+    }
+
+    dl::before {
+      content: 'Comments';
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    dl {
+      font-size: 0.8em;
+    }
+
+    dt {
+      font-weight: bold;
+      margin-top: 1em;
+    }
+
+    dd {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+  <div id="content"></div>
+  <script>
+    async function _fetch(url) {
+      return fetch(url);
+    }
+
+    async function loadComments(articleId) {
+      const response = await _fetch(`https://jsonplaceholder.typicode.com/posts/${articleId}/comments`);
+      const comments = await response.json();
+      return comments;
+    }
+
+    async function getAuthor(id) {
+      const response = await _fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+      const author = await response.json();
+      return author;
+    }
+
+    async function loadArticle(id) {
+      const response = await _fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+      const article = await response.json();
+      document.title = article.title;
+      document.getElementsByTagName('h1')[0].innerHTML = article.title;
+      const content = document.getElementById('content');
+      content.innerHTML = `<p id="article">${article.body}</p>`;
+
+      const author = await getAuthor(article.userId);
+      content.insertAdjacentHTML('beforeBegin', `<p id="byline">by ${author.name}</p>`);
+
+      const comments = await loadComments(id);
+      const dl = document.createElement('dl');
+      comments.forEach(comment => {
+        const dt = document.createElement('dt');
+        dt.innerHTML = comment.name;
+        const dd = document.createElement('dd');
+        dd.innerHTML = comment.body;
+        dl.appendChild(dt);
+        dl.appendChild(dd);
+      });
+      document.getElementById('content').appendChild(dl);
+    }
+
+    async function loadArticles() {
+      document.title = 'Articles';
+      const response = await _fetch('https://jsonplaceholder.typicode.com/posts');
+      const articles = await response.json();
+      const ul = document.createElement('ul');
+      articles.forEach(article => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="?id=${article.id}">${article.title}</a>`;
+        ul.appendChild(li);
+      });
+      document.getElementsByTagName('h1')[0].innerHTML = 'Articles';
+      document.getElementById('content').appendChild(ul);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id === null) {
+      loadArticles();
+    }
+    else {
+      loadArticle(id);
+    }
+  </script>
+</body>
+
+</html>

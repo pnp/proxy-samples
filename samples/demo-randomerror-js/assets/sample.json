@@ -1,0 +1,96 @@
+[
+  {
+    "name": "pnp-devproxy-demo-randomerror-js",
+    "source": "pnp",
+    "title": "Demo: Simulate random error responses from a custom API",
+    "shortDescription": "This sample contains a demo web application connected to a placeholder API. Using Dev Proxy, you can simulate random errors returned by the API and see how the app handles them.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/demo-randomerror-js",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/demo-randomerror-js",
+    "longDescription": [
+      "This sample contains a demo web application connected to a placeholder API. Using Dev Proxy, you can simulate random errors returned by the API and see how the app handles them."
+    ],
+    "creationDateTime": "2024-01-26",
+    "updateDateTime": "2024-01-26",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "demo-randomerror-js"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.14.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-randomerror-js/assets/devproxy-random-errors.png",
+        "alt": "Terminal window in VSCode showing Dev Proxy simulating random API errors"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-randomerror-js/assets/webapp.png",
+        "alt": "Demo web app"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-randomerror-js/assets/webapp-code.png",
+        "alt": "Demo web app code"
+      },
+      {
+        "type": "image",
+        "order": 400,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-randomerror-js/assets/devproxyrc.png",
+        "alt": "Dev Proxy configuration for simulating random errors"
+      },
+      {
+        "type": "image",
+        "order": 500,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-randomerror-js/assets/randomerrors.png",
+        "alt": "Random errors simulated by Dev Proxy"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Test my app with random errors",
+        "description": "Learn how to use the Dev Proxy to simulate random errors for your API.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-random-errors"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      }
+    ]
+  }
+]

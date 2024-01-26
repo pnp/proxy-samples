@@ -1,0 +1,12 @@
+{
+  "name": "demo-randomerror-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server -p 3000 -s & devproxy -c randomerror.devproxyrc.json"
+  },
+  "keywords": [],
+  "author": "Waldek Mastykarz",
+  "license": "ISC"
+}
