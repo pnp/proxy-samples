@@ -4,7 +4,7 @@
 
 This sample contains a demo web application connected to a placeholder API. Using Dev Proxy, you can simulate random errors returned by the API and see how the app handles them.
 
-![Terminal window in VSCode showing Dev Proxy simulating random API errors](assets/devproxy-randomerrors.png)
+![Terminal window in VSCode showing Dev Proxy simulating random API errors](assets/devproxy-random-errors.png)
 
 ## Compatibility
 
