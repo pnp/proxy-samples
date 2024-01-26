@@ -1,11 +1,11 @@
 [
   {
-    "name": "pnp-devproxy-demo-m365-randomerror",
+    "name": "pnp-devproxy-demo-m365-randomerror-js",
     "source": "pnp",
     "title": "Demo: Simulate random error responses from Microsoft 365 APIs",
     "shortDescription": "This sample contains a demo web application connected to Microsoft Graph. Using Dev Proxy, you can simulate random errors returned by Microsoft Graph and see how the app handles them.",
-    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/demo-m365-randomerror",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/demo-m365-randomerror",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/demo-m365-randomerror-js",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/demo-m365-randomerror-js",
     "longDescription": [
       "This sample contains a demo web application connected to Microsoft Graph. Using Dev Proxy, you can simulate random errors returned by Microsoft Graph and see how the app handles them."
     ],
@@ -17,7 +17,7 @@
     "metadata": [
       {
         "key": "SAMPLE ID",
-        "value": "demo-m365-randomerror"
+        "value": "demo-m365-randomerror-js"
       },
       {
         "key": "PRESET",
@@ -40,7 +40,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-m365-randomerror/assets/test-app-js-requests.png",
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/demo-m365-randomerror-js/assets/test-app-js-requests.png",
         "alt": "Screenshot of a web browser with the web app running. Dev tools open with console window full of errors"
       }
     ],

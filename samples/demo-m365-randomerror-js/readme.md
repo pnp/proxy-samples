@@ -27,8 +27,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get demo-m365-randomerror`
-- Navigate to the Dev Proxy installation folder, and open the `presets/demo-m365-randomerror` folder
+- Get the preset using Dev Proxy by running `devproxy preset get demo-m365-randomerror-js`
+- Navigate to the Dev Proxy installation folder, and open the `presets/demo-m365-randomerror-js` folder
 - Create a new Entra app registration (instructions below)
 - Start the sample app by running `npx lite-server`
 - Start Dev Proxy with the Microsoft 365 preset by running `devproxy -c "~appFolder/presets/m365.json"`
@@ -95,7 +95,7 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-demo-m365-randomerror)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-demo-m365-randomerror-js)
 
 
 
