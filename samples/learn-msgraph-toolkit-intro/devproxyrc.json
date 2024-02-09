@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.15.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "M365MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "mocks"
+    }
+  ],
+  "urlsToWatch": [
+    "https://login.microsoftonline.com/*",
+    "https://graph.microsoft.com/*"
+  ],
+  "mocks": {
+    "mocksFile": "mocks.json"
+  }
+}
