@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx http-server -p 3000 -s & devproxy -c randomerror.devproxyrc.json"
+    "start": "npx concurrently \"npx http-server -p 3000 -s\" \"devproxy -c randomerror.devproxyrc.json\""
   },
   "keywords": [],
   "author": "Waldek Mastykarz",
