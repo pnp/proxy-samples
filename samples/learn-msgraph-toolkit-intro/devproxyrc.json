@@ -2,17 +2,28 @@
   "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.15.0/rc.schema.json",
   "plugins": [
     {
-      "name": "M365MockResponsePlugin",
+      "name": "EntraMockResponsePlugin",
       "enabled": true,
       "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
-      "configSection": "mocks"
+      "configSection": "entraMocks",
+      "urlsToWatch": [
+        "https://login.microsoftonline.com/*"
+      ]
+    },
+    {
+      "name": "GraphMockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "graphMocks",
+      "urlsToWatch": [
+        "https://graph.microsoft.com/*"
+      ]
     }
   ],
-  "urlsToWatch": [
-    "https://login.microsoftonline.com/*",
-    "https://graph.microsoft.com/*"
-  ],
-  "mocks": {
-    "mocksFile": "mocks.json"
+  "entraMocks": {
+    "mocksFile": "entra-mocks.json"
+  },
+  "graphMocks": {
+    "mocksFile": "graph-mocks.json"
   }
 }

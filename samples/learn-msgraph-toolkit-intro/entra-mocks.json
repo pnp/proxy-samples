@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.15.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=f601c4cb-6902-4675-8415-7db28a4a332d*",
+        "method": "GET"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "text/html; charset=utf-8"
+          }
+        ],
+        "body": "@responses/1868_code.html"
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+        "method": "POST"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "Access-Control-Expose-Headers",
+            "value": "Content-Length,Content-Encoding,x-ms-request-id"
+          },
+          {
+            "name": "Access-Control-Allow-Methods",
+            "value": "POST, OPTIONS"
+          }
+        ],
+        "body": {
+          "token_type": "Bearer",
+          "scope": "Calendars.Read openid People.Read Presence.Read.All profile User.Read User.ReadBasic.All email",
+          "expires_in": 5091,
+          "ext_expires_in": 5091,
+          "access_token": "eyJ0eXAiOiJKV1QiLCJub25jZSI6ImYtVXNXRC1zcTRKdUZOWUNVVmcxem9ITmZLakNaZ3hhWi0zTnVtQlNOWmMiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8wMmIwM2M4Yy1hNTVjLTRmMjMtOTI4NS1kNWJkOGY4MTk3OWEvIiwiaWF0IjoxNzA3NDAzNDM5LCJuYmYiOjE3MDc0MDM0MzksImV4cCI6MTcwNzQwODgzMSwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhWQUFBQWt2Mnl1SXJVbW1vemlPN1V2VUxyODB6SVE4OVpJcDhmaG1iS01FYTJHYzFhTHU0VG53VjFJRGFhb2pPejZlY1FFZ0pFMnhPL0xxNEc4dytjWWNKdzROTlFPSW50VXBTbVk5TUhwOGJ5Z2dvPSIsImFtciI6WyJwd2QiLCJtZmEiXSwiYXBwX2Rpc3BsYXluYW1lIjoiTUdUIGludHJvIHdpdGggRGV2IFByb3h5IiwiYXBwaWQiOiJlNjAxYzRjYi02OTAyLTQ2NzUtODQxNS03ZGIyOGE0YTMzMmQiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6Ik1hc3R5a2FyeiIsImdpdmVuX25hbWUiOiJXYWxkZWsiLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiIyYTAyOmE0NGI6OGE3ZjoxOjcwN2U6MjUzODo4MmZlOjNlMmYiLCJuYW1lIjoiV2FsZGVrIE1hc3R5a2FyeiIsIm9pZCI6IjlkYTM3NzM5LWFkNjMtNDJhYS1iMGMyLTA2ZjdiNDNlM2U5ZSIsInBsYXRmIjoiNSIsInB1aWQiOiIxMDAzMjAwMTk1RjRCRjgyIiwicmgiOiIwLkFVNEFqRHl3QWx5bEkwLVNoZFc5ajRHWG1nTUFBQUFBQUFBQXdBQUFBQUFBQUFBT0FWay4iLCJzY3AiOiJDYWxlbmRhcnMuUmVhZCBvcGVuaWQgUGVvcGxlLlJlYWQgUHJlc2VuY2UuUmVhZC5BbGwgcHJvZmlsZSBVc2VyLlJlYWQgVXNlci5SZWFkQmFzaWMuQWxsIGVtYWlsIiwic2lnbmluX3N0YXRlIjpbImttc2kiXSwic3ViIjoieUVPMVEyQWFTSk5zTzZEOXZXdG9fTlptZXdYa1lndTRCQUdRRmZJSWMyWSIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6IjAyYjAzYzhjLWE1NWMtNGYyMy05Mjg1LWQ1YmQ4ZjgxOTc5YSIsInVuaXF1ZV9uYW1lIjoid2FsZGVrQDJjemszZy5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJ3YWxkZWtAMmN6azNnLm9ubWljcm9zb2Z0LmNvbSIsInV0aSI6IjJ3VU00Mm9YZGtTNm56YWFMWFZqQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfc3QiOnsic3ViIjoiOTNFMWpzS1d1eUNRMS11NlpwNGZ5RVZNUVRZQVNWYWFnODBadDlXU0FJRSJ9LCJ4bXNfdGNkdCI6MTYzNDA3ODk0MiwieG1zX3RkYnIiOiJFVSJ9.tduABa7c36SbCfbsUIoFx7B4KBR688k9PKpA6VeJ1YDgZ5PZwr8Cn-vPLCNZUTyYoAw9miVO9cnM-9Aarqwy-T-o4OiG8alvHpkzopYKai8e6rYwt6E2N6rO1k0cwo3vD-bbFI8Ix0-Gs8XLIL0_zFrvCoAE7b6r6ZVCq53fcXyzm-PaC9zRq2c3wi5HUN-gHONy2ux_cEYSoJtNPEodkxhwnZak9v2uqxGQj88WR8YE4Jef9jPoeYNJFAzfi2aYkexOJyA8vGgjgaQbB6CwWbasZ-FxSOB4AJZ2JUUtdwx_hVDzHVUki92mOrDKEzDxJVPrgWhkH1sofWpTjqrfcA",
+          "refresh_token": "abc",
+          "id_token": "@dynamic.eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImtXYmthYTZxczh3c1RuQndpaU5ZT2hIYm5BdyJ9.eyJhdWQiOiJlNjAxYzRjYi02OTAyLTQ2NzUtODQxNS03ZGIyOGE0YTMzMmQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vMDJiMDNjOGMtYTU1Yy00ZjIzLTkyODUtZDViZDhmODE5NzlhL3YyLjAiLCJpYXQiOjE3MDc0MDM0MzksIm5iZiI6MTcwNzQwMzQzOSwiZXhwIjoxNzA3NDA3MzM5LCJuYW1lIjoiV2FsZGVrIE1hc3R5a2FyeiIsIm5vbmNlIjoiZTUwMjFkMzgtZTk4MC00NDU1LWE3NDItNDE1MGM3ZmQ1ZWZjIiwib2lkIjoiOWRhMzc3MzktYWQ2My00MmFhLWIwYzItMDZmN2I0M2UzZTllIiwicHJlZmVycmVkX3VzZXJuYW1lIjoid2FsZGVrQDJjemszZy5vbm1pY3Jvc29mdC5jb20iLCJyaCI6IjAuQVU0QWpEeXdBbHlsSTAtU2hkVzlqNEdYbXN2RUFlWUNhWFZHaEJWOXNvcEtNeTBPQVZrLiIsInN1YiI6IjkzRTFqc0tXdXlDUTEtdTZacDRmeUVWTVFUWUFTVmFhZzgwWnQ5V1NBSUUiLCJ0aWQiOiIwMmIwM2M4Yy1hNTVjLTRmMjMtOTI4NS1kNWJkOGY4MTk3OWEiLCJ1dGkiOiIyd1VNNDJvWGRrUzZuemFhTFhWakFBIiwidmVyIjoiMi4wIn0.J6U9NVd3-UF_G60iUrFG0qHrW0RBSfSntoDjmRqnAuiGmZbaP4j7iXDVatmNaKfHTOyToUf1_y4K0o8KfvM9mDyBqoiooCPF61z-mnySZs46KghkHpFebVFES5obi_LWOLbQsHLQtGo5leum1vM60nUGqvnS4GEUWDAUJWWHUPJJNOhIriIuErD85nxTB71O7imYFAym_4mdWGY8T8Y1vUEJqypuEs6EA8LJ2VC9ufK6SE5CO4JfhZgyNrE5ppidl5o-NDjKJ28V_Wciq8UKoHVOeZxH3dcUmtKo72ncS7SeT5OtrZTYajyi4HVriCubc3fyiNgfFg347iC-ngJoqg",
+          "client_info": "eyJ1aWQiOiI5ZGEzNzczOS1hZDYzLTQyYWEtYjBjMi0wNmY3YjQzZTNlOWUiLCJ1dGlkIjoiMDJiMDNjOGMtYTU1Yy00ZjIzLTkyODUtZDViZDhmODE5NzlhIn0"
+        }
+      }
+    }
+  ]
+}

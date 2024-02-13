@@ -6,7 +6,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 ## Compatibility
 
-![Dev Proxy v0.15.0-beta.3](https://img.shields.io/badge/devproxy-v0.15.0--beta.3-orange.svg)
+![Dev Proxy v0.15.0-beta.4](https://img.shields.io/badge/devproxy-v0.15.0--beta.4-orange.svg)
 
 ## Contributors
 
@@ -16,6 +16,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 Version|Date|Comments
 -------|----|--------
+1.1|February 13, 2024|Updated to use the new EntraMockResponsePlugin
 1.0|February 9, 2024|Initial release
 
 ## Minimal path to awesome
