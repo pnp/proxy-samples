@@ -1,0 +1,196 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.16.0/mockresponseplugin.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://sts.windows.net/fa15d692-e9c7-4460-a743-29f29522229/.well-known/openid-configuration"
+      },
+      "response": {
+        "body": {
+          "token_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/token",
+          "token_endpoint_auth_methods_supported": [
+            "client_secret_post",
+            "private_key_jwt",
+            "client_secret_basic"
+          ],
+          "jwks_uri": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys",
+          "response_modes_supported": [
+            "query",
+            "fragment",
+            "form_post"
+          ],
+          "subject_types_supported": [
+            "pairwise"
+          ],
+          "id_token_signing_alg_values_supported": [
+            "RS256"
+          ],
+          "response_types_supported": [
+            "code",
+            "id_token",
+            "code id_token",
+            "token id_token",
+            "token"
+          ],
+          "scopes_supported": [
+            "openid"
+          ],
+          "issuer": "https://sts.windows.net/{tenantid}/",
+          "microsoft_multi_refresh_token": true,
+          "authorization_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/authorize",
+          "device_authorization_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/devicecode",
+          "http_logout_supported": true,
+          "frontchannel_logout_supported": true,
+          "end_session_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/logout",
+          "claims_supported": [
+            "sub",
+            "iss",
+            "cloud_instance_name",
+            "cloud_instance_host_name",
+            "cloud_graph_host_name",
+            "msgraph_host",
+            "aud",
+            "exp",
+            "iat",
+            "auth_time",
+            "acr",
+            "amr",
+            "nonce",
+            "email",
+            "given_name",
+            "family_name",
+            "nickname"
+          ],
+          "check_session_iframe": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/oauth2/checksession",
+          "userinfo_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/openid/userinfo",
+          "kerberos_endpoint": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/kerberos",
+          "tenant_region_scope": null,
+          "cloud_instance_name": "microsoftonline.com",
+          "cloud_graph_host_name": "graph.windows.net",
+          "msgraph_host": "graph.microsoft.com",
+          "rbac_url": "https://pas.windows.net"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "keys": [
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "i6lGk3FZzxRcUb2C3nEQ7syHJlY",
+              "x5t": "i6lGk3FZzxRcUb2C3nEQ7syHJlY",
+              "n": "vRIL3aZt-xVqOZgMOr71ltWe9YY2Wf_B28C4Jl2nBSTEcFnf_eqOHZ8yzUBbLc4Nti2_ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw_tBb9mvdQVgVs4Ci0dVJRYiz-ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c_34meAO4R6kLzIq0JnSsZMYB9O_6bMyIlzxmdZ8F442SynCUHxhnIh3yZew-xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl-H7YF5RgQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/jCCAeagAwIBAgIJAKysonliFZLIMA0GCSqGSIb3DQEBCwUAMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwHhcNMjQwMjA4MTcwMjUzWhcNMjkwMjA4MTcwMjUzWjAtMSswKQYDVQQDEyJhY2NvdW50cy5hY2Nlc3Njb250cm9sLndpbmRvd3MubmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvRIL3aZt+xVqOZgMOr71ltWe9YY2Wf/B28C4Jl2nBSTEcFnf/eqOHZ8yzUBbLc4Nti2/ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw/tBb9mvdQVgVs4Ci0dVJRYiz+ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c/34meAO4R6kLzIq0JnSsZMYB9O/6bMyIlzxmdZ8F442SynCUHxhnIh3yZew+xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl+H7YF5RgQIDAQABoyEwHzAdBgNVHQ4EFgQU8Sqmrf0UFpZbGtl5y1CjUdQq5ycwDQYJKoZIhvcNAQELBQADggEBAA57FiIOUs5yyLD6a6rWCbQ4Z2XJTfQb+TM/tZ6V6QqNhSS+Q98KFOIWe9Sit0iAyDsCCKuA8f08PYnUiHmHq8dG/7YRTShE/3zCZXHYKJgMaBhYfS788zQuq/hXDdVVc5X0pZwM4ibc6+2XpcpeDHxpMOLwo2AwujDdHVLzedAkIaTCzwPIizP4LB6l6IxR+xRXsH/1f034Gk3ReAEGgHW12NkajtXmC3DKl6vGIHvx1PgAMWQbxq3F2OopNx6aZEIIZWcMpQZ6/62f3pxRJHzZiJZN+khV8hpNjJvCNf6/hNbxkLcjLAycjW8AttcCRSTM4F+02S3TyHmoE4pYywA="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "qor_VePWgmxWy3r1dpfsWsw2-zY",
+              "x5t": "qor_VePWgmxWy3r1dpfsWsw2-zY",
+              "n": "rV8eXna9NCyzvgVZvbz18NhLIAfo1Qzn-VQQCbQzyGi2KDe3RI2sLeHltv9mVI2sahcRjgvhYNSETyxqHaKw3w8L4jg0kJdfzhD8dvpl32hunOCzuY2WpyJVq6CkxzGN4iikWTEIe_GMGsu9qhdxybaTCBTAya8qyKL1sbEByk8FiY6nsm6BhuRUVCh_rzfAp3HY-U_58ORLF1tmZrmSljHMFwlxvYuOIlKHacXy9gen8HsT7PUSA4n2PdnT1XAmlKJG1mzvdqyG2L3iRQJ45tcmrERKcd1pYwhb7ZtTyKypkeR9lkKbaYiQUt1QhpeO12pH1bRB1_k9MMzOm8Ca1Q",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC6jCCAdKgAwIBAgIJAMqvEglnjttEMA0GCSqGSIb3DQEBCwUAMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czAeFw0yNDAxMjQyMjE0MjNaFw0yOTAxMjQyMjE0MjNaMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK1fHl52vTQss74FWb289fDYSyAH6NUM5/lUEAm0M8hotig3t0SNrC3h5bb/ZlSNrGoXEY4L4WDUhE8sah2isN8PC+I4NJCXX84Q/Hb6Zd9obpzgs7mNlqciVaugpMcxjeIopFkxCHvxjBrLvaoXccm2kwgUwMmvKsii9bGxAcpPBYmOp7JugYbkVFQof683wKdx2PlP+fDkSxdbZma5kpYxzBcJcb2LjiJSh2nF8vYHp/B7E+z1EgOJ9j3Z09VwJpSiRtZs73ashti94kUCeObXJqxESnHdaWMIW+2bU8isqZHkfZZCm2mIkFLdUIaXjtdqR9W0Qdf5PTDMzpvAmtUCAwEAAaMhMB8wHQYDVR0OBBYEFKOxwRo5B0oCCCLMp8I/cHosF4cPMA0GCSqGSIb3DQEBCwUAA4IBAQCifXD9bW3dh6WAwfFHnL2HefUhuDQzisAZBR0o6kPASObicJK91BtfVg6iYW0LUCE70EVnFkyypTy19JIPf3zutQkHFAdXtS2/0NiR0vRJ561gi5Yqjl9BW9Az6Eb/O4UEzqBpe313FNt2co8I0OjRNhbKB1lIPUu6UZs5qBdfTwQFB6fU/XfXHnpZERZgRUZu5mku/n2EHZ1iMe9of1Qv/AtXgB51ZlfpT6YbrqMJBJs1yHxLd+rYqoXCwWLoBlJ3xYm4jEzSHPLjFgqHrUb9Cl2SazRKhV/UBAGqq0xG6qZMoiWvcfv0equddGa/r84lrEU2y1RBGUGw15jiLL/y"
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "@dynamic.devProxyKeyId",
+              "x5t": "@dynamic.devProxyKeyId",
+              "n": "vRIL3aZt-xVqOZgMOr71ltWe9YY2Wf_B28C4Jl2nBSTEcFnf_eqOHZ8yzUBbLc4Nti2_ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw_tBb9mvdQVgVs4Ci0dVJRYiz-ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c_34meAO4R6kLzIq0JnSsZMYB9O_6bMyIlzxmdZ8F442SynCUHxhnIh3yZew-xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl-H7YF5RgQ",
+              "e": "AQAB",
+              "x5c": [
+                "@dynamic.devProxyCertificateChain"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.windows.net/fa15d692-e9c7-4460-a743-29f29522229/discovery/keys"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "keys": [
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "i6lGk3FZzxRcUb2C3nEQ7syHJlY",
+              "x5t": "i6lGk3FZzxRcUb2C3nEQ7syHJlY",
+              "n": "vRIL3aZt-xVqOZgMOr71ltWe9YY2Wf_B28C4Jl2nBSTEcFnf_eqOHZ8yzUBbLc4Nti2_ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw_tBb9mvdQVgVs4Ci0dVJRYiz-ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c_34meAO4R6kLzIq0JnSsZMYB9O_6bMyIlzxmdZ8F442SynCUHxhnIh3yZew-xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl-H7YF5RgQ",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC/jCCAeagAwIBAgIJAKysonliFZLIMA0GCSqGSIb3DQEBCwUAMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwHhcNMjQwMjA4MTcwMjUzWhcNMjkwMjA4MTcwMjUzWjAtMSswKQYDVQQDEyJhY2NvdW50cy5hY2Nlc3Njb250cm9sLndpbmRvd3MubmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvRIL3aZt+xVqOZgMOr71ltWe9YY2Wf/B28C4Jl2nBSTEcFnf/eqOHZ8yzUBbLc4Nti2/ETcCsTUNuzS368BWkSgxc45JBH1wFSoWNFUSXaPt8mRwJYTF0H32iNhw/tBb9mvdQVgVs4Ci0dVJRYiz+ilk3PeO8wzlwRuwWIsaKFYlMyOKG9DVFbg93DmP5Tjq3C3oJlATyhAiJJc1T2trEP8960an33dDEaWwVAHh3c/34meAO4R6kLzIq0JnSsZMYB9O/6bMyIlzxmdZ8F442SynCUHxhnIh3yZew+xDdeHr6Ofl7KeVUcvSiZP9X44CaVJvknXQbBYNl+H7YF5RgQIDAQABoyEwHzAdBgNVHQ4EFgQU8Sqmrf0UFpZbGtl5y1CjUdQq5ycwDQYJKoZIhvcNAQELBQADggEBAA57FiIOUs5yyLD6a6rWCbQ4Z2XJTfQb+TM/tZ6V6QqNhSS+Q98KFOIWe9Sit0iAyDsCCKuA8f08PYnUiHmHq8dG/7YRTShE/3zCZXHYKJgMaBhYfS788zQuq/hXDdVVc5X0pZwM4ibc6+2XpcpeDHxpMOLwo2AwujDdHVLzedAkIaTCzwPIizP4LB6l6IxR+xRXsH/1f034Gk3ReAEGgHW12NkajtXmC3DKl6vGIHvx1PgAMWQbxq3F2OopNx6aZEIIZWcMpQZ6/62f3pxRJHzZiJZN+khV8hpNjJvCNf6/hNbxkLcjLAycjW8AttcCRSTM4F+02S3TyHmoE4pYywA="
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "qor_VePWgmxWy3r1dpfsWsw2-zY",
+              "x5t": "qor_VePWgmxWy3r1dpfsWsw2-zY",
+              "n": "rV8eXna9NCyzvgVZvbz18NhLIAfo1Qzn-VQQCbQzyGi2KDe3RI2sLeHltv9mVI2sahcRjgvhYNSETyxqHaKw3w8L4jg0kJdfzhD8dvpl32hunOCzuY2WpyJVq6CkxzGN4iikWTEIe_GMGsu9qhdxybaTCBTAya8qyKL1sbEByk8FiY6nsm6BhuRUVCh_rzfAp3HY-U_58ORLF1tmZrmSljHMFwlxvYuOIlKHacXy9gen8HsT7PUSA4n2PdnT1XAmlKJG1mzvdqyG2L3iRQJ45tcmrERKcd1pYwhb7ZtTyKypkeR9lkKbaYiQUt1QhpeO12pH1bRB1_k9MMzOm8Ca1Q",
+              "e": "AQAB",
+              "x5c": [
+                "MIIC6jCCAdKgAwIBAgIJAMqvEglnjttEMA0GCSqGSIb3DQEBCwUAMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czAeFw0yNDAxMjQyMjE0MjNaFw0yOTAxMjQyMjE0MjNaMCMxITAfBgNVBAMTGGxvZ2luLm1pY3Jvc29mdG9ubGluZS51czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK1fHl52vTQss74FWb289fDYSyAH6NUM5/lUEAm0M8hotig3t0SNrC3h5bb/ZlSNrGoXEY4L4WDUhE8sah2isN8PC+I4NJCXX84Q/Hb6Zd9obpzgs7mNlqciVaugpMcxjeIopFkxCHvxjBrLvaoXccm2kwgUwMmvKsii9bGxAcpPBYmOp7JugYbkVFQof683wKdx2PlP+fDkSxdbZma5kpYxzBcJcb2LjiJSh2nF8vYHp/B7E+z1EgOJ9j3Z09VwJpSiRtZs73ashti94kUCeObXJqxESnHdaWMIW+2bU8isqZHkfZZCm2mIkFLdUIaXjtdqR9W0Qdf5PTDMzpvAmtUCAwEAAaMhMB8wHQYDVR0OBBYEFKOxwRo5B0oCCCLMp8I/cHosF4cPMA0GCSqGSIb3DQEBCwUAA4IBAQCifXD9bW3dh6WAwfFHnL2HefUhuDQzisAZBR0o6kPASObicJK91BtfVg6iYW0LUCE70EVnFkyypTy19JIPf3zutQkHFAdXtS2/0NiR0vRJ561gi5Yqjl9BW9Az6Eb/O4UEzqBpe313FNt2co8I0OjRNhbKB1lIPUu6UZs5qBdfTwQFB6fU/XfXHnpZERZgRUZu5mku/n2EHZ1iMe9of1Qv/AtXgB51ZlfpT6YbrqMJBJs1yHxLd+rYqoXCwWLoBlJ3xYm4jEzSHPLjFgqHrUb9Cl2SazRKhV/UBAGqq0xG6qZMoiWvcfv0equddGa/r84lrEU2y1RBGUGw15jiLL/y"
+              ]
+            },
+            {
+              "kty": "RSA",
+              "use": "sig",
+              "kid": "@dynamic.devProxyKeyId",
+              "x5t": "@dynamic.devProxyKeyId",
+              "n": "rV8eXna9NCyzvgVZvbz18NhLIAfo1Qzn-VQQCbQzyGi2KDe3RI2sLeHltv9mVI2sahcRjgvhYNSETyxqHaKw3w8L4jg0kJdfzhD8dvpl32hunOCzuY2WpyJVq6CkxzGN4iikWTEIe_GMGsu9qhdxybaTCBTAya8qyKL1sbEByk8FiY6nsm6BhuRUVCh_rzfAp3HY-U_58ORLF1tmZrmSljHMFwlxvYuOIlKHacXy9gen8HsT7PUSA4n2PdnT1XAmlKJG1mzvdqyG2L3iRQJ45tcmrERKcd1pYwhb7ZtTyKypkeR9lkKbaYiQUt1QhpeO12pH1bRB1_k9MMzOm8Ca1Q",
+              "e": "AQAB",
+              "x5c": [
+                "@dynamic.devProxyCertificateChain"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://login.microsoftonline.com/fa15d692-e9c7-4460-a743-29f29522229/oauth2/v2.0/token",
+        "method": "POST"
+      },
+      "response": {
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "token_type": "Bearer",
+          "expires_in": 3599,
+          "ext_expires_in": 3599,
+          "access_token": "eyJ0eXAiOiJKV1QiLCJub25jZSI6ImQ0ODh0NVI3Ql9wQVdMMUtadEc5NWtxSjRuY2hhOVdCSkJld3JKWWdzOVEiLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mYTE1ZDY5Mi1lOWM3LTQ0NjAtYTc0My0yOWYyOTUyMjIyOS8iLCJpYXQiOjE3MTAxNDU1MDEsIm5iZiI6MTcxMDE0NTUwMSwiZXhwIjoxNzEwMTQ5NDAxLCJhaW8iOiJFMk5nWUlpelc3QlMrYlJtdmtuNW0vWjEvK1RUQUE9PSIsImFwcF9kaXNwbGF5bmFtZSI6Ik1pY3Jvc29mdCBHcmFwaCBjb25uZWN0b3IiLCJhcHBpZCI6ImVmMWRhOWQ0LWZmNzctNGMzZS1hMDA1LTg0MGMzZjgzMDc0NSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2ZhMTVkNjkyLWU5YzctNDQ2MC1hNzQzLTI5ZjI5NTIyMjI5LyIsImlkdHlwIjoiYXBwIiwib2lkIjoiNmFiNWE1OWYtZGI4Yi00YWYzLWFiMTgtZWNlNjI5YjNhYTgwIiwicmgiOiIwLkFVNEFqRHl3QWx5bEkwLVNoZFc5ajRHWG1nTUFBQUFBQUFBQXdBQUFBQUFBQUFBT0FRQS4iLCJyb2xlcyI6WyJFeHRlcm5hbENvbm5lY3Rpb24uUmVhZFdyaXRlLk93bmVkQnkiLCJFeHRlcm5hbEl0ZW0uUmVhZFdyaXRlLk93bmVkQnkiXSwic3ViIjoiNmFiNWE1OWYtZGI4Yi00YWYzLWFiMTgtZWNlNjI5YjNhYTgwIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkVVIiwidGlkIjoiZmExNWQ2OTItZTljNy00NDYwLWE3NDMtMjlmMjk1MjIyMjkiLCJ1dGkiOiIzcDRPeFlLZzNrbUJ6eDlYd3FCWEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyIwOTk3YTFkMC0wZDFkLTRhY2ItYjQwOC1kNWNhNzMxMjFlOTAiXSwieG1zX3RjZHQiOjE2MzQwNzg5NDIsInhtc190ZGJyIjoiRVUifQ==.rdyLh7G_3qpXsYiYyB3sLHQ3qAQEl-o60n8gaDe-9yCLp_oVv8NVhaqF-OStrMbY2GxuDr8mvEnIyawr1mE60VaxjF0p6PDtpQV5EnEm44zuKuRO6qPmoP2ZUUmMjxDyKCnohSkiqNm_60cVDgAip8g42PhKKN_eY4wG5nwqYF3QQtlMSqMwVWtJyO76CpVrNjsnPx1-Eza6mlOZoVYPWNwnUA64poR7vXydsFkCANYKZpk4O0_pe-5JqXz5-L4zv2V3qU6aVVXdJ6f5HyYDEBp9qTcoVzjxSxLLBIeFMBs2KykiTGKpZGVtU0aXZHG5Hor5dkPgSlN2IWjISzp_uQ"
+        }
+      }
+    }
+  ]
+}

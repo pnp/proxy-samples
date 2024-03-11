@@ -1,0 +1,88 @@
+[
+  {
+    "name": "pnp-devproxy-microsoft-graph-connector-notification",
+    "source": "pnp",
+    "title": "Simulate handling Teams Admin Center notification for Graph connectors",
+    "shortDescription": "This sample contains mocks for simulating handling notifications from the Teams Admin Center (TAC) for Graph connectors. Using these mocks, you can simulate enabling and disabling a Graph connector through Teams Admin Center, without having to package your Graph connector as a Teams app and deploying it to Teams Admin Center first. This sample also contains mocks for handling creating the external connection, provisioning the schema, ingesting external items and deleting the connection.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector-notification",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-connector-notification",
+    "longDescription": [
+      "This sample contains mocks for simulating handling notifications from the Teams Admin Center (TAC) for Graph connectors. Using these mocks, you can simulate enabling and disabling a Graph connector through Teams Admin Center, without having to package your Graph connector as a Teams app and deploying it to Teams Admin Center first. This sample also contains mocks for handling creating the external connection, provisioning the schema, ingesting external items and deleting the connection."
+    ],
+    "creationDateTime": "2024-03-11",
+    "updateDateTime": "2024-03-11",
+    "products": [
+      "Dev Proxy",
+      "Microsoft Graph connectors",
+      "Copilot for Microsoft 365",
+      "Microsoft Graph",
+      "Microsoft Teams"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "microsoft-graph-connector-notification"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.16.0-beta.1"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector-notification/assets/simulating-tac-notification.png",
+        "alt": "Dev Proxy simulating the Teams Admin Center notification after enabling a Graph connector"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector-notification/assets/simulating-creating-external-connection-schema.png",
+        "alt": "Dev Proxy simulating creating external connection and provisioning its schema"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/microsoft-graph-connector-notification/assets/simulating-ingesting-external-items.png",
+        "alt": "Dev Proxy simulating ingesting external items"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      }
+    ]
+  }
+]
