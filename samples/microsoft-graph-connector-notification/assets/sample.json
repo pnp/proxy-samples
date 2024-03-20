@@ -10,7 +10,7 @@
       "This sample contains mocks for simulating handling notifications from the Teams Admin Center (TAC) for Graph connectors. Using these mocks, you can simulate enabling and disabling a Graph connector through Teams Admin Center, without having to package your Graph connector as a Teams app and deploying it to Teams Admin Center first. This sample also contains mocks for handling creating the external connection, provisioning the schema, ingesting external items and deleting the connection."
     ],
     "creationDateTime": "2024-03-11",
-    "updateDateTime": "2024-03-11",
+    "updateDateTime": "2024-03-20",
     "products": [
       "Dev Proxy",
       "Microsoft Graph connectors",
@@ -37,7 +37,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.16.0-beta.1"
+        "value": "v0.16.0-beta.2"
       }
     ],
     "thumbnails": [

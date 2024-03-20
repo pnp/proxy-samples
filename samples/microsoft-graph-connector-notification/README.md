@@ -8,7 +8,7 @@ This sample contains mocks for simulating handling notifications from the Teams 
 
 ## Compatibility
 
-![Dev Proxy v0.16.0-beta.1](https://img.shields.io/badge/devproxy-v0.16.0--beta.1-orange.svg)
+![Dev Proxy v0.16.0-beta.2](https://img.shields.io/badge/devproxy-v0.16.0--beta.2-orange.svg)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains mocks for simulating handling notifications from the Teams 
 
 Version|Date|Comments
 -------|----|--------
+1.1|March 20, 2024|Added Graph connector guidance plugin
 1.0|March 11, 2024|Initial release
 
 ## Before you start
