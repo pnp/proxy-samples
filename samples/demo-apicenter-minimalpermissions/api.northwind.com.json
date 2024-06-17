@@ -1,0 +1,140 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Northwind API",
+    "description": "Northwind API",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.northwind.com"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/common/oauth2/token",
+            "scopes": {
+              "customer.read": "Grants access to ready customer info",
+              "customer.readwrite": "Grants access to read and write customer info"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "CustomerID": {
+            "type": "string"
+          },
+          "CompanyName": {
+            "type": "string"
+          },
+          "ContactName": {
+            "type": "string"
+          },
+          "ContactTitle": {
+            "type": "string"
+          },
+          "Address": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "PostalCode": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          },
+          "Phone": {
+            "type": "string"
+          },
+          "Fax": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/customers/{customers-id}": {
+      "description": "Provides operations to manage a customer",
+      "get": {
+        "summary": "Get customer by ID",
+        "operationId": "getCustomerById",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.read"
+            ]
+          },
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update customer by ID",
+        "operationId": "updateCustomerById",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customers-id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "x-ms-generated-by": {
+    "toolName": "Dev Proxy",
+    "toolVersion": "0.19.0"
+  }
+}

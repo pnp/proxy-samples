@@ -1,0 +1,43 @@
+# These are fake tokes for testing
+# scp: customer.read
+@readToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJzY3AiOlsiY3VzdG9tZXIucmVhZCJdfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+# scp: customer.readwrite
+@readwriteToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJzY3AiOlsiY3VzdG9tZXIucmVhZHdyaXRlIl19.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+# scp: customer.read, customer.readwrite
+@readAndReadwriteToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJzY3AiOlsiY3VzdG9tZXIucmVhZCIsImN1c3RvbWVyLnJlYWR3cml0ZSJdfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+## Single calls
+## ------------
+### Scenario 1: read scope for get: OK
+GET https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readToken}}
+
+### Scenario 2: readwrite scope for write: OK
+PATCH https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readwriteToken}}
+
+{
+  "City": "Stuttgart"
+}
+
+### Scenario 3: readwrite scope for get: FAIL
+GET https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readwriteToken}}
+
+### Scenario 4: read + readwrite scope for read: FAIL
+GET https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readAndReadwriteToken}}
+
+## Multiple calls
+## ------------
+### Scenario 5: readwrite scope for get + write: OK
+GET https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readwriteToken}}
+
+### 
+PATCH https://api.northwind.com/customers/ALFKI
+Authorization: Bearer {{readwriteToken}}
+
+{
+  "City": "Stuttgart"
+}

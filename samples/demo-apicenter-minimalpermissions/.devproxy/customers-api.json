@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.18.0/crudapiplugin.schema.json",
+  "baseUrl": "https://api.northwind.com/customers",
+  "dataFile": "customers-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.CustomerID == '{customer-id}')]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.CustomerID == '{customer-id}')]"
+    },
+    {
+      "action": "delete",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.CustomerID == '{customer-id}')]"
+    }
+  ]
+}
