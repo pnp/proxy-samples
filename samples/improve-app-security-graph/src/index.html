@@ -1,0 +1,246 @@
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Proxy - Microsoft Graph API Security Sample</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@n8d/htwoo-core@1.2.5/dist/css/htwoo.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"
+    />
+    <link rel="stylesheet" href="./style/theme.css" />
+    <script src="https://alcdn.msauth.net/browser/2.28.3/js/msal-browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-client-msalBrowserAuthProvider.js"></script>
+    <script src="env.js"></script>
+    <script src="https://unpkg.com/@n8d/htwoo-core@1.2.5/dist/js/umd/htwoo.min.js"></script>
+    <style>
+      div#auth {
+        padding: 2em;
+      }
+
+      div#content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        row-gap: 2em;
+        column-gap: 2em;
+        padding: 2em;
+        align-items: stretch;
+      }
+
+      div.dashboard img {
+        border-radius: 50%;
+        border: 2px solid black;
+      }
+
+      div.hoo-splashscr {
+        justify-content: initial;
+      }
+    </style>
+  </head>
+
+  <body class="ms-Fabric" dir="ltr">
+    <div id="auth"></div>
+    <div id="content"></div>
+    <script>
+      ((appId, msal, MSGraphAuthCodeMSALBrowserAuthProvider) => {
+        const msalClient = new msal.PublicClientApplication({
+          auth: {
+            clientId: appId,
+          },
+        });
+
+        function render() {
+          document.querySelector("div#content").innerHTML = "";
+          document.querySelector("div#auth").innerHTML = "";
+
+          const accounts = msalClient.getAllAccounts();
+
+          if (accounts.length === 0) {
+            const element = `<div class="hoo-splashscr">
+                                <div class="hoo-splashscr-content">
+                                    <article class="hoo-splashcard">
+                                    <header class="hoo-splashcard-header" role="presentation">
+                                        <img src="img/splash.jpg" alt="Peter taking a call" class="hoo-splashcard-img">
+                                    </header>
+                                    <h1 class="hoo-splashcard-title">
+                                        Contoso Electronics
+                                    </h1>
+                                    <p class="hoo-splashcard-desc">
+                                        Product Support Tickets
+                                    </p>
+                                    <footer class="hoo-splashcard-footer">
+                                        <button type="button" id="login" class="hoo-button-primary">
+                                            <span class="hoo-button-label">Login</span>
+                                        </button>
+                                    </article>
+                                </div>
+                            </div>`;
+
+            document.querySelector("div#auth").innerHTML = element;
+
+            document
+              .querySelector("button#login")
+              .addEventListener("click", login);
+          } else {
+            document.querySelector("div#auth").innerHTML = `
+              <button type="button" id="logout" class="hoo-button">
+                <span class="hoo-button-label">Logout</span>
+              </button>
+            `;
+
+            document
+              .querySelector("button#logout")
+              .addEventListener("click", logout);
+
+            const graphClient = getGraphClient(accounts[0]);
+            callGraph(graphClient);
+          }
+        }
+
+        function login(e) {
+          e.preventDefault();
+          msalClient.loginPopup().then((response) => render());
+        }
+
+        function logout(e) {
+          e.preventDefault();
+
+          msalClient.logoutPopup().then((response) => render());
+        }
+
+        function getGraphClient(account) {
+          const authProvider =
+            new MSGraphAuthCodeMSALBrowserAuthProvider.AuthCodeMSALBrowserAuthenticationProvider(
+              msalClient,
+              {
+                account,
+                scopes: ["https://graph.microsoft.com/Group.ReadWrite.All"],
+                interactionType: msal.InteractionType.Popup,
+              }
+            );
+
+          return MicrosoftGraph.Client.initWithMiddleware({ authProvider });
+        }
+
+        function callGraph(graphClient) {
+          graphClient
+            .api("/planner/plans/cFw3nBGJDkqSnkqDSbwmz5gABbkL/tasks")
+            .get()
+            .then((res) => {
+              const { value: tasks } = res;
+              const highPriority = tasks.filter(
+                (task) => task.priority === 3
+              ).length;
+              const completed = tasks.filter(
+                (task) => task.percentComplete === 100
+              ).length;
+              const inProgress = tasks.filter(
+                (task) => task.percentComplete === 50
+              ).length;
+              const notStarted = tasks.filter(
+                (task) => task.percentComplete === 0
+              ).length;
+
+              return {
+                highPriority,
+                completed,
+                inProgress,
+                notStarted,
+                tasks,
+              };
+            })
+            .then((overview) => {
+              console.log(overview);
+              const tableBody = overview.tasks
+                .map(
+                  (task) =>
+                    `<tr>
+                  <td>${
+                    task.priority === 3
+                      ? '<span class="high-priority">!</span> '
+                      : ""
+                  }<a href="https://tasks.office.com/6plbfs.onmicrosoft.com/Home/Task/${
+                      task.id
+                    }?Type=TaskLink&Channel=Link">${task.title}</td>
+                  <td>${
+                    task.percentComplete === 100
+                      ? "Completed"
+                      : task.percentComplete === 50
+                      ? "In progress"
+                      : "Not started"
+                  }</td>
+                </tr>`
+                )
+                .join("");
+
+              const element = `<div class="hoo-splashscr">
+                                <h1>Product Support Tickets</h1>
+                                <div class="hoo-splashscr-content dashboard">
+                                  <article class="hoo-splashcard">
+                                        <header class="hoo-splashcard-header" role="presentation">
+                                            <img src="https://placehold.co/150x150/red/white?text=${overview.highPriority}" alt="" class="hoo-splashcard-img">
+                                        </header>
+                                        <h1 class="hoo-splashcard-title">
+                                            High Priority
+                                        </h1>
+                                    </article>
+                                    <article class="hoo-splashcard">
+                                        <header class="hoo-splashcard-header" role="presentation">
+                                            <img src="https://placehold.co/150x150/white/black?text=${overview.notStarted}" alt="" class="hoo-splashcard-img">
+                                        </header>
+                                        <h1 class="hoo-splashcard-title">
+                                            Not started
+                                        </h1>
+                                    </article>
+                                    <article class="hoo-splashcard">
+                                        <header class="hoo-splashcard-header" role="presentation">
+                                            <img src="https://placehold.co/150x150/blue/white?text=${overview.inProgress}" alt="" class="hoo-splashcard-img">
+                                        </header>
+                                        <h1 class="hoo-splashcard-title">
+                                            In Progress
+                                        </h1>                                        
+                                    </article>
+                                    <article class="hoo-splashcard">
+                                        <header class="hoo-splashcard-header" role="presentation">
+                                            <img src="https://placehold.co/150x150/green/white?text=${overview.completed}" alt="" class="hoo-splashcard-img">
+                                        </header>
+                                        <h1 class="hoo-splashcard-title">
+                                            Completed
+                                        </h1>
+                                    </article>
+                                </div>
+                                <div>
+                                  <article>
+                                    <table class="hoo-table">
+                                      <thead>
+                                        <tr>                                          
+                                          <th>Title</th>
+                                          <th>Status</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        ${tableBody}
+                                      </tbody>
+                                    </table>
+                                  </article>
+                                </div>
+                            </div>`;
+
+              document.querySelector("div#content").innerHTML += element;
+            });
+          // .catch(e => console.log(e))
+        }
+
+        render();
+      })(appId, msal, MSGraphAuthCodeMSALBrowserAuthProvider);
+    </script>
+  </body>
+</html>

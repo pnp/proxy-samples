@@ -1,0 +1,8 @@
+node_modules
+env.js
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*Reporter*
+.env
