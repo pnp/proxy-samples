@@ -18,7 +18,7 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 Version|Date|Comments
 -------|----|--------
-1.0|June 28, 2024|Initial release
+1.0|July 2, 2024|Initial release
 
 ## Minimal path to awesome
 
