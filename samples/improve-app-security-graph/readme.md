@@ -70,7 +70,7 @@ A common approach to security is to apply the principle of least privilege (PoLP
 To check your access token for excessive permissions locally:
 
 1. Start the local web server, `npm start`
-1. Start Dev Proxy in recording mode, `devproxy -c .devproxy\excessive-permissions.json -u "https://graph.microsoft.com/*" --record`
+1. Start Dev Proxy in recording mode, `devproxy -c .devproxy/excessive-permissions.json -u "https://graph.microsoft.com/*" --record`
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>

@@ -14,7 +14,7 @@ appId=$(echo "$envJs" | head -n 1 | cut -d "'" -f 2)
 # replace scopes values in env.js
 echo "Replacing scopes in env.js..."
 newScope='const scopes = ["https://graph.microsoft.com/Group.ReadWrite.All"];'
-sed -i '' "s/const scopes = \[.*\];/$newScope/" $filePath
+sed -i '' "s|const scopes = \[.*\];|$newScope|" $filePath
 
 # get service principal id
 echo "Getting service principal id..."
