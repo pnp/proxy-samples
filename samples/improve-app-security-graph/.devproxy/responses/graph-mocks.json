@@ -1,0 +1,408 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/mockresponseplugin.schema.json",
+    "mocks": [
+        {
+            "request": {
+                "url": "https://graph.microsoft.com/v1.0/planner/plans/cFw3nBGJDkqSnkqDSbwmz5gABbkL/tasks",
+                "method": "GET"
+            },
+            "response": {
+                "statusCode": 200,
+                "body": {
+                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#Collection(microsoft.graph.plannerTask)",
+                    "@odata.count": 8,
+                    "value": [
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAYCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "CPHPnB4CQkCw1oRNuZJ6DpgAKJzF",
+                            "title": "Warranty Claim for Mark8 Controller",
+                            "orderHint": "8584826404969963364Pm",
+                            "assigneePriority": "",
+                            "percentComplete": 50,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:40:48.5124453Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "wLMgtEuJKUeYomNQQrRpRZgALTS0",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {
+                                "category3": true
+                            },
+                            "assignments": {
+                                "4fa8692f-ee48-4f55-bd6a-c443234816dc": {
+                                    "@odata.type": "#microsoft.graph.plannerAssignment",
+                                    "assignedDateTime": "2024-06-21T10:43:22.6321163Z",
+                                    "orderHint": "8584826403416301443P\u0026",
+                                    "assignedBy": {
+                                        "user": {
+                                            "displayName": null,
+                                            "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                        },
+                                        "application": {
+                                            "displayName": null,
+                                            "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "mR2_JfWe60SlNoUZawVXPZgAFv8N",
+                            "title": "Return Process for Eagle Air",
+                            "orderHint": "8584826405267011429P\\",
+                            "assigneePriority": "",
+                            "percentComplete": 0,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:40:18.823348Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "SupObNbN6EieqRFx0ZJz6ZgAJPBW",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {}
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAZCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "jS18THXzh0CZqAJFVSUhNpgANb9_",
+                            "title": "Repair Request for Contoso Quad",
+                            "orderHint": "8584826405704382496P-",
+                            "assigneePriority": "8584826402748248921",
+                            "percentComplete": 50,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:39:35.1018384Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "Zy74enRrZEWM9zV40PC1K5gAFGQ4",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {
+                                "category2": true
+                            },
+                            "assignments": {
+                                "ff4983ef-4d36-478a-b054-166c2c085645": {
+                                    "@odata.type": "#microsoft.graph.plannerAssignment",
+                                    "assignedDateTime": "2024-06-21T10:43:30.6526886Z",
+                                    "orderHint": "8584826403344112996Ps",
+                                    "assignedBy": {
+                                        "user": {
+                                            "displayName": null,
+                                            "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                        },
+                                        "application": {
+                                            "displayName": null,
+                                            "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "CPHPnB4CQkCw1oRNuZJ6DpgAKJzF",
+                            "title": "Mark8 Video Capture Quality Issue",
+                            "orderHint": "8584826406145200107PS",
+                            "assigneePriority": "",
+                            "percentComplete": 50,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:38:50.9888123Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 3,
+                            "id": "3D0cpIQyi0KjPpFP58BygpgAAlve",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {
+                                "ba13d565-ede7-40ee-bbdd-f74e5f7900fd": {
+                                    "@odata.type": "#microsoft.graph.plannerAssignment",
+                                    "assignedDateTime": "2024-06-21T10:44:53.3502101Z",
+                                    "orderHint": "8584826402521586048P9",
+                                    "assignedBy": {
+                                        "user": {
+                                            "displayName": null,
+                                            "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                        },
+                                        "application": {
+                                            "displayName": null,
+                                            "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAUCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "u6YdvloRX0S2MuqdGI2o1ZgAADT0",
+                            "title": "Gimbal Case Compatibility Check",
+                            "orderHint": "8584826406368608734PW",
+                            "assigneePriority": "",
+                            "percentComplete": 0,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:38:28.6636279Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 9,
+                            "id": "zhswNSNl00W_l2WLV2xGA5gAC7Yw",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {}
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAXCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "jS18THXzh0CZqAJFVSUhNpgANb9_",
+                            "title": "Troubleshooting Contoso Quad\u2019s Flight Controls",
+                            "orderHint": "8584826407307865589P\u002B",
+                            "assigneePriority": "",
+                            "percentComplete": 50,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:36:54.7223824Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": null,
+                            "completedBy": null,
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "lNmvK-1AVEy2xfuA4vGpRZgAF7oT",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {
+                                "53f56359-28d7-401a-bc1d-f93c23d7e6f1": {
+                                    "@odata.type": "#microsoft.graph.plannerAssignment",
+                                    "assignedDateTime": "2024-06-21T10:43:47.4944659Z",
+                                    "orderHint": "8584826403153248202Pp",
+                                    "assignedBy": {
+                                        "user": {
+                                            "displayName": null,
+                                            "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                        },
+                                        "application": {
+                                            "displayName": null,
+                                            "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBATCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "CPHPnB4CQkCw1oRNuZJ6DpgAKJzF",
+                            "title": "Guidance on Mark8 Intelligent Flight Modes",
+                            "orderHint": "8584826405962797306Pj",
+                            "assigneePriority": "",
+                            "percentComplete": 100,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:39:09.2290482Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": "2024-06-21T10:39:18.4336256Z",
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "c9UbER90G06AzRN3F-G40ZgADiM8",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "completedBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {}
+                        },
+                        {
+                            "@odata.etag": "W/\u0022JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAVCc=\u0022",
+                            "planId": "cFw3nBGJDkqSnkqDSbwmz5gABbkL",
+                            "bucketId": "mR2_JfWe60SlNoUZawVXPZgAFv8N",
+                            "title": "Eagle Air Range Limitation Inquiry",
+                            "orderHint": "8584826406778707642P5",
+                            "assigneePriority": "",
+                            "percentComplete": 100,
+                            "startDateTime": null,
+                            "createdDateTime": "2024-06-21T10:37:47.716156Z",
+                            "dueDateTime": null,
+                            "hasDescription": true,
+                            "previewType": "description",
+                            "completedDateTime": "2024-06-21T10:37:58.964334Z",
+                            "referenceCount": 0,
+                            "checklistItemCount": 0,
+                            "activeChecklistItemCount": 0,
+                            "conversationThreadId": null,
+                            "priority": 5,
+                            "id": "KxPIPT-ttESV7mHLWLT0HJgAMFkm",
+                            "createdBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "completedBy": {
+                                "user": {
+                                    "displayName": null,
+                                    "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                },
+                                "application": {
+                                    "displayName": null,
+                                    "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                }
+                            },
+                            "appliedCategories": {},
+                            "assignments": {
+                                "9fed56c6-4abf-4871-9b08-41d2d057ea42": {
+                                    "@odata.type": "#microsoft.graph.plannerAssignment",
+                                    "assignedDateTime": "2024-06-21T10:45:04.5428956Z",
+                                    "orderHint": "8584826402409503407Pz",
+                                    "assignedBy": {
+                                        "user": {
+                                            "displayName": null,
+                                            "id": "ff4983ef-4d36-478a-b054-166c2c085645"
+                                        },
+                                        "application": {
+                                            "displayName": null,
+                                            "id": "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"
+                    },
+                    {
+                        "name": "Access-Control-Allow-Origin",
+                        "value": "*"
+                    },
+                    {
+                        "name": "Access-Control-Expose-Headers",
+                        "value": "ETag, Location, Preference-Applied, Content-Range, request-id, client-request-id, ReadWriteConsistencyToken, Retry-After, SdkVersion, WWW-Authenticate, x-ms-client-gcc-tenant"
+                    }
+                ]
+            }
+        }
+    ]
+}

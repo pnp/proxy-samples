@@ -1,0 +1,69 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/mockresponseplugin.schema.json",
+    "mocks": [
+        {
+            "request": {
+                "url": "https://placehold.co/150x150/white/black?text=*",
+                "method": "GET"
+            },
+            "response": {
+                "statusCode": 200,
+                "body": "@img/white.svg",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "image/svg\u002Bxml; charset=utf-8"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "url": "https://placehold.co/150x150/red/white?text=*",
+                "method": "GET"
+            },
+            "response": {
+                "statusCode": 200,
+                "body": "@img/red.svg",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "image/svg\u002Bxml; charset=utf-8"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "url": "https://placehold.co/150x150/green/white?text=*",
+                "method": "GET"
+            },
+            "response": {
+                "statusCode": 200,
+                "body": "@img/green.svg",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "image/svg\u002Bxml; charset=utf-8"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "url": "https://placehold.co/150x150/blue/white?text=*",
+                "method": "GET"
+            },
+            "response": {
+                "statusCode": 200,
+                "body": "@img/blue.svg",
+                "headers": [
+                    {
+                        "name": "Content-Type",
+                        "value": "image/svg\u002Bxml; charset=utf-8"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/rc.schema.json",
+    "plugins": [
+        {
+            "name": "MockGeneratorPlugin",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+        }
+    ],
+    "urlsToWatch": [
+        "https://graph.microsoft.com/*",
+        "https://placehold.co/*"
+    ]
+}
