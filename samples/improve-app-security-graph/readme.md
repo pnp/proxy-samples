@@ -8,7 +8,7 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 ## Compatibility
 
-![Dev Proxy v0.19](https://img.shields.io/badge/devproxy-v0.19-green.svg)
+![Dev Proxy v0.19.1](https://img.shields.io/badge/devproxy-v0.19.1-green.svg)
 
 ## Contributors
 
@@ -18,13 +18,21 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 Version|Date|Comments
 -------|----|--------
-1.0|July 2, 2024|Initial release
+1.0|July 3, 2024|Initial release
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) then unzip it)
-* Run `npm install` to install project dependencies
-* Run `scripts\setup.ps1` (PowerShell) or `scripts\setup.sh` (bash) to create a Microsoft Entra app registration
+1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) then unzip it)
+1. [Install](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started) Dev Proxy
+1. In a terminal session, open the sample folder
+    1. If you cloned the repository, `cd samples/improve-app-security-graph`
+1. Run `npm install` to install project dependencies
+1. Run the setup script to create a Microsoft Entra app registration
+    1. PowerShell
+        1. Execute `.\scripts\setup.ps1`
+    1. bash
+        1. Execute `chmod +x ./scripts/setup.sh` to make the script an executable
+        1. Execute `./scripts/setup.sh`
 
 ## Features
 
@@ -43,7 +51,7 @@ If you work on a large solution that uses many endpoints, it can be difficult to
 To check for minimal permissions locally:
 
 1. Start the local web server, `npm start`
-1. Start Dev Proxy, `devproxy --config-file .\.dev-proxy\minimal-permissions.json --urls-to-watch "https://graph.microsoft.com/*" --record`
+1. Start Dev Proxy, `devproxy --config-file .devproxy\minimal-permissions.json --urls-to-watch "https://graph.microsoft.com/*" --record`
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
@@ -62,7 +70,7 @@ A common approach to security is to apply the principle of least privilege (PoLP
 To check your access token for excessive permissions locally:
 
 1. Start the local web server, `npm start`
-1. Start Dev Proxy in recording mode, `devproxy -c .\.dev-proxy\minimal-permissions.json -u "https://graph.microsoft.com/*" --record`
+1. Start Dev Proxy in recording mode, `devproxy -c .devproxy\excessive-permissions.json -u "https://graph.microsoft.com/*" --record`
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
@@ -133,31 +141,39 @@ To use the workflow, you will need to:
 
 To fix the app permissions and apply the principle of least privilege:
 
-1. Open the project directory in a terminal
-1. Execute the `.\script\fix.ps1` (PowerShell) script, or `./script/fix.sh` (bash) script
+1. Run the fix script to update permissions and scopes
+    1. PowerShell
+        1. Execute `.\scripts\fix.ps1`
+    1. bash
+        1. Execute `chmod +x ./scripts/fix.sh` to make the script an executable
+        1. Execute `./scripts/fix.sh`
 
 The script will:
 
-1. In `src\env.js`, replace the `Group.ReadWrite.All` scope with `Tasks.Read`
-1. Remove the service principal for the app registration
-1. Create a new service principal for the app registration
-1. Add the `Tasks.Read` delegated permission to the app registration and grant admin consent
-1. Remove the `Group.ReadWrite.All` delegated permission from the app registration
+1. Replace the `Group.ReadWrite.All` scope with `Tasks.Read` in `src\env.js`
+1. Remove the service principal
+1. Create a new service principal
+1. Add the `Tasks.Read` delegated permission and grant admin consent
+1. Remove the `Group.ReadWrite.All` delegated permission
 
 ## Reset app permissions
 
 To reset the app permissions to the original state:
 
-1. Open the project root folder in a terminal
-1. Execute the `.\script\reset.ps1` (PowerShell) script, or `./script/reset.sh` (bash) script
+1. Run the reset script to update permissions and scopes
+    1. PowerShell
+        1. Execute `.\scripts\reset.ps1`
+    1. bash
+        1. Execute `chmod +x ./scripts/reset.sh` to make the script an executable
+        1. Execute `./scripts/reset.sh`
 
 The script will:
 
-1. In `src\env.js`, replace the `Tasks.Read` scope with `Group.ReadWrite.All`
-1. Remove the service principal for the app registration
-1. Create a new service principal for the app registration
-1. Add the `Group.ReadWrite.All` delegated permission to the app registration and grant admin consent
-1. Remove the `Tasks.Read` delegated permission from the app registration
+1. Replace the `Tasks.Read` scope with `Group.ReadWrite.All` in `src\env.js`
+1. Remove the service principal
+1. Create a new service principal
+1. Add the `Group.ReadWrite.All` delegated permission and grant admin consent
+1. Remove the `Tasks.Read` delegated permission
 
 ## Help
 

@@ -9,7 +9,7 @@ variables:
 - name: LOG_FILE
   value: devproxy.log
 - name: DEV_PROXY_VERSION
-  value: v0.19.0
+  value: v0.19.1
 - name: DEV_PROXY_CACHE_RESTORED
   value: 'false'
 - name: PLAYWRIGHT_CACHE_RESTORED
