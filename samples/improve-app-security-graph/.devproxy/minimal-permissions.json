@@ -8,13 +8,10 @@
             "configSection": "minimalPermissionsPlugin"
         },
         {
-            "name": "MockResponsePlugin",
+            "name": "GraphMockResponsePlugin",
             "enabled": true,
             "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
-            "configSection": "mocksPlugin",
-            "urlsToWatch": [
-                "https://graph.microsoft.com/*"
-            ]
+            "configSection": "mocksPlugin"
         }
     ],
     "minimalPermissionsPlugin": {
@@ -22,5 +19,15 @@
     },
     "mocksPlugin": {
         "mocksFile": "responses/graph-mocks.json"
-    }
+    },
+    "urlsToWatch": [
+        "https://graph.microsoft.com/v1.0/*",
+        "https://graph.microsoft.com/beta/*",
+        "https://graph.microsoft.us/v1.0/*",
+        "https://graph.microsoft.us/beta/*",
+        "https://dod-graph.microsoft.us/v1.0/*",
+        "https://dod-graph.microsoft.us/beta/*",
+        "https://microsoftgraph.chinacloudapi.cn/v1.0/*",
+        "https://microsoftgraph.chinacloudapi.cn/beta/*"
+    ]
 }

@@ -36,5 +36,8 @@
     },
     "mocksPlugin": {
         "mocksFile": ".dev-proxy/responses/image-mocks.json"
-    }
+    },
+    "urlsToWatch": [
+        "https://graph.microsoft.com/*"
+    ]
 }

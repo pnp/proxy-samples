@@ -12,4 +12,8 @@ appId=$(npx -p @pnp/cli-microsoft365 -- m365 entra app add --name pnp-devproxy-i
 echo "Writing app to env.js..."
 echo "const appId = '$appId';" > ./src/env.js
 
+# write scopes to env.js
+Write-Output "Writing scopes to env.js..."
+echo "const scopes = ['Group.ReadWrite.All'];" >> ./src/env.js
+
 echo "DONE"

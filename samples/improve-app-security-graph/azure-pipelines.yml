@@ -68,7 +68,7 @@ steps:
     cacheHitVar: DEV_PROXY_CACHE_RESTORED
   displayName: Cache Dev Proxy
 
-- script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" $DEV_PROXY_VERSION
+- script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- $DEV_PROXY_VERSION
   displayName: 'Install Dev Proxy'
   condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
 

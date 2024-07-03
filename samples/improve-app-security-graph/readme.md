@@ -24,15 +24,17 @@ Version|Date|Comments
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) then unzip it)
 * Run `npm install` to install project dependencies
-* Run `scripts\setup.ps1` (Windows) or `scripts\setup.sh` (macOS) to create a Microsoft Entra app registration
+* Run `scripts\setup.ps1` (PowerShell) or `scripts\setup.sh` (bash) to create a Microsoft Entra app registration
 
 ## Features
 
 Using this sample you can use the Dev Proxy to:
 
-* Check for minimal permissions
-* Check if you are using excessive permissions
-* Prevent permission scope creep
+1. Check for minimal permissions
+2. Check if you are using excessive permissions
+3. Prevent permission scope creep
+
+## Scenarios
 
 ### Check for minimal permissions
 
@@ -46,7 +48,7 @@ To check for minimal permissions locally:
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
 
-The minimal scopes for the tracked requests is shown in the console output.
+The minimal scopes for the tracked requests are shown in the console output.
 
 > [!NOTE]
 > Authentication flow is real, however the responses from Microsoft Graph are mocked.
@@ -64,6 +66,7 @@ To check your access token for excessive permissions locally:
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
+1. Stop the local web server, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
 
 The guidance is shown in the console output.
 
@@ -71,6 +74,10 @@ The guidance is shown in the console output.
 > Authentication flow is real, however the responses from Microsoft Graph are mocked.
 
 ![Terminal output showing minimal scopes for the tracked requests and excessive scopes](./assets/excessive-permissions.png)
+
+> [!TIP]
+> To fix the permissions and verify the app functionality, [update the app registration permissions and requested scopes](#fixing-app-permissions), then repeat the above steps.
+> To reset the permissions to the original state and verify the app functionality, [update the app registration permissions and requested scopes](#reset-app-permissions) and repeat the above steps.
 
 ### Prevent scope creep
 
@@ -80,12 +87,12 @@ This scenario uses Playwright end to end tests to automate the issuing of reques
 > For this scenario you will need to provide the username and password of an account which Playwright will use to login to your Microsoft 365 tenant and obtain an access token. MFA must not be enabled on this account.
 
 > [!NOTE]
-> This scenario uses the `devproxyrc.json` file in the root as it's configuration
+> This scenario uses the `devproxyrc.json` file in the root as its configuration
 
 To run the tests locally:
 
-1. In the project root, rename `.env.sample` to `.env`
-1. In the `.env` file, replace `TEST_USERNAME` and `TEST_PASSWORD` values with those of your test account
+1. In the project root folder, rename `.env.sample` to `.env`
+1. In the `.env` file, replace `TEST_USERNAME` and `TEST_PASSWORD` environment variable values with those of your test account
 1. Start Dev Proxy, `devproxy --record`
 1. Run tests, `npm test`
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
@@ -96,33 +103,67 @@ To run the tests locally:
 
 ![Visual Studio Code showing passed Playwright tests in the Test Explorer, a Playwright test written in TypeScript, a terminal window with Dev Proxy running and the generated markdown report open in the editor displaying minimal permissions and excessive permissions](./assets/playwright.png)
 
+> [!TIP]
+> To fix the permissions and verify the app functionality, [update the app registration permissions and requested scopes](#fixing-app-permissions), then repeat the above steps.
+> To reset the permissions to the original state and verify the app functionality, [update the app registration permissions and requested scopes](#reset-app-permissions) and repeat the above steps.
+
 A [GitHub Workflow](./.github/workflows/api-permissions-check.yml) and [Azure DevOps Pipeline](./azure-pipelines.yml) are provided to automatically run Playwright and Dev Proxy when new code is committed to the repo.
 
-### Github Actions
+#### Github Actions
 
 To use the workflow, you will need to:
 
 * Create `TEST_PASSWORD` secret, set the value to the password of your test account. See [Creating secrets for a repository](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
-* Create `TEST_USERNAME` variable, set the value to the username of your test account. See [Creating configuration variables for a repository](https://docs.github.com/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository)
-* Create `APPID` variable, set the value to the ID of the Microsoft Entra app registration which is stored in the `env.js` file in the `src` directory.
+* Create `TEST_USERNAME` secret, set the value to the username of your test account.
+* Create `APPID` variable, set the value to the ID of the Microsoft Entra app registration which is stored in the `env.js` file in the `src` directory. See [Creating configuration variables for a repository](https://docs.github.com/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository)
 
 ![GitHub Actions workflow job summary displaying the markdown report](./assets/github-actions.png)
 
-### Azure Pipelines
+#### Azure Pipelines
 
 To use the workflow, you will need to:
 
-* Create `TEST_PASSWORD` variable, set the value to the password of your test account. See [Secret variable in the UI](https://learn.microsoft.com/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash#secret-variable-in-the-ui)
-* Create `TEST_USERNAME` variable, set the value to the username of your test account.
+* Create `TEST_PASSWORD` secret variable, set the value to the password of your test account. See [Secret variable in the UI](https://learn.microsoft.com/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash#secret-variable-in-the-ui)
+* Create `TEST_USERNAME` secret variable, set the value to the username of your test account.
 * Create `APPID` variable, set the value to the ID of the Microsoft Entra app registration which is stored in the `env.js` file in the `src` directory.
 
 ![Azure Pipelines job summary](./assets/azure-pipelines.png)
+
+## Fixing app permissions
+
+To fix the app permissions and apply the principle of least privilege:
+
+1. Open the project directory in a terminal
+1. Execute the `.\script\fix.ps1` (PowerShell) script, or `./script/fix.sh` (bash) script
+
+The script will:
+
+1. In `src\env.js`, replace the `Group.ReadWrite.All` scope with `Tasks.Read`
+1. Remove the service principal for the app registration
+1. Create a new service principal for the app registration
+1. Add the `Tasks.Read` delegated permission to the app registration and grant admin consent
+1. Remove the `Group.ReadWrite.All` delegated permission from the app registration
+
+## Reset app permissions
+
+To reset the app permissions to the original state:
+
+1. Open the project root folder in a terminal
+1. Execute the `.\script\reset.ps1` (PowerShell) script, or `./script/reset.sh` (bash) script
+
+The script will:
+
+1. In `src\env.js`, replace the `Tasks.Read` scope with `Group.ReadWrite.All`
+1. Remove the service principal for the app registration
+1. Create a new service principal for the app registration
+1. Add the `Group.ReadWrite.All` delegated permission to the app registration and grant admin consent
+1. Remove the `Tasks.Read` delegated permission from the app registration
 
 ## Help
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/proxy-samples/issues?q=label%3A%22sample%3A%20YOUR-SOLUTION-NAME%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/proxy-samples/issues?q=label%3A%22sample%3A%20pnp-devproxy-improve-app-security-graph) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/proxy-samples/issues/new).
 

@@ -50,7 +50,7 @@
     <div id="auth"></div>
     <div id="content"></div>
     <script>
-      ((appId, msal, MSGraphAuthCodeMSALBrowserAuthProvider) => {
+      ((appId, scopes, msal, MSGraphAuthCodeMSALBrowserAuthProvider) => {
         const msalClient = new msal.PublicClientApplication({
           auth: {
             clientId: appId,
@@ -122,7 +122,7 @@
               msalClient,
               {
                 account,
-                scopes: ["https://graph.microsoft.com/Group.ReadWrite.All"],
+                scopes,
                 interactionType: msal.InteractionType.Popup,
               }
             );
@@ -240,7 +240,7 @@
         }
 
         render();
-      })(appId, msal, MSGraphAuthCodeMSALBrowserAuthProvider);
+      })(appId, scopes, msal, MSGraphAuthCodeMSALBrowserAuthProvider);
     </script>
   </body>
 </html>
