@@ -8,7 +8,7 @@ This sample contains a preset for simulating Microsoft Graph and SharePoint API 
 
 ## Compatibility
 
-![Dev Proxy v0.13.0-beta.5](https://img.shields.io/badge/devproxy-v0.13.0--beta.5-green.svg)
+![Dev Proxy v0.13.0](https://img.shields.io/badge/devproxy-v0.13.0-green.svg)
 
 ## Contributors
 

@@ -8,7 +8,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 ## Compatibility
 
-![Dev Proxy v0.14.0](https://img.shields.io/badge/devproxy-v0.14.0--beta.6-green.svg)
+![Dev Proxy v0.14.0](https://img.shields.io/badge/devproxy-v0.14.0-green.svg)
 
 ## Contributors
 
