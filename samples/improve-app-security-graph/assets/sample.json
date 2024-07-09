@@ -60,7 +60,7 @@
             {
                 "type": "image",
                 "order": 600,
-                "url": "https://github.com/pnp/proxy-samples/raw/main/samples/improve-app-security-graph/assets/github-action.png",
+                "url": "https://github.com/pnp/proxy-samples/raw/main/samples/improve-app-security-graph/assets/github-actions.png",
                 "alt": "GitHub Actions workflow job summary displaying the markdown report"
             },
             {
