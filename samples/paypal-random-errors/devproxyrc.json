@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.20.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "configSection": "errorsPaypal"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api*.sandbox.paypal.com/v*"
+  ],
+  "rate": 50,
+  "logLevel": "information",
+  "newVersionNotification": "stable",
+  "errorsPaypal": {
+    "errorsFile": "errors-paypal.json"
+  }
+}
