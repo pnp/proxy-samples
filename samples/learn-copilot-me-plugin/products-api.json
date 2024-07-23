@@ -1,0 +1,36 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/crudapiplugin.schema.json",
+    "auth": "entra",
+    "entraAuthConfig": {
+        "scopes": [
+            "Product.Read"
+        ]
+    },
+    "actions": [
+        {
+            "action": "getAll",
+            "method": "GET",
+            "url": "/products"
+        },
+        {
+            "action": "getMany",
+            "method": "GET",
+            "url": "/products?name={name}",
+            "query": "$[?(@.name =~ /^{name}.*/i)]"
+        },
+        {
+            "action": "getMany",
+            "method": "GET",
+            "url": "/products?category={category}",
+            "query": "$[?(@.category == '{category}')]"
+        },
+        {
+            "action": "getMany",
+            "method": "GET",
+            "url": "/products?name={name}&category={category}",
+            "query": "$[?(@.name =~ /^{name}.*/i && @.category == '{category}')]"
+        }
+    ],
+    "baseUrl": "https://api.contoso.com/v1",
+    "dataFile": "products-data.json"
+}

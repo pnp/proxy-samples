@@ -1,0 +1,42 @@
+[
+    {
+        "productId": 1,
+        "name": "Contoso Quad",
+        "imageUrl": "https://raw.githubusercontent.com/SharePoint/sp-dev-provisioning-templates/master/tenant/productsupport/source/Product%20Imagery/Contoso4.png",
+        "category": "Enterprise",
+        "callVolume": 36,
+        "releaseDate": "2019-02-09"
+    },
+    {
+        "productId": 2,
+        "name": "Eagle Air",
+        "imageUrl": "https://raw.githubusercontent.com/SharePoint/sp-dev-provisioning-templates/master/tenant/productsupport/source/Product%20Imagery/EagleAir.png",
+        "category": "Enterprise",
+        "callVolume": 423,
+        "releaseDate": "2016-08-24"
+    },
+    {
+        "productId": 3,
+        "name": "Gimbal Case",
+        "imageUrl": "https://raw.githubusercontent.com/SharePoint/sp-dev-provisioning-templates/master/tenant/productsupport/source/Product%20Imagery/AerialGimbal.png",
+        "category": "Consumer",
+        "callVolume": 398,
+        "releaseDate": "2018-08-01"
+    },
+    {
+        "productId": 4,
+        "name": "Mark8",
+        "imageUrl": "https://raw.githubusercontent.com/SharePoint/sp-dev-provisioning-templates/master/tenant/productsupport/source/Product%20Imagery/Mark8.png",
+        "category": "Consumer",
+        "callVolume": 1201,
+        "releaseDate": "2020-01-02"
+    },
+    {
+        "productId": 5,
+        "name": "Mark8 controller",
+        "imageUrl": "https://raw.githubusercontent.com/SharePoint/sp-dev-provisioning-templates/master/tenant/productsupport/source/Product%20Imagery/Mark8-remotecontroller.png",
+        "category": "Consumer",
+        "callVolume": 812,
+        "releaseDate": "2020-01-02"
+    }
+]
