@@ -1,0 +1,17 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/rc.schema.json",
+    "plugins": [
+        {
+            "name": "CrudApiPlugin",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "configSection": "productsApi",
+            "urlsToWatch": [
+                "https://api.contoso.com/*"
+            ]
+        }
+    ],
+    "productsApi": {
+        "apiFile": "products-api.json"
+    }
+}
