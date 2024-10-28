@@ -79,10 +79,10 @@
       "configSection": "graphRandomErrorsPlugin"
     },
     {
-      "name": "MinimalPermissionsPlugin",
+      "name": "GraphMinimalPermissionsPlugin",
       "enabled": true,
       "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
-      "configSection": "minimalPermissionsPlugin"
+      "configSection": "graphMinimalPermissionsPlugin"
     }
   ],
   "urlsToWatch": [
@@ -113,7 +113,7 @@
   "executionSummaryPlugin": {
     "groupBy": "url"
   },
-  "minimalPermissionsPlugin": {
+  "graphMinimalPermissionsPlugin": {
     "type": "delegated"
   },
   "cachingGuidance": {

@@ -85,4 +85,4 @@ jobs:
       # only when using a reporting plugin with the Markdown reporter
       - name: Write summary
         run: |
-          cat MinimalPermissionsGuidancePlugin_MarkdownReporter.md >> $GITHUB_STEP_SUMMARY
+          cat GraphMinimalPermissionsGuidancePlugin_MarkdownReporter.md >> $GITHUB_STEP_SUMMARY

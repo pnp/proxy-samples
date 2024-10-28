@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.19.1/rc.schema.json",
+    "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.22.0/rc.schema.json",
     "plugins": [
         {
             "name": "GraphMockResponsePlugin",
@@ -20,10 +20,10 @@
             ]
         },
         {
-            "name": "MinimalPermissionsGuidancePlugin",
+            "name": "GraphMinimalPermissionsGuidancePlugin",
             "enabled": true,
             "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
-            "configSection": "minimalPermissionsGuidancePlugin"
+            "configSection": "graphMinimalPermissionsGuidancePlugin"
         },
         {
             "name": "MarkdownReporter",

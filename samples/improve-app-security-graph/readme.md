@@ -8,16 +8,18 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 ## Compatibility
 
-![Dev Proxy v0.19.1](https://img.shields.io/badge/devproxy-v0.19.1-green.svg)
+![Dev Proxy v0.22.0](https://img.shields.io/badge/devproxy-v0.22.0-green.svg)
 
 ## Contributors
 
 * [Garry Trinder](https://github.com/garrytrinder)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
+1.1|October 28, 2024|Updated plugin name
 1.0|July 3, 2024|Initial release
 
 ## Minimal path to awesome
@@ -104,7 +106,7 @@ To run the tests locally:
 1. Start Dev Proxy, `devproxy --record`
 1. Run tests, `npm test`
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
-1. Open `MinimalPermissionsGuidancePlugin_MarkdownReporter.md` file to view the output
+1. Open `GraphMinimalPermissionsGuidancePlugin_MarkdownReporter.md` file to view the output
 
 > [!NOTE]
 > Authentication flow is real, however the responses from Microsoft Graph are mocked.
