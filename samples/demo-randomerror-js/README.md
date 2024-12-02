@@ -8,7 +8,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://img.shields.io/badge/devproxy-v0.14.1-green.svg)
+![Dev Proxy v0.23.0](https://img.shields.io/badge/devproxy-v0.23.0-green.svg)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 Version|Date|Comments
 -------|----|--------
+1.1|December 2, 2024|Updated to Dev Proxy v0.23.0
 1.0|January 26, 2024|Initial release
 
 ## Prerequisites
