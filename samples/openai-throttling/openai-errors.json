@@ -1,76 +1,84 @@
 {
-  "responses": [
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.23.0/genericrandomerrorplugin.schema.json",
+  "errors": [
     {
-      "statusCode": 429,
-      "headers": [
+      "request": {
+        "url": "https://api.openai.com/*"
+      },
+      "responses": [
         {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
-        }
-      ],
-      "body": {
-        "error": {
-          "message": "Rate limit reached for default-text-davinci-003 in organization org-K7hT684bLccDbBRnySOoK9f2 on tokens per min. Limit: 150000.000000 / min. Current: 160000.000000 / min. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://beta.openai.com/account/billing to add a payment method.",
-          "type": "tokens",
-          "param": null,
-          "code": null
-        }
-      }
-    },
-    {
-      "statusCode": 429,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
-        }
-      ],
-      "body": {
-        "error": {
-          "message": "Rate limit reached for default-text-davinci-003 in organization org-K7hT684bLccDbBRnySOoK9f2 on requests per min. Limit: 60.000000 / min. Current: 70.000000 / min. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://beta.openai.com/account/billing to add a payment method.",
-          "type": "requests",
-          "param": null,
-          "code": null
-        }
-      }
-    },
-    {
-      "statusCode": 429,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
-        }
-      ],
-      "body": {
-        "error": {
-          "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
-          "type": "requests",
-          "param": null,
-          "code": null
-        }
-      }
-    },
-    {
-      "statusCode": 429,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "body": {
+            "error": {
+              "message": "Rate limit reached for default-text-davinci-003 in organization org-K7hT684bLccDbBRnySOoK9f2 on tokens per min. Limit: 150000.000000 / min. Current: 160000.000000 / min. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://beta.openai.com/account/billing to add a payment method.",
+              "type": "tokens",
+              "param": null,
+              "code": null
+            }
+          }
         },
         {
-          "name": "Retry-After",
-          "value": "@dynamic"
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "body": {
+            "error": {
+              "message": "Rate limit reached for default-text-davinci-003 in organization org-K7hT684bLccDbBRnySOoK9f2 on requests per min. Limit: 60.000000 / min. Current: 70.000000 / min. Contact support@openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://beta.openai.com/account/billing to add a payment method.",
+              "type": "requests",
+              "param": null,
+              "code": null
+            }
+          }
+        },
+        {
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            }
+          ],
+          "body": {
+            "error": {
+              "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+              "type": "requests",
+              "param": null,
+              "code": null
+            }
+          }
+        },
+        {
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "error": {
+              "message": "The engine is currently overloaded, please try again later.",
+              "type": "requests",
+              "param": null,
+              "code": null
+            }
+          }
         }
-      ],
-      "body": {
-        "error": {
-          "message": "The engine is currently overloaded, please try again later.",
-          "type": "requests",
-          "param": null,
-          "code": null
-        }
-      }
+      ]
     }
   ]
 }

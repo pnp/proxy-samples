@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.23.0/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
@@ -20,5 +21,5 @@
   },
   "rate": 90,
   "labelMode": "text",
-  "logLevel": "info"
+  "logLevel": "information"
 }
