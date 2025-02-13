@@ -1,92 +1,100 @@
 {
-  "responses": [
+  "$schema": "https://raw.githubusercontent.com/microsoft/dev-proxy/main/schemas/v0.24.0/genericrandomerrorplugin.schema.json",
+  "errors": [
     {
-      "statusCode": 429,
-      "headers": [
+      "request": {
+        "url": "https://*/*"
+      },
+      "responses": [
         {
-          "name": "content-type",
-          "value": "image/jpeg"
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            }
+          ],
+          "body": "@http-cats/429.jpeg"
         },
         {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
+          "statusCode": 500,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "@http-cats/500.jpeg"
         },
         {
-          "name": "Retry-After",
-          "value": "@dynamic"
+          "statusCode": 502,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "@http-cats/502.jpeg"
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "@http-cats/503.jpeg"
+        },
+        {
+          "statusCode": 504,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "@http-cats/504.jpeg"
+        },
+        {
+          "statusCode": 507,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "image/jpeg"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": "@http-cats/507.jpeg"
         }
-      ],
-      "body": "@http-cats/429.jpeg"
-    },
-    {
-      "statusCode": 500,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "image/jpeg"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": "@http-cats/500.jpeg"
-    },
-    {
-      "statusCode": 502,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "image/jpeg"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": "@http-cats/502.jpeg"
-    },
-    {
-      "statusCode": 503,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "image/jpeg"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": "@http-cats/503.jpeg"
-    },
-    {
-      "statusCode": 504,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "image/jpeg"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": "@http-cats/504.jpeg"
-    },
-    {
-      "statusCode": 507,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "image/jpeg"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": "@http-cats/507.jpeg"
+      ]
     }
   ]
 }
