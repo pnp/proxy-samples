@@ -8,7 +8,7 @@ This sample contains a demo web application connected to Microsoft Graph. Using 
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://img.shields.io/badge/devproxy-v0.14.1-green.svg)
+![Dev Proxy v0.14.1](https://aka.ms/devproxy/badge/v0.14.1)
 
 ## Contributors
 

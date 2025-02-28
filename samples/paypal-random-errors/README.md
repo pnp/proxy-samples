@@ -8,7 +8,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 ## Compatibility
 
-![Dev Proxy v0.20.0-beta.1](https://img.shields.io/badge/devproxy-v0.20.0--beta.1-orange.svg)
+![Dev Proxy v0.20.0](https://aka.ms/devproxy/badge/v0.20.0)
 
 ## Contributors
 

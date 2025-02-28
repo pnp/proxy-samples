@@ -12,7 +12,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 ## Compatibility
 
-![Dev Proxy v0.23.0](https://img.shields.io/badge/devproxy-v0.23.0-green.svg)
+![Dev Proxy v0.23.0](https://aka.ms/devproxy/badge/v0.23.0)
 
 ## Contributors
 

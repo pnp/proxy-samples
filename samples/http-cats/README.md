@@ -14,7 +14,7 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 ## Compatibility
 
-![Dev Proxy v0.14.0](https://img.shields.io/badge/devproxy-v0.14.0-green.svg)
+![Dev Proxy v0.24.0](https://aka.ms/devproxy/badge/v0.24.0)
 
 ## Contributors
 

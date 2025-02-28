@@ -8,7 +8,7 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 ## Compatibility
 
-![Dev Proxy v0.22.0](https://img.shields.io/badge/devproxy-v0.22.0-green.svg)
+![Dev Proxy v0.22.0](https://aka.ms/devproxy/badge/v0.22.0)
 
 ## Contributors
 

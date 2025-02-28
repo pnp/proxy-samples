@@ -8,7 +8,7 @@ This sample contains mocks for simulating handling notifications from the Teams 
 
 ## Compatibility
 
-![Dev Proxy v0.16.0](https://img.shields.io/badge/devproxy-v0.16.0-green.svg)
+![Dev Proxy v0.16.0](https://aka.ms/devproxy/badge/v0.16.0)
 
 ## Contributors
 

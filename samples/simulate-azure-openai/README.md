@@ -8,7 +8,7 @@ This sample contains a preset that allows you to easily simulate the Azure OpenA
 
 ## Compatibility
 
-![Dev Proxy v0.19.1](https://img.shields.io/badge/devproxy-v0.19.1-green.svg)
+![Dev Proxy v0.19.1](https://aka.ms/devproxy/badge/v0.19.1)
 
 ## Contributors
 

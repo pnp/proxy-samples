@@ -8,7 +8,7 @@ This sample contains a preset to simulate the rate limit policy for an API publi
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://img.shields.io/badge/devproxy-v0.14.1-green.svg)
+![Dev Proxy v0.14.1](https://aka.ms/devproxy/badge/v0.14.1)
 
 ## Contributors
 
