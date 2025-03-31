@@ -1,0 +1,83 @@
+[
+  {
+    "name": "pnp-devproxy-sharepoint-api-minimal-permissions",
+    "source": "pnp",
+    "title": "Detect minimal permissions for SharePoint REST and CSOM APIs.",
+    "shortDescription": "Detect minimal permissions for SharePoint REST and CSOM APIs. This preset contains a an OpenAPI spec of SharePoint REST APIs and documentation of permissions required by SharePoint CSOM APIs. Using this information allows you to effortlessly find out the minimal permissions that your app needs to use the select SharePoint APIs.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/sharepoint-api-minimal-permissions",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/sharepoint-api-minimal-permissions",
+    "longDescription": [
+      "Detect minimal permissions for SharePoint REST and CSOM APIs. This preset contains a an OpenAPI spec of SharePoint REST APIs and documentation of permissions required by SharePoint CSOM APIs. Using this information allows you to effortlessly find out the minimal permissions that your app needs to use the select SharePoint APIs."
+    ],
+    "creationDateTime": "2025-03-31",
+    "updateDateTime": "2025-03-31",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "sharepoint-api-minimal-permissions"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.26.0-beta.3"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/sharepoint-api-minimal-permissions/assets/sharepoint-minimal-csom-permissions.png",
+        "alt": "Dev Proxy showing minimal permissions required to call SharePoint CSOM APIs"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/sharepoint-api-minimal-permissions/assets/sharepoint-minimal-rest-permissions.png",
+        "alt": "Dev Proxy showing minimal permissions required to call SharePoint REST APIs"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "MinimalPermissionsPlugin documentation",
+        "description": "The documentation of the MinimalPermissionsPlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/minimalpermissionsplugin"
+      },
+      {
+        "name": "MinimalCsomPermissionsPlugin documentation",
+        "description": "The documentation of the MinimalCsomPermissionsPlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/minimalcsompermissionsplugin"
+      }
+    ]
+  }
+]
