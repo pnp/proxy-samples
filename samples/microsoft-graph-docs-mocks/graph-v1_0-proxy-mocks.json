@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.24.0/mockresponseplugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/mockresponseplugin.mocksfile.schema.json",
   "mocks": [
     {
       "request": {
@@ -9562,8 +9562,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/reports/managedDeviceEnrollmentFailureDetails(skip=*,top=*,filter=*,skipToken=*)",
-        "exampleUrl": "https://graph.microsoft.com/v1/reports/managedDeviceEnrollmentFailureDetails(skip=4,top=3,filter='parameterValue',skipToken='parameterValue')",
+        "url": "https://graph.microsoft.com/v1.0/reports/managedDeviceEnrollmentFailureDetails(skip=*,top=*,filter=*,skipToken=*)",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/reports/managedDeviceEnrollmentFailureDetails(skip=4,top=3,filter='parameterValue',skipToken='parameterValue')",
         "method": "GET"
       },
       "response": {
@@ -39540,8 +39540,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/reports/managedDeviceEnrollmentTopFailures(period=*)",
-        "exampleUrl": "https://graph.microsoft.com/v1/reports/managedDeviceEnrollmentTopFailures(period='parameterValue')",
+        "url": "https://graph.microsoft.com/v1.0/reports/managedDeviceEnrollmentTopFailures(period=*)",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/reports/managedDeviceEnrollmentTopFailures(period='parameterValue')",
         "method": "GET"
       },
       "response": {
@@ -50561,7 +50561,7 @@
             "value": "text/plain"
           }
         ],
-        "body": 893
+        "body": "893"
       }
     },
     {
@@ -63695,8 +63695,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
         "method": "DELETE"
       },
       "response": {
@@ -63706,8 +63706,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
         "method": "GET"
       },
       "response": {
@@ -63734,8 +63734,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents/{deviceManagementTroubleshootingEventId}",
         "method": "PATCH"
       },
       "response": {
@@ -67981,8 +67981,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents",
         "method": "POST"
       },
       "response": {
@@ -68007,8 +68007,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement/troubleshootingEvents",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement/troubleshootingEvents",
         "method": "GET"
       },
       "response": {
@@ -88878,7 +88878,7 @@
             "value": "text/plain"
           }
         ],
-        "body": 893
+        "body": "893"
       }
     },
     {
@@ -90043,7 +90043,7 @@
             "value": "text/plain"
           }
         ],
-        "body": 893
+        "body": "893"
       }
     },
     {
@@ -94927,7 +94927,7 @@
             "value": "text/plain"
           }
         ],
-        "body": 893
+        "body": "893"
       }
     },
     {
@@ -102497,8 +102497,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement",
         "method": "GET"
       },
       "response": {
@@ -102523,8 +102523,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/deviceManagement",
-        "exampleUrl": "https://graph.microsoft.com/v1/deviceManagement",
+        "url": "https://graph.microsoft.com/v1.0/deviceManagement",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/deviceManagement",
         "method": "PATCH"
       },
       "response": {
@@ -105286,7 +105286,7 @@
             "value": "text/plain"
           }
         ],
-        "body": 893
+        "body": "893"
       }
     },
     {
@@ -107166,8 +107166,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/reports",
-        "exampleUrl": "https://graph.microsoft.com/v1/reports",
+        "url": "https://graph.microsoft.com/v1.0/reports",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/reports",
         "method": "GET"
       },
       "response": {
@@ -107192,8 +107192,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/reports",
-        "exampleUrl": "https://graph.microsoft.com/v1/reports",
+        "url": "https://graph.microsoft.com/v1.0/reports",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/reports",
         "method": "PATCH"
       },
       "response": {
@@ -107216,8 +107216,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/users/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/users/{usersId}",
+        "url": "https://graph.microsoft.com/v1.0/users/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/users/{usersId}",
         "method": "DELETE"
       },
       "response": {
@@ -107227,8 +107227,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/users/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/users/{usersId}",
+        "url": "https://graph.microsoft.com/v1.0/users/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/users/{usersId}",
         "method": "GET"
       },
       "response": {
@@ -107253,8 +107253,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/users/*",
-        "exampleUrl": "https://graph.microsoft.com/v1/users/{usersId}",
+        "url": "https://graph.microsoft.com/v1.0/users/*",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/users/{usersId}",
         "method": "PATCH"
       },
       "response": {
@@ -107392,8 +107392,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/users",
-        "exampleUrl": "https://graph.microsoft.com/v1/users",
+        "url": "https://graph.microsoft.com/v1.0/users",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/users",
         "method": "POST"
       },
       "response": {
@@ -107416,8 +107416,8 @@
     },
     {
       "request": {
-        "url": "https://graph.microsoft.com/v1/users",
-        "exampleUrl": "https://graph.microsoft.com/v1/users",
+        "url": "https://graph.microsoft.com/v1.0/users",
+        "exampleUrl": "https://graph.microsoft.com/v1.0/users",
         "method": "GET"
       },
       "response": {
