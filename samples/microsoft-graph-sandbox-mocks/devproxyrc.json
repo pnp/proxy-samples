@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.24.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/rc.schema.json",
   "plugins": [
     {
       "name": "GraphMockResponsePlugin",
@@ -10,9 +10,11 @@
   ],
   "urlsToWatch": [
     "https://graph.microsoft.com/v1.0/*",
-    "https://graph.microsoft.com/beta/*"
+    "https://graph.microsoft.com/beta/*",
+    "https://*.files.1drv.com/*"
   ],
   "graphMockResponsePlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/mockresponseplugin.schema.json",
     "mocksFile": "graph-proxy-mocks-sandbox.json"
   },
   "logLevel": "information",
