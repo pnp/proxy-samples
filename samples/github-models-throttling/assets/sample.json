@@ -1,0 +1,83 @@
+[
+  {
+    "name": "pnp-devproxy-github-models-throttling",
+    "source": "pnp",
+    "title": "Simulate throttling of the GitHub Models inference API",
+    "shortDescription": "This sample contains a preset and mocks to simulate the throttling of the GitHub Models inference API. As more and more applications use GitHub Models inference API to use AI, it's important that developers can verify that their apps can properly handle cases when the API is throttled. Using this preset you can simulate throttling of the GitHub Models inference API and see how your app will handle it. The preset includes 2 different throttling scenarios: exceeded requests per minute, and exceeded requests per day. Dev Proxy will simulate throttling the API using one of these modes at random.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/github-models-throttling",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/github-models-throttling",
+    "longDescription": [
+      "This sample contains a preset and mocks to simulate the throttling of the GitHub Models inference API. As more and more applications use GitHub Models inference API to use AI, it's important that developers can verify that their apps can properly handle cases when the API is throttled. Using this preset you can simulate throttling of the GitHub Models inference API and see how your app will handle it. The preset includes 2 different throttling scenarios: exceeded requests per minute, and exceeded requests per day. Dev Proxy will simulate throttling the API using one of these modes at random."
+    ],
+    "creationDateTime": "2025-06-25",
+    "updateDateTime": "2025-06-25",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "github-models-throttling"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v0.29.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/github-models-throttling/assets/throttling-per-day.png",
+        "alt": "Dev Proxy simulating throttling of the GitHub Models inference API when exceeded the number of requests per day"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/github-models-throttling/assets/throttling-per-minute.png",
+        "alt": "Dev Proxy simulating throttling of the GitHub Models inference API when exceeded the number of requests per minute"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "GitHub Models inference API rate limits",
+        "description": "The GitHub Models inference API rate limits documentation.",
+        "url": "https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#rate-limits"
+      }
+    ]
+  }
+]
