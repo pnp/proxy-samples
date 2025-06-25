@@ -8,7 +8,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://aka.ms/devproxy/badge/v0.14.1)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 Version|Date|Comments
 -------|----|--------
+1.2|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.1|January 25, 2024|Updated schema version
 1.0|January 24, 2024|Initial release
 

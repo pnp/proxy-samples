@@ -1,10 +1,10 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.14.1/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
   "plugins": [
     {
       "name": "GenericRandomErrorPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "genericRandomErrorPlugin"
     }
   ],
@@ -12,9 +12,10 @@
     "https://api.postmarkapp.com/*"
   ],
   "genericRandomErrorPlugin": {
-    "errorsFile": "postmark-errors.json"
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/genericrandomerrorplugin.schema.json",
+    "errorsFile": "postmark-errors.json",
+    "rate": 50
   },
-  "rate": 50,
   "labelMode": "text",
-  "logLevel": "info"
+  "logLevel": "information"
 }

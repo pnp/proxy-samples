@@ -1,15 +1,16 @@
 {
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     },
     {
       "name": "RateLimitingPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
-      "configSection": "rateLimitingPlugin"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "rateLimiting"
     }
   ],
   "urlsToWatch": [
@@ -27,10 +28,11 @@
     "https://microsoftgraph.chinacloudapi.cn/*/sites/*"
   ],
   "labelMode": "text",
-  "logLevel": "info",
-  "rateLimitingPlugin": {
+  "logLevel": "information",
+  "rateLimiting": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/ratelimitingplugin.schema.json",
     "costPerRequest": 1,
-    "rateLimit": 40,
-    "retryAfterSeconds": 20
+    "resetTimeWindowSeconds": 20,
+    "rateLimit": 40
   }
 }

@@ -8,7 +8,7 @@ This sample illustrates how to use Dev Proxy to check if your app is calling API
 
 ## Compatibility
 
-![Dev Proxy v0.19.1](https://aka.ms/devproxy/badge/v0.19.1)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample illustrates how to use Dev Proxy to check if your app is calling API
 
 Version|Date|Comments
 -------|----|--------
+1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|June 17, 2024|Initial release
 
 ## Prerequisites

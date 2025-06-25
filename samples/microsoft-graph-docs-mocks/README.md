@@ -10,7 +10,7 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 ## Compatibility
 
-![Dev Proxy v0.26.0](https://aka.ms/devproxy/badge/v0.26.0)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -20,6 +20,7 @@ Using these mocks, you can simulate calling Microsoft Graph API without having t
 
 Version|Date|Comments
 -------|----|--------
+1.8|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.7.1|April 9, 2025|Fixed bugs
 1.7|February 19, 2025|Updated mocks, added preset
 1.6|January 25, 2024|Updated schema version

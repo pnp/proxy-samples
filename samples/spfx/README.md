@@ -8,7 +8,7 @@ This sample contains a preset for simulating Microsoft Graph and SharePoint API 
 
 ## Compatibility
 
-![Dev Proxy v0.22.0](https://aka.ms/devproxy/badge/v0.22.0)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset for simulating Microsoft Graph and SharePoint API 
 
 Version|Date|Comments
 -------|----|--------
+1.4|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.3|October 28, 2024|Updated plugin name
 1.2|January 17, 2024|Updated plugin path
 1.1|November 14, 2023|Renamed to Dev Proxy

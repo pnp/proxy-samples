@@ -12,7 +12,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 ## Compatibility
 
-![Dev Proxy v0.23.0](https://aka.ms/devproxy/badge/v0.23.0)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.7|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.6|January 9, 2025|Updated to Dev Proxy v0.23
 1.5|January 17, 2024|Updated plugin path
 1.4|January 11, 2024|Updated to new format

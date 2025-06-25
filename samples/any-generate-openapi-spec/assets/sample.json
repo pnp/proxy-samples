@@ -10,7 +10,7 @@
       "This sample contains a preset that allows you to generate an OpenAPI spec for any API. By specifying the URLs of the API for which you want to generate an OpenAPI spec, Dev Proxy will intercept all requests to that API and generate an OpenAPI spec based on the requests and responses."
     ],
     "creationDateTime": "2024-01-29",
-    "updateDateTime": "2025-02-05",
+    "updateDateTime": "2025-06-27",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.15.0"
+        "value": "v0.29.2"
       }
     ],
     "thumbnails": [

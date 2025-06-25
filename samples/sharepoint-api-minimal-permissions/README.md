@@ -8,7 +8,7 @@ Preset to detect minimal permissions for SharePoint REST and CSOM APIs.
 
 ## Compatibility
 
-![Dev Proxy v0.26.0](https://aka.ms/devproxy/badge/v0.26.0)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ Preset to detect minimal permissions for SharePoint REST and CSOM APIs.
 
 Version|Date|Comments
 -------|----|--------
+1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|March 31, 2025|Initial release
 
 ## Minimal path to awesome

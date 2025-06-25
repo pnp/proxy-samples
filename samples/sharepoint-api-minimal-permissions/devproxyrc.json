@@ -1,10 +1,10 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
   "plugins": [
     {
       "name": "MinimalPermissionsPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "minimalPermissionsPlugin",
       "urlsToWatch": [
         "https://*.sharepoint.com/*_api/*"
@@ -13,7 +13,7 @@
     {
       "name": "MinimalCsomPermissionsPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "minimalCsomPermissionsPlugin",
       "urlsToWatch": [
         "https://*.sharepoint.com/*_vti_bin/client.svc/ProcessQuery"
@@ -22,18 +22,18 @@
     {
       "name": "PlainTextReporter",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     }
   ],
   "urlsToWatch": [
     "https://*.sharepoint.com/*"
   ],
   "minimalPermissionsPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/minimalpermissionsplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/minimalpermissionsplugin.schema.json",
     "apiSpecsFolderPath": "./api-specs"
   },
   "minimalCsomPermissionsPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.26.0/minimalcsompermissionsplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/minimalcsompermissionsplugin.schema.json",
     "typesFilePath": "./spo-csom-types.json" 
   },
   "logLevel": "information",

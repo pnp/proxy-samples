@@ -10,7 +10,7 @@
       "This sample contains a preset for simulating Microsoft Graph and SharePoint API errors for use with SharePoint Framework solutions. It contains specific URL exclusion rules to ensure that the API behind the hosted SPFx workbench is not intercepted by the proxy."
     ],
     "creationDateTime": "2023-08-10",
-    "updateDateTime": "2024-10-28",
+    "updateDateTime": "2025-06-27",
     "products": [
       "Dev Proxy",
       "SharePoint",
@@ -35,7 +35,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.22.0"
+        "value": "v0.29.2"
       }
     ],
     "thumbnails": [

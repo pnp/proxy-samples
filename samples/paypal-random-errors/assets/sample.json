@@ -10,7 +10,7 @@
       "This sample contains a preset to simulate random errors on PayPal APIs. Sample errors are modeled after the information from the official PayPal Postman collection."
     ],
     "creationDateTime": "2024-07-09",
-    "updateDateTime": "2025-02-05",
+    "updateDateTime": "2025-06-27",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.20.0-beta.1"
+        "value": "v0.29.2"
       }
     ],
     "thumbnails": [

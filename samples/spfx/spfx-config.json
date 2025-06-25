@@ -1,14 +1,15 @@
 {
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     },
     {
       "name": "GraphSelectGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "urlsToWatch": [
         "https://graph.microsoft.com/v1.0/*",
         "https://graph.microsoft.com/beta/*",
@@ -23,7 +24,7 @@
     {
       "name": "GraphBetaSupportGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "urlsToWatch": [
         "https://graph.microsoft.com/beta/*",
         "https://graph.microsoft.us/beta/*",
@@ -34,7 +35,7 @@
     {
       "name": "GraphSdkGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "urlsToWatch": [
         "https://graph.microsoft.com/v1.0/*",
         "https://graph.microsoft.com/beta/*",
@@ -49,12 +50,12 @@
     {
       "name": "ODataPagingGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     },
     {
       "name": "GraphClientRequestIdGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "urlsToWatch": [
         "https://graph.microsoft.com/v1.0/*",
         "https://graph.microsoft.com/beta/*",
@@ -69,19 +70,19 @@
     {
       "name": "CachingGuidancePlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "cachingGuidance"
     },
     {
       "name": "GraphRandomErrorPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "graphRandomErrorsPlugin"
     },
     {
       "name": "GraphMinimalPermissionsPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "graphMinimalPermissionsPlugin"
     }
   ],
@@ -101,6 +102,7 @@
     "https://*.sharepoint-df.*/*_vti_bin/*"
   ],
   "graphRandomErrorsPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/graphrandomerrorplugin.schema.json",
     "allowedErrors": [
       429,
       500,
@@ -108,18 +110,15 @@
       503,
       504,
       507
-    ]
-  },
-  "executionSummaryPlugin": {
-    "groupBy": "url"
+    ],
+    "rate": 50
   },
   "graphMinimalPermissionsPlugin": {
-    "type": "delegated"
+    "type": "Delegated"
   },
   "cachingGuidance": {
     "cacheThresholdSeconds": 5
   },
-  "rate": 50,
   "labelMode": "text",
-  "logLevel": "info"
+  "logLevel": "information"
 }

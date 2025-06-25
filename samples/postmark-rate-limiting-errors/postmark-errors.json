@@ -1,75 +1,82 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.14.1/genericrandomerrorplugin.schema.json",
-  "responses": [
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
     {
-      "statusCode": 401,
-      "headers": [
+      "request": {
+        "url": "https://*/*"
+      },
+      "responses": [
         {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
+          "statusCode": 401,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "ErrorCode": 10,
+            "Message": "Request does not contain a valid Server token."
+          }
         },
         {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": {
-        "ErrorCode": 10,
-        "Message": "Request does not contain a valid Server token."
-      }
-    },
-    {
-      "statusCode": 415,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/problem+json; charset=utf-8"
+          "statusCode": 415,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/problem+json; charset=utf-8"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
+            "title": "Unsupported Media Type",
+            "status": 415,
+            "traceId": "00-68ea66d63b66a1cef5af1e2922e88335-78b1e6dc3d0fce86-01"
+          }
         },
         {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": {
-        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
-        "title": "Unsupported Media Type",
-        "status": 415,
-        "traceId": "00-68ea66d63b66a1cef5af1e2922e88335-78b1e6dc3d0fce86-01"
-      }
-    },
-    {
-      "statusCode": 422,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
+          "statusCode": 422,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "ErrorCode": 402,
+            "Message": "Invalid JSON"
+          }
         },
         {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "ErrorCode": 429,
+            "Message": "Rate Limit Exceeded"
+          }
         }
-      ],
-      "body": {
-        "ErrorCode": 402,
-        "Message": "Invalid JSON"
-      }
-    },
-    {
-      "statusCode": 429,
-      "headers": [
-        {
-          "name": "content-type",
-          "value": "application/json; charset=utf-8"
-        },
-        {
-          "name": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ],
-      "body": {
-        "ErrorCode": 429,
-        "Message": "Rate Limit Exceeded"
-      }
+      ]
     }
   ]
 }

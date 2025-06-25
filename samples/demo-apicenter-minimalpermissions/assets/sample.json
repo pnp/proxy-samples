@@ -10,7 +10,7 @@
       "This sample illustrates how to use Dev Proxy to check if your app is calling APIs using minimal permissions. The sample contains a mock CRUD API secured with Microsoft Entra. Different API operations require different scopes. The mock CRUD API is described using an OpenAPI spec including information about the available operations and the necessary scopes for each of them. By uploading the OpenAPI to Azure API Center, and calling the API, you can use Dev Proxy to check if your app is calling the API using the minimal permissions required."
     ],
     "creationDateTime": "2024-06-17",
-    "updateDateTime": "2025-02-05",
+    "updateDateTime": "2025-06-27",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.19.1"
+        "value": "v0.29.2"
       }
     ],
     "thumbnails": [

@@ -1,14 +1,15 @@
 {
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     },
     {
       "name": "RateLimitingPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "rateLimiting"
     }
   ],
@@ -27,7 +28,6 @@
     "whenLimitExceeded": "Custom",
     "customResponseFile": "resend-daily-quota-exceeded.json"
   },
-  "rate": 50,
   "labelMode": "text",
-  "logLevel": "info"
+  "logLevel": "information"
 }

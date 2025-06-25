@@ -8,7 +8,7 @@ This sample contains a preset that allows you to easily simulate the OpenAI API 
 
 ## Compatibility
 
-![Dev Proxy v0.19.1](https://aka.ms/devproxy/badge/v0.19.1)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -18,18 +18,19 @@ This sample contains a preset that allows you to easily simulate the OpenAI API 
 
 Version|Date|Comments
 -------|----|--------
+1.1|June 27, 2025|Updated for Dev Proxy v0.29.2
 1.0|June 17, 2024|Initial release
 
 ## Minimal path to awesome
 
 - Download the preset using Dev Proxy by running: `devproxy preset get simulate-openai`
-- Start Ollama with the phi-3 model: `ollama run phi3`
+- Start Ollama with the llama3.2 model: `ollama run llama3.2`
 - Start Dev Proxy specifying the path to the config file: `devproxy --config-file "~appFolder/presets/simulate-openai/simulate-openai.json"`
 - Use your app
 
 ## Features
 
-This is a generic preset for simulating OpenAI API using Ollama. By default, the preset uses the phi-3 model, but you can use a different model by updating the configuration file.
+This is a generic preset for simulating OpenAI API using Ollama. By default, the preset uses the llama3.2 model, but you can use a different model by updating the configuration file.
 
 For more information about the configuration options, see the documentation of the [OpenAIMockResponsePlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/openaimockresponseplugin).
 

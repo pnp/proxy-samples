@@ -10,7 +10,7 @@
       "This sample contains a preset to simulate rate limiting and random errors on Postmark APIs. Postmark APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling."
     ],
     "creationDateTime": "2024-01-07",
-    "updateDateTime": "2025-02-05",
+    "updateDateTime": "2025-06-27",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.14.1"
+        "value": "v0.29.2"
       }
     ],
     "thumbnails": [

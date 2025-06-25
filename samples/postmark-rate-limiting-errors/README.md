@@ -9,7 +9,7 @@ This sample contains a preset to simulate rate limiting and random errors on Pos
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://aka.ms/devproxy/badge/v0.14.1)
+![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
 
 ## Contributors
 
@@ -19,6 +19,7 @@ This sample contains a preset to simulate rate limiting and random errors on Pos
 
 Version|Date|Comments
 -------|----|--------
+1.4|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.3|January 25, 2024|Updated schema version
 1.2|January 17, 2024|Updated plugin path
 1.1|January 11, 2024|Updated to new format
