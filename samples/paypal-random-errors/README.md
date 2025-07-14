@@ -23,8 +23,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset, by running `devproxy preset get paypal-random-errors`
-- Start Dev Proxy with the preset, by running `devproxy --config-file "~appFolder/presets/paypal-random-errors/devproxyrc.json"`
+- Get the preset, by running `devproxy config get paypal-random-errors`
+- Start Dev Proxy with the preset, by running `devproxy --config-file "~appFolder/config/paypal-random-errors/devproxyrc.json"`
 
 ## Features
 

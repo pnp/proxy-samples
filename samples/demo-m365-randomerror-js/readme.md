@@ -27,11 +27,11 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get demo-m365-randomerror-js`
-- Navigate to the Dev Proxy installation folder, and open the `presets/demo-m365-randomerror-js` folder
+- Get the preset using Dev Proxy by running `devproxy config get demo-m365-randomerror-js`
+- Navigate to the Dev Proxy installation folder, and open the `config/demo-m365-randomerror-js` folder
 - Create a new Entra app registration (instructions below)
 - Start the sample app by running `npx lite-server`
-- Start Dev Proxy with the Microsoft 365 preset by running `devproxy -c "~appFolder/presets/m365.json"`
+- Start Dev Proxy with the Microsoft 365 preset by running `devproxy -c "~appFolder/config/m365.json"`
 - In a web browser, navigate to `http://localhost:3000` and interact with the sample app to see how it handles random errors
 
 ### <a id="appreg">Configure Azure AD App Registration</a>

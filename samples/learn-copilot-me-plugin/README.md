@@ -21,8 +21,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get learn-copilot-me-plugin`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/learn-copilot-me-plugin/products-api-config.json"`
+- Get the preset using Dev Proxy by running `devproxy config get learn-copilot-me-plugin`
+- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/learn-copilot-me-plugin/products-api-config.json"`
 - Follow along with the [Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio](https://learn.microsoft.com/training/modules/copilot-message-extension-plugins/) learn module
 
 ## Features

@@ -28,8 +28,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get demo-openapispec-js`
-- Navigate to the Dev Proxy installation folder, and open the `presets/demo-openapispec-js` folder
+- Get the preset using Dev Proxy by running `devproxy config get demo-openapispec-js`
+- Navigate to the Dev Proxy installation folder, and open the `config/demo-openapispec-js` folder
 - Start the sample app and Dev Proxy by running `npm start`
 - After Dev Proxy starts, press `r` to start recording
 - In a web browser, navigate to `http://localhost:3000` and interact with the sample app to generate some activity

@@ -30,11 +30,11 @@ Version|Date|Comments
 
 - Create Azure API Center instance
   - Get the API Center instance name, resource group name and subscription ID
-- Get the preset using Dev Proxy by running `devproxy preset get demo-apicenter-minimalpermissions`
-- Navigate to the Dev Proxy installation folder, and open the `presets/demo-apicenter-minimalpermissions` folder
+- Get the preset using Dev Proxy by running `devproxy config get demo-apicenter-minimalpermissions`
+- Navigate to the Dev Proxy installation folder, and open the `config/demo-apicenter-minimalpermissions` folder
 - In the `devproxyrc.json` file, in the `apiCenterMinimalPermissionsPlugin` update the API Center information
 - In API Center, create a new API and import the OpenAPI spec from the `api.northwind.com.json` file
-- Start Dev Proxy by running `devproxy --config-file "~appFolder/presets/demo-apicenter-minimalpermissions/devproxyrc.json" --record`
+- Start Dev Proxy by running `devproxy --config-file "~appFolder/config/demo-apicenter-minimalpermissions/devproxyrc.json" --record`
 - In VSCode, open the `northwind.http` file and run the requests to the API
 - In the terminal where Dev Proxy is running, press `s` to stop recording
 - Dev Proxy will generate a report of the minimal permissions needed to call the API
