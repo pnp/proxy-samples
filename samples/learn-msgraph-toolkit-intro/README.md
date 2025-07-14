@@ -22,8 +22,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get learn-msgraph-toolkit-intro`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/learn-msgraph-toolkit-intro/devproxyrc.json"`
+- Get the preset using Dev Proxy by running `devproxy config get learn-msgraph-toolkit-intro`
+- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/learn-msgraph-toolkit-intro/devproxyrc.json"`
 - Follow along with the [Get started with Microsoft Graph Toolkit](https://learn.microsoft.com/training/modules/msgraph-toolkit-intro/) learn module
 
 ## Help

@@ -23,9 +23,9 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Download the preset using Dev Proxy by running: `devproxy preset get simulate-openai`
+- Download the preset using Dev Proxy by running: `devproxy config get simulate-openai`
 - Start Ollama with the llama3.2 model: `ollama run llama3.2`
-- Start Dev Proxy specifying the path to the config file: `devproxy --config-file "~appFolder/presets/simulate-openai/simulate-openai.json"`
+- Start Dev Proxy specifying the path to the config file: `devproxy --config-file "~appFolder/config/simulate-openai/simulate-openai.json"`
 - Use your app
 
 ## Features

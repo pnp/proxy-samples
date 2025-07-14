@@ -23,8 +23,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get sharepoint-api-minimal-permissions`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/sharepoint-api-minimal-permissions/devproxyrc.json" --env tenant=your-tenant-name`. `your-tenant-name` is the name of your Microsoft 365 tenant without `.onmicrosoft.com`, for example `contoso`.
+- Get the preset using Dev Proxy by running `devproxy config get sharepoint-api-minimal-permissions`
+- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/sharepoint-api-minimal-permissions/devproxyrc.json" --env tenant=your-tenant-name`. `your-tenant-name` is the name of your Microsoft 365 tenant without `.onmicrosoft.com`, for example `contoso`.
 - Call SharePoint APIs.
 - Stop recording, by pressing `s` in the Dev Proxy session.
 - Check out the output in the console and the generated reports for the minimal permissions required by the SharePoint APIs you called.

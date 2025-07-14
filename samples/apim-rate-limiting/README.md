@@ -24,8 +24,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Get the preset using Dev Proxy by running `devproxy preset get apim-rate-limiting`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/presets/apim-rate-limiting/apim-rate-limiting.json"`
+- Get the preset using Dev Proxy by running `devproxy config get apim-rate-limiting`
+- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/apim-rate-limiting/apim-rate-limiting.json"`
 
 ## Features
 
