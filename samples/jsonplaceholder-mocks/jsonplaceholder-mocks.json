@@ -1,0 +1,662 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "userId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] sunt aut facere repellat provident occaecati",
+            "body": "This is a mocked response from Dev Proxy. Original: quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"
+          },
+          {
+            "userId": 1,
+            "id": 2,
+            "title": "[MOCKED BY DEV PROXY] qui est esse",
+            "body": "This is a mocked response from Dev Proxy. Original: est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla"
+          },
+          {
+            "userId": 1,
+            "id": 3,
+            "title": "[MOCKED BY DEV PROXY] ea molestias quasi exercitationem",
+            "body": "This is a mocked response from Dev Proxy. Original: et iusto sed quo iure\\nvoluptatem occaecati omnis eligendi aut ad\\nvoluptatem doloribus vel accusantium quis pariatur\\nmolestiae porro eius odio et labore et velit aut"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "userId": 1,
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] sunt aut facere repellat provident occaecati",
+          "body": "This is a mocked response from Dev Proxy. Original: quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/*/comments",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "postId": 1,
+            "id": 1,
+            "name": "[MOCKED BY DEV PROXY] id labore ex et quam laborum",
+            "email": "devproxy@mock.com",
+            "body": "This is a mocked comment response from Dev Proxy. Original: laudantium enim quasi est quidem magnam voluptate ipsam eos\\ntempora quo necessitatibus\\ndolor quam autem quasi\\nreiciendis et nam sapiente accusantium"
+          },
+          {
+            "postId": 1,
+            "id": 2,
+            "name": "[MOCKED BY DEV PROXY] quo vero reiciendis velit similique",
+            "email": "devproxy.test@mock.com",
+            "body": "This is a mocked comment response from Dev Proxy. Original: est natus enim nihil est dolore omnis voluptatem numquam\\net omnis occaecati quod ullam at\\nvoluptatem error expedita pariatur\\nnihil sint nostrum voluptatem reiciendis et"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/comments",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "postId": 1,
+            "id": 1,
+            "name": "[MOCKED BY DEV PROXY] id labore ex et quam laborum",
+            "email": "devproxy@mock.com",
+            "body": "This is a mocked comment response from Dev Proxy. Original: laudantium enim quasi est quidem magnam voluptate ipsam eos\\ntempora quo necessitatibus\\ndolor quam autem quasi\\nreiciendis et nam sapiente accusantium"
+          },
+          {
+            "postId": 1,
+            "id": 2,
+            "name": "[MOCKED BY DEV PROXY] quo vero reiciendis velit similique",
+            "email": "devproxy.test@mock.com",
+            "body": "This is a mocked comment response from Dev Proxy. Original: est natus enim nihil est dolore omnis voluptatem numquam\\net omnis occaecati quod ullam at\\nvoluptatem error expedita pariatur\\nnihil sint nostrum voluptatem reiciendis et"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/albums",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "userId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] quidem molestiae enim"
+          },
+          {
+            "userId": 1,
+            "id": 2,
+            "title": "[MOCKED BY DEV PROXY] sunt qui excepturi placeat culpa"
+          },
+          {
+            "userId": 1,
+            "id": 3,
+            "title": "[MOCKED BY DEV PROXY] omnis laborum odio"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/albums/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "userId": 1,
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] quidem molestiae enim"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/albums/*/photos",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "albumId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] accusamus beatae ad facilis",
+            "url": "https://via.placeholder.com/600/92c952",
+            "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+          },
+          {
+            "albumId": 1,
+            "id": 2,
+            "title": "[MOCKED BY DEV PROXY] reprehenderit est deserunt",
+            "url": "https://via.placeholder.com/600/771796",
+            "thumbnailUrl": "https://via.placeholder.com/150/771796"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/photos",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "albumId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] accusamus beatae ad facilis",
+            "url": "https://via.placeholder.com/600/92c952",
+            "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+          },
+          {
+            "albumId": 1,
+            "id": 2,
+            "title": "[MOCKED BY DEV PROXY] reprehenderit est deserunt",
+            "url": "https://via.placeholder.com/600/771796",
+            "thumbnailUrl": "https://via.placeholder.com/150/771796"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/photos/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "albumId": 1,
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] accusamus beatae ad facilis",
+          "url": "https://via.placeholder.com/600/92c952",
+          "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/todos",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "userId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] delectus aut autem",
+            "completed": false
+          },
+          {
+            "userId": 1,
+            "id": 2,
+            "title": "[MOCKED BY DEV PROXY] quis ut nam facilis et officia qui",
+            "completed": false
+          },
+          {
+            "userId": 1,
+            "id": 3,
+            "title": "[MOCKED BY DEV PROXY] fugiat veniam minus",
+            "completed": true
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/todos/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "userId": 1,
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] delectus aut autem",
+          "completed": false
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/users",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "id": 1,
+            "name": "[MOCKED BY DEV PROXY] Leanne Graham",
+            "username": "devproxy.bret",
+            "email": "devproxy.sincere@mock.com",
+            "address": {
+              "street": "Kulas Light",
+              "suite": "Apt. 556",
+              "city": "Gwenborough",
+              "zipcode": "92998-3874",
+              "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+              }
+            },
+            "phone": "1-770-736-8031 x56442",
+            "website": "devproxy.mock",
+            "company": {
+              "name": "Dev Proxy Mocks Inc",
+              "catchPhrase": "Mocking APIs for developers",
+              "bs": "harness real-time e-markets"
+            }
+          },
+          {
+            "id": 2,
+            "name": "[MOCKED BY DEV PROXY] Ervin Howell",
+            "username": "devproxy.antonette",
+            "email": "devproxy.shanna@mock.com",
+            "address": {
+              "street": "Victor Plains",
+              "suite": "Suite 879",
+              "city": "Wisokyburgh",
+              "zipcode": "90566-7771",
+              "geo": {
+                "lat": "-43.9509",
+                "lng": "-34.4618"
+              }
+            },
+            "phone": "010-692-6593 x09125",
+            "website": "devproxy.anastasia.net",
+            "company": {
+              "name": "Dev Proxy Solutions",
+              "catchPhrase": "Proactive testing solutions",
+              "bs": "synergize scalable supply-chains"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/users/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "id": 1,
+          "name": "[MOCKED BY DEV PROXY] Leanne Graham",
+          "username": "devproxy.bret",
+          "email": "devproxy.sincere@mock.com",
+          "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+              "lat": "-37.3159",
+              "lng": "81.1496"
+            }
+          },
+          "phone": "1-770-736-8031 x56442",
+          "website": "devproxy.mock",
+          "company": {
+            "name": "Dev Proxy Mocks Inc",
+            "catchPhrase": "Mocking APIs for developers",
+            "bs": "harness real-time e-markets"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/users/*/posts",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "userId": 1,
+            "id": 1,
+            "title": "[MOCKED BY DEV PROXY] sunt aut facere repellat provident occaecati",
+            "body": "This is a mocked response from Dev Proxy. Original: quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "id": 101,
+          "title": "[MOCKED BY DEV PROXY] Created post title",
+          "body": "This is a mocked POST response from Dev Proxy showing successful creation",
+          "userId": 1
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/*",
+        "method": "PUT"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] Updated post title",
+          "body": "This is a mocked PUT response from Dev Proxy showing successful update",
+          "userId": 1
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/*",
+        "method": "PATCH"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "id": 1,
+          "title": "[MOCKED BY DEV PROXY] Partially updated post title",
+          "body": "This is a mocked PATCH response from Dev Proxy showing successful partial update",
+          "userId": 1
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/*",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {}
+      }
+    }
+  ]
+}
