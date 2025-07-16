@@ -17,11 +17,26 @@ When working with Dev Proxy configurations, use the [Dev Proxy MCP server](https
 
 Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compatible AI assistant for real-time Dev Proxy guidance.
 
+## Sample Creation Best Practices
+
+### Schema Versions
+- **Always check current schema version** using the Dev Proxy MCP server
+- Use the latest available schema version (e.g., `v1.0.0` not `v0.29.2`)
+- Apply same version to both `devproxyrc.json` and plugin-specific schemas
+
+### Testing Instructions
+- **Proxy configuration required**: Dev Proxy runs as a local proxy, so curl commands must explicitly use it
+- **Correct curl syntax**: Use `curl -ikx http://127.0.0.1:8000 <url>` for testing
+  - `-i`: Include response headers in output
+  - `-k`: Allow insecure connections (for SSL certificate issues)
+  - `-x http://127.0.0.1:8000`: Route through Dev Proxy on localhost:8000
+- **Never use**: `curl <url>` without proxy configuration - this bypasses Dev Proxy entirely
+
 ## Sample Structure Patterns
 
 ### Configuration Files
 - **`devproxyrc.json`** or `*.json` - Main Dev Proxy configuration files using JSON schema validation
-- **Schema reference**: `https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json`
+- **Schema reference**: Always use latest version from Dev Proxy MCP server
 - **Common plugins**: `MockResponsePlugin`, `GenericRandomErrorPlugin`, `RateLimitingPlugin`, `OpenApiSpecGeneratorPlugin`
 
 ### Sample Types (via metadata)
@@ -32,7 +47,7 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 ### Key Configuration Patterns
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/rc.schema.json",
   "plugins": [
     {
       "name": "PluginName",
@@ -48,21 +63,32 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 
 1. **Directory**: Create under `samples/your-sample-name/`
 2. **Required files**:
-   - Config file(s) with proper schema
+   - Config file(s) with proper schema (check current version via MCP)
    - `README.md` following template structure
-   - `assets/sample.json` metadata file
-   - `assets/screenshot.png` (1920x1080 preferred)
+   - `assets/sample.json` metadata file (follow existing samples)
+   - `assets/screenshot.png` (1920x1080 preferred) or placeholder README
 
 ### README.md Requirements
 - Use template from `templates/README-template.md`
-- Include compatibility badge: `![Dev Proxy vx.x.x](badge-url)`
-- Provide "Minimal path to awesome" steps
+- Include compatibility badge with current version: `![Dev Proxy vx.x.x](badge-url)`
+- Provide "Minimal path to awesome" steps with correct curl syntax
 - Include tracking pixel: `![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/your-sample-name)`
+- **No test scripts**: Other samples don't include test scripts, so don't create them
 
-### Metadata File Structure
-- Follow `templates/metadata-schema.json` 
-- Required fields: name (pattern: `pnp-devproxy-*`), title, URL, authors, creation/update dates
-- Metadata keys indicate sample type: `PRESET`, `MOCKS`, `PLUGIN`, `PROXY VERSION`
+### Metadata File Structure (`assets/sample.json`)
+- **Examine existing samples** to understand the correct structure
+- **Required fields**: 
+  - `name` (pattern: `pnp-devproxy-*`)
+  - `source: "pnp"`
+  - `title`, `shortDescription`
+  - `url` (full GitHub URL) and `downloadUrl` (pnp.github.io URL)
+  - `longDescription` (array format, not string)
+  - `creationDateTime`, `updateDateTime`
+  - `products: ["Dev Proxy"]`
+  - Complete `metadata` section with `SAMPLE ID`, `PRESET`, `MOCKS`, `PLUGIN`, `PROXY VERSION`
+  - `thumbnails` with full GitHub URL
+  - `authors` with current user's details: `gitHubAccount`, `pictureUrl`, `name`
+  - `references` section with relevant Dev Proxy documentation
 
 ## Common Dev Proxy Use Cases
 
@@ -70,11 +96,18 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 ```json
 // Mock file pattern
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/mockresponseplugin.mocksfile.schema.json",
-  "responses": [
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
     {
       "request": { "url": "https://api.example.com/*" },
-      "response": { "statusCode": 200, "body": {...} }
+      "response": { 
+        "statusCode": 200, 
+        "headers": [
+          {"name": "x-powered-by", "value": "Dev Proxy"},
+          {"name": "x-mocked-by", "value": "Dev Proxy MockResponsePlugin"}
+        ],
+        "body": {...} 
+      }
     }
   ]
 }
