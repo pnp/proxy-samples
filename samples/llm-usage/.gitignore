@@ -1,0 +1,13 @@
+node_modules
+*.log
+.DS_Store
+*Reporter*
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# act
+.artifacts

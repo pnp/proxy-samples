@@ -1,0 +1,79 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🧪 Run tests, local AI & API",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "test"
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "devproxy-start-simulate-ai",
+            "postDebugTask": "devproxy-stop",
+            "presentation": {
+                "group": "Playwright Tests",
+                "order": 1
+            }
+        },
+        {
+            "name": "🧪 Run tests, cloud AI & local API",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "test"
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "devproxy-start",
+            "postDebugTask": "devproxy-stop",
+            "presentation": {
+                "group": "Playwright Tests",
+                "order": 2
+            }
+        },
+        {
+            "name": "🌐 Run web app, local AI & API",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Available on:",
+                "uriFormat": "http://127.0.0.1:8007",
+                "action": "openExternally"
+            },
+            "preLaunchTask": "devproxy-start-simulate-ai",
+            "postDebugTask": "devproxy-stop",
+            "presentation": {
+                "group": "Web App Launch",
+                "order": 1
+            }
+        },
+        {
+            "name": "🌐 Run web app, cloud AI & local API",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Available on:",
+                "uriFormat": "http://127.0.0.1:8007",
+                "action": "openExternally"
+            },
+            "preLaunchTask": "devproxy-start",
+            "postDebugTask": "devproxy-stop",
+            "presentation": {
+                "group": "Web App Launch",
+                "order": 2
+            }
+        }
+    ]
+}

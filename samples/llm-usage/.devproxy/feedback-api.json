@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/crudapiplugin.apifile.schema.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "create"
+    }
+  ],
+  "baseUrl": "http://api.ecs.eu/feedback",
+  "dataFile": "feedback-data.json"
+}

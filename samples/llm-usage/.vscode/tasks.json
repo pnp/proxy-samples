@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm install",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "install"
+            ],
+            "group": "build",
+        },
+        {
+            "label": "devproxy-start",
+            "type": "devproxy",
+            "command": "start",
+            "isBackground": true,
+            "problemMatcher": "$devproxy-watch",
+            "dependsOn": "npm install",
+            "args": [
+                "--record"
+            ],
+        },
+        {
+            "label": "devproxy-start-simulate-ai",
+            "type": "devproxy",
+            "command": "start",
+            "isBackground": true,
+            "problemMatcher": "$devproxy-watch",
+            "args": [
+                "-c",
+                ".devproxy/simulate-ai.json",
+                "--record"
+            ],
+            "dependsOn": "npm install"
+        },
+        {
+            "label": "devproxy-stop",
+            "type": "devproxy",
+            "command": "stop"
+        }
+    ]
+}
