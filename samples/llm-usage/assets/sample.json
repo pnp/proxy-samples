@@ -1,0 +1,78 @@
+[
+    {
+        "name": "pnp-devproxy-llm-usage",
+        "source": "pnp",
+        "title": "Track language model usage and costs",
+        "shortDescription": "This sample web application demonstrates how to use Dev Proxy to monitor and track LLM usage and costs.",
+        "url": "https://github.com/pnp/proxy-samples/tree/main/samples/llm-usage",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/llm-usage",
+        "longDescription": [
+            "This sample web application demonstrates how to use Dev Proxy to monitor and track LLM usage and costs."
+        ],
+        "creationDateTime": "2025-07-28",
+        "updateDateTime": "2025-07-28",
+        "products": [
+            "Dev Proxy"
+        ],
+        "metadata": [
+            {
+                "key": "SAMPLE ID",
+                "value": "llm-usage"
+            },
+            {
+                "key": "PRESET",
+                "value": "No"
+            },
+            {
+                "key": "MOCKS",
+                "value": "No"
+            },
+            {
+                "key": "PROXY VERSION",
+                "value": "v1.0.0"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/proxy-samples/raw/main/samples/llm-usage/assets/llm-usage-github.png",
+                "alt": "GitHub Actions summary for 'Test Dev Proxy LLM Usage with Playwright #38' by garrytrinder. Status: Success. Duration: 3m 40s. Includes LLM usage report for gpt-4-1-2025-04-14 showing token usage and cost in development environment."
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "garrytrinder",
+                "pictureUrl": "https://github.com/garrytrinder.png",
+                "name": "Garry Trinder"
+            }
+        ],
+        "references": [
+            {
+                "name": "Get started with Dev Proxy",
+                "description": "The tutorial will introduce you to Dev Proxy and show you how to use its features.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+            },
+            {
+                "name": "Simulate OpenAI API",
+                "description": "Learn how to simulate OpenAI API calls using Dev Proxy.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/openaitelemetryplugin"
+            },
+            {
+                "name": "Use Dev Proxy to track language model usage and costs with GitHub Actions",
+                "description": "Learn how to use Dev Proxy to track language model usage and costs in GitHub Actions workflows.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-github-actions-language-model-usage-costs"
+            },
+            {
+                "name": "Use Dev Proxy with GitHub Actions",
+                "description": "Learn how to use Dev Proxy in GitHub Actions worfklows.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-github-actions"
+            },
+            {
+                "name": "Use Dev Proxy with Visual Studio Code debug configurations",
+                "description": "Learn how to use Dev Proxy with Visual Studio Code debug configurations.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-vs-code-debug-configurations"
+            }
+        ]
+    }
+]

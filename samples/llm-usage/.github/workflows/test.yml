@@ -1,0 +1,67 @@
+name: Test Dev Proxy LLM Usage with Playwright
+
+on:
+  workflow_dispatch:
+
+permissions:
+  models: read
+
+jobs:
+  test-llm-usage:
+    name: Test Dev Proxy LLM Usage with Playwright
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update env.js
+        run: |
+          echo "Updating env.js..."
+          echo "export const apiKey = '${{ secrets.GITHUB_TOKEN }}';" > ./js/env.js
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Edge browser
+        run: npm run install:msedge
+
+      - name: Setup Dev Proxy
+        uses: dev-proxy-tools/actions/setup@v1
+        with:
+          auto-record: true
+          version: v1.0.0-beta.8
+          report-job-summary: $GITHUB_STEP_SUMMARY
+
+      - name: Install the Dev Proxy certificate for Chromium
+        uses: dev-proxy-tools/actions/chromium-cert@v1
+
+      - name: Run Playwright tests
+        run: npm test
+
+      - name: Stop recording
+        uses: dev-proxy-tools/actions/record-stop@v1
+
+      - name: Upload Dev Proxy reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: Reports
+          path: ./*Reporter*
+
+      - name: Show logs
+        if: always()
+        run: |
+          echo "Dev Proxy logs:"
+          cat devproxy.log
+
+      - name: Upload Dev Proxy logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: devproxy.log
+          path: devproxy.log

@@ -1,0 +1,20 @@
+{
+  "name": "ecs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "http-server -c-1 -p 8007",
+    "test": "playwright test",
+    "install:msedge": "npx playwright install msedge"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
