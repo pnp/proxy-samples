@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.devproxy.example.com/snippets/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          { "name": "Content-Type", "value": "application/json" },
+          { "name": "x-powered-by", "value": "Dev Proxy" },
+          { "name": "x-mocked-by", "value": "Dev Proxy MockResponsePlugin" }
+        ],
+        "body": {
+          "id": 1,
+          "name": "fibonacci.js",
+          "language": "JavaScript",
+          "code": "function fibonacci(n) {\n  if (n <= 1) return n;\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.devproxy.example.com/snippets",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          { "name": "Content-Type", "value": "application/json" },
+          { "name": "x-powered-by", "value": "Dev Proxy" },
+          { "name": "x-mocked-by", "value": "Dev Proxy MockResponsePlugin" }
+        ],
+        "body": [
+          {
+            "id": 1,
+            "name": "fibonacci.js",
+            "language": "JavaScript",
+            "code": "function fibonacci(n) {\n  if (n <= 1) return n;\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\n// Calculate first 10 fibonacci numbers\nfor (let i = 0; i < 10; i++) {\n  console.log(fibonacci(i));\n}"
+          },
+          {
+            "id": 2,
+            "name": "user-service.py",
+            "language": "Python",
+            "code": "import sqlite3\n\ndef get_user(user_id):\n    conn = sqlite3.connect('users.db')\n    cursor = conn.cursor()\n    query = f\"SELECT * FROM users WHERE id = {user_id}\"\n    cursor.execute(query)\n    return cursor.fetchone()\n\ndef delete_all_users():\n    conn = sqlite3.connect('users.db')\n    cursor = conn.cursor()\n    cursor.execute(\"DELETE FROM users\")\n    conn.commit()"
+          },
+          {
+            "id": 3,
+            "name": "auth-handler.ts",
+            "language": "TypeScript",
+            "code": "async function authenticateUser(req: Request): Promise<User | null> {\n  const token = req.headers.get('Authorization');\n  \n  if (!token) {\n    return null;\n  }\n\n  try {\n    const decoded = jwt.verify(token, 'secret123');\n    const user = await db.users.findById(decoded.userId);\n    return user;\n  } catch (err) {\n    console.log('Auth failed:', err);\n    return null;\n  }\n}"
+          },
+          {
+            "id": 4,
+            "name": "data-processor.go",
+            "language": "Go",
+            "code": "func processData(items []Item) []Result {\n    var results []Result\n    \n    for _, item := range items {\n        result := Result{}\n        \n        // Process each item\n        data, _ := fetchExternalData(item.ID)\n        result.Data = data\n        result.Processed = true\n        \n        results = append(results, result)\n    }\n    \n    return results\n}"
+          },
+          {
+            "id": 5,
+            "name": "api-client.js",
+            "language": "JavaScript",
+            "code": "class APIClient {\n  constructor(baseUrl) {\n    this.baseUrl = baseUrl;\n  }\n\n  async fetch(endpoint) {\n    const response = await fetch(this.baseUrl + endpoint);\n    return response.json();\n  }\n\n  async post(endpoint, data) {\n    const response = await fetch(this.baseUrl + endpoint, {\n      method: 'POST',\n      body: JSON.stringify(data)\n    });\n    return response.json();\n  }\n}"
+          }
+        ]
+      }
+    }
+  ]
+}

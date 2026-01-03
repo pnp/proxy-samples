@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "LanguageModelRateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "llmRateLimiting",
+      "urlsToWatch": [
+        "https://models.github.ai/*"
+      ]
+    },
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "apiRateLimiting",
+      "urlsToWatch": [
+        "https://api.devproxy.example.com/*"
+      ]
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "apiMocks",
+      "urlsToWatch": [
+        "https://api.devproxy.example.com/*"
+      ]
+    }
+  ],
+  "urlsToWatch": [
+    "https://models.github.ai/*",
+    "https://api.devproxy.example.com/*"
+  ],
+  "llmRateLimiting": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/languagemodelratelimitingplugin.schema.json",
+    "promptTokenLimit": 1000,
+    "completionTokenLimit": 500,
+    "resetTimeWindowSeconds": 60,
+    "whenLimitExceeded": "Throttle"
+  },
+  "apiRateLimiting": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/ratelimitingplugin.schema.json",
+    "headerLimit": "X-RateLimit-Limit",
+    "headerRemaining": "X-RateLimit-Remaining",
+    "headerReset": "X-RateLimit-Reset",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 60,
+    "warningThresholdPercent": 80,
+    "rateLimit": 10,
+    "resetFormat": "SecondsLeft",
+    "whenLimitExceeded": "Throttle"
+  },
+  "apiMocks": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.schema.json",
+    "mocksFile": "api-mocks.json"
+  },
+  "languageModel": {
+    "enabled": true
+  },
+  "logLevel": "information"
+}

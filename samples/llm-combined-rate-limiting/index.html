@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Review Assistant</title>
+  <style>
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --border-color: #30363d;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent-blue: #58a6ff;
+      --accent-green: #3fb950;
+      --accent-yellow: #d29922;
+      --accent-red: #f85149;
+      --accent-purple: #a371f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    h1 .icon {
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 2rem;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .badge.dev-proxy {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      background: var(--bg-tertiary);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .panel-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .panel-body {
+      padding: 1rem;
+    }
+
+    .code-snippets {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .snippet-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .snippet-card:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .snippet-card.selected {
+      border-color: var(--accent-blue);
+      background: rgba(88, 166, 255, 0.1);
+    }
+
+    .snippet-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .snippet-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .snippet-lang {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: var(--bg-primary);
+      padding: 0.125rem 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .snippet-preview {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .code-display {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+
+    .code-display-header {
+      background: var(--bg-tertiary);
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .code-display pre {
+      padding: 1rem;
+      margin: 0;
+      overflow-x: auto;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    .btn:hover:not(:disabled) {
+      background: var(--bg-primary);
+    }
+
+    .btn-primary {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      color: #000;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #2ea043;
+      border-color: #2ea043;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .review-output {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      min-height: 200px;
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    .review-output.empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+    }
+
+    .review-output h4 {
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .review-output ul {
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-output li {
+      margin-bottom: 0.25rem;
+    }
+
+    .status-bar {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .status-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .status-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-value {
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-secondary);
+    }
+
+    .status-indicator.success {
+      background: var(--accent-green);
+    }
+
+    .status-indicator.warning {
+      background: var(--accent-yellow);
+    }
+
+    .status-indicator.error {
+      background: var(--accent-red);
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border-color);
+      border-top-color: var(--accent-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .error-message {
+      background: rgba(248, 81, 73, 0.1);
+      border: 1px solid var(--accent-red);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      color: var(--accent-red);
+      font-size: 0.875rem;
+    }
+
+    .error-message code {
+      background: var(--bg-primary);
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.8125rem;
+    }
+
+    .setup-notice {
+      background: rgba(210, 153, 34, 0.1);
+      border: 1px solid var(--accent-yellow);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .setup-notice summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent-yellow);
+    }
+
+    .setup-notice pre {
+      background: var(--bg-primary);
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      margin-top: 0.75rem;
+      overflow-x: auto;
+      font-size: 0.8125rem;
+    }
+
+    .token-input {
+      margin-top: 1rem;
+    }
+
+    .token-input label {
+      display: block;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .token-input input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+    }
+
+    .token-input input:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <span class="icon">🤖</span>
+        AI Code Review Assistant
+      </h1>
+      <p class="subtitle">Analyze code snippets using GitHub Models + Mock API</p>
+      <span class="badge dev-proxy">⚡ Powered by Dev Proxy Rate Limiting Demo</span>
+    </header>
+
+    <details class="setup-notice">
+      <summary>📋 Setup Instructions (click to expand)</summary>
+      <div style="margin-top: 0.75rem;">
+        <p><strong>1. Start Dev Proxy</strong> with the aggressive limiting config:</p>
+        <pre>devproxy --config-file aggressive-limiting.json</pre>
+        <p style="margin-top: 0.5rem; font-size: 0.8125rem; color: var(--text-secondary);">Dev Proxy automatically registers as a system proxy when started.</p>
+        
+        <p style="margin-top: 0.75rem;"><strong>2. Get a GitHub Token</strong> with access to GitHub Models:</p>
+        <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+          <li><a href="https://github.com/settings/personal-access-tokens/new?name=GitHub+Models+token&description=Used%20to%20call%20GitHub%20Models%20APIs&user_models=read" style="color: var(--accent-blue);">Click here to create a token</a> (pre-filled with correct permissions)</li>
+          <li>Or go to <a href="https://github.com/settings/tokens?type=beta" style="color: var(--accent-blue);">Fine-grained tokens</a> and add <strong>Models: Read</strong> permission</li>
+          <li>Enter the token in the field below</li>
+        </ul>
+
+        <p style="margin-top: 0.75rem;"><strong>3. Run this app</strong> with a local server:</p>
+        <pre>npx http-server -p 3000</pre>
+      </div>
+    </details>
+
+    <div class="main-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">📁 Code Snippets (Mock API)</span>
+          <button class="btn" id="fetchSnippets" onclick="fetchCodeSnippets()">
+            Fetch Snippets
+          </button>
+        </div>
+        <div class="panel-body">
+          <div id="snippetsList" class="code-snippets">
+            <div style="color: var(--text-secondary); text-align: center; padding: 2rem;">
+              Click "Fetch Snippets" to load code samples from the API
+            </div>
+          </div>
+          
+          <div class="code-display" id="codeDisplay" style="display: none;">
+            <div class="code-display-header" id="codeFileName">Select a snippet</div>
+            <pre><code id="codeContent"></code></pre>
+          </div>
+
+          <div class="token-input">
+            <label for="githubToken">GitHub Token (for GitHub Models API)</label>
+            <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx" />
+          </div>
+
+          <div class="btn-group">
+            <button class="btn btn-primary" id="reviewBtn" onclick="reviewCode()" disabled>
+              🔍 Review with AI
+            </button>
+            <button class="btn" onclick="reviewAllSnippets()" id="reviewAllBtn" disabled>
+              🚀 Review All (stress test)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">🧠 AI Review (GitHub Models)</span>
+          <span id="reviewStatus" style="font-size: 0.75rem; color: var(--text-secondary);">Waiting...</span>
+        </div>
+        <div class="panel-body">
+          <div id="reviewOutput" class="review-output empty">
+            Select a code snippet and click "Review with AI" to get started
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">API Requests</span>
+          <span class="status-value">
+            <span class="status-indicator" id="apiIndicator"></span>
+            <span id="apiRequestCount">0</span> / <span id="apiRequestLimit">?</span>
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">LLM Tokens Used</span>
+          <span class="status-value">
+            <span class="status-indicator" id="tokenIndicator"></span>
+            <span id="tokenCount">0</span> tokens
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Rate Limit Status</span>
+          <span class="status-value" id="rateLimitStatus">
+            <span class="status-indicator success"></span>
+            OK
+          </span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Last Error</span>
+          <span class="status-value" id="lastError" style="font-size: 0.8125rem;">
+            None
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const MOCK_API_URL = 'https://api.devproxy.example.com';
+    const GITHUB_MODELS_URL = 'https://models.github.ai/inference/chat/completions';
+    
+    // State
+    let snippets = [];
+    let selectedSnippet = null;
+    let apiRequestCount = 0;
+    let tokenCount = 0;
+    let rateLimitRemaining = null;
+
+    // Sample code snippets (these will be "fetched" from the mock API)
+    const sampleSnippets = [
+      {
+        id: 1,
+        name: 'fibonacci.js',
+        language: 'JavaScript',
+        code: `function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Calculate first 10 fibonacci numbers
+for (let i = 0; i < 10; i++) {
+  console.log(fibonacci(i));
+}`
+      },
+      {
+        id: 2,
+        name: 'user-service.py',
+        language: 'Python',
+        code: `import sqlite3
+
+def get_user(user_id):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    query = f"SELECT * FROM users WHERE id = {user_id}"
+    cursor.execute(query)
+    return cursor.fetchone()
+
+def delete_all_users():
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM users")
+    conn.commit()`
+      },
+      {
+        id: 3,
+        name: 'auth-handler.ts',
+        language: 'TypeScript',
+        code: `async function authenticateUser(req: Request): Promise<User | null> {
+  const token = req.headers.get('Authorization');
+  
+  if (!token) {
+    return null;
+  }
+
+  try {
+    const decoded = jwt.verify(token, 'secret123');
+    const user = await db.users.findById(decoded.userId);
+    return user;
+  } catch (err) {
+    console.log('Auth failed:', err);
+    return null;
+  }
+}`
+      },
+      {
+        id: 4,
+        name: 'data-processor.go',
+        language: 'Go',
+        code: `func processData(items []Item) []Result {
+    var results []Result
+    
+    for _, item := range items {
+        result := Result{}
+        
+        // Process each item
+        data, _ := fetchExternalData(item.ID)
+        result.Data = data
+        result.Processed = true
+        
+        results = append(results, result)
+    }
+    
+    return results
+}`
+      },
+      {
+        id: 5,
+        name: 'api-client.js',
+        language: 'JavaScript',
+        code: `class APIClient {
+  constructor(baseUrl) {
+    this.baseUrl = baseUrl;
+  }
+
+  async fetch(endpoint) {
+    const response = await fetch(this.baseUrl + endpoint);
+    return response.json();
+  }
+
+  async post(endpoint, data) {
+    const response = await fetch(this.baseUrl + endpoint, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    return response.json();
+  }
+}`
+      }
+    ];
+
+    // Fetch code snippets from the mock API
+    async function fetchCodeSnippets() {
+      const btn = document.getElementById('fetchSnippets');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span> Fetching...';
+
+      try {
+        // Simulate API call - in real scenario, this goes through Dev Proxy
+        const response = await fetch(`${MOCK_API_URL}/snippets`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        apiRequestCount++;
+        updateApiStatus(response);
+
+        if (response.status === 429) {
+          throw new Error('Rate limit exceeded! Please wait before making more requests.');
+        }
+
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+
+        snippets = await response.json();
+        renderSnippets();
+        
+      } catch (error) {
+        // If the real API fails (expected with Dev Proxy mocks), use local data
+        console.log('Using local sample data:', error.message);
+        updateLastError(error.message);
+        
+        // Simulate the API response with local data
+        snippets = sampleSnippets;
+        renderSnippets();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = 'Fetch Snippets';
+        document.getElementById('apiRequestCount').textContent = apiRequestCount;
+      }
+    }
+
+    function renderSnippets() {
+      const container = document.getElementById('snippetsList');
+      container.innerHTML = snippets.map(snippet => `
+        <div class="snippet-card" onclick="selectSnippet(${snippet.id})" id="snippet-${snippet.id}">
+          <div class="snippet-card-header">
+            <span class="snippet-name">${snippet.name}</span>
+            <span class="snippet-lang">${snippet.language}</span>
+          </div>
+          <div class="snippet-preview">${escapeHtml(snippet.code.split('\n')[0])}</div>
+        </div>
+      `).join('');
+      
+      document.getElementById('reviewBtn').disabled = true;
+      document.getElementById('reviewAllBtn').disabled = false;
+    }
+
+    function selectSnippet(id) {
+      selectedSnippet = snippets.find(s => s.id === id);
+      
+      // Update UI
+      document.querySelectorAll('.snippet-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      document.getElementById(`snippet-${id}`).classList.add('selected');
+      
+      // Show code
+      const display = document.getElementById('codeDisplay');
+      display.style.display = 'block';
+      document.getElementById('codeFileName').textContent = selectedSnippet.name;
+      document.getElementById('codeContent').textContent = selectedSnippet.code;
+      
+      // Enable review button
+      document.getElementById('reviewBtn').disabled = false;
+    }
+
+    async function reviewCode() {
+      if (!selectedSnippet) {
+        alert('Please select a code snippet first');
+        return;
+      }
+
+      const token = document.getElementById('githubToken').value;
+      if (!token) {
+        alert('Please enter your GitHub token');
+        return;
+      }
+
+      const btn = document.getElementById('reviewBtn');
+      const statusEl = document.getElementById('reviewStatus');
+      const outputEl = document.getElementById('reviewOutput');
+      
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span> Analyzing...';
+      statusEl.textContent = 'Analyzing code...';
+      outputEl.classList.remove('empty');
+      outputEl.innerHTML = '<div style="text-align: center;"><span class="loading"></span> AI is reviewing your code...</div>';
+
+      try {
+        const response = await fetch(GITHUB_MODELS_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            model: 'openai/gpt-4o-mini',
+            messages: [
+              {
+                role: 'system',
+                content: 'You are a senior code reviewer. Analyze the provided code and give a brief, helpful review covering: 1) Potential bugs or issues, 2) Security concerns, 3) Performance considerations, 4) Best practice suggestions. Be concise and actionable.'
+              },
+              {
+                role: 'user',
+                content: `Please review this ${selectedSnippet.language} code:\n\n\`\`\`${selectedSnippet.language.toLowerCase()}\n${selectedSnippet.code}\n\`\`\``
+              }
+            ],
+            max_tokens: 500
+          })
+        });
+
+        updateTokenStatus(response);
+
+        if (response.status === 429) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(`Token rate limit exceeded! ${errorData.error?.message || 'Please wait before making more requests.'}`);
+        }
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.error?.message || `GitHub Models error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        // Update token count
+        if (data.usage) {
+          tokenCount += data.usage.total_tokens || 0;
+          document.getElementById('tokenCount').textContent = tokenCount;
+        }
+
+        // Display review
+        const review = data.choices?.[0]?.message?.content || 'No review generated';
+        outputEl.innerHTML = formatReview(review);
+        statusEl.textContent = 'Review complete!';
+
+      } catch (error) {
+        console.error('Review error:', error);
+        updateLastError(error.message);
+        outputEl.innerHTML = `
+          <div class="error-message">
+            <strong>❌ Error:</strong> ${escapeHtml(error.message)}
+            <br><br>
+            <small>This might be due to rate limiting. Check the Dev Proxy console for details.</small>
+          </div>
+        `;
+        statusEl.textContent = 'Error occurred';
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '🔍 Review with AI';
+      }
+    }
+
+    async function reviewAllSnippets() {
+      const token = document.getElementById('githubToken').value;
+      if (!token) {
+        alert('Please enter your GitHub token');
+        return;
+      }
+
+      if (snippets.length === 0) {
+        alert('Please fetch snippets first');
+        return;
+      }
+
+      const btn = document.getElementById('reviewAllBtn');
+      const outputEl = document.getElementById('reviewOutput');
+      
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span> Stress testing...';
+      outputEl.classList.remove('empty');
+      outputEl.innerHTML = '<div style="text-align: center;"><span class="loading"></span> Running stress test - reviewing all snippets rapidly...</div>';
+
+      let results = [];
+      let errors = 0;
+
+      for (const snippet of snippets) {
+        try {
+          // First, fetch the snippet details (API rate limiting)
+          await fetch(`${MOCK_API_URL}/snippets/${snippet.id}`);
+          apiRequestCount++;
+          document.getElementById('apiRequestCount').textContent = apiRequestCount;
+
+          // Then, send to LLM (token rate limiting)
+          const response = await fetch(GITHUB_MODELS_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+              model: 'openai/gpt-4o-mini',
+              messages: [
+                {
+                  role: 'system',
+                  content: 'Give a one-line summary of this code.'
+                },
+                {
+                  role: 'user',
+                  content: snippet.code
+                }
+              ],
+              max_tokens: 50
+            })
+          });
+
+          updateTokenStatus(response);
+
+          if (response.status === 429) {
+            errors++;
+            results.push(`❌ ${snippet.name}: Rate limited`);
+            updateLastError('Token rate limit exceeded');
+          } else if (response.ok) {
+            const data = await response.json();
+            if (data.usage) {
+              tokenCount += data.usage.total_tokens || 0;
+              document.getElementById('tokenCount').textContent = tokenCount;
+            }
+            const summary = data.choices?.[0]?.message?.content || 'No summary';
+            results.push(`✅ ${snippet.name}: ${summary.substring(0, 60)}...`);
+          } else {
+            errors++;
+            results.push(`⚠️ ${snippet.name}: Error ${response.status}`);
+          }
+
+        } catch (error) {
+          errors++;
+          results.push(`❌ ${snippet.name}: ${error.message}`);
+          updateLastError(error.message);
+        }
+
+        // Update output in real-time
+        outputEl.innerHTML = `
+          <h4>Stress Test Results (${results.length}/${snippets.length})</h4>
+          <ul>${results.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+          ${errors > 0 ? `<p style="color: var(--accent-yellow);">⚠️ ${errors} requests were rate limited - this is expected behavior!</p>` : ''}
+        `;
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '🚀 Review All (stress test)';
+    }
+
+    function updateApiStatus(response) {
+      const limit = response.headers.get('X-RateLimit-Limit');
+      const remaining = response.headers.get('X-RateLimit-Remaining');
+      
+      if (limit) {
+        document.getElementById('apiRequestLimit').textContent = limit;
+      }
+      
+      const indicator = document.getElementById('apiIndicator');
+      if (response.status === 429) {
+        indicator.className = 'status-indicator error';
+        updateRateLimitStatus('API Limited', 'error');
+      } else if (remaining && parseInt(remaining) < 3) {
+        indicator.className = 'status-indicator warning';
+        updateRateLimitStatus('API Low', 'warning');
+      } else {
+        indicator.className = 'status-indicator success';
+      }
+    }
+
+    function updateTokenStatus(response) {
+      const indicator = document.getElementById('tokenIndicator');
+      
+      if (response.status === 429) {
+        indicator.className = 'status-indicator error';
+        updateRateLimitStatus('Token Limited', 'error');
+      } else {
+        indicator.className = 'status-indicator success';
+      }
+    }
+
+    function updateRateLimitStatus(text, type) {
+      const el = document.getElementById('rateLimitStatus');
+      el.innerHTML = `<span class="status-indicator ${type}"></span> ${text}`;
+    }
+
+    function updateLastError(message) {
+      document.getElementById('lastError').textContent = message.substring(0, 50) + (message.length > 50 ? '...' : '');
+    }
+
+    function formatReview(text) {
+      // Simple markdown-like formatting
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/`(.*?)`/g, '<code>$1</code>')
+        .replace(/^### (.*$)/gm, '<h4>$1</h4>')
+        .replace(/^## (.*$)/gm, '<h4>$1</h4>')
+        .replace(/^# (.*$)/gm, '<h4>$1</h4>')
+        .replace(/^\* (.*$)/gm, '<li>$1</li>')
+        .replace(/^- (.*$)/gm, '<li>$1</li>')
+        .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check for saved token
+      const savedToken = localStorage.getItem('github_token');
+      if (savedToken) {
+        document.getElementById('githubToken').value = savedToken;
+      }
+
+      // Save token on change
+      document.getElementById('githubToken').addEventListener('change', (e) => {
+        localStorage.setItem('github_token', e.target.value);
+      });
+    });
+  </script>
+</body>
+</html>
