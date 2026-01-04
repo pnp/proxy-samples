@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/*",
+        "method": "OPTIONS"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "Access-Control-Allow-Methods",
+            "value": "GET, POST, PUT, DELETE, OPTIONS"
+          },
+          {
+            "name": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Authorization, api-key, x-ms-client-request-id"
+          },
+          {
+            "name": "Access-Control-Max-Age",
+            "value": "86400"
+          }
+        ]
+      }
+    }
+  ]
+}

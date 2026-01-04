@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Failover Chat Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #16213e;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #0f3460;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #e94560;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .config {
+      background: #16213e;
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #0f3460;
+    }
+
+    .config label {
+      font-size: 0.875rem;
+      color: #aaa;
+    }
+
+    .config input, .config select {
+      background: #0f3460;
+      border: 1px solid #1a1a2e;
+      color: #eee;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+
+    .config input:focus, .config select:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+
+    .status {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: #0f3460;
+      font-size: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #666;
+    }
+
+    .status-dot.success { background: #4ade80; }
+    .status-dot.error { background: #ef4444; }
+    .status-dot.pending { background: #fbbf24; }
+
+    .chat-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      line-height: 1.5;
+    }
+
+    .message.user {
+      background: #e94560;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message.assistant {
+      background: #0f3460;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message.error {
+      background: #7f1d1d;
+      border: 1px solid #ef4444;
+    }
+
+    .message.system {
+      background: #1e3a5f;
+      align-self: center;
+      font-size: 0.875rem;
+      color: #aaa;
+    }
+
+    .message-meta {
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+
+    .input-container {
+      padding: 1rem;
+      background: #16213e;
+      border-top: 1px solid #0f3460;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    #messageInput {
+      flex: 1;
+      background: #0f3460;
+      border: 1px solid #1a1a2e;
+      color: #eee;
+      padding: 0.75rem 1rem;
+      border-radius: 24px;
+      font-size: 1rem;
+    }
+
+    #messageInput:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+
+    button {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #d63a55;
+    }
+
+    button:disabled {
+      background: #666;
+      cursor: not-allowed;
+    }
+
+    .typing {
+      display: flex;
+      gap: 4px;
+      padding: 0.5rem;
+    }
+
+    .typing span {
+      width: 8px;
+      height: 8px;
+      background: #888;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out;
+    }
+
+    .typing span:nth-child(1) { animation-delay: -0.32s; }
+    .typing span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    .provider-badge {
+      display: inline-block;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .provider-badge.azure { background: #0078d4; }
+    .provider-badge.github { background: #238636; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔄 AI Failover Chat Demo</h1>
+    <p class="subtitle">Azure OpenAI → GitHub Models failover demonstration</p>
+  </header>
+
+  <div class="config">
+    <div>
+      <label for="apiKey">GitHub Token:</label>
+      <input type="password" id="apiKey" placeholder="github_pat_..." style="width: 200px;">
+    </div>
+    <div>
+      <label for="model">Model:</label>
+      <select id="model">
+        <option value="gpt-4o">gpt-4o</option>
+        <option value="gpt-4o-mini">gpt-4o-mini</option>
+      </select>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" id="enableFailover" checked>
+        Enable failover
+      </label>
+    </div>
+  </div>
+
+  <div class="status">
+    <div class="status-item">
+      <span class="status-dot" id="primaryStatus"></span>
+      <span><span class="provider-badge azure">Azure OpenAI</span> <span id="primaryStatusText">-</span></span>
+    </div>
+    <div class="status-item">
+      <span class="status-dot" id="secondaryStatus"></span>
+      <span><span class="provider-badge github">GitHub Models</span> <span id="secondaryStatusText">-</span></span>
+    </div>
+    <div class="status-item">
+      <span>Last: <span id="lastProvider">-</span></span>
+    </div>
+  </div>
+
+  <div class="chat-container" id="chatContainer">
+    <div class="message system">
+      👋 Welcome! This demo shows failover from Azure OpenAI to GitHub Models.<br><br>
+      With Dev Proxy running, Azure OpenAI requests will fail and the app automatically fails over to GitHub Models.<br>
+      You only need a GitHub token - no Azure subscription required!
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+    <button id="sendButton">Send</button>
+  </div>
+
+  <script>
+    // Azure OpenAI endpoint (will be intercepted by Dev Proxy)
+    const AZURE_OPENAI_URL = 'https://your-resource.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-08-01-preview';
+    // GitHub Models endpoint (fallback)
+    const GITHUB_MODELS_URL = 'https://models.github.ai/inference/chat/completions';
+    
+    let conversationHistory = [];
+
+    const chatContainer = document.getElementById('chatContainer');
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const apiKeyInput = document.getElementById('apiKey');
+    const modelSelect = document.getElementById('model');
+    const enableFailoverCheckbox = document.getElementById('enableFailover');
+
+    function addMessage(content, type, meta = '') {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${type}`;
+      messageDiv.innerHTML = content;
+      
+      if (meta) {
+        const metaDiv = document.createElement('div');
+        metaDiv.className = 'message-meta';
+        metaDiv.textContent = meta;
+        messageDiv.appendChild(metaDiv);
+      }
+      
+      chatContainer.appendChild(messageDiv);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      return messageDiv;
+    }
+
+    function showTyping() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message assistant';
+      typingDiv.id = 'typing';
+      typingDiv.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+      chatContainer.appendChild(typingDiv);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function hideTyping() {
+      const typing = document.getElementById('typing');
+      if (typing) typing.remove();
+    }
+
+    function updateStatus(element, status, text) {
+      const dot = document.getElementById(element + 'Status');
+      const textEl = document.getElementById(element + 'StatusText');
+      dot.className = `status-dot ${status}`;
+      textEl.textContent = text;
+    }
+
+    async function callAzureOpenAI(messages, model) {
+      // In a real app, you'd use your Azure OpenAI API key
+      // Here we use a dummy key since Dev Proxy will intercept and fail the request
+      const response = await fetch(AZURE_OPENAI_URL.replace('gpt-4o', model), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': 'dummy-key-for-dev-proxy-simulation'
+        },
+        body: JSON.stringify({
+          messages: messages,
+          max_tokens: 500
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const error = new Error(errorData.error?.message || `HTTP ${response.status}`);
+        error.status = response.status;
+        error.data = errorData;
+        throw error;
+      }
+
+      return response.json();
+    }
+
+    async function callGitHubModels(messages, model, apiKey) {
+      const response = await fetch(GITHUB_MODELS_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: model,
+          messages: messages,
+          max_tokens: 500
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const error = new Error(errorData.error?.message || `HTTP ${response.status}`);
+        error.status = response.status;
+        error.data = errorData;
+        throw error;
+      }
+
+      return response.json();
+    }
+
+    async function sendMessage() {
+      const apiKey = apiKeyInput.value.trim();
+      const userMessage = messageInput.value.trim();
+      const model = modelSelect.value;
+      const enableFailover = enableFailoverCheckbox.checked;
+      
+      if (!apiKey) {
+        addMessage('⚠️ Please enter your GitHub token first (needed for failover).', 'error');
+        return;
+      }
+      
+      if (!userMessage) return;
+
+      // Add user message
+      addMessage(userMessage, 'user');
+      messageInput.value = '';
+      sendButton.disabled = true;
+
+      // Add to conversation history
+      conversationHistory.push({ role: 'user', content: userMessage });
+
+      showTyping();
+
+      let response = null;
+      let usedProvider = 'Azure OpenAI';
+      let primaryFailed = false;
+
+      // Try Azure OpenAI first (will be intercepted by Dev Proxy)
+      try {
+        updateStatus('primary', 'pending', 'Requesting...');
+        response = await callAzureOpenAI(conversationHistory, model);
+        updateStatus('primary', 'success', 'OK');
+      } catch (error) {
+        primaryFailed = true;
+        updateStatus('primary', 'error', `Failed (${error.status || 'error'})`);
+        
+        addMessage(
+          `⚠️ Azure OpenAI failed: ${error.message}`,
+          'error'
+        );
+
+        // Failover to GitHub Models
+        if (enableFailover) {
+          try {
+            updateStatus('secondary', 'pending', 'Failing over...');
+            addMessage(`🔄 Failing over to GitHub Models...`, 'system');
+            
+            response = await callGitHubModels(conversationHistory, model, apiKey);
+            usedProvider = 'GitHub Models';
+            updateStatus('secondary', 'success', 'OK');
+          } catch (secondaryError) {
+            updateStatus('secondary', 'error', `Failed (${secondaryError.status || 'error'})`);
+            hideTyping();
+            addMessage(
+              `❌ GitHub Models also failed: ${secondaryError.message}`,
+              'error'
+            );
+            sendButton.disabled = false;
+            return;
+          }
+        } else {
+          hideTyping();
+          sendButton.disabled = false;
+          return;
+        }
+      }
+
+      hideTyping();
+
+      if (response) {
+        const assistantMessage = response.choices[0].message.content;
+        conversationHistory.push({ role: 'assistant', content: assistantMessage });
+        
+        const providerBadge = primaryFailed 
+          ? '<span class="provider-badge github">GitHub Models</span> (failover)'
+          : '<span class="provider-badge azure">Azure OpenAI</span>';
+        
+        addMessage(assistantMessage, 'assistant', '');
+        
+        // Update last provider
+        document.getElementById('lastProvider').innerHTML = providerBadge;
+      }
+
+      sendButton.disabled = false;
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && !sendButton.disabled) {
+        sendMessage();
+      }
+    });
+
+    // Load API key from sessionStorage if available
+    const savedKey = sessionStorage.getItem('github_token');
+    if (savedKey) {
+      apiKeyInput.value = savedKey;
+    }
+
+    apiKeyInput.addEventListener('change', () => {
+      sessionStorage.setItem('github_token', apiKeyInput.value);
+    });
+  </script>
+</body>
+</html>

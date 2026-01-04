@@ -1,0 +1,82 @@
+[
+  {
+    "name": "pnp-devproxy-azure-ai-failover",
+    "source": "pnp",
+    "title": "Simulate Azure OpenAI to GitHub Models failover",
+    "shortDescription": "This sample demonstrates how to test failover logic from Azure OpenAI to GitHub Models using Dev Proxy. The sample includes a chat app that attempts to use Azure OpenAI as the primary provider and automatically fails over to GitHub Models when Azure OpenAI is unavailable. Key benefit: You don't need an actual Azure OpenAI deployment to test failover! Dev Proxy simulates Azure OpenAI failures, and the app falls back to GitHub Models using just your GitHub token.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-failover",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-failover",
+    "longDescription": [
+      "This sample demonstrates how to test failover logic from Azure OpenAI to GitHub Models using Dev Proxy. The sample includes a chat app that attempts to use Azure OpenAI as the primary provider and automatically fails over to GitHub Models when Azure OpenAI is unavailable. Key benefit: You don't need an actual Azure OpenAI deployment to test failover! Dev Proxy simulates Azure OpenAI failures, and the app falls back to GitHub Models using just your GitHub token."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "azure-ai-failover"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/azure-ai-failover/assets/screenshot.png",
+        "alt": "Dev Proxy simulating Azure OpenAI errors and failover to GitHub Models"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "GenericRandomErrorPlugin documentation",
+        "description": "The documentation of the GenericRandomErrorPlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin"
+      },
+      {
+        "name": "GitHub Models",
+        "description": "Run AI models for free during development with GitHub Models.",
+        "url": "https://github.com/marketplace/models"
+      },
+      {
+        "name": "Azure OpenAI Service",
+        "description": "Azure OpenAI Service documentation.",
+        "url": "https://learn.microsoft.com/azure/ai-services/openai/"
+      }
+    ]
+  }
+]

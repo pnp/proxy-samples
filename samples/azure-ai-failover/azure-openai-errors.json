@@ -1,0 +1,97 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST"
+      },
+      "responses": [
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "30"
+            },
+            {
+              "name": "x-ms-region",
+              "value": "East US"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "ServiceUnavailable",
+              "message": "The service is temporarily unavailable. Please retry after 30 seconds."
+            }
+          }
+        },
+        {
+          "statusCode": 500,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "x-ms-region",
+              "value": "East US"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "InternalServerError",
+              "message": "The server encountered an internal error. Please retry your request."
+            }
+          }
+        },
+        {
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            },
+            {
+              "name": "x-ratelimit-remaining-tokens",
+              "value": "0"
+            },
+            {
+              "name": "x-ratelimit-remaining-requests",
+              "value": "0"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "429",
+              "message": "Requests to the ChatCompletions_Create Operation under Azure OpenAI API version 2024-08-01-preview have exceeded token rate limit of your current OpenAI S0 pricing tier. Please retry after 60 seconds."
+            }
+          }
+        },
+        {
+          "statusCode": 504,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "GatewayTimeout",
+              "message": "The gateway did not receive a response from the upstream server within the expected time."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
