@@ -1,0 +1,617 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/*",
+        "method": "OPTIONS"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "Access-Control-Allow-Methods",
+            "value": "GET, POST, PUT, DELETE, OPTIONS"
+          },
+          {
+            "name": "Access-Control-Allow-Headers",
+            "value": "Content-Type, api-key, Authorization"
+          },
+          {
+            "name": "Access-Control-Max-Age",
+            "value": "86400"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "blocked-prompt"
+      },
+      "response": {
+        "statusCode": 400,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "error": {
+            "message": "The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766",
+            "type": null,
+            "param": "prompt",
+            "code": "content_filter",
+            "status": 400,
+            "innererror": {
+              "code": "ResponsibleAIPolicyViolation",
+              "content_filter_result": {
+                "hate": {
+                  "filtered": true,
+                  "severity": "high"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "violent-content"
+      },
+      "response": {
+        "statusCode": 400,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "error": {
+            "message": "The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766",
+            "type": null,
+            "param": "prompt",
+            "code": "content_filter",
+            "status": 400,
+            "innererror": {
+              "code": "ResponsibleAIPolicyViolation",
+              "content_filter_result": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": true,
+                  "severity": "high"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "jailbreak-attempt"
+      },
+      "response": {
+        "statusCode": 400,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "error": {
+            "message": "The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766",
+            "type": null,
+            "param": "prompt",
+            "code": "content_filter",
+            "status": 400,
+            "innererror": {
+              "code": "ResponsibleAIPolicyViolation",
+              "content_filter_result": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "jailbreak": {
+                  "filtered": true,
+                  "detected": true
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "filtered-completion"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "chatcmpl-filtered-001",
+          "object": "chat.completion",
+          "created": 1703980800,
+          "model": "gpt-4",
+          "choices": [
+            {
+              "index": 0,
+              "finish_reason": "content_filter",
+              "message": {
+                "role": "assistant",
+                "content": null
+              },
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": true,
+                  "severity": "medium"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 15,
+            "completion_tokens": 0,
+            "total_tokens": 15
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "annotated-response"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "chatcmpl-annotated-001",
+          "object": "chat.completion",
+          "created": 1703980800,
+          "model": "gpt-4",
+          "choices": [
+            {
+              "index": 0,
+              "finish_reason": "stop",
+              "message": {
+                "role": "assistant",
+                "content": "While I can discuss conflict resolution strategies, I want to emphasize the importance of peaceful approaches to any situation."
+              },
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "low"
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 20,
+            "completion_tokens": 25,
+            "total_tokens": 45
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "protected-material"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "chatcmpl-protected-001",
+          "object": "chat.completion",
+          "created": 1703980800,
+          "model": "gpt-4",
+          "choices": [
+            {
+              "index": 0,
+              "finish_reason": "stop",
+              "message": {
+                "role": "assistant",
+                "content": "I can't reproduce copyrighted song lyrics. However, I can tell you about the song's themes and history, or help you find where to listen to it legally."
+              },
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "protected_material_text": {
+                  "filtered": false,
+                  "detected": true
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 18,
+            "completion_tokens": 35,
+            "total_tokens": 53
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST",
+        "bodyFragment": "filters-not-run"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "chatcmpl-nofilter-001",
+          "object": "chat.completion",
+          "created": 1703980800,
+          "model": "gpt-4",
+          "choices": [
+            {
+              "index": 0,
+              "finish_reason": "stop",
+              "message": {
+                "role": "assistant",
+                "content": "This is a response where the content filters were unable to run. Your application should detect this scenario and handle it appropriately."
+              },
+              "content_filter_results": {
+                "error": {
+                  "code": "content_filter_error",
+                  "message": "The contents are not filtered because the content filtering system is down or otherwise unable to complete the operation in time."
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 12,
+            "completion_tokens": 28,
+            "total_tokens": 40
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/chat/completions*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "chatcmpl-success-001",
+          "object": "chat.completion",
+          "created": 1703980800,
+          "model": "gpt-4",
+          "choices": [
+            {
+              "index": 0,
+              "finish_reason": "stop",
+              "message": {
+                "role": "assistant",
+                "content": "Hello! I'm doing well, thank you for asking. How can I assist you today?"
+              },
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 10,
+            "completion_tokens": 18,
+            "total_tokens": 28
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/completions*",
+        "method": "POST",
+        "bodyFragment": "blocked-prompt"
+      },
+      "response": {
+        "statusCode": 400,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "error": {
+            "message": "The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766",
+            "type": null,
+            "param": "prompt",
+            "code": "content_filter",
+            "status": 400,
+            "innererror": {
+              "code": "ResponsibleAIPolicyViolation",
+              "content_filter_result": {
+                "hate": {
+                  "filtered": true,
+                  "severity": "high"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://*.openai.azure.com/openai/deployments/*/completions*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "name": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "name": "x-ms-region",
+            "value": "East US"
+          }
+        ],
+        "body": {
+          "id": "cmpl-success-001",
+          "object": "text_completion",
+          "created": 1703980800,
+          "model": "gpt-35-turbo-instruct",
+          "choices": [
+            {
+              "text": " is a great day to learn something new!",
+              "index": 0,
+              "finish_reason": "stop",
+              "content_filter_results": {
+                "hate": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "self_harm": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "sexual": {
+                  "filtered": false,
+                  "severity": "safe"
+                },
+                "violence": {
+                  "filtered": false,
+                  "severity": "safe"
+                }
+              }
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 5,
+            "completion_tokens": 10,
+            "total_tokens": 15
+          }
+        }
+      }
+    }
+  ]
+}

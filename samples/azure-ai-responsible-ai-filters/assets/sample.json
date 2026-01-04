@@ -1,0 +1,82 @@
+[
+  {
+    "name": "pnp-devproxy-azure-ai-responsible-ai-filters",
+    "source": "pnp",
+    "title": "Simulate Azure AI Responsible AI Filters",
+    "shortDescription": "This sample contains mock responses that simulate Azure OpenAI's Responsible AI content filtering behavior. It helps developers test how their applications handle filtered, blocked, or modified responses based on Azure's content safety policies. The sample covers all content filter categories including hate, sexual, violence, self-harm, jailbreak attacks, and protected material detection. Using this sample, developers can implement proper error handling for Responsible AI filtered responses without needing to trigger actual content filters.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-responsible-ai-filters",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-responsible-ai-filters",
+    "longDescription": [
+      "This sample contains mock responses that simulate Azure OpenAI's Responsible AI content filtering behavior. It helps developers test how their applications handle filtered, blocked, or modified responses based on Azure's content safety policies. The sample covers all content filter categories including hate, sexual, violence, self-harm, jailbreak attacks, and protected material detection. Using this sample, developers can implement proper error handling for Responsible AI filtered responses without needing to trigger actual content filters."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "azure-ai-responsible-ai-filters"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/azure-ai-responsible-ai-filters/assets/screenshot.png",
+        "alt": "Dev Proxy simulating Azure OpenAI Responsible AI content filter responses"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Azure OpenAI Content Filtering",
+        "description": "Learn about Azure OpenAI's content filtering capabilities and how to configure them.",
+        "url": "https://learn.microsoft.com/azure/ai-services/openai/concepts/content-filter"
+      },
+      {
+        "name": "Content Filter Annotations",
+        "description": "Understanding content filter annotations in Azure OpenAI responses.",
+        "url": "https://learn.microsoft.com/azure/ai-services/openai/concepts/content-filter-annotations"
+      },
+      {
+        "name": "Responsible AI Overview for Azure OpenAI",
+        "description": "Best practices and recommendations for responsible use of Azure OpenAI.",
+        "url": "https://learn.microsoft.com/azure/ai-services/openai/concepts/responsible-ai"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      }
+    ]
+  }
+]
