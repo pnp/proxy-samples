@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "dev-proxy-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/devProxyDemo/DevProxyDemoWebPart.js",
+          "manifest": "./src/webparts/devProxyDemo/DevProxyDemoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DevProxyDemoWebPartStrings": "lib/webparts/devProxyDemo/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "minimal-browser-js",
+  "version": "1.0.0",
+  "description": "Minimal JavaScript browser app using Dev Proxy",
+  "scripts": {
+    "start": "concurrently -n server,proxy -c cyan,magenta \"http-server -p 3000\" \"devproxy\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  }
+}
