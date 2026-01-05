@@ -10,7 +10,7 @@
       "This sample contains a Dev Proxy mock file that simulates responses for creating a Microsoft Graph connector and provisioning its schema. Provisioning Graph connector schema is a long-running operation, and to simulate checking the status of the provisioning operation, the mock uses simulating the n-th request feature of the Developer Proxy."
     ],
     "creationDateTime": "2023-09-08",
-    "updateDateTime": "2025-06-27",
+    "updateDateTime": "2026-01-05",
     "products": [
       "Dev Proxy",
       "Microsoft Graph"
@@ -34,7 +34,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v0.29.2"
+        "value": "v2.0.0"
       }
     ],
     "thumbnails": [

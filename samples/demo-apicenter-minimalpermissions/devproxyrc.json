@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
   "plugins": [
     {
       "name": "CrudApiPlugin",
@@ -33,11 +33,11 @@
     "https://api.northwind.com/*"
   ],
   "customersApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
     "apiFile": "./.devproxy/customers-api.json"
   },
   "apiCenterMinimalPermissionsPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v0.29.2/apicenterminimalpermissionsplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/apicenterminimalpermissionsplugin.schema.json",
     "subscriptionId": "cdae2297-7aa6-4195-bbb1-dcd89153cc72",
     "resourceGroupName": "resource-group-name",
     "serviceName": "apic-instance",

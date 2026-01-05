@@ -10,7 +10,7 @@
             "This sample web application demonstrates how to use Dev Proxy to monitor and track LLM usage and costs."
         ],
         "creationDateTime": "2025-07-28",
-        "updateDateTime": "2025-07-28",
+        "updateDateTime": "2026-01-05",
         "products": [
             "Dev Proxy"
         ],
@@ -29,7 +29,7 @@
             },
             {
                 "key": "PROXY VERSION",
-                "value": "v1.0.0"
+                "value": "v2.0.0"
             }
         ],
         "thumbnails": [

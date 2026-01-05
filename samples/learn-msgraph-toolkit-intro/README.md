@@ -16,6 +16,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.2|February 29, 2024|Updated Dev Proxy version to stable
 1.1|February 13, 2024|Updated to use the new EntraMockResponsePlugin
 1.0|February 9, 2024|Initial release

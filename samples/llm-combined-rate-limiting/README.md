@@ -27,6 +27,7 @@ This combination helps developers test their applications' resilience when:
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|January 3, 2026|Initial release
 
 ## Minimal path to awesome
