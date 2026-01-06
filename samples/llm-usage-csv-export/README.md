@@ -34,6 +34,8 @@ Version|Date|Comments
      -d '{"model": "gpt-4", "messages": [{"role": "user", "content": "Hello!"}]}'
    ```
 
+   > **Note**: Replace `YOUR_API_KEY` with your actual API key. Never commit API keys to version control.
+
 1. Stop Dev Proxy by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Find the generated CSV file in your working directory named `devproxy_llmusage_<timestamp>.csv`
 1. Open the CSV file in a spreadsheet application for analysis
