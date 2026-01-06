@@ -1,0 +1,87 @@
+[
+  {
+    "name": "pnp-devproxy-network-chaos-simulation",
+    "source": "pnp",
+    "title": "Simulate slow and failing network conditions",
+    "shortDescription": "This sample contains a preset to simulate slow and failing network conditions for resilience testing. It combines the LatencyPlugin to add realistic network delays (200ms to 10 seconds) with the GenericRandomErrorPlugin to randomly return server errors (500, 503, 504), helping you test how your applications handle challenging network environments.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/network-chaos-simulation",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/network-chaos-simulation",
+    "longDescription": [
+      "This sample contains a preset to simulate slow and failing network conditions for resilience testing. It combines the LatencyPlugin to add realistic network delays (200ms to 10 seconds) with the GenericRandomErrorPlugin to randomly return server errors (500, 503, 504), helping you test how your applications handle challenging network environments."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "network-chaos-simulation"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/network-chaos-simulation/assets/screenshot.png",
+        "alt": "Dev Proxy simulating network chaos"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "Simulate slow API responses",
+        "description": "How to use the LatencyPlugin to simulate slow API responses.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-slow-api-responses"
+      },
+      {
+        "name": "Test my app with random errors",
+        "description": "How to test your app with random errors using the GenericRandomErrorPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-random-errors"
+      },
+      {
+        "name": "LatencyPlugin reference",
+        "description": "Technical reference for the LatencyPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/latencyplugin"
+      },
+      {
+        "name": "GenericRandomErrorPlugin reference",
+        "description": "Technical reference for the GenericRandomErrorPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin"
+      }
+    ]
+  }
+]

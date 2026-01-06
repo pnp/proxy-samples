@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "*"
+      },
+      "responses": [
+        {
+          "statusCode": 500,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "InternalServerError",
+              "message": "An unexpected error occurred on the server. Please try again later."
+            }
+          }
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "ServiceUnavailable",
+              "message": "The service is temporarily unavailable. Please retry after the specified time."
+            }
+          }
+        },
+        {
+          "statusCode": 504,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "GatewayTimeout",
+              "message": "The server did not receive a timely response from the upstream server."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
