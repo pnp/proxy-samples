@@ -1,0 +1,272 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Contoso API",
+    "description": "Sample Contoso API for demonstrating permission validation in CI/CD pipelines",
+    "version": "v1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.contoso.com"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/common/oauth2/token",
+            "scopes": {
+              "customer.read": "Grants access to read customer info",
+              "customer.readwrite": "Grants access to read and write customer info",
+              "order.read": "Grants access to read order info",
+              "order.readwrite": "Grants access to read and write order info"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "customerId": {
+            "type": "string"
+          },
+          "total": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/customers": {
+      "get": {
+        "summary": "Get all customers",
+        "operationId": "getCustomers",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.read"
+            ]
+          },
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Customer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a customer",
+        "operationId": "createCustomer",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customers/{customer-id}": {
+      "get": {
+        "summary": "Get customer by ID",
+        "operationId": "getCustomerById",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.read"
+            ]
+          },
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update customer by ID",
+        "operationId": "updateCustomerById",
+        "security": [
+          {
+            "OAuth2": [
+              "customer.readwrite"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer-id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/orders": {
+      "get": {
+        "summary": "Get all orders",
+        "operationId": "getOrders",
+        "security": [
+          {
+            "OAuth2": [
+              "order.read"
+            ]
+          },
+          {
+            "OAuth2": [
+              "order.readwrite"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order-id}": {
+      "get": {
+        "summary": "Get order by ID",
+        "operationId": "getOrderById",
+        "security": [
+          {
+            "OAuth2": [
+              "order.read"
+            ]
+          },
+          {
+            "OAuth2": [
+              "order.readwrite"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "order-id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,149 @@
+trigger:
+- main
+- dev
+
+pr:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- name: LOG_FILE
+  value: devproxy.log
+- name: DEV_PROXY_VERSION
+  value: v2.0.0
+- name: DEV_PROXY_CACHE_RESTORED
+  value: 'false'
+
+stages:
+- stage: ShadowApiDetection
+  displayName: 'Shadow API detection'
+  jobs:
+  - job: DetectShadowApis
+    displayName: 'Check for shadow APIs'
+    steps:
+    - task: Cache@2
+      inputs:
+        key: '"dev-proxy-$(DEV_PROXY_VERSION)"'
+        path: ./devproxy
+        cacheHitVar: DEV_PROXY_CACHE_RESTORED
+      displayName: 'Cache Dev Proxy'
+
+    - script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- $DEV_PROXY_VERSION
+      displayName: 'Install Dev Proxy'
+      condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
+
+    - script: bash ./run.sh shadow-api-detection.json
+      displayName: 'Run API validation'
+      env:
+        AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
+        AZURE_RESOURCE_GROUP_NAME: $(AZURE_RESOURCE_GROUP_NAME)
+        AZURE_APIC_INSTANCE_NAME: $(AZURE_APIC_INSTANCE_NAME)
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload Dev Proxy logs'
+      inputs:
+        targetPath: $(LOG_FILE)
+        artifact: shadow-api-logs
+
+    - script: |
+        mkdir -p $(Build.ArtifactStagingDirectory)/ShadowApiReports
+        for file in *Reporter*; do
+          if [ -f "$file" ]; then
+            cp "$file" $(Build.ArtifactStagingDirectory)/ShadowApiReports
+          fi
+        done
+      displayName: 'Copy reports to artifact directory'
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload shadow API reports'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/ShadowApiReports'
+        artifact: 'ShadowApiReports'
+
+- stage: PermissionValidation
+  displayName: 'Permission validation'
+  dependsOn: []
+  jobs:
+  - job: ValidatePermissions
+    displayName: 'Validate API permissions'
+    steps:
+    - task: Cache@2
+      inputs:
+        key: '"dev-proxy-$(DEV_PROXY_VERSION)"'
+        path: ./devproxy
+        cacheHitVar: DEV_PROXY_CACHE_RESTORED
+      displayName: 'Cache Dev Proxy'
+
+    - script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- $DEV_PROXY_VERSION
+      displayName: 'Install Dev Proxy'
+      condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
+
+    - script: bash ./run.sh permission-validation.json
+      displayName: 'Run permission validation'
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload Dev Proxy logs'
+      inputs:
+        targetPath: $(LOG_FILE)
+        artifact: permission-logs
+
+    - script: |
+        mkdir -p $(Build.ArtifactStagingDirectory)/PermissionReports
+        for file in *Reporter*; do
+          if [ -f "$file" ]; then
+            cp "$file" $(Build.ArtifactStagingDirectory)/PermissionReports
+          fi
+        done
+      displayName: 'Copy reports to artifact directory'
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload permission reports'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/PermissionReports'
+        artifact: 'PermissionReports'
+
+- stage: OpenApiGeneration
+  displayName: 'OpenAPI spec generation'
+  dependsOn: []
+  jobs:
+  - job: GenerateOpenApiSpec
+    displayName: 'Generate OpenAPI spec'
+    steps:
+    - task: Cache@2
+      inputs:
+        key: '"dev-proxy-$(DEV_PROXY_VERSION)"'
+        path: ./devproxy
+        cacheHitVar: DEV_PROXY_CACHE_RESTORED
+      displayName: 'Cache Dev Proxy'
+
+    - script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- $DEV_PROXY_VERSION
+      displayName: 'Install Dev Proxy'
+      condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
+
+    - script: bash ./run.sh openapi-generation.json
+      displayName: 'Run OpenAPI generation'
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload Dev Proxy logs'
+      inputs:
+        targetPath: $(LOG_FILE)
+        artifact: openapi-logs
+
+    - script: |
+        mkdir -p $(Build.ArtifactStagingDirectory)/OpenApiSpecs
+        for file in *.json; do
+          if [[ "$file" != "devproxyrc.json" && "$file" != "shadow-api-detection.json" && "$file" != "permission-validation.json" && "$file" != "openapi-generation.json" ]]; then
+            if [ -f "$file" ]; then
+              cp "$file" $(Build.ArtifactStagingDirectory)/OpenApiSpecs
+            fi
+          fi
+        done
+      displayName: 'Copy OpenAPI specs to artifact directory'
+
+    - task: PublishPipelineArtifact@1
+      displayName: 'Upload generated OpenAPI specs'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/OpenApiSpecs'
+        artifact: 'OpenApiSpecs'
