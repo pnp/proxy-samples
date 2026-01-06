@@ -57,7 +57,7 @@ curl -ikx http://127.0.0.1:8000 https://api.openai.com/v1/chat/completions \
 
 ## Customizing failure types
 
-To test specific failure scenarios, edit the `devproxyrc.json` file and modify the `failures` array. For example, to test only content accuracy issues:
+To test specific failure scenarios, edit the `devproxyrc.json` file and modify the `failures` array. For example, to focus on testing content accuracy issues (using different failure types than the default configuration):
 
 ```json
 {
