@@ -5,6 +5,7 @@ set -m
 
 log_file=devproxy.log
 config_file=${1:-devproxyrc.json}
+start_time=$SECONDS
 
 echo "Using config file: $config_file"
 
@@ -29,7 +30,7 @@ while true; do
     break
   fi
   # timeout after 60 seconds
-  if [ $SECONDS -gt 60 ]; then
+  if [ $((SECONDS - start_time)) -gt 60 ]; then
     echo "Timeout waiting for Dev Proxy to start"
     cat $log_file
     exit 1
@@ -73,13 +74,14 @@ curl -ikx http://127.0.0.1:8000 https://api.contoso.com/orders/1 || true
 echo "Stopping Dev Proxy..."
 curl -s -X POST http://localhost:8897/proxy/stop || kill -INT $proxy_pid
 
+stop_time=$SECONDS
 echo "Waiting for Dev Proxy to complete..."
 while true; do
   if grep -q -e "DONE" -e "No requests to process" -e "An error occurred in a plugin" $log_file; then
     break
   fi
   # timeout after 60 seconds
-  if [ $SECONDS -gt 120 ]; then
+  if [ $((SECONDS - stop_time)) -gt 60 ]; then
     echo "Timeout waiting for Dev Proxy to complete"
     cat $log_file
     exit 1

@@ -118,16 +118,22 @@ jobs:
       - name: Stop Dev Proxy
         uses: dev-proxy-tools/actions/stop@v1
 
+      - name: Collect OpenAPI specs
+        run: |
+          mkdir -p generated-specs
+          for file in *.json; do
+            if [[ "$file" != "devproxyrc.json" && "$file" != "shadow-api-detection.json" && "$file" != "permission-validation.json" && "$file" != "openapi-generation.json" ]]; then
+              if [ -f "$file" ]; then
+                cp "$file" generated-specs/
+              fi
+            fi
+          done
+
       - name: Upload OpenAPI spec
         uses: actions/upload-artifact@v4
         with:
           name: openapi-spec
-          path: ./*.json
-          exclude: |
-            devproxyrc.json
-            shadow-api-detection.json
-            permission-validation.json
-            openapi-generation.json
+          path: generated-specs/
 
       # Optional: Commit generated spec to repository
       # - name: Commit OpenAPI spec
