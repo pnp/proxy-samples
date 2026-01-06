@@ -1,0 +1,128 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.contoso.com/items",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          }
+        ],
+        "body": [
+          {
+            "id": 1,
+            "name": "Item 1",
+            "description": "First item in the collection"
+          },
+          {
+            "id": 2,
+            "name": "Item 2",
+            "description": "Second item in the collection"
+          },
+          {
+            "id": 3,
+            "name": "Item 3",
+            "description": "Third item in the collection"
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/items/*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          }
+        ],
+        "body": {
+          "id": 1,
+          "name": "Item 1",
+          "description": "First item in the collection"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/items",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          }
+        ],
+        "body": {
+          "id": 4,
+          "name": "New Item",
+          "description": "Newly created item"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/items/*",
+        "method": "PUT"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          },
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          }
+        ],
+        "body": {
+          "id": 1,
+          "name": "Updated Item",
+          "description": "Updated item description"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/items/*",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "x-powered-by",
+            "value": "Dev Proxy"
+          }
+        ]
+      }
+    }
+  ]
+}
