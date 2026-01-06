@@ -1,0 +1,32 @@
+# Registered API - registered in API Center
+# This call should be marked as "registered" in the report
+
+### Get all products (registered API)
+GET https://api.contoso.com/products
+
+### Get specific product (registered API)
+GET https://api.contoso.com/products/1
+
+###
+
+# Shadow API - NOT registered in API Center
+# This call should be marked as "new/unregistered" in the report
+
+### Get posts from shadow API (unregistered)
+GET https://jsonplaceholder.typicode.com/posts
+
+### Get specific post from shadow API (unregistered)
+GET https://jsonplaceholder.typicode.com/posts/1
+
+### Get users from shadow API (unregistered)
+GET https://jsonplaceholder.typicode.com/users
+
+###
+
+# Mixed scenario - both registered and unregistered APIs
+
+### First call - registered API
+GET https://api.contoso.com/products/2
+
+### Second call - shadow API
+GET https://jsonplaceholder.typicode.com/comments?postId=1

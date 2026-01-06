@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Widget A",
+    "price": 29.99,
+    "category": "Electronics"
+  },
+  {
+    "id": "2",
+    "name": "Gadget B",
+    "price": 49.99,
+    "category": "Electronics"
+  },
+  {
+    "id": "3",
+    "name": "Tool C",
+    "price": 19.99,
+    "category": "Hardware"
+  }
+]
