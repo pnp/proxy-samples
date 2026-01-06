@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🌐 Run demo with Dev Proxy",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "runtimeArgs": [
+                "http-server",
+                "-c-1",
+                "-p",
+                "3000"
+            ],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "Available on:",
+                "uriFormat": "http://127.0.0.1:3000",
+                "action": "openExternally"
+            },
+            "preLaunchTask": "devproxy-start",
+            "postDebugTask": "devproxy-stop"
+        }
+    ]
+}
