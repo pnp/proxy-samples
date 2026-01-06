@@ -84,7 +84,8 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
   - `source: "pnp"`
   - `title`, `shortDescription`
   - `url` (full GitHub URL) and `downloadUrl` (pnp.github.io URL)
-  - `longDescription` (array format, not string)
+  - `longDescription` (array with exactly one string element, same content as `shortDescription`)
+  - **shortDescription vs longDescription**: Both must have identical content. `shortDescription` is a plain string, `longDescription` is an array containing that same string as its only element (e.g., `"shortDescription": "Foo bar"` and `"longDescription": ["Foo bar"]`)
   - `creationDateTime`, `updateDateTime` (both in `YYYY-MM-DD` format)
   - `products: ["Dev Proxy"]`
   - Complete `metadata` section with `SAMPLE ID`, `PRESET`, `MOCKS`, `PLUGIN`, `PROXY VERSION`
