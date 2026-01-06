@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-mock-from-real-api",
+    "source": "pnp",
+    "title": "Auto-generate mocks from production traffic",
+    "shortDescription": "Demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatically generate mock files from real API traffic. Record once, mock forever - no manual mock creation needed.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api",
+    "longDescription": [
+      "Demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatically generate mock files from real API traffic. Record once, mock forever - no manual mock creation needed."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "mock-from-real-api"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/mock-from-real-api/assets/screenshot.png",
+        "alt": "Dev Proxy generating mock files from intercepted API requests"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "MockGeneratorPlugin documentation",
+        "description": "Technical reference for the MockGeneratorPlugin that generates mock files from intercepted requests.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockgeneratorplugin"
+      },
+      {
+        "name": "Record and export proxy activity",
+        "description": "Instructions on how to record and export proxy activity with Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/record-and-export-proxy-activity"
+      },
+      {
+        "name": "Mock responses",
+        "description": "Learn how to mock API responses with Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses"
+      }
+    ]
+  }
+]
