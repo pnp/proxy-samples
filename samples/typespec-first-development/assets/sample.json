@@ -1,0 +1,82 @@
+[
+  {
+    "name": "pnp-devproxy-typespec-first-development",
+    "source": "pnp",
+    "title": "TypeSpec-first API development with LLM",
+    "shortDescription": "This sample demonstrates TypeSpec-first API development workflow using Dev Proxy. Generate TypeSpec files from API traffic and use a local language model to enhance the output with clearer operation IDs and descriptions.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/typespec-first-development",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/typespec-first-development",
+    "longDescription": [
+      "This sample demonstrates TypeSpec-first API development workflow using Dev Proxy. Generate TypeSpec files from API traffic and use a local language model to enhance the output with clearer operation IDs and descriptions."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "typespec-first-development"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/typespec-first-development/assets/screenshot.png",
+        "alt": "Dev Proxy generating TypeSpec from API traffic"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "GitHub Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "The tutorial will introduce you to Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Generate a TypeSpec file",
+        "description": "Learn how to use Dev Proxy to generate a TypeSpec file from intercepted API traffic.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/generate-typespec-file"
+      },
+      {
+        "name": "TypeSpecGeneratorPlugin",
+        "description": "Technical reference for the TypeSpecGeneratorPlugin that generates TypeSpec files from API traffic.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/typespecgeneratorplugin"
+      },
+      {
+        "name": "Use a local language model",
+        "description": "Learn how to use a local language model with Dev Proxy to enhance generated output.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-language-model"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      }
+    ]
+  }
+]
