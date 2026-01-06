@@ -12,7 +12,7 @@ This sample demonstrates how to simulate API key authentication for mock APIs us
 
 ## Contributors
 
-* [GitHub Copilot](https://github.com/copilot)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
