@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "ExecutionSummaryPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "executionSummaryPlugin"
+    },
+    {
+      "name": "PlainTextReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "JsonReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "MarkdownReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    }
+  ],
+  "urlsToWatch": [
+    "https://jsonplaceholder.typicode.com/*"
+  ],
+  "executionSummaryPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/executionsummaryplugin.schema.json",
+    "groupBy": "url"
+  },
+  "logLevel": "information",
+  "newVersionNotification": "stable"
+}
