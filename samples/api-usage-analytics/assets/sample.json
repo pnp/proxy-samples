@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-api-usage-analytics",
+    "source": "pnp",
+    "title": "Track API usage analytics",
+    "shortDescription": "Demonstrates how to use Dev Proxy to track and analyze API usage patterns, showing which endpoints are used most frequently with reports in plain text, JSON, and Markdown formats.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/api-usage-analytics",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-usage-analytics",
+    "longDescription": [
+      "Demonstrates how to use Dev Proxy to track and analyze API usage patterns, showing which endpoints are used most frequently with reports in plain text, JSON, and Markdown formats."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "api-usage-analytics"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/api-usage-analytics/assets/screenshot.png",
+        "alt": "Dev Proxy tracking API usage analytics"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "ExecutionSummaryPlugin documentation",
+        "description": "The documentation of the ExecutionSummaryPlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/executionsummaryplugin"
+      },
+      {
+        "name": "Record and export proxy activity",
+        "description": "Learn how to record and export proxy activity using Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/record-and-export-proxy-activity"
+      }
+    ]
+  }
+]
