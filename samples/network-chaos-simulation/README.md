@@ -18,7 +18,7 @@ Using this preset, you can verify that your app properly handles:
 
 ## Contributors
 
-* [Copilot](https://github.com/copilot)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
