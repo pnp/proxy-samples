@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "minimal-spfx",
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "none",
+    "componentName": "DevProxyDemo",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.21.1",
+    "sdksVersions": {},
+    "version": "1.22.1",
+    "libraryName": "minimal-spfx",
+    "libraryId": "908e22be-a40f-47f7-a1df-18dc4f455a9a",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "minimal-spfx description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

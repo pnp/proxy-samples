@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          { "name": "content-type", "value": "application/json; charset=utf-8" },
+          { "name": "Access-Control-Allow-Origin", "value": "*" },
+          { "name": "Access-Control-Expose-Headers", "value": "x-powered-by, x-mocked-by" },
+          { "name": "x-powered-by", "value": "Dev Proxy" },
+          { "name": "x-mocked-by", "value": "Dev Proxy MockResponsePlugin" }
+        ],
+        "body": {
+          "userId": 1,
+          "id": 1,
+          "title": "Hello from Dev Proxy!",
+          "body": "This response was mocked by Dev Proxy. Your SPFx web part is working correctly with the proxy."
+        }
+      }
+    }
+  ]
+}

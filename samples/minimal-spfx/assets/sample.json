@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-minimal-spfx",
+    "source": "pnp",
+    "title": "Minimal SPFx web part using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with a SharePoint Framework web part",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-spfx",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-spfx",
+    "longDescription": [
+      "This sample demonstrates the minimal setup to use Dev Proxy with a SharePoint Framework (SPFx) web part. It includes a simple web part that makes an API call to JSONPlaceholder, with Dev Proxy configured to mock the response. This is perfect for learning how to integrate Dev Proxy into your SPFx development workflow for testing API behaviors without hitting real endpoints."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "minimal-spfx"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-spfx/assets/screenshot.png",
+        "alt": "Dev Proxy mocking API response for SPFx web part"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      },
+      {
+        "name": "SharePoint Framework overview",
+        "description": "Overview of the SharePoint Framework for building SharePoint customizations.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview"
+      },
+      {
+        "name": "Build your first SharePoint client-side web part",
+        "description": "Tutorial for building your first SPFx web part.",
+        "url": "https://learn.microsoft.com/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part"
+      }
+    ]
+  }
+]

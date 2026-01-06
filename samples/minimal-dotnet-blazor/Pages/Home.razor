@@ -1,0 +1,79 @@
+@page "/"
+@inject HttpClient Http
+
+<h1>Minimal Blazor + Dev Proxy</h1>
+
+<p>This sample demonstrates using Dev Proxy to mock API responses in a Blazor WebAssembly app.</p>
+
+<button @onclick="FetchPost" disabled="@loading">
+    @(loading ? "Loading..." : "Fetch Post from API")
+</button>
+
+@if (post is not null)
+{
+    <div style="margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px;">
+        <h2>@post.Title</h2>
+        <p>@post.Body</p>
+        <small>Post ID: @post.Id, User ID: @post.UserId</small>
+    </div>
+    
+    @if (responseHeaders is not null)
+    {
+        <div style="margin-top: 15px; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+            <h3>Response Headers:</h3>
+            <ul>
+                @foreach (var header in responseHeaders)
+                {
+                    <li><strong>@header.Key:</strong> @string.Join(", ", header.Value)</li>
+                }
+            </ul>
+        </div>
+    }
+}
+
+@if (error is not null)
+{
+    <div style="margin-top: 20px; padding: 15px; border: 1px solid #f00; color: #f00; border-radius: 5px;">
+        <strong>Error:</strong> @error
+    </div>
+}
+
+@code {
+    private Post? post;
+    private bool loading;
+    private string? error;
+    private IEnumerable<KeyValuePair<string, IEnumerable<string>>>? responseHeaders;
+
+    private async Task FetchPost()
+    {
+        loading = true;
+        error = null;
+        post = null;
+        responseHeaders = null;
+
+        try
+        {
+            var response = await Http.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+            response.EnsureSuccessStatusCode();
+            
+            post = await response.Content.ReadFromJsonAsync<Post>();
+            responseHeaders = response.Headers;
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private class Post
+    {
+        public int UserId { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Body { get; set; } = string.Empty;
+    }
+}

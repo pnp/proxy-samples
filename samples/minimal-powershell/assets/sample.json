@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-minimal-powershell",
+    "source": "pnp",
+    "title": "Minimal PowerShell script using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with a PowerShell script",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-powershell",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-powershell",
+    "longDescription": [
+      "This sample demonstrates the minimal setup to use Dev Proxy with a PowerShell script. It shows how to configure Dev Proxy to intercept API requests and mock responses using the MockResponsePlugin. The sample makes a single API call to JSONPlaceholder and returns a mocked response, demonstrating how Dev Proxy intercepts and replaces the real API call. Perfect for getting started with Dev Proxy in PowerShell projects."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "minimal-powershell"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-powershell/assets/screenshot.png",
+        "alt": "Dev Proxy mocking a PowerShell API request"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use Dev Proxy with PowerShell",
+        "description": "Learn how to configure Dev Proxy to work with PowerShell scripts.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-powershell"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      }
+    ]
+  }
+]
