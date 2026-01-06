@@ -2,9 +2,16 @@
 
 ## Summary
 
-This sample demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin. When building AI-powered applications, it's essential to ensure they gracefully handle unexpected or problematic LLM responses. This configuration helps you simulate various failure scenarios like hallucinations, bias, circular reasoning, and more.
+Sample chat application that demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin. The app shows how to build resilient AI applications that gracefully handle unexpected or problematic LLM responses.
 
-![Screenshot of a command prompt with Dev Proxy simulating a language model failure response for an LLM API request.](assets/screenshot.png)
+![Screenshot of the AI Failure Resilience demo app showing a chat interface with Dev Proxy simulating LLM failure modes](assets/screenshot.png)
+
+The sample showcases:
+
+- **Chat Interface**: Interactive chat UI to test LLM interactions
+- **LLM Failure Simulation**: Dev Proxy injects various failure types into API responses
+- **Graceful Error Handling**: Demonstrates how to handle problematic LLM responses
+- **VS Code Integration**: Use Dev Proxy Toolkit for local development and testing
 
 ## Compatibility
 
@@ -22,12 +29,23 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Download the preset using Dev Proxy by running: `devproxy config get ai-failure-resilience`
-- Start Dev Proxy specifying the path to the config file: `devproxy --config-file "~appFolder/config/ai-failure-resilience/devproxyrc.json"`
-- Use your AI application to make requests to OpenAI, Azure OpenAI, or Ollama APIs
-- Observe how your app handles the simulated failure responses
+1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience) then unzip it)
+1. Open the sample folder in Visual Studio Code
+1. Install the [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) extension
+1. Install dependencies: `npm install`
+1. Update the `apiKey` in `js/env.js` with your OpenAI API key
+1. Start the debug session by pressing <kbd>F5</kbd>
+1. The browser opens with the chat interface
+1. Type questions and observe how Dev Proxy injects failure responses
 
-## Testing specific failure types
+### Running manually
+
+1. Start Dev Proxy: `devproxy --config-file .devproxy/devproxyrc.json`
+1. In a separate terminal, start the web server: `npm start`
+1. Open http://localhost:3000 in your browser
+1. Configure your browser to use the Dev Proxy (http://127.0.0.1:8000)
+
+## Simulated failure types
 
 The sample includes configuration for seven common LLM failure types:
 
@@ -41,23 +59,9 @@ The sample includes configuration for seven common LLM failure types:
 | `Misinterpretation` | Misinterprets the user's request |
 | `OverconfidenceUncertainty` | Shows overconfidence about uncertain information |
 
-## Testing with curl
-
-Test your configuration by sending a request through Dev Proxy:
-
-```bash
-curl -ikx http://127.0.0.1:8000 https://api.openai.com/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -d '{
-    "model": "gpt-4",
-    "messages": [{"role": "user", "content": "What is the capital of France?"}]
-  }'
-```
-
 ## Customizing failure types
 
-To test specific failure scenarios, edit the `devproxyrc.json` file and modify the `failures` array. For example, to focus on testing content accuracy issues (using different failure types than the default configuration):
+To test specific failure scenarios, edit the `.devproxy/devproxyrc.json` file and modify the `failures` array. For example, to focus on testing content accuracy issues:
 
 ```json
 {
@@ -114,10 +118,9 @@ Then add `TechnicalJargonOveruse` to your failures array.
 
 Using this sample you can use Dev Proxy to:
 
-- Simulate common LLM failure scenarios without needing a real LLM endpoint
-- Test how your AI application handles hallucinations and false information
-- Verify your app's resilience to biased or stereotypical responses
-- Ensure proper handling of contradictory or ambiguous LLM outputs
+- Interact with a real chat interface while Dev Proxy simulates LLM failures
+- See how failure modes like hallucinations and bias appear in practice
+- Test your application's error handling and user experience
 - Build more robust and reliable AI-powered applications
 
 ## Help

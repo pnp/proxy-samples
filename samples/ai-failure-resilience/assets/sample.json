@@ -3,13 +3,13 @@
     "name": "pnp-devproxy-ai-failure-resilience",
     "source": "pnp",
     "title": "Test AI app against LLM failure modes",
-    "shortDescription": "Test AI applications against common LLM failure modes like hallucinations, bias, circular reasoning, and more using the LanguageModelFailurePlugin.",
+    "shortDescription": "Sample chat application that demonstrates how to test AI applications against common LLM failure modes using the LanguageModelFailurePlugin.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
     "longDescription": [
-      "This sample demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin.",
-      "When building AI-powered applications, it's essential to ensure they gracefully handle unexpected or problematic LLM responses.",
-      "This configuration helps you simulate various failure scenarios like hallucinations, bias, circular reasoning, contradictory information, plausible but incorrect responses, and overconfidence."
+      "Sample chat application that demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin.",
+      "The app shows how to build resilient AI applications that gracefully handle unexpected or problematic LLM responses.",
+      "Features an interactive chat UI where Dev Proxy injects failure types like hallucinations, bias, circular reasoning, and more."
     ],
     "creationDateTime": "2026-01-06",
     "updateDateTime": "2026-01-06",
@@ -43,7 +43,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/ai-failure-resilience/assets/screenshot.png",
-        "alt": "Screenshot of a command prompt with Dev Proxy simulating a language model failure response for an LLM API request."
+        "alt": "Screenshot of the AI Failure Resilience demo app showing a chat interface with Dev Proxy simulating LLM failure modes."
       }
     ],
     "authors": [
@@ -70,9 +70,9 @@
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-language-model-failures"
       },
       {
-        "name": "Use preset configurations",
-        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
-        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+        "name": "Use Dev Proxy with Visual Studio Code debug configurations",
+        "description": "Learn how to use Dev Proxy with Visual Studio Code debug configurations.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-vs-code-debug-configurations"
       }
     ]
   }
