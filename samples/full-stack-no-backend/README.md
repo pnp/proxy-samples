@@ -10,7 +10,8 @@ The sample includes:
 - **LatencyPlugin** - Realistic response time simulation (200-800ms)
 - **DevToolsPlugin** - Chrome DevTools integration for debugging
 
-![Task Manager app running with Dev Proxy](assets/screenshot.png)
+<!-- Screenshot to be added -->
+<!-- ![Task Manager app running with Dev Proxy](assets/screenshot.png) -->
 
 ## Compatibility
 
