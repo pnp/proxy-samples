@@ -1,0 +1,79 @@
+[
+  {
+    "name": "pnp-devproxy-ai-failure-resilience",
+    "source": "pnp",
+    "title": "Test AI app against LLM failure modes",
+    "shortDescription": "Test AI applications against common LLM failure modes like hallucinations, bias, circular reasoning, and more using the LanguageModelFailurePlugin.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
+    "longDescription": [
+      "This sample demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin.",
+      "When building AI-powered applications, it's essential to ensure they gracefully handle unexpected or problematic LLM responses.",
+      "This configuration helps you simulate various failure scenarios like hallucinations, bias, circular reasoning, contradictory information, plausible but incorrect responses, and overconfidence."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "ai-failure-resilience"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/ai-failure-resilience/assets/screenshot.png",
+        "alt": "Screenshot of a command prompt with Dev Proxy simulating a language model failure response for an LLM API request."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "LanguageModelFailurePlugin documentation",
+        "description": "The documentation of the LanguageModelFailurePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/languagemodelfailureplugin"
+      },
+      {
+        "name": "Test my app with language model failures",
+        "description": "How-to guide for testing your app with simulated language model failures.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-language-model-failures"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      }
+    ]
+  }
+]

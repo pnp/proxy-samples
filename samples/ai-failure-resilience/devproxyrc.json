@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "LanguageModelFailurePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "languageModelFailurePlugin"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.openai.com/*",
+    "https://*.openai.azure.com/*",
+    "http://localhost:11434/*"
+  ],
+  "languageModelFailurePlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/languagemodelfailureplugin.schema.json",
+    "failures": [
+      "Hallucination",
+      "BiasStereotyping",
+      "CircularReasoning",
+      "ContradictoryInformation",
+      "PlausibleIncorrect",
+      "Misinterpretation",
+      "OverconfidenceUncertainty"
+    ]
+  }
+}
