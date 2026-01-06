@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-jwt-testing-toolkit",
+    "source": "pnp",
+    "title": "Generate and test JWTs with Dev Proxy",
+    "shortDescription": "Demonstrates how to use devproxy jwt create to generate JSON Web Tokens for testing API authentication scenarios with a simulated CRUD API secured by JWT validation.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/jwt-testing-toolkit",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/jwt-testing-toolkit",
+    "longDescription": [
+      "Demonstrates how to use devproxy jwt create to generate JSON Web Tokens for testing API authentication scenarios with a simulated CRUD API secured by JWT validation."
+    ],
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "jwt-testing-toolkit"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/jwt-testing-toolkit/assets/screenshot.png",
+        "alt": "Dev Proxy generating and validating JWTs"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "copilot",
+        "pictureUrl": "https://github.com/copilot.png",
+        "name": "GitHub Copilot"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "jwt create command reference",
+        "description": "Documentation for the devproxy jwt create command.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/jwt-create"
+      },
+      {
+        "name": "CrudApiPlugin documentation",
+        "description": "Documentation for the CrudApiPlugin that simulates a CRUD API.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/crudapiplugin"
+      }
+    ]
+  }
+]

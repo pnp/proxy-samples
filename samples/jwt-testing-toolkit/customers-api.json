@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "https://api.contoso.com/v1/customers",
+  "dataFile": "customers-data.json",
+  "auth": "entra",
+  "entraAuthConfig": {
+    "audience": "https://api.contoso.com",
+    "issuer": "dev-proxy",
+    "validateLifetime": false,
+    "validateSigningKey": false
+  },
+  "actions": [
+    {
+      "action": "getAll",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["Customers.Read"]
+      }
+    },
+    {
+      "action": "getOne",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["Customers.Read"]
+      }
+    },
+    {
+      "action": "create",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["Customers.Write"]
+      }
+    },
+    {
+      "action": "merge",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["Customers.Write"]
+      }
+    },
+    {
+      "action": "delete",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "roles": ["Customers.Admin"]
+      }
+    }
+  ]
+}
