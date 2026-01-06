@@ -32,18 +32,17 @@ Version|Date|Comments
 1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience) then unzip it)
 1. Open the sample folder in Visual Studio Code
 1. Install the [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) extension
-1. Install dependencies: `npm install`
-1. Update the `apiKey` in `js/env.js` with your OpenAI API key
+1. [Generate a fine-grained personal access token](https://github.com/settings/tokens?type=beta) with `models:read` permission granted
+1. Update the `apiKey` variable value in `js/env.js` with your token
 1. Start the debug session by pressing <kbd>F5</kbd>
 1. The browser opens with the chat interface
 1. Type questions and observe how Dev Proxy injects failure responses
 
 ### Running manually
 
-1. Start Dev Proxy: `devproxy --config-file .devproxy/devproxyrc.json`
-1. In a separate terminal, start the web server: `npm start`
+1. In a terminal, start Dev Proxy: `devproxy`
+1. In a separate terminal, start the web server: `npx http-server -c-1 -p 3000`
 1. Open http://localhost:3000 in your browser
-1. Configure your browser to use the Dev Proxy (http://127.0.0.1:8000)
 
 ## Simulated failure types
 

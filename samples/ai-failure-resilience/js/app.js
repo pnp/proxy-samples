@@ -11,9 +11,9 @@
 import OpenAI from "https://cdn.jsdelivr.net/npm/openai@4.98.0/+esm";
 import { apiKey } from "./env.js";
 
-// Configuration
-const llmUrl = "https://api.openai.com/v1";
-const model = "gpt-4";
+// Configuration - Using GitHub Models
+const llmUrl = "https://models.github.ai/inference";
+const model = "openai/gpt-4.1";
 
 // Initialize OpenAI client
 // WARNING: dangerouslyAllowBrowser exposes API keys in the browser.

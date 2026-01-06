@@ -4,12 +4,9 @@
   "description": "Demo app for testing AI applications against LLM failure modes using Dev Proxy",
   "main": "index.html",
   "scripts": {
-    "start": "http-server -c-1 -p 3000"
+    "start": "npx http-server -c-1 -p 3000"
   },
   "keywords": ["devproxy", "ai", "llm", "testing"],
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "http-server": "^14.1.1"
-  }
+  "license": "MIT"
 }

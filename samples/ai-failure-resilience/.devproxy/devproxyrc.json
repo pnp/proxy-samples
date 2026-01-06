@@ -9,9 +9,7 @@
     }
   ],
   "urlsToWatch": [
-    "https://api.openai.com/*",
-    "https://*.openai.azure.com/*",
-    "http://localhost:11434/*"
+    "https://models.github.ai/*"
   ],
   "languageModelFailurePlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/languagemodelfailureplugin.schema.json",
