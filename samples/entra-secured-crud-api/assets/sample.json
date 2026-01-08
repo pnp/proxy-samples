@@ -3,14 +3,14 @@
     "name": "pnp-devproxy-entra-secured-crud-api",
     "source": "pnp",
     "title": "CRUD API secured with Microsoft Entra",
-    "shortDescription": "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes three configurations: single scope for all operations, different scopes for read vs write operations, and token validation with signature verification.",
+    "shortDescription": "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes a demo web application that shows authentication with different scopes and CRUD operations with Bearer token authorization.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api",
     "longDescription": [
-      "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes three configurations: single scope for all operations, different scopes for read vs write operations, and token validation with signature verification."
+      "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes a demo web application that shows authentication with different scopes and CRUD operations with Bearer token authorization."
     ],
     "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-08",
     "products": [
       "Dev Proxy"
     ],
@@ -41,7 +41,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/entra-secured-crud-api/assets/screenshot.png",
-        "alt": "Dev Proxy simulating a Microsoft Entra secured CRUD API"
+        "alt": "Customer Manager demo app showing Entra secured CRUD API"
       }
     ],
     "authors": [
