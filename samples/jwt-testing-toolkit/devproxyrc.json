@@ -14,7 +14,5 @@
   "customersApi": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
     "apiFile": "customers-api.json"
-  },
-  "logLevel": "information",
-  "newVersionNotification": "stable"
+  }
 }

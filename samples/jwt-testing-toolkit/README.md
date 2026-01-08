@@ -12,13 +12,13 @@ This sample demonstrates how to use the `devproxy jwt create` command to generat
 
 ## Contributors
 
-* [GitHub Copilot](https://github.com/copilot)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 8, 2026|Initial release
 
 ## Minimal path to awesome
 
@@ -38,71 +38,24 @@ Version|Date|Comments
 
 ## JWT Generation Examples
 
-### Basic JWT
+The sample demonstrates three common JWT scenarios:
 
-Generate a simple JWT with default settings:
-
-```bash
-devproxy jwt create --name "Test User" --issuer "dev-proxy"
-```
-
-### JWT with Scopes
-
-Generate a JWT with specific scopes for API access:
+### JWT with Read Scope
 
 ```bash
-# Read-only access
 devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read"
+```
 
-# Write access
+### JWT with Write Scope
+
+```bash
 devproxy jwt create --name "Alex Wilber" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Write"
-
-# Multiple scopes
-devproxy jwt create --name "Adele Vance" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --scopes "Customers.Write"
 ```
 
-### JWT with Roles
-
-Generate a JWT with application roles:
+### JWT with Admin Role
 
 ```bash
-# Admin role for delete operations
 devproxy jwt create --name "Admin User" --issuer "dev-proxy" --audiences "https://api.contoso.com" --roles "Customers.Admin"
-
-# Multiple roles
-devproxy jwt create --name "Super Admin" --issuer "dev-proxy" --audiences "https://api.contoso.com" --roles "Customers.Admin" --roles "Users.Admin"
-```
-
-### JWT with Custom Claims
-
-Add custom claims to simulate specific user contexts:
-
-```bash
-# Department claim
-devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --claims "department:engineering"
-
-# Multiple custom claims
-devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --claims "department:engineering" --claims "level:senior" --claims "region:US"
-```
-
-### JWT with Custom Validity
-
-Control how long the token is valid:
-
-```bash
-# Token valid for 2 hours (120 minutes)
-devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --valid-for 120
-
-# Short-lived token (5 minutes) for security testing
-devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --valid-for 5
-```
-
-### JWT with Custom Signing Key
-
-Use a specific signing key for consistent token generation:
-
-```bash
-devproxy jwt create --name "Megan Bowen" --issuer "dev-proxy" --audiences "https://api.contoso.com" --scopes "Customers.Read" --signing-key "my-super-secret-signing-key-at-least-32-chars"
 ```
 
 ## Testing Scenarios
@@ -178,14 +131,6 @@ curl -ikx http://127.0.0.1:8000 https://api.contoso.com/v1/customers
 
 This sample provides everything you need to test JWT-based authentication:
 
-**JWT Generation Capabilities:**
-* Generate JWTs with custom user names
-* Add multiple scopes for fine-grained access control
-* Include application roles for authorization
-* Add custom claims for business logic testing
-* Control token validity duration
-* Use consistent signing keys across tests
-
 **Simulated CRUD API with JWT Validation:**
 * `GET /customers` - Requires `Customers.Read` scope
 * `GET /customers/{id}` - Requires `Customers.Read` scope
@@ -198,9 +143,7 @@ Using this sample you can use Dev Proxy to:
 * Generate test JWTs locally without external identity providers
 * Test API authentication and authorization scenarios
 * Validate scope-based and role-based access control
-* Simulate different user contexts with custom claims
 * Debug authentication issues in your applications
-* Create reproducible test scenarios with consistent tokens
 
 ## Help
 

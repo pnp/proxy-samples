@@ -11,16 +11,16 @@
   },
   "actions": [
     {
-      "action": "getAll",
+      "action": "getOne",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
       "auth": "entra",
       "entraAuthConfig": {
         "scopes": ["Customers.Read"]
       }
     },
     {
-      "action": "getOne",
-      "url": "/{customer-id}",
-      "query": "$.[?(@.id == {customer-id})]",
+      "action": "getAll",
       "auth": "entra",
       "entraAuthConfig": {
         "scopes": ["Customers.Read"]
