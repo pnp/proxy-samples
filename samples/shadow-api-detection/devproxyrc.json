@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "record": true,
   "plugins": [
     {
       "name": "CrudApiPlugin",
@@ -39,6 +40,5 @@
     "serviceName": "your-api-center",
     "workspace": "default",
     "createApicEntryForNewApis": true
-  },
-  "logLevel": "information"
+  }
 }

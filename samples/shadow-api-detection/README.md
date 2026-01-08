@@ -22,7 +22,7 @@ Example: ![Dev Proxy detecting shadow APIs not registered in Azure API Center](a
 
 ## Contributors
 
-- [GitHub Copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
@@ -33,21 +33,76 @@ Version|Date|Comments
 ## Prerequisites
 
 - [Azure API Center](https://learn.microsoft.com/azure/api-center/) instance
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (for authentication)
-- [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code (optional, for testing)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (for authentication and API onboarding)
 
 ## Minimal path to awesome
 
 1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/shadow-api-detection) then unzip it)
-1. Create an Azure API Center instance and register your organization's APIs
-1. Get the API Center instance name, resource group name, and subscription ID
+1. Create an Azure API Center instance
+1. Onboard the Contoso Products API to API Center by running the setup script:
+
+   ```bash
+   chmod +x setup.sh
+   ./setup.sh <subscription-id> <resource-group> <api-center-name>
+   ```
+
+   Or manually using the Azure CLI:
+
+   ```bash
+   # Register the API
+   az apic api create \
+     --resource-group <resource-group> \
+     --service-name <api-center-name> \
+     --api-id "contoso-products-api" \
+     --title "Contoso Products API" \
+     --type "rest"
+
+   # Create a version
+   az apic api version create \
+     --resource-group <resource-group> \
+     --service-name <api-center-name> \
+     --api-id "contoso-products-api" \
+     --version-id "v1-0-0" \
+     --title "v1.0.0" \
+     --lifecycle-stage "production"
+
+   # Create a definition
+   az apic api definition create \
+     --resource-group <resource-group> \
+     --service-name <api-center-name> \
+     --api-id "contoso-products-api" \
+     --version-id "v1-0-0" \
+     --definition-id "openapi" \
+     --title "OpenAPI"
+
+   # Import the OpenAPI spec
+   az apic api definition import-specification \
+     --resource-group <resource-group> \
+     --service-name <api-center-name> \
+     --api-id "contoso-products-api" \
+     --version-id "v1-0-0" \
+     --definition-id "openapi" \
+     --format "inline" \
+     --specification '{"name":"openapi","version":"3.0.1"}' \
+     --value "$(cat api.contoso.com.json)"
+   ```
+
 1. In the `devproxyrc.json` file, update the `apiCenterOnboardingPlugin` section with your API Center information:
    - `subscriptionId`: Your Azure subscription ID
    - `resourceGroupName`: The resource group containing your API Center
    - `serviceName`: Your API Center instance name
 1. Sign in to Azure using `az login`
-1. Start Dev Proxy in recording mode: `devproxy --config-file devproxyrc.json --record`
-1. Issue API requests through Dev Proxy using the `demo-requests.http` file or by running `curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts`
+1. Start Dev Proxy: `devproxy`
+1. In a new terminal, issue API requests through Dev Proxy:
+
+   ```bash
+   # Request to registered API (Contoso Products API)
+   curl -ikx http://127.0.0.1:8000 https://api.contoso.com/products
+
+   # Request to shadow API (not registered in API Center)
+   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
+   ```
+
 1. Press `s` to stop recording
 1. Dev Proxy generates a report showing which APIs are registered and which are shadow APIs
 
