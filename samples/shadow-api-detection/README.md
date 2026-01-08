@@ -84,7 +84,7 @@ Version|Date|Comments
      --definition-id "openapi" \
      --format "inline" \
      --specification '{"name":"openapi","version":"3.0.1"}' \
-     --value "$(cat api.contoso.com.json)"
+     --file-name "api.contoso.com.json"
    ```
 
 1. In the `devproxyrc.json` file, update the `apiCenterOnboardingPlugin` section with your API Center information:

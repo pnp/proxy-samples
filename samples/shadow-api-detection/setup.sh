@@ -52,7 +52,7 @@ az apic api definition import-specification \
   --definition-id "openapi" \
   --format "inline" \
   --specification '{"name":"openapi","version":"3.0.1"}' \
-  --value "$(cat api.contoso.com.json)"
+  --file-name "api.contoso.com.json"
 
 echo ""
 echo "API onboarded successfully!"
