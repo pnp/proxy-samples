@@ -19,7 +19,7 @@ The sample showcases:
 
 ## Contributors
 
-- [Copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
