@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Degradation Scenarios - Monitoring Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00d9ff;
+      font-size: 2em;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .metric-card h3 {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: #888;
+    }
+
+    .metric-value {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .metric-value.success {
+      color: #00ff88;
+    }
+
+    .metric-value.warning {
+      color: #ffcc00;
+    }
+
+    .metric-value.error {
+      color: #ff4444;
+    }
+
+    .metric-value.neutral {
+      color: #00d9ff;
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+      color: #1a1a2e;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+    }
+
+    button:disabled {
+      background: #444;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    button.stop {
+      background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    }
+
+    button.clear {
+      background: linear-gradient(135deg, #888 0%, #666 100%);
+    }
+
+    .log-container {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .log-container h3 {
+      margin-bottom: 15px;
+      color: #00d9ff;
+    }
+
+    .log-entry {
+      padding: 8px 12px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 0.85em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .log-entry.success {
+      background: rgba(0, 255, 136, 0.1);
+      border-left: 3px solid #00ff88;
+    }
+
+    .log-entry.error {
+      background: rgba(255, 68, 68, 0.1);
+      border-left: 3px solid #ff4444;
+    }
+
+    .log-entry.rate-limit {
+      background: rgba(255, 204, 0, 0.1);
+      border-left: 3px solid #ffcc00;
+    }
+
+    .log-entry .status {
+      font-weight: bold;
+    }
+
+    .log-entry .time {
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .error-breakdown {
+      margin-top: 30px;
+    }
+
+    .error-breakdown h3 {
+      margin-bottom: 15px;
+      color: #00d9ff;
+    }
+
+    .error-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .error-bar .label {
+      width: 120px;
+      font-size: 0.9em;
+    }
+
+    .error-bar .bar-container {
+      flex: 1;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 0 15px;
+    }
+
+    .error-bar .bar {
+      height: 100%;
+      border-radius: 12px;
+      transition: width 0.3s ease;
+    }
+
+    .error-bar .bar.success {
+      background: linear-gradient(90deg, #00ff88, #00cc6a);
+    }
+
+    .error-bar .bar.error-503 {
+      background: linear-gradient(90deg, #ff4444, #cc0000);
+    }
+
+    .error-bar .bar.error-429 {
+      background: linear-gradient(90deg, #ffcc00, #ff9900);
+    }
+
+    .error-bar .count {
+      width: 50px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .info-box {
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+
+    .info-box code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔥 API Degradation Scenarios</h1>
+
+    <div class="info-box">
+      <strong>How it works:</strong> This dashboard makes requests to <code>https://api.example.com/data</code> through Dev Proxy.
+      Dev Proxy intercepts these requests and simulates various degradation scenarios including 503 errors (30% rate),
+      rate limiting (429 after 10 requests/minute), and slow responses (3-5s latency).
+      <br><br>
+      <strong>Start Dev Proxy first:</strong> <code>devproxy</code>
+    </div>
+
+    <div class="dashboard">
+      <div class="metric-card">
+        <h3>Total Requests</h3>
+        <div class="metric-value neutral" id="totalRequests">0</div>
+      </div>
+      <div class="metric-card">
+        <h3>Success Rate</h3>
+        <div class="metric-value success" id="successRate">100%</div>
+      </div>
+      <div class="metric-card">
+        <h3>Avg Response Time</h3>
+        <div class="metric-value neutral" id="avgResponseTime">0ms</div>
+      </div>
+      <div class="metric-card">
+        <h3>Errors (503)</h3>
+        <div class="metric-value error" id="errors503">0</div>
+      </div>
+      <div class="metric-card">
+        <h3>Rate Limited (429)</h3>
+        <div class="metric-value warning" id="errors429">0</div>
+      </div>
+      <div class="metric-card">
+        <h3>Successful (2xx)</h3>
+        <div class="metric-value success" id="successCount">0</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="singleRequest">Send Single Request</button>
+      <button id="burstRequests">Send Burst (10 requests)</button>
+      <button id="autoRequests">Start Auto Requests</button>
+      <button id="stopRequests" class="stop" disabled>Stop</button>
+      <button id="clearStats" class="clear">Clear Stats</button>
+    </div>
+
+    <div class="error-breakdown">
+      <h3>Response Distribution</h3>
+      <div class="error-bar">
+        <span class="label">Success (2xx)</span>
+        <div class="bar-container">
+          <div class="bar success" id="successBar" style="width: 0%"></div>
+        </div>
+        <span class="count" id="successPercent">0%</span>
+      </div>
+      <div class="error-bar">
+        <span class="label">Error (503)</span>
+        <div class="bar-container">
+          <div class="bar error-503" id="error503Bar" style="width: 0%"></div>
+        </div>
+        <span class="count" id="error503Percent">0%</span>
+      </div>
+      <div class="error-bar">
+        <span class="label">Rate Limit (429)</span>
+        <div class="bar-container">
+          <div class="bar error-429" id="error429Bar" style="width: 0%"></div>
+        </div>
+        <span class="count" id="error429Percent">0%</span>
+      </div>
+    </div>
+
+    <div class="log-container">
+      <h3>Request Log</h3>
+      <div id="logEntries"></div>
+    </div>
+  </div>
+
+  <script>
+    const stats = {
+      total: 0,
+      success: 0,
+      error503: 0,
+      error429: 0,
+      totalResponseTime: 0,
+      responseTimes: []
+    };
+
+    let autoRequestInterval = null;
+
+    function updateUI() {
+      document.getElementById('totalRequests').textContent = stats.total;
+      document.getElementById('successCount').textContent = stats.success;
+      document.getElementById('errors503').textContent = stats.error503;
+      document.getElementById('errors429').textContent = stats.error429;
+
+      const successRate = stats.total > 0 ? ((stats.success / stats.total) * 100).toFixed(1) : 100;
+      const successRateEl = document.getElementById('successRate');
+      successRateEl.textContent = successRate + '%';
+      successRateEl.className = 'metric-value ' + (successRate >= 80 ? 'success' : successRate >= 50 ? 'warning' : 'error');
+
+      const avgTime = stats.total > 0 ? Math.round(stats.totalResponseTime / stats.total) : 0;
+      const avgTimeEl = document.getElementById('avgResponseTime');
+      avgTimeEl.textContent = avgTime + 'ms';
+      avgTimeEl.className = 'metric-value ' + (avgTime < 1000 ? 'success' : avgTime < 3000 ? 'warning' : 'error');
+
+      // Update bars
+      if (stats.total > 0) {
+        const successPercent = (stats.success / stats.total) * 100;
+        const error503Percent = (stats.error503 / stats.total) * 100;
+        const error429Percent = (stats.error429 / stats.total) * 100;
+
+        document.getElementById('successBar').style.width = successPercent + '%';
+        document.getElementById('error503Bar').style.width = error503Percent + '%';
+        document.getElementById('error429Bar').style.width = error429Percent + '%';
+
+        document.getElementById('successPercent').textContent = successPercent.toFixed(0) + '%';
+        document.getElementById('error503Percent').textContent = error503Percent.toFixed(0) + '%';
+        document.getElementById('error429Percent').textContent = error429Percent.toFixed(0) + '%';
+      }
+    }
+
+    function addLogEntry(status, responseTime, message) {
+      const logEntries = document.getElementById('logEntries');
+      const entry = document.createElement('div');
+
+      let className = 'log-entry ';
+      if (status >= 200 && status < 300) className += 'success';
+      else if (status === 429) className += 'rate-limit';
+      else className += 'error';
+
+      const timestamp = new Date().toLocaleTimeString();
+
+      entry.className = className;
+      entry.innerHTML = `
+        <span><span class="status">${status}</span> - ${message}</span>
+        <span class="time">${responseTime}ms | ${timestamp}</span>
+      `;
+
+      logEntries.insertBefore(entry, logEntries.firstChild);
+
+      // Keep only last 50 entries
+      while (logEntries.children.length > 50) {
+        logEntries.removeChild(logEntries.lastChild);
+      }
+    }
+
+    async function makeRequest() {
+      const startTime = performance.now();
+
+      try {
+        const response = await fetch('https://api.example.com/data', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const endTime = performance.now();
+        const responseTime = Math.round(endTime - startTime);
+
+        stats.total++;
+        stats.totalResponseTime += responseTime;
+        stats.responseTimes.push(responseTime);
+
+        if (response.ok) {
+          stats.success++;
+          addLogEntry(response.status, responseTime, 'Request successful');
+        } else if (response.status === 503) {
+          stats.error503++;
+          const data = await response.json().catch(() => ({}));
+          addLogEntry(response.status, responseTime, data.error?.message || 'Service Unavailable');
+        } else if (response.status === 429) {
+          stats.error429++;
+          const retryAfter = response.headers.get('Retry-After');
+          addLogEntry(response.status, responseTime, `Rate limited. Retry after: ${retryAfter || 'unknown'}s`);
+        } else {
+          addLogEntry(response.status, responseTime, `HTTP ${response.status}`);
+        }
+      } catch (error) {
+        const endTime = performance.now();
+        const responseTime = Math.round(endTime - startTime);
+        stats.total++;
+        stats.totalResponseTime += responseTime;
+
+        addLogEntry(0, responseTime, `Network error: ${error.message}`);
+      }
+
+      updateUI();
+    }
+
+    async function sendBurst(count) {
+      const promises = [];
+      for (let i = 0; i < count; i++) {
+        promises.push(makeRequest());
+      }
+      await Promise.all(promises);
+    }
+
+    function startAutoRequests() {
+      if (autoRequestInterval) return;
+
+      document.getElementById('autoRequests').disabled = true;
+      document.getElementById('stopRequests').disabled = false;
+
+      autoRequestInterval = setInterval(() => {
+        makeRequest();
+      }, 1000);
+    }
+
+    function stopAutoRequests() {
+      if (autoRequestInterval) {
+        clearInterval(autoRequestInterval);
+        autoRequestInterval = null;
+      }
+
+      document.getElementById('autoRequests').disabled = false;
+      document.getElementById('stopRequests').disabled = true;
+    }
+
+    function clearStats() {
+      stats.total = 0;
+      stats.success = 0;
+      stats.error503 = 0;
+      stats.error429 = 0;
+      stats.totalResponseTime = 0;
+      stats.responseTimes = [];
+
+      document.getElementById('logEntries').innerHTML = '';
+      updateUI();
+    }
+
+    // Event listeners
+    document.getElementById('singleRequest').addEventListener('click', makeRequest);
+    document.getElementById('burstRequests').addEventListener('click', () => sendBurst(10));
+    document.getElementById('autoRequests').addEventListener('click', startAutoRequests);
+    document.getElementById('stopRequests').addEventListener('click', stopAutoRequests);
+    document.getElementById('clearStats').addEventListener('click', clearStats);
+
+    // Initialize UI
+    updateUI();
+  </script>
+</body>
+
+</html>
