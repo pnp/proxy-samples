@@ -18,12 +18,12 @@ This sample demonstrates how to simulate API key authentication for mock APIs us
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 9, 2026|Initial release
 
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file devproxyrc.json`
+* Start Dev Proxy: `devproxy`
 * Test the API key authentication by making requests:
 
 **With valid API key in header (should return 200):**
