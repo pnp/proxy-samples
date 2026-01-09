@@ -44,7 +44,5 @@
   "mockResponsePlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.schema.json",
     "mocksFile": "mocks.json"
-  },
-  "logLevel": "information",
-  "newVersionNotification": "stable"
+  }
 }
