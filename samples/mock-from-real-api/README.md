@@ -12,18 +12,18 @@ This sample demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatic
 
 ## Contributors
 
-* [Copilot](https://github.com/copilot)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 9, 2026|Initial release
 
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api) then unzip it)
-* Start Dev Proxy with recording enabled, specifying the path to the config file and the URL of the API you want to record: `devproxy --config-file devproxyrc.json --urls-to-watch "https://jsonplaceholder.typicode.com/*" --record`
+* Start Dev Proxy specifying the URL of the API you want to record: `devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
 * Use your application or make API requests to capture real responses:
   ```bash
   # Example: Make some requests to capture
@@ -42,7 +42,7 @@ Version|Date|Comments
 This sample provides a preset for automatically generating mock files from intercepted API traffic.
 
 **Workflow:**
-1. **Record** - Start Dev Proxy with the `--record` flag to capture real API responses
+1. **Record** - Start Dev Proxy with recording enabled (configured in devproxyrc.json)
 2. **Interact** - Use your application normally, making requests to the APIs you want to mock
 3. **Generate** - Stop recording and Dev Proxy automatically creates a mocks file
 4. **Reuse** - Use the generated mocks file with MockResponsePlugin for offline development
