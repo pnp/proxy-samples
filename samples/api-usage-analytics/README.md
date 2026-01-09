@@ -4,7 +4,7 @@
 
 This sample demonstrates how to use Dev Proxy to track and analyze API usage patterns. Using the ExecutionSummaryPlugin combined with multiple reporter plugins, you can generate detailed summaries showing which endpoints are used most frequently, response status codes, and timing information across different output formats.
 
-The sample uses JSONPlaceholder API as an example, but you can easily adapt it to monitor any API by updating the `urlsToWatch` configuration.
+The sample includes a web app that makes API requests to the JSONPlaceholder API, allowing you to interactively generate traffic and see how Dev Proxy tracks usage patterns.
 
 ![Dev Proxy tracking API usage analytics](assets/screenshot.png)
 
@@ -14,42 +14,48 @@ The sample uses JSONPlaceholder API as an example, but you can easily adapt it t
 
 ## Contributors
 
-* [Copilot](https://github.com/copilot)
+* [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 9, 2026|Initial release
+
+## Prerequisites
+
+- [Dev Proxy](https://aka.ms/devproxy)
+- [Node.js LTS](https://nodejs.org) (for http-server)
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-usage-analytics) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file devproxyrc.json`
-* Make API requests through the proxy to generate usage data:
-  ```bash
-  # Make various requests to different endpoints
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users/1
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/comments
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1/comments
-  
-  # Make repeated requests to simulate usage patterns
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users/1
-  ```
-* Stop Dev Proxy (press <kbd>Ctrl</kbd>+<kbd>C</kbd>)
-* Check the generated reports in the current directory:
-  * `ExecutionSummaryPlugin_PlainTextReporter.txt` - Plain text format
-  * `ExecutionSummaryPlugin_JsonReporter.json` - JSON format
-  * `ExecutionSummaryPlugin_MarkdownReporter.md` - Markdown format
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-usage-analytics) then unzip it)
+- Navigate to the sample folder: `cd samples/api-usage-analytics`
+- Run `npm install` to install dependencies
+- Run `npm start` to start Dev Proxy and the web server
+- Open http://localhost:3000 in your browser (configure browser to use Dev Proxy at `http://127.0.0.1:8000`)
+- Click the API buttons to make requests and see the usage tracked in real-time
+- Use "Simulate User Session" to generate a realistic browsing pattern
+- Use "Burst 10 Requests" to test rapid request tracking
+- Stop Dev Proxy (<kbd>Ctrl</kbd>+<kbd>C</kbd>) to generate the execution summary reports
+
+### Generated Reports
+
+After stopping Dev Proxy, check the generated reports in the current directory:
+- `ExecutionSummaryPlugin_PlainTextReporter.txt` - Plain text format
+- `ExecutionSummaryPlugin_JsonReporter.json` - JSON format
+- `ExecutionSummaryPlugin_MarkdownReporter.md` - Markdown format
 
 ## Features
 
 This sample uses Dev Proxy's ExecutionSummaryPlugin to track API usage and generates reports in multiple formats:
+
+**Web App Features:**
+* Interactive buttons to call different API endpoints
+* Real-time request log showing method, URL, status, and duration
+* Live statistics: total requests, success count, errors, and unique endpoints
+* "Simulate User Session" - generates realistic browsing patterns
+* "Burst 10 Requests" - tests rapid request handling
 
 **Summary Information:**
 * Request counts per endpoint

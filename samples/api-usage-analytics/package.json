@@ -1,0 +1,12 @@
+{
+  "name": "api-usage-analytics",
+  "version": "1.0.0",
+  "description": "Track API usage analytics with Dev Proxy",
+  "scripts": {
+    "start": "concurrently -n server,proxy -c cyan,magenta \"http-server -p 3000\" \"devproxy --config-file devproxyrc.json\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  }
+}
