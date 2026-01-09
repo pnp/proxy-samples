@@ -7,5 +7,5 @@
       "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     }
   ],
-  "rate": 0
+  "record": true
 }
