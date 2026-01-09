@@ -1,0 +1,17 @@
+{
+  "name": "api-degradation-scenarios",
+  "version": "1.0.0",
+  "description": "Demo web app to test API degradation scenarios with Dev Proxy",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx concurrently \"npx http-server -p 3000\" \"devproxy\""
+  },
+  "keywords": [
+    "dev-proxy",
+    "api-testing",
+    "degradation",
+    "resilience"
+  ],
+  "author": "Waldek Mastykarz",
+  "license": "ISC"
+}

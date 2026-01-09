@@ -4,7 +4,7 @@
 
 This sample contains presets to simulate various API degradation scenarios to test how your application handles partial failures, intermittent errors, rate limiting, and slow responses. Use these configurations to build apps that gracefully degrade under stress and verify that your error handling and retry logic works before production.
 
-![Dev Proxy simulating API degradation](assets/screenshot.png)
+![API Degradation Monitoring Dashboard](assets/screenshot.png)
 
 ## Compatibility
 
@@ -12,25 +12,52 @@ This sample contains presets to simulate various API degradation scenarios to te
 
 ## Contributors
 
-- [copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 9, 2026|Initial release
+
+## Prerequisites
+
+- [Node.js LTS](https://nodejs.org)
 
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios) then unzip it)
-- Start Dev Proxy with one of the preset configurations:
+- Start the sample app and Dev Proxy by running `npm start`
+- In a web browser, navigate to `http://localhost:3000` and use the dashboard to test API degradation scenarios
+
+### Using the monitoring dashboard
+
+The included web app provides a real-time monitoring dashboard that shows:
+
+- **Total Requests** - Number of requests made
+- **Success Rate** - Percentage of successful requests
+- **Average Response Time** - Average response time across all requests
+- **Error counts** - Breakdown of 503 and 429 errors
+- **Response Distribution** - Visual bar chart of response types
+
+Use the dashboard buttons to:
+
+- **Send Single Request** - Make one API request
+- **Send Burst (10 requests)** - Make 10 concurrent requests to trigger rate limiting
+- **Start Auto Requests** - Continuously send requests every second
+- **Stop** - Stop auto requests
+- **Clear Stats** - Reset all statistics
+
+### Using Dev Proxy configurations directly
+
+You can also run Dev Proxy with specific configurations:
 
 ### All degradation scenarios combined
 
 This configuration combines all three degradation scenarios: intermittent 503 errors (30% of requests), rate limiting (10 requests per minute), and slow responses (3-5 seconds latency).
 
 ```bash
-devproxy --config-file devproxyrc.json
+devproxy
 ```
 
 Test with:
@@ -101,6 +128,8 @@ This sample demonstrates how to use Dev Proxy to simulate API degradation scenar
 | `rate-limiting.devproxyrc.json` | Rate limiting at 10 requests/minute |
 | `slow-responses.devproxyrc.json` | Random latency between 3-5 seconds |
 | `errors-503.json` | Error responses for the GenericRandomErrorPlugin |
+| `index.html` | Monitoring dashboard web app |
+| `package.json` | Node.js configuration to run the sample |
 
 ### Plugins used
 
