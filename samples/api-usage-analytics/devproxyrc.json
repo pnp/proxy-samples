@@ -29,7 +29,5 @@
   "executionSummaryPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/executionsummaryplugin.schema.json",
     "groupBy": "url"
-  },
-  "logLevel": "information",
-  "newVersionNotification": "stable"
+  }
 }
