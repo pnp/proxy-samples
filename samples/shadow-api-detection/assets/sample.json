@@ -9,8 +9,8 @@
     "longDescription": [
       "Detect APIs not registered in Azure API Center (shadow APIs) to improve API governance, compliance, and security before reaching production."
     ],
-    "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
     ],
