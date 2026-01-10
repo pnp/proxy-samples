@@ -57,7 +57,7 @@ The sample includes two configuration files:
 
 ### Default (Microsoft Edge)
 
-`.devproxy/devproxyrc.json` - Uses Microsoft Edge to display DevTools
+`.devproxy/devproxyrc.json` - Uses Microsoft Edge (default) to display DevTools
 
 ```json
 {
@@ -74,8 +74,7 @@ The sample includes two configuration files:
     "https://jsonplaceholder.typicode.com/*"
   ],
   "devTools": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json",
-    "preferredBrowser": "Edge"
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json"
   }
 }
 ```
