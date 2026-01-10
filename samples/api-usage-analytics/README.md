@@ -20,7 +20,7 @@ The sample includes a web app that makes API requests to the JSONPlaceholder API
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 9, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Prerequisites
 
