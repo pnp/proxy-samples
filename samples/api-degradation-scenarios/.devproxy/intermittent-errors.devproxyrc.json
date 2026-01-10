@@ -16,8 +16,6 @@
   "urlsToWatch": [
     "https://api.example.com/*"
   ],
-  "logLevel": "information",
-  "labelMode": "text",
   "genericRandomErrorPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/genericrandomerrorplugin.schema.json",
     "errorsFile": "errors-503.json",

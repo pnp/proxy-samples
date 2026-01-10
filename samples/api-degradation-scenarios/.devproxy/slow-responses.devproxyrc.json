@@ -11,8 +11,6 @@
   "urlsToWatch": [
     "https://api.example.com/*"
   ],
-  "logLevel": "information",
-  "labelMode": "text",
   "latencyPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/latencyplugin.schema.json",
     "minMs": 3000,
