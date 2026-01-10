@@ -12,7 +12,6 @@
     "https://jsonplaceholder.typicode.com/*"
   ],
   "devTools": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json",
-    "preferredBrowser": "Edge"
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json"
   }
 }
