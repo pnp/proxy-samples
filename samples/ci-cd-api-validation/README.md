@@ -30,7 +30,7 @@ Version|Date|Comments
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ci-cd-api-validation) then unzip it)
 - Update the configuration files with your API URLs:
-  - In `devproxyrc.json`, `shadow-api-detection.json`, `permission-validation.json`, and `openapi-generation.json`, update the `urlsToWatch` property to match your API endpoints
+  - In `devproxyrc.json` and the configuration files in `.devproxy/` folder, update the `urlsToWatch` property to match your API endpoints
 - For shadow API detection with Azure API Center:
   - Create an Azure API Center instance
   - Set up the required environment variables/secrets (see CI/CD configuration sections below)
@@ -53,9 +53,9 @@ This sample includes several configuration files for different validation scenar
 | File | Description |
 |------|-------------|
 | `devproxyrc.json` | Combined configuration with all plugins enabled |
-| `shadow-api-detection.json` | Configuration for detecting unregistered APIs using Azure API Center |
-| `permission-validation.json` | Configuration for validating API permissions |
-| `openapi-generation.json` | Configuration for generating OpenAPI specifications |
+| `.devproxy/shadow-api-detection.json` | Configuration for detecting unregistered APIs using Azure API Center |
+| `.devproxy/permission-validation.json` | Configuration for validating API permissions |
+| `.devproxy/openapi-generation.json` | Configuration for generating OpenAPI specifications |
 
 ## GitHub Actions
 
@@ -104,7 +104,7 @@ To test the configurations locally:
 1. Start Dev Proxy with the desired configuration:
 
    ```bash
-   devproxy --config-file shadow-api-detection.json --record
+   devproxy --config-file .devproxy/shadow-api-detection.json --record
    ```
 
 2. Make API requests using curl through Dev Proxy:
