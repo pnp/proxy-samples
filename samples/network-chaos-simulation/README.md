@@ -29,7 +29,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/network-chaos-simulation) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file devproxyrc.json`
+* Start Dev Proxy specifying the path to the config file: `devproxy --config-file .devproxy/devproxyrc.json`
 * Test the simulation by making requests to the watched URLs:
 
 ```bash
@@ -40,7 +40,7 @@ curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
 curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users
 curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/todos/1
 
-# Add your own API URLs to urlsToWatch in devproxyrc.json
+# Add your own API URLs to urlsToWatch in .devproxy/devproxyrc.json
 ```
 
 ## Features
@@ -73,7 +73,7 @@ Using this sample you can use Dev Proxy to:
 
 ## Customization
 
-You can adjust the simulation parameters in `devproxyrc.json`:
+You can adjust the simulation parameters in `.devproxy/devproxyrc.json`:
 
 ```json
 "latencyPlugin": {

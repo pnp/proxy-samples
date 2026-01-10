@@ -23,8 +23,6 @@
     "https://jsonplaceholder.typicode.com/*",
     "https://api.example.com/*"
   ],
-  "logLevel": "information",
-  "newVersionNotification": "stable",
   "latencyPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/latencyplugin.schema.json",
     "minMs": 200,
