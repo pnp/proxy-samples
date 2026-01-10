@@ -12,7 +12,7 @@ This sample demonstrates how to use Dev Proxy to export LLM usage metrics to a C
 
 ## Contributors
 
-- [Copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
