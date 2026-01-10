@@ -38,7 +38,7 @@ Version|Date|Comments
 - Run `npm install` to install dependencies
 - Run `npm start` to start Dev Proxy and the web server
 - Open http://localhost:3000 in your browser
-- Select a token scope (read, write, or both) and click **Generate Mock Token**
+- Select a token scope (read, write, or both) and click **Generate Token**
 - Click the API operation buttons to see the responses
 
 ## Features
@@ -73,7 +73,7 @@ Write Scope|`api://contoso.com/customer.write`
 
 The included web application demonstrates:
 
-- **Token generation** - Generate mock JWT tokens with different scopes
+- **Token generation** - Generate JWT tokens using Dev Proxy's token API with different scopes
 - **Scope selection** - Choose between read-only, write-only, or both scopes
 - **CRUD operations** - Test all API operations (GET, POST, PATCH, DELETE)
 - **Response visualization** - See full API responses including headers and status codes
