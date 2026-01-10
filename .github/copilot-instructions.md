@@ -85,13 +85,16 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 
 ### Metadata File Structure (`assets/sample.json`)
 - **Examine existing samples** to understand the correct structure
+- **Preserve formatting**: Never reformat JSON files - only change values, not structure
+- **Date format**: Use `YYYY-MM-DD` format (e.g., `"2026-01-05"`), NOT ISO timestamps
 - **Required fields**: 
   - `name` (pattern: `pnp-devproxy-*`)
   - `source: "pnp"`
   - `title`, `shortDescription`
   - `url` (full GitHub URL) and `downloadUrl` (pnp.github.io URL)
-  - `longDescription` (array format, not string)
-  - `creationDateTime`, `updateDateTime`
+  - `longDescription` (array with exactly one string element, same content as `shortDescription`)
+  - **shortDescription vs longDescription**: Both must have identical content. `shortDescription` is a plain string, `longDescription` is an array containing that same string as its only element (e.g., `"shortDescription": "Foo bar"` and `"longDescription": ["Foo bar"]`)
+  - `creationDateTime`, `updateDateTime` (both in `YYYY-MM-DD` format)
   - `products: ["Dev Proxy"]`
   - Complete `metadata` section with `SAMPLE ID`, `PRESET`, `MOCKS`, `PLUGIN`, `PROXY VERSION`
   - `thumbnails` with full GitHub URL
@@ -159,3 +162,47 @@ Special patterns for Graph API samples:
 - **Permission demos**: Minimal permission and security-focused samples
 
 When contributing, ensure your sample demonstrates a specific Dev Proxy capability with real-world applicability and follows the established file structure and naming patterns.
+
+## Upgrading Samples to a New Dev Proxy Version
+
+When upgrading samples to a new Dev Proxy version, update ALL of the following:
+
+### 1. Configuration Files (ALL `.json` files with Dev Proxy schemas)
+- Update `$schema` URLs to the new version in every config file
+- **Schema naming matters**:
+  - `mockresponseplugin.schema.json` = plugin config file (requires `mocksFile` property)
+  - `mockresponseplugin.mocksfile.schema.json` = mocks data file (requires `mocks` array)
+  - Similar pattern for other plugins (e.g., `genericrandomerrorplugin.schema.json` vs `genericrandomerrorplugin.errorsfile.schema.json`)
+- **Validate against schemas**: After updating, validate all config files against their schemas to catch breaking changes (e.g., `null` values that are no longer allowed)
+
+### 2. Metadata (`assets/sample.json`)
+- Update `PROXY VERSION` value (e.g., `"value": "v2.0.0"`)
+- Update `updateDateTime` to current date in `YYYY-MM-DD` format
+- **Preserve formatting**: Use sed or similar to change only values, not JSON structure
+
+### 3. README.md
+- Update compatibility badge: `![Dev Proxy vX.X.X](https://aka.ms/devproxy/badge/vX.X.X)`
+- Add version history entry with format: `X.X|Month DD, YYYY|Updated to Dev Proxy vX.X.X`
+
+### Schema Validation
+Use `ajv-cli` to validate config files against their schemas:
+```bash
+npm install -g ajv-cli
+
+# Validate all Dev Proxy config files in a sample directory
+find . -name "*.json" -not -path "*/assets/*" | while read f; do
+  schema_url=$(grep -m1 '"\$schema"' "$f" 2>/dev/null | grep -o 'https://[^"]*')
+  if [[ "$schema_url" == *"dev-proxy"* ]]; then
+    echo "Validating $f"
+    ajv validate -s <(curl -s "$schema_url") -d "$f" || echo "FAILED: $f"
+  fi
+done
+```
+
+### Post-Upgrade Verification
+After upgrading, use VS Code's **Problems panel** (or `get_errors` tool) to confirm there are no schema validation issues across all modified files before considering the upgrade complete.
+
+### Common Schema Issues When Upgrading
+- `body: null` may not be allowed (use `body: ""` instead)
+- New required properties may be added
+- Property types may become stricter

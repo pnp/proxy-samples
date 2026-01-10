@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure AI Responsible AI Filters Demo</title>
+  <style>
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #106ebe;
+      --danger: #d13438;
+      --warning: #ffb900;
+      --success: #107c10;
+      --bg: #f3f2f1;
+      --card-bg: #ffffff;
+      --text: #323130;
+      --text-secondary: #605e5c;
+      --border: #edebe9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .scenarios {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .scenario-btn {
+      padding: 12px 16px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      background: var(--card-bg);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .scenario-btn:hover {
+      border-color: var(--primary);
+      background: #f0f6ff;
+    }
+
+    .scenario-btn.selected {
+      border-color: var(--primary);
+      background: #e6f2ff;
+    }
+
+    .scenario-btn .title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .scenario-btn .desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .scenario-btn.blocked .title { color: var(--danger); }
+    .scenario-btn.filtered .title { color: var(--warning); }
+    .scenario-btn.allowed .title { color: var(--success); }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-primary:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .response-section {
+      margin-top: 24px;
+    }
+
+    .response-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-200 { background: #dff6dd; color: #107c10; }
+    .status-400 { background: #fde7e9; color: #d13438; }
+    .status-error { background: #fff4ce; color: #797673; }
+
+    .filter-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .filter-item {
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-item.safe { background: #dff6dd; }
+    .filter-item.low { background: #fff4ce; }
+    .filter-item.medium { background: #fed9cc; }
+    .filter-item.high { background: #fde7e9; }
+    .filter-item.filtered { background: #fde7e9; border: 2px solid var(--danger); }
+
+    .filter-name { font-weight: 600; text-transform: capitalize; }
+    .filter-severity { font-size: 11px; }
+
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 13px;
+      max-height: 400px;
+    }
+
+    .message-content {
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 6px;
+      border-left: 4px solid var(--primary);
+      margin: 12px 0;
+    }
+
+    .warning-box {
+      background: #fff4ce;
+      border: 1px solid #ffb900;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .warning-box h3 {
+      margin: 0 0 8px 0;
+      color: #797673;
+      font-size: 14px;
+    }
+
+    .warning-box code {
+      background: rgba(0,0,0,0.1);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+
+    .tab.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      font-weight: 600;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .info-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ Azure AI Responsible AI Filters Demo</h1>
+    <p class="subtitle">Test how your app handles content filtering responses from Azure OpenAI</p>
+
+    <div class="warning-box">
+      <h3>⚠️ Prerequisites</h3>
+      <p>Make sure Dev Proxy is running with the sample configuration:</p>
+      <p><code>cd samples/azure-ai-responsible-ai-filters && devproxy</code></p>
+      <p>Then open this page via <code>npx http-server -p 3000</code> and access <code>http://localhost:3000</code></p>
+    </div>
+
+    <div class="card">
+      <h2>Configuration</h2>
+      <div class="form-group">
+        <label for="endpoint">Azure OpenAI Endpoint</label>
+        <input type="text" id="endpoint" value="https://contoso.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-02-01">
+        <p class="info-text">Dev Proxy will intercept requests to *.openai.azure.com</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Select a Test Scenario</h2>
+      <p class="info-text">Choose a scenario to see how Azure OpenAI's Responsible AI filters respond</p>
+      
+      <div class="scenarios">
+        <button class="scenario-btn blocked" data-trigger="blocked-prompt" data-category="Hate Filter">
+          <div class="title">🚫 Blocked: Hate</div>
+          <div class="desc">HTTP 400 - Prompt triggers hate filter</div>
+        </button>
+        <button class="scenario-btn blocked" data-trigger="violent-content" data-category="Violence Filter">
+          <div class="title">🚫 Blocked: Violence</div>
+          <div class="desc">HTTP 400 - Prompt triggers violence filter</div>
+        </button>
+        <button class="scenario-btn blocked" data-trigger="jailbreak-attempt" data-category="Jailbreak Detection">
+          <div class="title">🚫 Blocked: Jailbreak</div>
+          <div class="desc">HTTP 400 - Jailbreak attempt detected</div>
+        </button>
+        <button class="scenario-btn filtered" data-trigger="filtered-completion" data-category="Completion Filtered">
+          <div class="title">⚠️ Filtered Completion</div>
+          <div class="desc">HTTP 200 - Output filtered, content null</div>
+        </button>
+        <button class="scenario-btn filtered" data-trigger="annotated-response" data-category="Annotated Response">
+          <div class="title">⚠️ Annotated Response</div>
+          <div class="desc">HTTP 200 - Low severity annotations</div>
+        </button>
+        <button class="scenario-btn filtered" data-trigger="protected-material" data-category="Protected Material">
+          <div class="title">⚠️ Protected Material</div>
+          <div class="desc">HTTP 200 - Copyright content detected</div>
+        </button>
+        <button class="scenario-btn filtered" data-trigger="filters-not-run" data-category="Filters Not Run">
+          <div class="title">⚠️ Filters Not Run</div>
+          <div class="desc">HTTP 200 - Content filters unavailable</div>
+        </button>
+        <button class="scenario-btn allowed selected" data-trigger="Hello, how are you?" data-category="Allowed Response">
+          <div class="title">✅ Allowed Response</div>
+          <div class="desc">HTTP 200 - Normal successful response</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Request</h2>
+      <div class="form-group">
+        <label for="message">Message Content</label>
+        <textarea id="message">Hello, how are you?</textarea>
+      </div>
+      <button class="btn btn-primary" id="sendBtn">Send Request</button>
+    </div>
+
+    <div class="card response-section" id="responseSection" style="display: none;">
+      <h2>Response</h2>
+      
+      <div class="response-header">
+        <span class="status-badge" id="statusBadge">200 OK</span>
+        <span id="responseTime"></span>
+      </div>
+
+      <div id="filterResults"></div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="formatted">Formatted</button>
+        <button class="tab" data-tab="raw">Raw JSON</button>
+      </div>
+
+      <div class="tab-content active" id="formatted">
+        <div id="formattedResponse"></div>
+      </div>
+
+      <div class="tab-content" id="raw">
+        <pre id="rawResponse"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // DOM Elements
+    const endpoint = document.getElementById('endpoint');
+    const message = document.getElementById('message');
+    const sendBtn = document.getElementById('sendBtn');
+    const responseSection = document.getElementById('responseSection');
+    const statusBadge = document.getElementById('statusBadge');
+    const responseTime = document.getElementById('responseTime');
+    const filterResults = document.getElementById('filterResults');
+    const formattedResponse = document.getElementById('formattedResponse');
+    const rawResponse = document.getElementById('rawResponse');
+    const scenarioBtns = document.querySelectorAll('.scenario-btn');
+    const tabs = document.querySelectorAll('.tab');
+
+    // Scenario selection
+    scenarioBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        scenarioBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        message.value = btn.dataset.trigger;
+      });
+    });
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Send request
+    sendBtn.addEventListener('click', async () => {
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending...';
+      responseSection.style.display = 'none';
+
+      const startTime = performance.now();
+
+      try {
+        const response = await fetch(endpoint.value, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': 'demo-api-key'
+          },
+          body: JSON.stringify({
+            messages: [
+              { role: 'user', content: message.value }
+            ],
+            max_tokens: 100
+          })
+        });
+
+        const endTime = performance.now();
+        const data = await response.json();
+
+        displayResponse(response.status, data, endTime - startTime);
+      } catch (error) {
+        const endTime = performance.now();
+        displayError(error, endTime - startTime);
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send Request';
+      }
+    });
+
+    function displayResponse(status, data, time) {
+      responseSection.style.display = 'block';
+      
+      // Status badge
+      statusBadge.textContent = status === 200 ? '200 OK' : `${status} Error`;
+      statusBadge.className = `status-badge status-${status}`;
+      responseTime.textContent = `${Math.round(time)}ms`;
+
+      // Raw JSON
+      rawResponse.textContent = JSON.stringify(data, null, 2);
+
+      // Filter results
+      let filterHtml = '';
+      let contentFilters = null;
+      let filtersNotRun = false;
+
+      // Check for prompt filter error (400)
+      if (data.error?.innererror?.content_filter_result) {
+        contentFilters = data.error.innererror.content_filter_result;
+      }
+      // Check for completion filter results (200)
+      else if (data.choices?.[0]?.content_filter_results) {
+        contentFilters = data.choices[0].content_filter_results;
+        // Check if filters didn't run (error object in content_filter_results)
+        if (contentFilters.error) {
+          filtersNotRun = true;
+        }
+      }
+
+      if (filtersNotRun && contentFilters?.error) {
+        filterHtml = `
+          <div class="warning-box" style="margin: 16px 0;">
+            <h3>⚠️ Content Filters Did Not Run</h3>
+            <p><strong>Code:</strong> ${contentFilters.error.code}</p>
+            <p><strong>Message:</strong> ${contentFilters.error.message}</p>
+            <p style="margin-top: 12px; font-size: 13px;">
+              <em>Your application should detect this scenario and handle it appropriately. 
+              The response was not filtered, which may pose a risk.</em>
+            </p>
+          </div>
+        `;
+      } else if (contentFilters && !filtersNotRun) {
+        filterHtml = '<h3>Content Filter Results</h3><div class="filter-results">';
+        
+        const categories = ['hate', 'sexual', 'violence', 'self_harm', 'jailbreak', 'protected_material_text', 'protected_material_code'];
+        
+        for (const cat of categories) {
+          if (contentFilters[cat]) {
+            const filter = contentFilters[cat];
+            const severity = filter.severity || (filter.filtered ? 'filtered' : 'safe');
+            const displayName = cat.replace(/_/g, ' ');
+            
+            filterHtml += `
+              <div class="filter-item ${filter.filtered ? 'filtered' : severity}">
+                <span class="filter-name">${displayName}</span>
+                <span class="filter-severity">${filter.filtered ? '🚫 FILTERED' : severity}</span>
+              </div>
+            `;
+          }
+        }
+        filterHtml += '</div>';
+      }
+
+      filterResults.innerHTML = filterHtml;
+
+      // Formatted response
+      let formattedHtml = '';
+
+      if (data.error) {
+        formattedHtml = `
+          <div style="color: var(--danger);">
+            <strong>Error Code:</strong> ${data.error.code || 'Unknown'}<br>
+            <strong>Message:</strong> ${data.error.message}
+          </div>
+        `;
+        
+        if (data.error.innererror?.code) {
+          formattedHtml += `<p><strong>Inner Error:</strong> ${data.error.innererror.code}</p>`;
+        }
+      } else if (data.choices?.[0]) {
+        const choice = data.choices[0];
+        
+        formattedHtml = `<p><strong>Finish Reason:</strong> <code>${choice.finish_reason}</code></p>`;
+        
+        if (choice.finish_reason === 'content_filter') {
+          formattedHtml += `
+            <div class="message-content" style="border-color: var(--danger);">
+              <em>⚠️ Content was filtered. The completion was blocked by Responsible AI filters.</em>
+            </div>
+          `;
+        } else if (choice.message?.content) {
+          formattedHtml += `
+            <div class="message-content">
+              <strong>Assistant:</strong><br>
+              ${choice.message.content}
+            </div>
+          `;
+        }
+
+        if (data.usage) {
+          formattedHtml += `
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              <strong>Tokens:</strong> ${data.usage.prompt_tokens} prompt + ${data.usage.completion_tokens} completion = ${data.usage.total_tokens} total
+            </p>
+          `;
+        }
+      }
+
+      formattedResponse.innerHTML = formattedHtml;
+    }
+
+    function displayError(error, time) {
+      responseSection.style.display = 'block';
+      
+      statusBadge.textContent = 'Network Error';
+      statusBadge.className = 'status-badge status-error';
+      responseTime.textContent = `${Math.round(time)}ms`;
+
+      filterResults.innerHTML = '';
+      
+      formattedResponse.innerHTML = `
+        <div style="color: var(--danger);">
+          <strong>Error:</strong> ${error.message}<br><br>
+          <p>Make sure Dev Proxy is running with the sample configuration:</p>
+          <pre style="background: #f5f5f5; color: #333;">devproxy --config-file devproxyrc.json</pre>
+        </div>
+      `;
+
+      rawResponse.textContent = JSON.stringify({ error: error.message }, null, 2);
+    }
+  </script>
+</body>
+</html>

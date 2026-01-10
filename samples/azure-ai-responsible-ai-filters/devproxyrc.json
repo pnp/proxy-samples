@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "azureOpenAIRAI"
+    }
+  ],
+  "urlsToWatch": [
+    "https://*.openai.azure.com/*"
+  ],
+  "azureOpenAIRAI": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.schema.json",
+    "mocksFile": "azure-openai-rai-responses.json"
+  },
+  "logLevel": "information"
+}

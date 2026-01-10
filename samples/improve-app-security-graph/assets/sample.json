@@ -10,7 +10,7 @@
             "This sample demonstrates how to use Dev Proxy to improve your app security when calling Microsoft Graph API. Using this sample you use Dev Proxy to check for minimal permissions, check if you are using excessive permissions, and prevent permission scope creep."
         ],
         "creationDateTime": "2024-07-02",
-        "updateDateTime": "2025-02-05",
+        "updateDateTime": "2026-01-05",
         "products": [
             "Dev Proxy"
         ],
@@ -29,7 +29,7 @@
             },
             {
                 "key": "PROXY VERSION",
-                "value": "v0.22"
+                "value": "v2.0.0"
             }
         ],
         "thumbnails": [

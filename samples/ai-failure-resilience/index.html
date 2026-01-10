@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Failure Resilience Demo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <h1>🛡️ AI Failure Resilience Demo</h1>
+      <p class="subtitle">Test how your app handles LLM failure modes</p>
+    </header>
+    <main>
+      <div class="chat-container">
+        <div class="messages" id="messages">
+          <div class="message assistant">
+            <div class="message-content">
+              <p>Hello! I'm an AI assistant. Ask me anything and Dev Proxy will simulate various failure modes to test your app's resilience.</p>
+              <p class="hint">Try asking questions like "What is the capital of France?" or "Tell me about quantum computing"</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+          <button id="send-button" class="send-button">Send</button>
+        </div>
+      </div>
+      <div class="failure-info">
+        <h2>Simulated Failure Types</h2>
+        <p>Dev Proxy will randomly inject these LLM failure modes:</p>
+        <div class="failure-types">
+          <span class="failure-pill hallucination">Hallucination</span>
+          <span class="failure-pill bias">Bias/Stereotyping</span>
+          <span class="failure-pill circular">Circular Reasoning</span>
+          <span class="failure-pill contradictory">Contradictory Info</span>
+          <span class="failure-pill plausible">Plausible Incorrect</span>
+          <span class="failure-pill misinterpretation">Misinterpretation</span>
+          <span class="failure-pill overconfidence">Overconfidence</span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Powered by Dev Proxy LanguageModelFailurePlugin</p>
+    </footer>
+  </div>
+  <script type="module" src="js/env.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "minimal-node-js",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Minimal Node.js sample demonstrating Dev Proxy usage with Node.js 24 built-in proxy support",
+  "main": "app.js",
+  "scripts": {
+    "start": "concurrently -n proxy,app -c magenta,cyan \"devproxy\" \"sleep 2 && NODE_USE_ENV_PROXY=1 HTTP_PROXY=http://127.0.0.1:8000 HTTPS_PROXY=http://127.0.0.1:8000 node --use-system-ca app.js\""
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "keywords": [
+    "dev-proxy",
+    "mock",
+    "api",
+    "node24"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

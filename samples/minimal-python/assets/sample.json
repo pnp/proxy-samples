@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-minimal-python",
+    "source": "pnp",
+    "title": "Minimal Python app using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with a Python application",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-python",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-python",
+    "longDescription": [
+      "This sample demonstrates the minimal setup to use Dev Proxy with a Python application. It shows how to configure the requests library to route traffic through Dev Proxy and receive mocked API responses. The sample includes a simple Python script that makes an API call to JSONPlaceholder and receives a mocked response from Dev Proxy's MockResponsePlugin."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "minimal-python"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-python/assets/screenshot.png",
+        "alt": "Dev Proxy simulating mocking JSONPlaceholder API request in Python"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      },
+      {
+        "name": "Use Dev Proxy with Python applications",
+        "description": "Learn how to configure Python applications to use Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-python"
+      }
+    ]
+  }
+]

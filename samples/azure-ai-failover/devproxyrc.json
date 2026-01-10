@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "azureOpenAIMocks"
+    },
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "azureOpenAIFailover"
+    }
+  ],
+  "urlsToWatch": [
+    "https://*.openai.azure.com/*",
+    "https://models.github.ai/inference/*"
+  ],
+  "azureOpenAIMocks": {
+    "mocksFile": "azure-openai-mocks.json"
+  },
+  "azureOpenAIFailover": {
+    "errorsFile": "azure-openai-errors.json",
+    "rate": 100
+  },
+  "logLevel": "information"
+}

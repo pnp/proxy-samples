@@ -19,6 +19,7 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|October 28, 2024|Updated plugin name
 1.0|July 3, 2024|Initial release
 

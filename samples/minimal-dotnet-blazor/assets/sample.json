@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-minimal-dotnet-blazor",
+    "source": "pnp",
+    "title": "Minimal Blazor app using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with a Blazor WebAssembly application",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-blazor",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-blazor",
+    "longDescription": [
+      "This sample demonstrates the minimal setup to use Dev Proxy with a Blazor WebAssembly application. It shows how to configure Dev Proxy to intercept API requests from a browser-based application and mock responses using the MockResponsePlugin with CORS headers. The sample makes a single API call to JSONPlaceholder and returns a mocked response, demonstrating how Dev Proxy intercepts and replaces the real API call. Perfect for getting started with Dev Proxy in Blazor projects."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "minimal-dotnet-blazor"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-dotnet-blazor/assets/screenshot.png",
+        "alt": "Dev Proxy mocking a Blazor WebAssembly app API request"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use Dev Proxy with client-side applications",
+        "description": "Learn how to configure Dev Proxy to work with browser-based applications.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      }
+    ]
+  }
+]

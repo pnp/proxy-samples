@@ -10,7 +10,7 @@
             "This sample contains a CRUD API for the 'Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio' learn module. The CRUD API simulates the behavior of a custom API protected with Microsoft Entra that returns product data. Using this preset you can complete exercises from the learn module without having to create a real custom API."
         ],
         "creationDateTime": "2024-07-23",
-        "updateDateTime": "2025-06-27",
+        "updateDateTime": "2026-01-05",
         "products": [
             "Dev Proxy"
         ],
@@ -33,7 +33,7 @@
             },
             {
                 "key": "PROXY VERSION",
-                "value": "v0.29.1"
+                "value": "v2.0.0"
             }
         ],
         "thumbnails": [

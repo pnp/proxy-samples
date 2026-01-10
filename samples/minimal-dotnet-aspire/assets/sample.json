@@ -1,0 +1,92 @@
+[
+  {
+    "name": "pnp-devproxy-minimal-dotnet-aspire",
+    "source": "pnp",
+    "title": "Minimal .NET Aspire app using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with .NET Aspire",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
+    "longDescription": [
+      "This sample demonstrates the minimal setup to use Dev Proxy with .NET Aspire. It shows how to configure Dev Proxy to intercept API requests and mock responses using the MockResponsePlugin. The sample includes an Aspire AppHost that orchestrates a web API service, which makes a single API call to JSONPlaceholder and displays the mocked response. Perfect for getting started with Dev Proxy in .NET Aspire distributed applications."
+    ],
+    "creationDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "minimal-dotnet-aspire"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-dotnet-aspire/assets/screenshot.png",
+        "alt": "Dev Proxy mocking a .NET Aspire app API request"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use Dev Proxy with .NET Aspire applications",
+        "description": "Learn how to integrate Dev Proxy into your .NET Aspire application.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-dotnet-aspire"
+      },
+      {
+        "name": "Use Dev Proxy with .NET applications",
+        "description": "Learn how to configure Dev Proxy to work with .NET applications.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-dotnet"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      },
+      {
+        "name": ".NET Aspire overview",
+        "description": "Learn about .NET Aspire and how to build cloud-native applications.",
+        "url": "https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview"
+      },
+      {
+        "name": ".NET Aspire setup and tooling",
+        "description": "Learn how to install and set up .NET Aspire workload.",
+        "url": "https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling"
+      },
+      {
+        "name": "DevProxy.Hosting NuGet package",
+        "description": "Dev Proxy .NET Aspire extensions for seamless integration.",
+        "url": "https://www.nuget.org/packages/DevProxy.Hosting"
+      }
+    ]
+  }
+]

@@ -12,7 +12,7 @@ Using this preset you can simulate throttling of the GitHub Models inference API
 
 ## Compatibility
 
-![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
+![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the GitHub Models inference API
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|June 27, 2025|Initial release
 
 ## Minimal path to awesome

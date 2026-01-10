@@ -8,7 +8,7 @@ This sample contains a demo web application connected to Microsoft Graph. Using 
 
 ## Compatibility
 
-![Dev Proxy v0.14.1](https://aka.ms/devproxy/badge/v0.14.1)
+![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a demo web application connected to Microsoft Graph. Using 
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|January 26, 2024|Initial release
 
 ## Prerequisites

@@ -8,7 +8,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 ## Compatibility
 
-![Dev Proxy v0.29.2](https://aka.ms/devproxy/badge/v0.29.2)
+![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|July 9, 2024|Initial release
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
   "plugins": [
     {
       "name": "LatencyPlugin",
@@ -35,16 +35,16 @@
     "https://models.github.ai/inference/chat/completions*"
   ],
   "feedbackApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
     "apiFile": "feedback-api.json"
   },
   "apiLatencyPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/latencyplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/latencyplugin.schema.json",
     "minMs": 200,
     "maxMs": 500
   },
   "openAITelemetryPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v1.0.0/openaitelemetryplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/openaitelemetryplugin.schema.json",
     "currency": "EUR",
     "includeCosts": true,
     "pricesFile": "azure-ai-prices.json"

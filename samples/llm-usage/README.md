@@ -27,6 +27,7 @@ The sample showcases:
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|July 28, 2025|Initial release
 
 ## Minimal path to awesome
