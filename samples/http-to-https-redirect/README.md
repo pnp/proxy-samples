@@ -49,7 +49,7 @@ You can extend the `rewrites.json` file with additional patterns such as:
 * Redirect staging to production URLs
 * Add/modify query parameters
 
-Using this sample you can use Dev Proxy to:
+Using this sample you can use the Dev Proxy to:
 
 * Automatically force HTTPS for all HTTP requests during development
 * Test HTTPS behavior without modifying your application code
