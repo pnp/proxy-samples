@@ -57,7 +57,7 @@ You can also run Dev Proxy with specific configurations:
 This configuration combines all three degradation scenarios: intermittent 503 errors (30% of requests), rate limiting (10 requests per minute), and slow responses (3-5 seconds latency).
 
 ```bash
-devproxy
+devproxy --config-file .devproxy/devproxyrc.json
 ```
 
 Test with:
@@ -71,7 +71,7 @@ curl -ikx http://127.0.0.1:8000 https://api.example.com/data
 This configuration simulates random 503 Service Unavailable errors for 30% of requests.
 
 ```bash
-devproxy --config-file intermittent-errors.devproxyrc.json
+devproxy --config-file .devproxy/intermittent-errors.devproxyrc.json
 ```
 
 Test with:
@@ -85,7 +85,7 @@ curl -ikx http://127.0.0.1:8000 https://api.example.com/data
 This configuration simulates hitting rate limits with 429 Too Many Requests responses after 10 requests per minute.
 
 ```bash
-devproxy --config-file rate-limiting.devproxyrc.json
+devproxy --config-file .devproxy/rate-limiting.devproxyrc.json
 ```
 
 Test with:
@@ -99,7 +99,7 @@ curl -ikx http://127.0.0.1:8000 https://api.example.com/data
 This configuration adds random latency (3-5 seconds) to all responses.
 
 ```bash
-devproxy --config-file slow-responses.devproxyrc.json
+devproxy --config-file .devproxy/slow-responses.devproxyrc.json
 ```
 
 Test with:
@@ -123,11 +123,11 @@ This sample demonstrates how to use Dev Proxy to simulate API degradation scenar
 
 | File | Description |
 |------|-------------|
-| `devproxyrc.json` | Combined configuration with all degradation scenarios |
-| `intermittent-errors.devproxyrc.json` | 503 errors at 30% failure rate |
-| `rate-limiting.devproxyrc.json` | Rate limiting at 10 requests/minute |
-| `slow-responses.devproxyrc.json` | Random latency between 3-5 seconds |
-| `errors-503.json` | Error responses for the GenericRandomErrorPlugin |
+| `.devproxy/devproxyrc.json` | Combined configuration with all degradation scenarios |
+| `.devproxy/intermittent-errors.devproxyrc.json` | 503 errors at 30% failure rate |
+| `.devproxy/rate-limiting.devproxyrc.json` | Rate limiting at 10 requests/minute |
+| `.devproxy/slow-responses.devproxyrc.json` | Random latency between 3-5 seconds |
+| `.devproxy/errors-503.json` | Error responses for the GenericRandomErrorPlugin |
 | `index.html` | Monitoring dashboard web app |
 | `package.json` | Node.js configuration to run the sample |
 

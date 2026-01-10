@@ -16,13 +16,9 @@
   "urlsToWatch": [
     "https://api.example.com/*"
   ],
-  "logLevel": "information",
-  "labelMode": "text",
   "rateLimitingPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/ratelimitingplugin.schema.json",
     "costPerRequest": 1,
-    "rateLimit": 10,
-    "resetTimeWindowSeconds": 60,
-    "warningThresholdPercent": 50
+    "rateLimit": 10
   }
 }
