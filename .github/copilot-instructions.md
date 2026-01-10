@@ -10,12 +10,14 @@ This repository contains configuration presets and mock responses for [Dev Proxy
 
 ## Dev Proxy MCP Server
 
-When working with Dev Proxy configurations, use the [Dev Proxy MCP server](https://www.npmjs.com/package/@devproxy/mcp) to access:
+When working with Dev Proxy configurations, **you MUST use the [Dev Proxy MCP server](https://www.npmjs.com/package/@devproxy/mcp)** tools to access:
 - **Latest documentation** - Up-to-date information about Dev Proxy features and capabilities
 - **Plugin schemas** - Current JSON schemas for configuring all available plugins
 - **Best practices** - Recommended patterns for different use cases
 
 Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compatible AI assistant for real-time Dev Proxy guidance.
+
+> **⚠️ CRITICAL**: Do NOT create samples based on general knowledge or training data. Always call the Dev Proxy MCP tools first to get current schemas, best practices, and documentation. Samples created without using MCP tools will be rejected.
 
 ## Sample Creation Best Practices
 
@@ -31,6 +33,12 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
   - `-k`: Allow insecure connections (for SSL certificate issues)
   - `-x http://127.0.0.1:8000`: Route through Dev Proxy on localhost:8000
 - **Never use**: `curl <url>` without proxy configuration - this bypasses Dev Proxy entirely
+
+### Demo Apps Over Repeated Curl Commands
+- **Prefer demo applications**: When a sample demonstrates behavior that would require multiple curl commands (e.g., rate limiting, throttling, retry logic), create a simple demo app instead
+- **Good demo app examples**: Simple HTML+JavaScript page, Node.js script, Python script that makes API calls in a loop
+- **Why**: Demo apps show the sample in action more effectively than asking users to run curl 10+ times manually
+- **When curl is OK**: Single request/response demonstrations, quick verification steps
 
 ## Sample Structure Patterns
 
@@ -124,10 +132,16 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 
 ## Development Commands
 
-- **Start with config**: `devproxy --config-file sample-config.json`
+- **Default config**: Just run `devproxy` — it automatically loads `devproxyrc.json` from the current directory, or falls back to the one in the Dev Proxy installation directory if not found. Full resolution order:
+  1. Current directory: `devproxyrc.jsonc`, then `devproxyrc.json`
+  2. `.devproxy` subfolder: `.devproxy/devproxyrc.jsonc`, then `.devproxy/devproxyrc.json`
+  3. Dev Proxy installation directory: `devproxyrc.jsonc`, then `devproxyrc.json`
+- **Custom config file**: `devproxy --config-file custom-config.json` (only needed for non-default filenames)
 - **Watch specific URLs**: `devproxy --urls-to-watch "https://api.example.com/*"`
-- **Record mode**: `devproxy --config-file config.json --record`
+- **Record mode**: `devproxy --record`
 - **Multiple configs**: Different files for different scenarios (daily limits, rate limits, etc.)
+
+> **⚠️ IMPORTANT**: Never use `devproxy --config-file devproxyrc.json` — the `--config-file` flag is redundant when using the default filename. Just use `devproxy`.
 
 ## Naming Conventions
 
