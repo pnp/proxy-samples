@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "MockGeneratorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    }
+  ],
+  "record": true
+}
