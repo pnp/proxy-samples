@@ -24,6 +24,7 @@ Use this sample to build frontend applications before the backend API exists, wi
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 10, 2026|Updated for compliance with repository guidelines
 1.1|January 8, 2026|Added demo web application
 1.0|January 6, 2026|Initial release
 
