@@ -2,13 +2,7 @@
 
 ## Summary
 
-This sample demonstrates how to use Dev Proxy to detect APIs not registered in Azure API Center (shadow APIs). Shadow APIs are APIs that your application uses but aren't registered in your organization's API catalog. Detecting shadow APIs helps you improve API governance, compliance, and security by ensuring all APIs are properly cataloged before reaching production.
-
-The sample shows how to:
-- Configure Dev Proxy to check API requests against Azure API Center
-- Detect unregistered (shadow) APIs
-- Automatically onboard new APIs with OpenAPI specs
-- Integrate shadow API detection in CI/CD pipelines
+This sample demonstrates how to use Dev Proxy to detect APIs not registered in Azure API Center (shadow APIs). Shadow APIs are APIs that your application uses but aren't registered in your organization's API catalog. By detecting shadow APIs, you can improve API governance, compliance, and security by ensuring all APIs are properly cataloged.
 
 <!--
 Add a screenshot showing Dev Proxy detecting shadow APIs.
@@ -32,195 +26,19 @@ Version|Date|Comments
 
 ## Prerequisites
 
-- [Azure API Center](https://learn.microsoft.com/azure/api-center/) instance
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) (for authentication and API onboarding)
+- [Azure API Center](https://learn.microsoft.com/azure/api-center/)
+- [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension for Visual Studio Code
 
 ## Minimal path to awesome
 
-1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/shadow-api-detection) then unzip it)
-1. Create an Azure API Center instance
-1. Onboard the Contoso Products API to API Center by running the setup script:
-
-   ```bash
-   chmod +x setup.sh
-   ./setup.sh <subscription-id> <resource-group> <api-center-name>
-   ```
-
-   Or manually using the Azure CLI:
-
-   ```bash
-   # Register the API
-   az apic api create \
-     --resource-group <resource-group> \
-     --service-name <api-center-name> \
-     --api-id "contoso-products-api" \
-     --title "Contoso Products API" \
-     --type "rest"
-
-   # Create a version
-   az apic api version create \
-     --resource-group <resource-group> \
-     --service-name <api-center-name> \
-     --api-id "contoso-products-api" \
-     --version-id "v1-0-0" \
-     --title "v1.0.0" \
-     --lifecycle-stage "production"
-
-   # Create a definition
-   az apic api definition create \
-     --resource-group <resource-group> \
-     --service-name <api-center-name> \
-     --api-id "contoso-products-api" \
-     --version-id "v1-0-0" \
-     --definition-id "openapi" \
-     --title "OpenAPI"
-
-   # Import the OpenAPI spec
-   az apic api definition import-specification \
-     --resource-group <resource-group> \
-     --service-name <api-center-name> \
-     --api-id "contoso-products-api" \
-     --version-id "v1-0-0" \
-     --definition-id "openapi" \
-     --format "inline" \
-     --specification '{"name":"openapi","version":"3.0.1"}' \
-     --file-name "api.contoso.com.json"
-   ```
-
-1. In the `devproxyrc.json` file, update the `apiCenterOnboardingPlugin` section with your API Center information:
-   - `subscriptionId`: Your Azure subscription ID
-   - `resourceGroupName`: The resource group containing your API Center
-   - `serviceName`: Your API Center instance name
-1. Sign in to Azure using `az login`
-1. Start Dev Proxy: `devproxy`
-1. In a new terminal, issue API requests through Dev Proxy:
-
-   ```bash
-   # Request to registered API (Contoso Products API)
-   curl -ikx http://127.0.0.1:8000 https://api.contoso.com/products
-
-   # Request to shadow API (not registered in API Center)
-   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
-   ```
-
-1. Press `s` to stop recording
-1. Dev Proxy generates a report showing which APIs are registered and which are shadow APIs
-
-## Features
-
-This sample demonstrates API governance automation using Dev Proxy and Azure API Center:
-
-- **Shadow API detection**: Identifies APIs used by your application that aren't registered in Azure API Center
-- **Automatic onboarding**: Optionally creates new API entries in API Center for discovered shadow APIs
-- **OpenAPI spec generation**: Generates OpenAPI specs for new APIs to speed up onboarding
-- **CI/CD integration**: Can be integrated into pipelines to fail builds when shadow APIs are detected
-
-## Configuration options
-
-### Basic shadow API detection
-
-Set `createApicEntryForNewApis` to `false` to only report shadow APIs without creating entries:
-
-```json
-{
-  "apiCenterOnboardingPlugin": {
-    "subscriptionId": "your-subscription-id",
-    "resourceGroupName": "your-resource-group",
-    "serviceName": "your-api-center",
-    "createApicEntryForNewApis": false
-  }
-}
-```
-
-### Automatic onboarding with OpenAPI specs
-
-Set `createApicEntryForNewApis` to `true` and include the `OpenApiSpecGeneratorPlugin` before `ApiCenterOnboardingPlugin` to automatically onboard new APIs with generated OpenAPI specs:
-
-```json
-{
-  "plugins": [
-    {
-      "name": "OpenApiSpecGeneratorPlugin",
-      "enabled": true,
-      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
-    },
-    {
-      "name": "ApiCenterOnboardingPlugin",
-      "enabled": true,
-      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
-      "configSection": "apiCenterOnboardingPlugin"
-    }
-  ],
-  "apiCenterOnboardingPlugin": {
-    "createApicEntryForNewApis": true
-  }
-}
-```
-
-### Environment variables for CI/CD
-
-Use environment variables for sensitive configuration in CI/CD pipelines:
-
-```json
-{
-  "apiCenterOnboardingPlugin": {
-    "subscriptionId": "@AZURE_SUBSCRIPTION_ID",
-    "resourceGroupName": "@AZURE_RESOURCE_GROUP_NAME",
-    "serviceName": "@AZURE_APIC_INSTANCE_NAME"
-  }
-}
-```
-
-## CI/CD integration example
-
-### GitHub Actions workflow
-
-```yaml
-name: Shadow API Detection
-
-on:
-  pull_request:
-    branches: [main]
-
-jobs:
-  check-shadow-apis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Azure Login
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Setup Dev Proxy
-        uses: dev-proxy-tools/actions/setup@v1
-        with:
-          auto-record: true
-
-      - name: Run application tests
-        run: |
-          # Run your application tests here
-          # Dev Proxy intercepts all API requests
-
-      - name: Stop Dev Proxy
-        uses: dev-proxy-tools/actions/stop@v1
-
-      - name: Check for shadow APIs
-        run: |
-          if grep -q "New APIs that aren't registered" ApiCenterOnboardingPlugin_PlainTextReporter.txt; then
-            echo "::error::Shadow APIs detected! Please register all APIs in API Center."
-            cat ApiCenterOnboardingPlugin_PlainTextReporter.txt
-            exit 1
-          fi
-
-      - name: Upload reports
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: shadow-api-report
-          path: ./*Reporter*
-```
+- Create Azure API Center instance
+  - Get the API Center instance name, resource group name and subscription ID
+- In API Center, create a new API and import the OpenAPI spec from the `api.contoso.com.json` file
+- In the `devproxyrc.json` file, in the `apiCenterOnboardingPlugin` update the API Center information
+- Start Dev Proxy by running `devproxy`
+- In VSCode, open the `shadow-api-detection.http` file and run the requests to the API
+- In the terminal where Dev Proxy is running, press `s` to stop recording
+- Dev Proxy will generate a report showing which APIs are registered and which are shadow APIs
 
 ## Help
 
