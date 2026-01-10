@@ -19,13 +19,13 @@ The sample includes:
 
 ## Contributors
 
-- [GitHub Copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Prerequisites
 
