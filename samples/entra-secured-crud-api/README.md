@@ -18,7 +18,7 @@ Use this sample to build frontend applications before the backend API exists, wi
 
 ## Contributors
 
-- [Copilot](https://github.com/copilot)
+- [Waldek Mastykarz](https://github.com/waldekmastykarz)
 
 ## Version history
 
