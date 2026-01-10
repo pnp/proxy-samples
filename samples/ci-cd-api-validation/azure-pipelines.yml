@@ -134,10 +134,8 @@ stages:
     - script: |
         mkdir -p $(Build.ArtifactStagingDirectory)/OpenApiSpecs
         for file in *.json; do
-          if [[ "$file" != "devproxyrc.json" ]]; then
-            if [ -f "$file" ]; then
-              cp "$file" $(Build.ArtifactStagingDirectory)/OpenApiSpecs
-            fi
+          if [ -f "$file" ]; then
+            cp "$file" $(Build.ArtifactStagingDirectory)/OpenApiSpecs
           fi
         done
       displayName: 'Copy OpenAPI specs to artifact directory'
