@@ -30,7 +30,7 @@ Version|Date|Comments
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ci-cd-api-validation) then unzip it)
 - Update the configuration files with your API URLs:
-  - In `devproxyrc.json` and the configuration files in `.devproxy/` folder, update the `urlsToWatch` property to match your API endpoints
+  - In the configuration files in `.devproxy/` folder, update the `urlsToWatch` property to match your API endpoints
 - For shadow API detection with Azure API Center:
   - Create an Azure API Center instance
   - Set up the required environment variables/secrets (see CI/CD configuration sections below)
@@ -52,7 +52,7 @@ This sample includes several configuration files for different validation scenar
 
 | File | Description |
 |------|-------------|
-| `devproxyrc.json` | Combined configuration with all plugins enabled |
+| `.devproxy/devproxyrc.json` | Combined configuration with all plugins enabled |
 | `.devproxy/shadow-api-detection.json` | Configuration for detecting unregistered APIs using Azure API Center |
 | `.devproxy/permission-validation.json` | Configuration for validating API permissions |
 | `.devproxy/openapi-generation.json` | Configuration for generating OpenAPI specifications |

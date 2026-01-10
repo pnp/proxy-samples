@@ -4,7 +4,7 @@
 set -m
 
 log_file=devproxy.log
-config_file=${1:-devproxyrc.json}
+config_file=${1:-.devproxy/devproxyrc.json}
 start_time=$SECONDS
 
 echo "Using config file: $config_file"

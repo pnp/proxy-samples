@@ -42,12 +42,10 @@
     "subscriptionId": "@AZURE_SUBSCRIPTION_ID",
     "resourceGroupName": "@AZURE_RESOURCE_GROUP_NAME",
     "serviceName": "@AZURE_APIC_INSTANCE_NAME",
-    "workspaceName": "default",
     "createApicEntryForNewApis": false
   },
   "minimalPermissionsPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/minimalpermissionsplugin.schema.json",
-    "apiSpecsFolderPath": "./.devproxy/api-specs"
-  },
-  "logLevel": "information"
+    "apiSpecsFolderPath": "./api-specs"
+  }
 }

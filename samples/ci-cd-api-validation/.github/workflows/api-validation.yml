@@ -122,10 +122,8 @@ jobs:
         run: |
           mkdir -p generated-specs
           for file in *.json; do
-            if [[ "$file" != "devproxyrc.json" ]]; then
-              if [ -f "$file" ]; then
-                cp "$file" generated-specs/
-              fi
+            if [ -f "$file" ]; then
+              cp "$file" generated-specs/
             fi
           done
 

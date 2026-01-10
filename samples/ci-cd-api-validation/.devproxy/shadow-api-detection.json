@@ -26,8 +26,6 @@
     "subscriptionId": "@AZURE_SUBSCRIPTION_ID",
     "resourceGroupName": "@AZURE_RESOURCE_GROUP_NAME",
     "serviceName": "@AZURE_APIC_INSTANCE_NAME",
-    "workspaceName": "default",
     "createApicEntryForNewApis": false
-  },
-  "logLevel": "information"
+  }
 }
