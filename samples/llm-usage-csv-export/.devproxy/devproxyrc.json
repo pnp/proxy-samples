@@ -11,6 +11,5 @@
     "https://api.openai.com/*",
     "https://*.openai.azure.com/*",
     "https://models.github.ai/*"
-  ],
-  "logLevel": "information"
+  ]
 }
