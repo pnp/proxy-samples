@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Contoso Ltd",
+    "email": "contact@contoso.com",
+    "phone": "+1-555-0100",
+    "address": "123 Innovation Drive, Seattle, WA 98101",
+    "industry": "Technology",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Fabrikam Inc",
+    "email": "info@fabrikam.com",
+    "phone": "+1-555-0200",
+    "address": "456 Enterprise Blvd, Redmond, WA 98052",
+    "industry": "Manufacturing",
+    "createdAt": "2024-02-20T14:45:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Tailspin Toys",
+    "email": "hello@tailspintoys.com",
+    "phone": "+1-555-0300",
+    "address": "789 Retail Lane, Bellevue, WA 98004",
+    "industry": "Retail",
+    "createdAt": "2024-03-10T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Northwind Traders",
+    "email": "sales@northwindtraders.com",
+    "phone": "+1-555-0400",
+    "address": "321 Commerce Street, Portland, OR 97201",
+    "industry": "Wholesale",
+    "createdAt": "2024-04-05T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Adventure Works",
+    "email": "support@adventureworks.com",
+    "phone": "+1-555-0500",
+    "address": "654 Outdoor Ave, Denver, CO 80202",
+    "industry": "Sports & Recreation",
+    "createdAt": "2024-05-12T11:00:00Z"
+  }
+]
