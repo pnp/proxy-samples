@@ -5,9 +5,7 @@
   "auth": "entra",
   "entraAuthConfig": {
     "audience": "https://api.contoso.com",
-    "issuer": "dev-proxy",
-    "validateLifetime": false,
-    "validateSigningKey": false
+    "issuer": "dev-proxy"
   },
   "actions": [
     {
