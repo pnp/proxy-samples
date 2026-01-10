@@ -28,7 +28,7 @@ Version|Date|Comments
 1. Start Dev Proxy with the basic configuration, specifying your API URL:
 
    ```console
-   devproxy --config-file generate-typespec.json --urls-to-watch "https://api.contoso.com/*" --record
+   devproxy --config-file .devproxy/generate-typespec.json --urls-to-watch "https://api.contoso.com/*" --record
    ```
 
 1. Use your application to issue API requests
@@ -44,7 +44,7 @@ Version|Date|Comments
 1. Start Dev Proxy with the LLM configuration:
 
    ```console
-   devproxy --config-file generate-typespec-llm.json --urls-to-watch "https://api.contoso.com/*" --record
+   devproxy --config-file .devproxy/generate-typespec-llm.json --urls-to-watch "https://api.contoso.com/*" --record
    ```
 
 1. Use your application to issue API requests

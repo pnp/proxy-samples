@@ -6,10 +6,5 @@
       "enabled": true,
       "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     }
-  ],
-  "languageModel": {
-    "enabled": true,
-    "model": "llama3.2"
-  },
-  "rate": 0
+  ]
 }
