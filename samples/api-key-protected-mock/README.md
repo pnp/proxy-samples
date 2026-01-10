@@ -23,6 +23,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock) then unzip it)
+* Change to the `.devproxy` folder: `cd .devproxy`
 * Start Dev Proxy: `devproxy`
 * Test the API key authentication by making requests:
 
