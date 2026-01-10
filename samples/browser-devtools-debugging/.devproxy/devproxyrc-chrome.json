@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "DevToolsPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "devTools"
+    }
+  ],
+  "urlsToWatch": [
+    "https://jsonplaceholder.typicode.com/*"
+  ],
+  "devTools": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json",
+    "preferredBrowser": "Chrome"
+  }
+}
