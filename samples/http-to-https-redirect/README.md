@@ -21,7 +21,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-to-https-redirect) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file devproxyrc.json`
+* Start Dev Proxy specifying the path to the config file: `devproxy --config-file .devproxy/devproxyrc.json`
 * Test the rewrite by making HTTP requests that will be automatically redirected to HTTPS:
   ```bash
   # This HTTP request will be rewritten to HTTPS
@@ -41,10 +41,10 @@ This sample provides a Dev Proxy configuration that rewrites HTTP requests to HT
 **Key Benefits:**
 * **Match production security locally** - Ensure your development environment uses HTTPS just like production
 * **Test against HTTPS without certificate hassles** - Dev Proxy handles the protocol rewriting transparently
-* **Easy to customize** - Add more rewrite rules in `rewrites.json` for additional URL transformations
+* **Easy to customize** - Add more rewrite rules in `.devproxy/rewrites.json` for additional URL transformations
 
 **Additional Rewrite Patterns:**
-You can extend the `rewrites.json` file with additional patterns such as:
+You can extend the `.devproxy/rewrites.json` file with additional patterns such as:
 * Change API versions (v1 to v2)
 * Redirect staging to production URLs
 * Add/modify query parameters
