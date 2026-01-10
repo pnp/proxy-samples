@@ -22,8 +22,7 @@
     {
       "name": "DevToolsPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
-      "configSection": "devToolsPlugin"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     }
   ],
   "urlsToWatch": [
@@ -52,9 +51,5 @@
   "tasksApi": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
     "apiFile": "tasks-api.json"
-  },
-  "devToolsPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json",
-    "preferredBrowser": "Edge"
   }
 }
