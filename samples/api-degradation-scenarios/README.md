@@ -18,7 +18,7 @@ This sample contains presets to simulate various API degradation scenarios to te
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 9, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Prerequisites
 
