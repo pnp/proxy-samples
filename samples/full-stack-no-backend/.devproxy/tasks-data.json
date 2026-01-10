@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Set up Dev Proxy",
+    "description": "Install and configure Dev Proxy for the project",
+    "status": "completed",
+    "priority": "high",
+    "dueDate": "2026-01-05",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "id": 2,
+    "title": "Create task manager UI",
+    "description": "Build the frontend interface for managing tasks",
+    "status": "in-progress",
+    "priority": "high",
+    "dueDate": "2026-01-10",
+    "createdAt": "2026-01-02"
+  },
+  {
+    "id": 3,
+    "title": "Add authentication",
+    "description": "Implement API key authentication using AuthPlugin",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2026-01-15",
+    "createdAt": "2026-01-03"
+  },
+  {
+    "id": 4,
+    "title": "Write documentation",
+    "description": "Document the sample and how to use it",
+    "status": "pending",
+    "priority": "low",
+    "dueDate": "2026-01-20",
+    "createdAt": "2026-01-04"
+  },
+  {
+    "id": 5,
+    "title": "Test offline functionality",
+    "description": "Verify the app works completely offline with Dev Proxy",
+    "status": "pending",
+    "priority": "medium",
+    "dueDate": "2026-01-18",
+    "createdAt": "2026-01-05"
+  }
+]

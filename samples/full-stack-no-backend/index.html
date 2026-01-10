@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager - Dev Proxy Full Stack Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    .api-key-section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .api-key-section h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .api-key-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    .api-key-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 2px solid #e1e1e1;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .api-key-input button {
+      padding: 10px 20px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .api-key-input button:hover {
+      background: #5a6fd6;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .status-connected {
+      background: #10b981;
+    }
+
+    .status-disconnected {
+      background: #ef4444;
+    }
+
+    .add-task-form {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-task-form h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-row input,
+    .form-row select {
+      flex: 1;
+      padding: 10px 15px;
+      border: 2px solid #e1e1e1;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .form-row input:focus,
+    .form-row select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5a6fd6;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    .tasks-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tasks-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .tasks-header h3 {
+      color: #333;
+    }
+
+    .task-list {
+      list-style: none;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #e1e1e1;
+      transition: background 0.2s;
+    }
+
+    .task-item:last-child {
+      border-bottom: none;
+    }
+
+    .task-item:hover {
+      background: #f9fafb;
+    }
+
+    .task-checkbox {
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .task-content {
+      flex: 1;
+    }
+
+    .task-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .task-title.completed {
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+
+    .task-description {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .task-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 12px;
+    }
+
+    .task-priority {
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .priority-high {
+      background: #fef2f2;
+      color: #ef4444;
+    }
+
+    .priority-medium {
+      background: #fffbeb;
+      color: #f59e0b;
+    }
+
+    .priority-low {
+      background: #f0fdf4;
+      color: #10b981;
+    }
+
+    .task-status {
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .status-completed {
+      background: #f0fdf4;
+      color: #10b981;
+    }
+
+    .status-in-progress {
+      background: #eff6ff;
+      color: #3b82f6;
+    }
+
+    .status-pending {
+      background: #f3f4f6;
+      color: #6b7280;
+    }
+
+    .task-due {
+      color: #6b7280;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .task-actions button {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #6b7280;
+    }
+
+    .error {
+      background: #fef2f2;
+      color: #ef4444;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .success {
+      background: #f0fdf4;
+      color: #10b981;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .latency-indicator {
+      font-size: 12px;
+      color: #6b7280;
+      margin-left: 10px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: #6b7280;
+    }
+
+    .empty-state svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 15px;
+      opacity: 0.5;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 30px;
+      opacity: 0.8;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <p>A complete app with zero backend - powered by Dev Proxy</p>
+    </header>
+
+    <div class="api-key-section">
+      <h3><span class="status-indicator status-disconnected" id="connectionStatus"></span>API Authentication</h3>
+      <div class="api-key-input">
+        <input type="text" id="apiKeyInput" placeholder="Enter API key (hint: dev-proxy-demo-key)" value="dev-proxy-demo-key">
+        <button onclick="connectApi()">Connect</button>
+      </div>
+      <p id="connectionMessage" style="margin-top: 10px; font-size: 14px; color: #6b7280;"></p>
+    </div>
+
+    <div class="add-task-form">
+      <h3>Add New Task</h3>
+      <div class="form-row">
+        <input type="text" id="taskTitle" placeholder="Task title">
+        <select id="taskPriority">
+          <option value="low">Low Priority</option>
+          <option value="medium" selected>Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <input type="text" id="taskDescription" placeholder="Task description">
+        <input type="date" id="taskDueDate">
+      </div>
+      <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="tasks-container">
+      <div class="tasks-header">
+        <h3>Tasks <span class="latency-indicator" id="latencyIndicator"></span></h3>
+        <button class="btn btn-primary" onclick="loadTasks()">Refresh</button>
+      </div>
+      <div id="messageArea"></div>
+      <ul class="task-list" id="taskList">
+        <li class="loading">Loading tasks...</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>This app runs entirely with Dev Proxy - no real backend needed!</p>
+      <p><a href="https://aka.ms/devproxy" target="_blank">Learn more about Dev Proxy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const API_BASE = 'https://api.tasks.local/tasks';
+    let apiKey = 'dev-proxy-demo-key';
+    let isConnected = false;
+    let nextId = 6;
+
+    async function apiRequest(url, options = {}) {
+      const startTime = performance.now();
+      
+      const headers = {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        ...options.headers
+      };
+
+      try {
+        const response = await fetch(url, { ...options, headers });
+        const endTime = performance.now();
+        const latency = Math.round(endTime - startTime);
+        
+        document.getElementById('latencyIndicator').textContent = `(${latency}ms)`;
+        
+        if (!response.ok) {
+          if (response.status === 401) {
+            throw new Error('Unauthorized - Invalid API key');
+          }
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const text = await response.text();
+        return text ? JSON.parse(text) : null;
+      } catch (error) {
+        console.error('API Error:', error);
+        throw error;
+      }
+    }
+
+    async function connectApi() {
+      apiKey = document.getElementById('apiKeyInput').value;
+      const statusIndicator = document.getElementById('connectionStatus');
+      const connectionMessage = document.getElementById('connectionMessage');
+      
+      try {
+        await apiRequest(API_BASE);
+        isConnected = true;
+        statusIndicator.className = 'status-indicator status-connected';
+        connectionMessage.textContent = 'Connected successfully!';
+        connectionMessage.style.color = '#10b981';
+        loadTasks();
+      } catch (error) {
+        isConnected = false;
+        statusIndicator.className = 'status-indicator status-disconnected';
+        connectionMessage.textContent = 'Connection failed: ' + error.message;
+        connectionMessage.style.color = '#ef4444';
+      }
+    }
+
+    async function loadTasks() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = '<li class="loading">Loading tasks...</li>';
+      
+      try {
+        const tasks = await apiRequest(API_BASE);
+        
+        if (!tasks || tasks.length === 0) {
+          taskList.innerHTML = `
+            <li class="empty-state">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              <p>No tasks yet. Add your first task above!</p>
+            </li>
+          `;
+          return;
+        }
+
+        // Update nextId based on existing tasks
+        const maxId = Math.max(...tasks.map(t => t.id));
+        if (maxId >= nextId) {
+          nextId = maxId + 1;
+        }
+
+        taskList.innerHTML = tasks.map(task => `
+          <li class="task-item" data-id="${task.id}">
+            <input type="checkbox" class="task-checkbox" 
+              ${task.status === 'completed' ? 'checked' : ''} 
+              onchange="toggleTaskStatus(${task.id}, this.checked)">
+            <div class="task-content">
+              <div class="task-title ${task.status === 'completed' ? 'completed' : ''}">${escapeHtml(task.title)}</div>
+              <div class="task-description">${escapeHtml(task.description)}</div>
+              <div class="task-meta">
+                <span class="task-priority priority-${task.priority}">${task.priority}</span>
+                <span class="task-status status-${task.status.replace(' ', '-')}">${task.status}</span>
+                ${task.dueDate ? `<span class="task-due">Due: ${task.dueDate}</span>` : ''}
+              </div>
+            </div>
+            <div class="task-actions">
+              <button class="btn btn-danger" onclick="deleteTask(${task.id})">Delete</button>
+            </div>
+          </li>
+        `).join('');
+        
+      } catch (error) {
+        taskList.innerHTML = `<li class="error">Failed to load tasks: ${error.message}</li>`;
+      }
+    }
+
+    async function addTask() {
+      const title = document.getElementById('taskTitle').value.trim();
+      const description = document.getElementById('taskDescription').value.trim();
+      const priority = document.getElementById('taskPriority').value;
+      const dueDate = document.getElementById('taskDueDate').value;
+
+      if (!title) {
+        showMessage('Please enter a task title', 'error');
+        return;
+      }
+
+      const today = new Date().toISOString().split('T')[0];
+      const newTask = {
+        id: nextId++,
+        title,
+        description: description || 'No description',
+        status: 'pending',
+        priority,
+        dueDate: dueDate || null,
+        createdAt: today
+      };
+
+      try {
+        await apiRequest(API_BASE, {
+          method: 'POST',
+          body: JSON.stringify(newTask)
+        });
+        
+        // Clear form
+        document.getElementById('taskTitle').value = '';
+        document.getElementById('taskDescription').value = '';
+        document.getElementById('taskDueDate').value = '';
+        
+        showMessage('Task added successfully!', 'success');
+        loadTasks();
+      } catch (error) {
+        showMessage('Failed to add task: ' + error.message, 'error');
+      }
+    }
+
+    async function toggleTaskStatus(taskId, isCompleted) {
+      const newStatus = isCompleted ? 'completed' : 'pending';
+      
+      try {
+        await apiRequest(`${API_BASE}/${taskId}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ status: newStatus })
+        });
+        loadTasks();
+      } catch (error) {
+        showMessage('Failed to update task: ' + error.message, 'error');
+        loadTasks(); // Reload to reset checkbox state
+      }
+    }
+
+    async function deleteTask(taskId) {
+      if (!confirm('Are you sure you want to delete this task?')) {
+        return;
+      }
+
+      try {
+        await apiRequest(`${API_BASE}/${taskId}`, {
+          method: 'DELETE'
+        });
+        showMessage('Task deleted successfully!', 'success');
+        loadTasks();
+      } catch (error) {
+        showMessage('Failed to delete task: ' + error.message, 'error');
+      }
+    }
+
+    function showMessage(message, type) {
+      const messageArea = document.getElementById('messageArea');
+      messageArea.innerHTML = `<div class="${type}">${escapeHtml(message)}</div>`;
+      setTimeout(() => {
+        messageArea.innerHTML = '';
+      }, 3000);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set default due date to tomorrow
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('taskDueDate').value = tomorrow.toISOString().split('T')[0];
+      
+      // Auto-connect with default key
+      connectApi();
+    });
+  </script>
+</body>
+</html>
