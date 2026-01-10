@@ -31,14 +31,12 @@
   ],
   "productsApi": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
-    "apiFile": "./.devproxy/products-api.json"
+    "apiFile": "products-api.json"
   },
   "apiCenterOnboardingPlugin": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/apicenteronboardingplugin.schema.json",
     "subscriptionId": "your-subscription-id",
     "resourceGroupName": "your-resource-group",
-    "serviceName": "your-api-center",
-    "workspace": "default",
-    "createApicEntryForNewApis": true
+    "serviceName": "your-api-center"
   }
 }

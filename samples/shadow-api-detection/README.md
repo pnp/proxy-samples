@@ -33,9 +33,9 @@ Version|Date|Comments
 
 - Create Azure API Center instance
   - Get the API Center instance name, resource group name and subscription ID
-- In API Center, create a new API and import the OpenAPI spec from the `api.contoso.com.json` file
-- In the `devproxyrc.json` file, in the `apiCenterOnboardingPlugin` update the API Center information
-- Start Dev Proxy by running `devproxy`
+- In API Center, create a new API and import the OpenAPI spec from the `.devproxy/api.contoso.com.json` file
+- In the `.devproxy/devproxyrc.json` file, in the `apiCenterOnboardingPlugin` update the API Center information
+- Start Dev Proxy by running `devproxy --config-file .devproxy/devproxyrc.json`
 - In VSCode, open the `shadow-api-detection.http` file and run the requests to the API
 - In the terminal where Dev Proxy is running, press `s` to stop recording
 - Dev Proxy will generate a report showing which APIs are registered and which are shadow APIs
