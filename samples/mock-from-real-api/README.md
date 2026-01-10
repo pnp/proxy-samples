@@ -18,7 +18,7 @@ This sample demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatic
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 9, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Minimal path to awesome
 
