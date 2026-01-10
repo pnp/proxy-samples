@@ -18,12 +18,12 @@ This sample demonstrates how to use the `devproxy jwt create` command to generat
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 8, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/jwt-testing-toolkit) then unzip it)
-* Start Dev Proxy with the sample configuration: `devproxy --config-file devproxyrc.json`
+* Start Dev Proxy: `devproxy`
 * In another terminal, generate a JWT with read scope and test the API:
 
   ```bash
