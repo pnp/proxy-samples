@@ -24,7 +24,7 @@ Using this preset, you can verify that your app properly handles:
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 6, 2026|Initial release
+1.0|January 10, 2026|Initial release
 
 ## Minimal path to awesome
 
