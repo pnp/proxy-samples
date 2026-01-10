@@ -10,7 +10,7 @@
       "This sample demonstrates TypeSpec-first API development workflow using Dev Proxy. Generate TypeSpec files from API traffic and use a local language model to enhance the output with clearer operation IDs and descriptions."
     ],
     "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
     ],

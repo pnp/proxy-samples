@@ -18,6 +18,7 @@ This sample demonstrates TypeSpec-first API development workflow using Dev Proxy
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 10, 2026|Updated to comply with repository guidelines
 1.0|January 6, 2026|Initial release
 
 ## Minimal path to awesome
@@ -50,22 +51,6 @@ Version|Date|Comments
 1. Use your application to issue API requests
 1. Stop Dev Proxy by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open the generated TypeSpec file with AI-enhanced descriptions
-
-### Test with a sample API
-
-You can test the TypeSpec generation using the JSON Placeholder API:
-
-```bash
-# Start Dev Proxy with recording
-devproxy --config-file generate-typespec.json --urls-to-watch "https://jsonplaceholder.typicode.com/*" --record
-
-# In another terminal, make sample requests
-curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
-curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
-curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users
-
-# Stop Dev Proxy (Ctrl+C) to generate the TypeSpec file
-```
 
 ## Features
 
