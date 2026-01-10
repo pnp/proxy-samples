@@ -201,14 +201,14 @@
   <div class="auth-section">
     <h2>Authentication</h2>
     <div class="info-box">
-      <strong>How it works:</strong> This demo simulates Microsoft Entra authentication. 
+      <strong>How it works:</strong> This demo uses Dev Proxy's JWT token API to generate tokens. 
       Dev Proxy validates tokens based on audience, issuer, and scopes. 
-      Enter a mock JWT token below to test the API.
+      Click "Generate Token" to create a JWT token with the selected scopes.
     </div>
     
     <div class="scope-selector">
       <label>Select token scope:</label>
-      <select id="scopeSelect" onchange="updateToken()">
+      <select id="scopeSelect">
         <option value="read">Read only (customer.read)</option>
         <option value="write">Write only (customer.write)</option>
         <option value="both">Both scopes (customer.read, customer.write)</option>
@@ -218,7 +218,7 @@
     
     <textarea id="tokenInput" class="token-input" rows="3" placeholder="JWT token will appear here..."></textarea>
     
-    <button class="btn btn-primary" onclick="generateToken()">Generate Mock Token</button>
+    <button class="btn btn-primary" onclick="generateToken()">Generate Token</button>
     <button class="btn btn-secondary" onclick="clearToken()">Clear Token</button>
   </div>
 
@@ -260,46 +260,12 @@
 
   <script>
     const API_BASE = 'https://api.contoso.com/v1/customers';
+    const DEV_PROXY_API = 'http://localhost:8897';
     
-    // Generate a mock JWT token with the specified scopes
-    function generateMockToken(scopes) {
-      const header = {
-        alg: 'RS256',
-        typ: 'JWT'
-      };
-      
-      const payload = {
-        aud: 'https://api.contoso.com',
-        iss: 'https://login.microsoftonline.com/contoso.com',
-        iat: Math.floor(Date.now() / 1000),
-        exp: Math.floor(Date.now() / 1000) + 3600,
-        sub: 'user@contoso.com',
-        name: 'Demo User',
-        scp: scopes.join(' ')
-      };
-      
-      // Base64URL encode (this is a mock token, not cryptographically valid)
-      const base64UrlEncode = (obj) => {
-        return btoa(JSON.stringify(obj))
-          .replace(/\+/g, '-')
-          .replace(/\//g, '_')
-          .replace(/=/g, '');
-      };
-      
-      const headerEncoded = base64UrlEncode(header);
-      const payloadEncoded = base64UrlEncode(payload);
-      // Mock signature
-      const signature = 'mock_signature_for_dev_proxy_demo';
-      
-      return `${headerEncoded}.${payloadEncoded}.${signature}`;
-    }
-    
-    function updateToken() {
-      generateToken();
-    }
-    
-    function generateToken() {
+    // Generate a JWT token using Dev Proxy's JWT token API
+    async function generateToken() {
       const scopeSelect = document.getElementById('scopeSelect').value;
+      const tokenInput = document.getElementById('tokenInput');
       let scopes = [];
       
       switch (scopeSelect) {
@@ -317,8 +283,32 @@
           break;
       }
       
-      const token = generateMockToken(scopes);
-      document.getElementById('tokenInput').value = token;
+      tokenInput.value = 'Generating token...';
+      
+      try {
+        const response = await fetch(`${DEV_PROXY_API}/proxy/jwtToken`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: 'Demo User',
+            audiences: ['https://api.contoso.com'],
+            issuer: 'https://login.microsoftonline.com/contoso.com',
+            scopes: scopes,
+            validFor: 60
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to generate token: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        tokenInput.value = data.token;
+      } catch (error) {
+        tokenInput.value = `Error: ${error.message}\n\nMake sure Dev Proxy is running on port 8897.`;
+      }
     }
     
     function clearToken() {
@@ -444,9 +434,6 @@
         method: 'DELETE'
       });
     }
-    
-    // Generate initial token on page load
-    generateToken();
   </script>
 </body>
 </html>
