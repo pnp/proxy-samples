@@ -16,6 +16,10 @@
           {
             "name": "x-powered-by",
             "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
           }
         ],
         "body": [
@@ -52,6 +56,10 @@
           {
             "name": "x-powered-by",
             "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
           }
         ],
         "body": {
@@ -76,6 +84,10 @@
           {
             "name": "x-powered-by",
             "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
           }
         ],
         "body": {
@@ -100,6 +112,10 @@
           {
             "name": "x-powered-by",
             "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
           }
         ],
         "body": {
@@ -120,6 +136,10 @@
           {
             "name": "x-powered-by",
             "value": "Dev Proxy"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
           }
         ]
       }

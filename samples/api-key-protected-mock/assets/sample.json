@@ -9,8 +9,8 @@
     "longDescription": [
       "Demonstrates how to simulate API key authentication for mock APIs using Dev Proxy with AuthPlugin and MockResponsePlugin."
     ],
-    "creationDateTime": "2026-01-09",
-    "updateDateTime": "2026-01-09",
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
     ],
