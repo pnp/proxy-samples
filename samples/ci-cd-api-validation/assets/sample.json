@@ -9,8 +9,8 @@
     "longDescription": [
       "This sample demonstrates how to integrate Dev Proxy in CI/CD pipelines for API validation. It includes configurations for shadow API detection, permission validation, and OpenAPI spec generation, along with example GitHub Actions workflows and Azure Pipelines YAML files."
     ],
-    "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
     ],
@@ -46,9 +46,9 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "copilot",
-        "pictureUrl": "https://github.com/copilot.png",
-        "name": "GitHub Copilot"
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
       }
     ],
     "references": [
