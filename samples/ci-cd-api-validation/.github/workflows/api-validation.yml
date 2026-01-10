@@ -23,7 +23,7 @@ jobs:
       - name: Start Dev Proxy
         uses: dev-proxy-tools/actions/start@v1
         with:
-          config-file: shadow-api-detection.json
+          config-file: .devproxy/shadow-api-detection.json
           auto-record: true
 
       # Replace with your test commands
@@ -65,7 +65,7 @@ jobs:
       - name: Start Dev Proxy
         uses: dev-proxy-tools/actions/start@v1
         with:
-          config-file: permission-validation.json
+          config-file: .devproxy/permission-validation.json
           auto-record: true
 
       # Replace with your test commands
@@ -103,7 +103,7 @@ jobs:
       - name: Start Dev Proxy
         uses: dev-proxy-tools/actions/start@v1
         with:
-          config-file: openapi-generation.json
+          config-file: .devproxy/openapi-generation.json
           auto-record: true
 
       # Replace with your test commands
@@ -122,7 +122,7 @@ jobs:
         run: |
           mkdir -p generated-specs
           for file in *.json; do
-            if [[ "$file" != "devproxyrc.json" && "$file" != "shadow-api-detection.json" && "$file" != "permission-validation.json" && "$file" != "openapi-generation.json" ]]; then
+            if [[ "$file" != "devproxyrc.json" ]]; then
               if [ -f "$file" ]; then
                 cp "$file" generated-specs/
               fi

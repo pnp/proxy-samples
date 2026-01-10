@@ -34,7 +34,7 @@ stages:
       displayName: 'Install Dev Proxy'
       condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
 
-    - script: bash ./run.sh shadow-api-detection.json
+    - script: bash ./run.sh .devproxy/shadow-api-detection.json
       displayName: 'Run API validation'
       env:
         AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
@@ -80,7 +80,7 @@ stages:
       displayName: 'Install Dev Proxy'
       condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
 
-    - script: bash ./run.sh permission-validation.json
+    - script: bash ./run.sh .devproxy/permission-validation.json
       displayName: 'Run permission validation'
 
     - task: PublishPipelineArtifact@1
@@ -122,7 +122,7 @@ stages:
       displayName: 'Install Dev Proxy'
       condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
 
-    - script: bash ./run.sh openapi-generation.json
+    - script: bash ./run.sh .devproxy/openapi-generation.json
       displayName: 'Run OpenAPI generation'
 
     - task: PublishPipelineArtifact@1
@@ -134,7 +134,7 @@ stages:
     - script: |
         mkdir -p $(Build.ArtifactStagingDirectory)/OpenApiSpecs
         for file in *.json; do
-          if [[ "$file" != "devproxyrc.json" && "$file" != "shadow-api-detection.json" && "$file" != "permission-validation.json" && "$file" != "openapi-generation.json" ]]; then
+          if [[ "$file" != "devproxyrc.json" ]]; then
             if [ -f "$file" ]; then
               cp "$file" $(Build.ArtifactStagingDirectory)/OpenApiSpecs
             fi
