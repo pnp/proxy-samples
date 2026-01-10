@@ -9,7 +9,7 @@
     "longDescription": [
       "This sample demonstrates how to use Dev Proxy to export LLM usage metrics to a CSV file for detailed analysis. The OpenAIUsageDebuggingPlugin captures usage data from OpenAI-compatible API requests and writes them to a CSV file, enabling offline analysis in spreadsheets or BI tools."
     ],
-    "creationDateTime": "2026-01-06",
+    "creationDateTime": "2026-01-10",
     "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
