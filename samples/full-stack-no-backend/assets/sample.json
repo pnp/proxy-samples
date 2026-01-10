@@ -9,8 +9,8 @@
     "longDescription": [
       "Demonstrates building a complete task manager application with zero backend using Dev Proxy. Features a vanilla JavaScript frontend with full CRUD operations, API key authentication, realistic latency simulation, and Chrome DevTools integration."
     ],
-    "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
     "products": [
       "Dev Proxy"
     ],
@@ -46,9 +46,9 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "copilot",
-        "pictureUrl": "https://github.com/copilot.png",
-        "name": "GitHub Copilot"
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
       }
     ],
     "references": [
