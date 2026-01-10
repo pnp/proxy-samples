@@ -4,8 +4,7 @@
     {
       "name": "ExecutionSummaryPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
-      "configSection": "executionSummaryPlugin"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     },
     {
       "name": "PlainTextReporter",
@@ -25,9 +24,5 @@
   ],
   "urlsToWatch": [
     "https://jsonplaceholder.typicode.com/*"
-  ],
-  "executionSummaryPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/executionsummaryplugin.schema.json",
-    "groupBy": "url"
-  }
+  ]
 }

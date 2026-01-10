@@ -77,15 +77,18 @@ Using this sample you can use Dev Proxy to:
 
 ## Configuration Options
 
-The sample is configured to group requests by URL. You can change this to group by message type by modifying the `groupBy` property in the config file:
+The sample is configured to group requests by URL (the default). You can change this to group by message type by modifying the `groupBy` property in the `.devproxy/devproxyrc.json` config file:
 
 ```json
 "executionSummaryPlugin": {
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/executionsummaryplugin.schema.json",
   "groupBy": "messageType"
 }
 ```
 
-You can also use the command line option: `devproxy --config-file devproxyrc.json --summary-group-by messageType`
+Don't forget to add a `configSection` reference to the ExecutionSummaryPlugin when adding custom configuration.
+
+You can also use the command line option: `devproxy --summary-group-by messageType`
 
 To monitor different APIs, update the `urlsToWatch` property:
 
