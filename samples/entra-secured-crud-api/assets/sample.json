@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-entra-secured-crud-api",
+    "source": "pnp",
+    "title": "CRUD API secured with Microsoft Entra",
+    "shortDescription": "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes a demo web application that shows authentication with different scopes and CRUD operations with Bearer token authorization.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api",
+    "longDescription": [
+      "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes a demo web application that shows authentication with different scopes and CRUD operations with Bearer token authorization."
+    ],
+    "creationDateTime": "2026-01-16",
+    "updateDateTime": "2026-01-16",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "entra-secured-crud-api"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0-beta.3"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/entra-secured-crud-api/assets/screenshot.png",
+        "alt": "Customer Manager demo app showing Entra secured CRUD API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Simulate a CRUD API secured with Microsoft Entra",
+        "description": "Learn how to use Dev Proxy to simulate a CRUD API secured with Microsoft Entra authentication.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-entra"
+      },
+      {
+        "name": "CrudApiPlugin",
+        "description": "Technical reference for the CrudApiPlugin that simulates CRUD APIs.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/crudapiplugin"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      }
+    ]
+  }
+]

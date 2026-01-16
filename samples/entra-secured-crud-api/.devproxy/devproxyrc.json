@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "customersApi"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "customersApi": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/crudapiplugin.schema.json",
+    "apiFile": "customers-api.json"
+  }
+}

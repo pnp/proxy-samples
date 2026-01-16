@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "https://api.contoso.com/v1/customers",
+  "dataFile": "customers-data.json",
+  "auth": "entra",
+  "entraAuthConfig": {
+    "audience": "https://api.contoso.com",
+    "issuer": "https://login.microsoftonline.com/contoso.com"
+  },
+  "actions": [
+    {
+      "action": "getAll",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.read"]
+      }
+    },
+    {
+      "action": "getOne",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.read"]
+      }
+    },
+    {
+      "action": "create",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.write"]
+      }
+    },
+    {
+      "action": "merge",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.write"]
+      }
+    },
+    {
+      "action": "update",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.write"]
+      }
+    },
+    {
+      "action": "delete",
+      "url": "/{customer-id}",
+      "query": "$.[?(@.id == {customer-id})]",
+      "auth": "entra",
+      "entraAuthConfig": {
+        "scopes": ["api://contoso.com/customer.write"]
+      }
+    }
+  ]
+}
