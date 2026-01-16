@@ -10,7 +10,7 @@
       "Demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatically generate mock files from real API traffic. Record once, mock forever - no manual mock creation needed."
     ],
     "creationDateTime": "2026-01-10",
-    "updateDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-16",
     "products": [
       "Dev Proxy"
     ],

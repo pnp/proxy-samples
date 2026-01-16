@@ -4,6 +4,8 @@
 
 This sample demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatically generate mock files from real API traffic. Instead of manually creating mock responses, you can record actual API interactions and have Dev Proxy generate the mocks for you. This enables a powerful "record once, mock forever" workflow for offline development.
 
+The sample includes a simple web app that makes API calls to JSONPlaceholder, allowing you to easily capture real API responses and generate mocks.
+
 ![Dev Proxy generating mock files from intercepted API requests](assets/screenshot.png)
 
 ## Compatibility
@@ -18,16 +20,35 @@ This sample demonstrates how to use Dev Proxy's MockGeneratorPlugin to automatic
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 16, 2026|Added demo web app
 1.0|January 10, 2026|Initial release
 
+## Prerequisites
+
+- [Dev Proxy](https://aka.ms/devproxy)
+- [Node.js LTS](https://nodejs.org) (for http-server)
+
 ## Minimal path to awesome
+
+### Using the demo web app
+
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api) then unzip it)
+* Navigate to the sample folder: `cd samples/mock-from-real-api`
+* Install dependencies: `npm install`
+* In a separate terminal, navigate to the `.devproxy` folder and start Dev Proxy: `cd .devproxy && devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
+* Start the web app: `npm start`
+* Open http://localhost:3000 in your browser
+* Click the buttons to make API requests through Dev Proxy
+* Press `S` in the Dev Proxy terminal to stop recording
+* Find the generated mock file `mocks-yyyyMMddHHmmss.json` in the `.devproxy` folder
+
+### Using curl
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api) then unzip it)
 * Navigate to the `.devproxy` folder: `cd .devproxy`
 * Start Dev Proxy specifying the URL of the API you want to record: `devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
-* Use your application or make API requests to capture real responses:
+* Make API requests to capture real responses:
   ```bash
-  # Example: Make some requests to capture
   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users/1
   curl -ikx http://127.0.0.1:8000 -X POST https://jsonplaceholder.typicode.com/posts \
