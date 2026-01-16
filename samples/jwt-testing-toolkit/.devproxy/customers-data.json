@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Contoso Ltd",
+    "email": "contact@contoso.com",
+    "department": "Engineering"
+  },
+  {
+    "id": 2,
+    "name": "Fabrikam Inc",
+    "email": "info@fabrikam.com",
+    "department": "Sales"
+  },
+  {
+    "id": 3,
+    "name": "Northwind Traders",
+    "email": "sales@northwind.com",
+    "department": "Marketing"
+  }
+]
