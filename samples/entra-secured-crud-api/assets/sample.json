@@ -9,8 +9,8 @@
     "longDescription": [
       "This sample demonstrates how to simulate a CRUD API secured with Microsoft Entra authentication. It includes a demo web application that shows authentication with different scopes and CRUD operations with Bearer token authorization."
     ],
-    "creationDateTime": "2026-01-10",
-    "updateDateTime": "2026-01-10",
+    "creationDateTime": "2026-01-16",
+    "updateDateTime": "2026-01-16",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.0.0"
+        "value": "v2.1.0-beta.3"
       }
     ],
     "thumbnails": [
