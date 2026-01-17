@@ -40,30 +40,6 @@ Version|Date|Comments
 - Open http://localhost:3000 in your browser
 - The app auto-connects using the default API key (`dev-proxy-demo-key`)
 
-### Testing the API with curl
-
-You can also test the API directly using curl:
-
-```bash
-# Get all tasks
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks -H "x-api-key: dev-proxy-demo-key"
-
-# Get a single task
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks/1 -H "x-api-key: dev-proxy-demo-key"
-
-# Create a new task
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks -H "x-api-key: dev-proxy-demo-key" -H "Content-Type: application/json" -d '{"id": 6, "title": "New task", "description": "Task description", "status": "pending", "priority": "high"}'
-
-# Update a task
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks/1 -X PATCH -H "x-api-key: dev-proxy-demo-key" -H "Content-Type: application/json" -d '{"status": "completed"}'
-
-# Delete a task
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks/1 -X DELETE -H "x-api-key: dev-proxy-demo-key"
-
-# Test with invalid API key (should return 401)
-curl -ikx http://127.0.0.1:8000 https://api.tasks.local/tasks -H "x-api-key: invalid-key"
-```
-
 ## Architecture
 
 ```
