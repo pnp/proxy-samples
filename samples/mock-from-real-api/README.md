@@ -20,8 +20,7 @@ The sample includes a simple web app that makes API calls to JSONPlaceholder, al
 
 Version|Date|Comments
 -------|----|--------
-1.1|January 16, 2026|Added demo web app
-1.0|January 10, 2026|Initial release
+1.0|January 17, 2026|Initial release
 
 ## Prerequisites
 
@@ -34,30 +33,12 @@ Version|Date|Comments
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api) then unzip it)
 * Navigate to the sample folder: `cd samples/mock-from-real-api`
-* Install dependencies: `npm install`
-* In a separate terminal, navigate to the `.devproxy` folder and start Dev Proxy: `cd .devproxy && devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
-* Start the web app: `npm start`
+* In a separate terminal, start Dev Proxy: `devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
+* Start the web app: `npx http-server -p 3000`
 * Open http://localhost:3000 in your browser
 * Click the buttons to make API requests through Dev Proxy
 * Press `S` in the Dev Proxy terminal to stop recording
-* Find the generated mock file `mocks-yyyyMMddHHmmss.json` in the `.devproxy` folder
-
-### Using curl
-
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/mock-from-real-api) then unzip it)
-* Navigate to the `.devproxy` folder: `cd .devproxy`
-* Start Dev Proxy specifying the URL of the API you want to record: `devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"`
-* Make API requests to capture real responses:
-  ```bash
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
-  curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/users/1
-  curl -ikx http://127.0.0.1:8000 -X POST https://jsonplaceholder.typicode.com/posts \
-    -H "Content-Type: application/json" \
-    -d '{"title":"New Post","body":"Post content","userId":1}'
-  ```
-* Stop Dev Proxy by pressing `Ctrl+C` or by pressing `S` to stop recording
-* Find the generated mock file `mocks-yyyyMMddHHmmss.json` in your current working folder
-* Use the generated mocks for offline development by updating your Dev Proxy config to use MockResponsePlugin with the generated mocks file
+* Find the generated mock file `mocks-yyyyMMddHHmmss.json` in the current folder
 
 ## Features
 
