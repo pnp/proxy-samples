@@ -21,7 +21,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-to-https-redirect) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file .devproxy/devproxyrc.json`
+* Start Dev Proxy: `devproxy`
 * Test the rewrite by making HTTP requests that will be automatically redirected to HTTPS:
   ```bash
   # This HTTP request will be rewritten to HTTPS
