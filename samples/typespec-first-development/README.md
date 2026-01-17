@@ -25,13 +25,19 @@ Version|Date|Comments
 ### Generate TypeSpec without LLM
 
 1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/typespec-first-development) then unzip it)
-1. Start Dev Proxy with the basic configuration, specifying your API URL:
+1. Start Dev Proxy with the basic configuration:
 
    ```console
-   devproxy --config-file .devproxy/generate-typespec.json --urls-to-watch "https://api.contoso.com/*" --record
+   devproxy --config-file .devproxy/generate-typespec.json --urls-to-watch "https://jsonplaceholder.typicode.com/*" --record
    ```
 
-1. Use your application to issue API requests
+1. In a new terminal, issue some API requests:
+
+   ```console
+   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
+   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
+   ```
+
 1. Stop Dev Proxy by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open the generated TypeSpec file in the current working folder
 
@@ -44,10 +50,16 @@ Version|Date|Comments
 1. Start Dev Proxy with the LLM configuration:
 
    ```console
-   devproxy --config-file .devproxy/generate-typespec-llm.json --urls-to-watch "https://api.contoso.com/*" --record
+   devproxy --config-file .devproxy/generate-typespec-llm.json --urls-to-watch "https://jsonplaceholder.typicode.com/*" --record
    ```
 
-1. Use your application to issue API requests
+1. In a new terminal, issue some API requests:
+
+   ```console
+   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts
+   curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1
+   ```
+
 1. Stop Dev Proxy by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open the generated TypeSpec file with AI-enhanced descriptions
 
