@@ -28,7 +28,7 @@ Version|Date|Comments
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/browser-devtools-debugging) and unzip it)
 - Navigate to the sample folder: `cd samples/browser-devtools-debugging`
-- Start Dev Proxy: `devproxy --config-file .devproxy/devproxyrc.json`
+- Start Dev Proxy: `devproxy`
 - Dev Proxy automatically opens a browser window with Chrome DevTools
 - Send a request through Dev Proxy: `curl -ikx http://127.0.0.1:8000 https://jsonplaceholder.typicode.com/posts/1`
 - View the request in the Chrome DevTools **Network** tab
@@ -66,16 +66,12 @@ The sample includes two configuration files:
     {
       "name": "DevToolsPlugin",
       "enabled": true,
-      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
-      "configSection": "devTools"
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
     }
   ],
   "urlsToWatch": [
     "https://jsonplaceholder.typicode.com/*"
-  ],
-  "devTools": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/devtoolsplugin.schema.json"
-  }
+  ]
 }
 ```
 
