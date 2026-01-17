@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Generator Demo - Dev Proxy Sample</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .description {
+      background: #e7f3ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 4px solid #0078d4;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #0078d4;
+      color: white;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #005a9e;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .status.recording {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+    }
+    .status.info {
+      background: #d1ecf1;
+      border: 1px solid #17a2b8;
+    }
+    .workflow {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+    .workflow h3 {
+      margin-top: 0;
+    }
+    .workflow ol {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Mock Generator Demo</h1>
+  
+  <div class="description">
+    <strong>Dev Proxy MockGeneratorPlugin Demo</strong><br>
+    This app demonstrates how to automatically generate mock files from real API traffic.
+    Make API requests while Dev Proxy is recording, then stop recording to generate mocks.
+  </div>
+
+  <div class="workflow">
+    <h3>Workflow: Record Once, Mock Forever</h3>
+    <ol>
+      <li>Start Dev Proxy with recording enabled (it's already configured in <code>.devproxy/devproxyrc.json</code>)</li>
+      <li>Click the buttons below to make API requests through Dev Proxy</li>
+      <li>Press <kbd>S</kbd> in the Dev Proxy terminal to stop recording</li>
+      <li>Find your generated mocks in <code>mocks-yyyyMMddHHmmss.json</code></li>
+    </ol>
+  </div>
+
+  <div class="status info" id="status">
+    Ready to make API requests. Make sure Dev Proxy is running!
+  </div>
+
+  <div class="button-group">
+    <button id="fetchPost">📄 Fetch Post</button>
+    <button id="fetchUser">👤 Fetch User</button>
+    <button id="fetchComments">💬 Fetch Comments</button>
+    <button id="createPost">➕ Create Post</button>
+    <button id="fetchAll">🔄 Fetch All</button>
+  </div>
+
+  <div id="result">Click a button to make an API request...</div>
+
+  <script>
+    const resultDiv = document.getElementById('result');
+    const statusDiv = document.getElementById('status');
+
+    async function makeRequest(url, options = {}) {
+      resultDiv.textContent = 'Fetching...';
+      statusDiv.className = 'status recording';
+      statusDiv.textContent = '🔴 Making request through Dev Proxy...';
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        
+        const headers = {};
+        response.headers.forEach((value, key) => {
+          headers[key] = value;
+        });
+
+        const result = {
+          url: url,
+          method: options.method || 'GET',
+          status: response.status,
+          data: data,
+          headers: headers
+        };
+
+        resultDiv.textContent = JSON.stringify(result, null, 2);
+        statusDiv.className = 'status info';
+        statusDiv.textContent = '✅ Request completed! This response will be captured in the generated mocks file.';
+      } catch (error) {
+        resultDiv.textContent = 'Error: ' + error.message + '\n\nMake sure Dev Proxy is running with: devproxy --urls-to-watch "https://jsonplaceholder.typicode.com/*"';
+        statusDiv.className = 'status info';
+        statusDiv.textContent = '❌ Request failed. Is Dev Proxy running?';
+      }
+    }
+
+    document.getElementById('fetchPost').addEventListener('click', () => {
+      makeRequest('https://jsonplaceholder.typicode.com/posts/1');
+    });
+
+    document.getElementById('fetchUser').addEventListener('click', () => {
+      makeRequest('https://jsonplaceholder.typicode.com/users/1');
+    });
+
+    document.getElementById('fetchComments').addEventListener('click', () => {
+      makeRequest('https://jsonplaceholder.typicode.com/posts/1/comments');
+    });
+
+    document.getElementById('createPost').addEventListener('click', () => {
+      makeRequest('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          title: 'My New Post',
+          body: 'This is the post content created through Dev Proxy',
+          userId: 1
+        })
+      });
+    });
+
+    document.getElementById('fetchAll').addEventListener('click', async () => {
+      resultDiv.textContent = 'Fetching multiple endpoints...';
+      statusDiv.className = 'status recording';
+      statusDiv.textContent = '🔴 Making multiple requests through Dev Proxy...';
+
+      try {
+        const [posts, users, comments] = await Promise.all([
+          fetch('https://jsonplaceholder.typicode.com/posts/1').then(r => r.json()),
+          fetch('https://jsonplaceholder.typicode.com/users/1').then(r => r.json()),
+          fetch('https://jsonplaceholder.typicode.com/posts/1/comments').then(r => r.json())
+        ]);
+
+        const result = {
+          post: posts,
+          user: users,
+          commentsCount: comments.length
+        };
+
+        resultDiv.textContent = JSON.stringify(result, null, 2);
+        statusDiv.className = 'status info';
+        statusDiv.textContent = '✅ All requests completed! Multiple endpoints captured for mocks.';
+      } catch (error) {
+        resultDiv.textContent = 'Error: ' + error.message;
+        statusDiv.className = 'status info';
+        statusDiv.textContent = '❌ Request failed. Is Dev Proxy running?';
+      }
+    });
+  </script>
+</body>
+</html>
