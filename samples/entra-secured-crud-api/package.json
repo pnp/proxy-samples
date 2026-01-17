@@ -1,0 +1,12 @@
+{
+  "name": "entra-secured-crud-api",
+  "version": "1.0.0",
+  "description": "Demo app for Microsoft Entra secured CRUD API with Dev Proxy",
+  "scripts": {
+    "start": "concurrently -n server,proxy -c cyan,magenta \"http-server -p 3000\" \"devproxy\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  }
+}

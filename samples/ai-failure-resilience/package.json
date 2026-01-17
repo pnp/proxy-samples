@@ -1,0 +1,12 @@
+{
+  "name": "ai-failure-resilience-demo",
+  "version": "1.0.0",
+  "description": "Demo app for testing AI applications against LLM failure modes using Dev Proxy",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -c-1 -p 3000"
+  },
+  "keywords": ["devproxy", "ai", "llm", "testing"],
+  "author": "",
+  "license": "MIT"
+}

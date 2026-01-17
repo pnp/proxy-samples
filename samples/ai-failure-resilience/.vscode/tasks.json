@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "devproxy-start",
+            "type": "devproxy",
+            "command": "start",
+            "isBackground": true,
+            "problemMatcher": "$devproxy-watch"
+        },
+        {
+            "label": "devproxy-stop",
+            "type": "devproxy",
+            "command": "stop"
+        }
+    ]
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Manager - Entra Secured CRUD API Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #0078d4;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .auth-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .auth-section h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .token-input {
+      width: 100%;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .scope-selector {
+      margin-bottom: 15px;
+    }
+    .scope-selector label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .scope-selector select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-primary {
+      background: #0078d4;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #106ebe;
+    }
+    .btn-success {
+      background: #107c10;
+      color: white;
+    }
+    .btn-success:hover {
+      background: #0b6a0b;
+    }
+    .btn-danger {
+      background: #d13438;
+      color: white;
+    }
+    .btn-danger:hover {
+      background: #a4262c;
+    }
+    .btn-secondary {
+      background: #605e5c;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #484644;
+    }
+    .operations {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .operations h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .operation-group {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .operation-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .operation-group h3 {
+      margin: 0 0 10px 0;
+      color: #666;
+      font-size: 14px;
+    }
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .input-group input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .result-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .result-section h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    #result {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      min-height: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .status {
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    .status-success {
+      background: #dff6dd;
+      color: #107c10;
+    }
+    .status-error {
+      background: #fde7e9;
+      color: #d13438;
+    }
+    .info-box {
+      background: #deecf9;
+      border-left: 4px solid #0078d4;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .scope-badge {
+      display: inline-block;
+      background: #e1dfdd;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: monospace;
+      margin-right: 5px;
+    }
+    .scope-badge.read {
+      background: #dff6dd;
+      color: #107c10;
+    }
+    .scope-badge.write {
+      background: #fff4ce;
+      color: #835c00;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Customer Manager</h1>
+  <p class="subtitle">Demo app for Microsoft Entra secured CRUD API with Dev Proxy</p>
+
+  <div class="auth-section">
+    <h2>Authentication</h2>
+    <div class="info-box">
+      <strong>How it works:</strong> This demo uses Dev Proxy's JWT token API to generate tokens. 
+      Dev Proxy validates tokens based on audience, issuer, and scopes. 
+      Click "Generate Token" to create a JWT token with the selected scopes.
+    </div>
+    
+    <div class="scope-selector">
+      <label>Select token scope:</label>
+      <select id="scopeSelect">
+        <option value="read">Read only (customer.read)</option>
+        <option value="write">Write only (customer.write)</option>
+        <option value="both">Both scopes (customer.read, customer.write)</option>
+        <option value="none">No scopes (will fail)</option>
+      </select>
+    </div>
+    
+    <textarea id="tokenInput" class="token-input" rows="3" placeholder="JWT token will appear here..."></textarea>
+    
+    <button class="btn btn-primary" onclick="generateToken()">Generate Token</button>
+    <button class="btn btn-secondary" onclick="clearToken()">Clear Token</button>
+  </div>
+
+  <div class="operations">
+    <h2>API Operations</h2>
+    
+    <div class="operation-group">
+      <h3>Read Operations <span class="scope-badge read">customer.read</span></h3>
+      <button class="btn btn-primary" onclick="getAllCustomers()">Get All Customers</button>
+      <div class="input-group">
+        <input type="number" id="customerId" placeholder="Customer ID (e.g., 1)" value="1">
+        <button class="btn btn-primary" onclick="getCustomer()">Get Customer</button>
+      </div>
+    </div>
+
+    <div class="operation-group">
+      <h3>Write Operations <span class="scope-badge write">customer.write</span></h3>
+      <div class="input-group">
+        <input type="text" id="newCustomerName" placeholder="Customer name" value="Acme Corp">
+        <input type="email" id="newCustomerEmail" placeholder="Email" value="info@acme.com">
+        <button class="btn btn-success" onclick="createCustomer()">Create Customer</button>
+      </div>
+      <div class="input-group">
+        <input type="number" id="updateCustomerId" placeholder="Customer ID" value="1">
+        <input type="text" id="updateField" placeholder="New phone" value="+1-555-9999">
+        <button class="btn btn-secondary" onclick="updateCustomer()">Update Customer</button>
+      </div>
+      <div class="input-group">
+        <input type="number" id="deleteCustomerId" placeholder="Customer ID to delete" value="5">
+        <button class="btn btn-danger" onclick="deleteCustomer()">Delete Customer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-section">
+    <h2>Response <span id="statusBadge"></span></h2>
+    <div id="result">Click an operation button to see the API response...</div>
+  </div>
+
+  <script>
+    const API_BASE = 'https://api.contoso.com/v1/customers';
+    const DEV_PROXY_API = 'http://localhost:8897';
+    
+    // Generate a JWT token using Dev Proxy's JWT token API
+    async function generateToken() {
+      const scopeSelect = document.getElementById('scopeSelect').value;
+      const tokenInput = document.getElementById('tokenInput');
+      let scopes = [];
+      
+      switch (scopeSelect) {
+        case 'read':
+          scopes = ['api://contoso.com/customer.read'];
+          break;
+        case 'write':
+          scopes = ['api://contoso.com/customer.write'];
+          break;
+        case 'both':
+          scopes = ['api://contoso.com/customer.read', 'api://contoso.com/customer.write'];
+          break;
+        case 'none':
+          scopes = [];
+          break;
+      }
+      
+      tokenInput.value = 'Generating token...';
+      
+      try {
+        const response = await fetch(`${DEV_PROXY_API}/proxy/jwtToken`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: 'Demo User',
+            audiences: ['https://api.contoso.com'],
+            issuer: 'https://login.microsoftonline.com/contoso.com',
+            scopes: scopes,
+            validFor: 60
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Failed to generate token: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        tokenInput.value = data.token;
+      } catch (error) {
+        tokenInput.value = `Error: ${error.message}\n\nMake sure Dev Proxy is running on port 8897.`;
+      }
+    }
+    
+    function clearToken() {
+      document.getElementById('tokenInput').value = '';
+    }
+    
+    function getToken() {
+      return document.getElementById('tokenInput').value;
+    }
+    
+    async function makeRequest(url, options = {}) {
+      const token = getToken();
+      const resultDiv = document.getElementById('result');
+      const statusBadge = document.getElementById('statusBadge');
+      
+      resultDiv.textContent = 'Fetching...';
+      statusBadge.innerHTML = '';
+      
+      const headers = {
+        'Content-Type': 'application/json',
+        ...options.headers
+      };
+      
+      if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+      }
+      
+      try {
+        const response = await fetch(url, {
+          ...options,
+          headers
+        });
+        
+        const responseHeaders = {};
+        response.headers.forEach((value, key) => {
+          responseHeaders[key] = value;
+        });
+        
+        let data;
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          data = await response.json();
+        } else {
+          data = await response.text();
+        }
+        
+        const isSuccess = response.ok;
+        statusBadge.innerHTML = `<span class="status ${isSuccess ? 'status-success' : 'status-error'}">${response.status} ${response.statusText}</span>`;
+        
+        resultDiv.textContent = JSON.stringify({
+          status: response.status,
+          statusText: response.statusText,
+          headers: responseHeaders,
+          data: data
+        }, null, 2);
+        
+      } catch (error) {
+        statusBadge.innerHTML = '<span class="status status-error">Error</span>';
+        resultDiv.textContent = 'Error: ' + error.message + '\n\nMake sure Dev Proxy is running and your browser is configured to use it.';
+      }
+    }
+    
+    function getAllCustomers() {
+      makeRequest(API_BASE);
+    }
+    
+    function getCustomer() {
+      const id = document.getElementById('customerId').value;
+      if (!id || isNaN(parseInt(id))) {
+        document.getElementById('result').textContent = 'Error: Please enter a valid customer ID';
+        return;
+      }
+      makeRequest(`${API_BASE}/${id}`);
+    }
+    
+    // Simple counter for generating unique IDs
+    let customerIdCounter = 100;
+    
+    function createCustomer() {
+      const name = document.getElementById('newCustomerName').value;
+      const email = document.getElementById('newCustomerEmail').value;
+      if (!name || !email) {
+        document.getElementById('result').textContent = 'Error: Please enter customer name and email';
+        return;
+      }
+      const newCustomer = {
+        id: customerIdCounter++,
+        name: name,
+        email: email,
+        phone: '+1-555-0000',
+        address: '123 New Street',
+        industry: 'Technology',
+        createdAt: new Date().toISOString()
+      };
+      
+      makeRequest(API_BASE, {
+        method: 'POST',
+        body: JSON.stringify(newCustomer)
+      });
+    }
+    
+    function updateCustomer() {
+      const id = document.getElementById('updateCustomerId').value;
+      const phone = document.getElementById('updateField').value;
+      if (!id || isNaN(parseInt(id))) {
+        document.getElementById('result').textContent = 'Error: Please enter a valid customer ID';
+        return;
+      }
+      
+      makeRequest(`${API_BASE}/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ phone: phone })
+      });
+    }
+    
+    function deleteCustomer() {
+      const id = document.getElementById('deleteCustomerId').value;
+      if (!id || isNaN(parseInt(id))) {
+        document.getElementById('result').textContent = 'Error: Please enter a valid customer ID';
+        return;
+      }
+      makeRequest(`${API_BASE}/${id}`, {
+        method: 'DELETE'
+      });
+    }
+  </script>
+</body>
+</html>
