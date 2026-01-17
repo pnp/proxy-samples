@@ -3,11 +3,11 @@
     "name": "pnp-devproxy-api-degradation-scenarios",
     "source": "pnp",
     "title": "Simulate API degradation scenarios",
-    "shortDescription": "This sample contains presets to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience.",
+    "shortDescription": "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios",
     "longDescription": [
-      "This sample contains presets to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience."
+      "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience."
     ],
     "creationDateTime": "2026-01-10",
     "updateDateTime": "2026-01-10",
@@ -21,7 +21,7 @@
       },
       {
         "key": "PRESET",
-        "value": "Yes"
+        "value": "No"
       },
       {
         "key": "MOCKS",

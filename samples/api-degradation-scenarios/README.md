@@ -2,7 +2,7 @@
 
 ## Summary
 
-This sample contains presets to simulate various API degradation scenarios to test how your application handles partial failures, intermittent errors, rate limiting, and slow responses. Use these configurations to build apps that gracefully degrade under stress and verify that your error handling and retry logic works before production.
+This sample demonstrates how to simulate various API degradation scenarios to test how your application handles partial failures, intermittent errors, rate limiting, and slow responses. Use these configurations to build apps that gracefully degrade under stress and verify that your error handling and retry logic works before production.
 
 ![API Degradation Monitoring Dashboard](assets/screenshot.png)
 
@@ -57,13 +57,7 @@ You can also run Dev Proxy with specific configurations:
 This configuration combines all three degradation scenarios: intermittent 503 errors (30% of requests), rate limiting (10 requests per minute), and slow responses (3-5 seconds latency).
 
 ```bash
-devproxy --config-file .devproxy/devproxyrc.json
-```
-
-Test with:
-
-```bash
-curl -ikx http://127.0.0.1:8000 https://api.example.com/data
+devproxy
 ```
 
 ### Intermittent 503 errors only
@@ -74,12 +68,6 @@ This configuration simulates random 503 Service Unavailable errors for 30% of re
 devproxy --config-file .devproxy/intermittent-errors.devproxyrc.json
 ```
 
-Test with:
-
-```bash
-curl -ikx http://127.0.0.1:8000 https://api.example.com/data
-```
-
 ### Rate limiting only
 
 This configuration simulates hitting rate limits with 429 Too Many Requests responses after 10 requests per minute.
@@ -88,24 +76,12 @@ This configuration simulates hitting rate limits with 429 Too Many Requests resp
 devproxy --config-file .devproxy/rate-limiting.devproxyrc.json
 ```
 
-Test with:
-
-```bash
-curl -ikx http://127.0.0.1:8000 https://api.example.com/data
-```
-
 ### Slow responses only
 
 This configuration adds random latency (3-5 seconds) to all responses.
 
 ```bash
 devproxy --config-file .devproxy/slow-responses.devproxyrc.json
-```
-
-Test with:
-
-```bash
-curl -ikx http://127.0.0.1:8000 https://api.example.com/data
 ```
 
 ## Features
