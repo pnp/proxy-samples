@@ -33,7 +33,7 @@ Version|Date|Comments
 - Navigate to the sample folder: `cd samples/api-usage-analytics`
 - Run `npm install` to install dependencies
 - Run `npm start` to start Dev Proxy and the web server
-- Open http://localhost:3000 in your browser (configure browser to use Dev Proxy at `http://127.0.0.1:8000`)
+- Open http://localhost:3000 in your browser
 - Click the API buttons to make requests and see the usage tracked in real-time
 - Use "Simulate User Session" to generate a realistic browsing pattern
 - Use "Burst 10 Requests" to test rapid request tracking
