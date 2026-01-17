@@ -48,7 +48,7 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 - **Common plugins**: `MockResponsePlugin`, `GenericRandomErrorPlugin`, `RateLimitingPlugin`, `OpenApiSpecGeneratorPlugin`
 
 ### Sample Types (via metadata)
-- **PRESET**: Pre-configured Dev Proxy settings (`"PRESET": "Yes"`)
+- **PRESET**: Reusable Dev Proxy configurations you can apply across APIs (for example, a config for generating OpenAPI specs where the target URL is provided via command-line args) (`"PRESET": "Yes"`)
 - **MOCKS**: API response mock files (`"MOCKS": "Yes"`)
 - **PLUGIN**: Custom Dev Proxy plugins (`"PLUGIN": "Yes"`)
 
@@ -144,7 +144,7 @@ Install with: `npm install -g @devproxy/mcp` or configure it in your MCP-compati
 - **Record mode**: `devproxy --record`
 - **Multiple configs**: Different files for different scenarios (daily limits, rate limits, etc.)
 
-> **⚠️ IMPORTANT**: Never use `devproxy --config-file devproxyrc.json` — the `--config-file` flag is redundant when using the default filename. Just use `devproxy`.
+> **⚠️ IMPORTANT**: Never use any of the default config filenames with `--config-file` (for example: `devproxyrc.jsonc` or `devproxyrc.json`). Dev Proxy automatically loads the default filenames and paths, so just use `devproxy`.
 
 ## Naming Conventions
 
