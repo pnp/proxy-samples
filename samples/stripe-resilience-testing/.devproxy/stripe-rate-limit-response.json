@@ -1,0 +1,16 @@
+{
+  "statusCode": 429,
+  "headers": [
+    { "name": "content-type", "value": "application/json" },
+    { "name": "request-id", "value": "req_simulated_rate_limit" },
+    { "name": "stripe-should-retry", "value": "true" }
+  ],
+  "body": {
+    "error": {
+      "type": "invalid_request_error",
+      "code": "rate_limit",
+      "message": "Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.",
+      "doc_url": "https://docs.stripe.com/error-codes/rate-limit"
+    }
+  }
+}

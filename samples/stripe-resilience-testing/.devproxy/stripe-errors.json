@@ -1,0 +1,161 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://api.stripe.com/*"
+      },
+      "responses": [
+        {
+          "statusCode": 402,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_card_declined" }
+          ],
+          "body": {
+            "error": {
+              "type": "card_error",
+              "code": "card_declined",
+              "decline_code": "generic_decline",
+              "message": "Your card was declined.",
+              "param": "source",
+              "doc_url": "https://docs.stripe.com/error-codes/card-declined"
+            }
+          }
+        },
+        {
+          "statusCode": 402,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_insufficient_funds" }
+          ],
+          "body": {
+            "error": {
+              "type": "card_error",
+              "code": "card_declined",
+              "decline_code": "insufficient_funds",
+              "message": "Your card has insufficient funds.",
+              "param": "source",
+              "doc_url": "https://docs.stripe.com/error-codes/card-declined"
+            }
+          }
+        },
+        {
+          "statusCode": 402,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_expired_card" }
+          ],
+          "body": {
+            "error": {
+              "type": "card_error",
+              "code": "expired_card",
+              "message": "Your card has expired.",
+              "param": "exp_year",
+              "doc_url": "https://docs.stripe.com/error-codes/expired-card"
+            }
+          }
+        },
+        {
+          "statusCode": 402,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_processing_error" }
+          ],
+          "body": {
+            "error": {
+              "type": "card_error",
+              "code": "processing_error",
+              "message": "An error occurred while processing your card. Try again in a little bit.",
+              "doc_url": "https://docs.stripe.com/error-codes/processing-error"
+            }
+          }
+        },
+        {
+          "statusCode": 500,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_server_error" }
+          ],
+          "body": {
+            "error": {
+              "type": "api_error",
+              "message": "An unexpected error occurred on Stripe's end. Please try again."
+            }
+          }
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_service_unavailable" },
+            { "name": "retry-after", "value": "5" }
+          ],
+          "body": {
+            "error": {
+              "type": "api_error",
+              "message": "The Stripe API is temporarily unavailable. Please retry your request."
+            }
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_invalid_request" }
+          ],
+          "body": {
+            "error": {
+              "type": "invalid_request_error",
+              "code": "parameter_missing",
+              "message": "Missing required param: amount.",
+              "param": "amount",
+              "doc_url": "https://docs.stripe.com/error-codes/parameter-missing"
+            }
+          }
+        },
+        {
+          "statusCode": 401,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_auth_error" }
+          ],
+          "body": {
+            "error": {
+              "type": "invalid_request_error",
+              "message": "Invalid API Key provided: sk_test_****XXXX"
+            }
+          }
+        },
+        {
+          "statusCode": 409,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_idempotency_error" }
+          ],
+          "body": {
+            "error": {
+              "type": "idempotency_error",
+              "message": "Keys for idempotent requests can only be used with the same parameters they were first used with."
+            }
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            { "name": "content-type", "value": "application/json" },
+            { "name": "request-id", "value": "req_simulated_refund_error" }
+          ],
+          "body": {
+            "error": {
+              "type": "invalid_request_error",
+              "code": "charge_already_refunded",
+              "message": "Charge ch_123 has already been refunded.",
+              "doc_url": "https://docs.stripe.com/error-codes/charge-already-refunded"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

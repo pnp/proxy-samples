@@ -1,0 +1,88 @@
+[
+  {
+    "name": "pnp-devproxy-stripe-resilience-testing",
+    "source": "pnp",
+    "title": "Stripe API resilience testing",
+    "shortDescription": "Test how your app handles Stripe API errors, rate limiting, and slow responses",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/stripe-resilience-testing",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/stripe-resilience-testing",
+    "longDescription": [
+      "Test how your app handles Stripe API errors, rate limiting, and slow responses"
+    ],
+    "creationDateTime": "2026-01-18",
+    "updateDateTime": "2026-01-18",
+    "products": [
+      "Dev Proxy",
+      "Stripe"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "stripe-resilience-testing"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/stripe-resilience-testing/assets/screenshot.png",
+        "alt": "Screenshot of Dev Proxy simulating Stripe API errors"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Test my app with random errors",
+        "description": "Learn how to use Dev Proxy to test your app with random API errors.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-random-errors"
+      },
+      {
+        "name": "Simulate slow API responses",
+        "description": "Learn how to use Dev Proxy to simulate slow API responses.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-slow-api-responses"
+      },
+      {
+        "name": "Simulate rate limiting",
+        "description": "Learn how to use Dev Proxy to simulate rate limiting.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-rate-limit-api-responses"
+      },
+      {
+        "name": "Stripe API Error Handling",
+        "description": "Learn about Stripe API error types and how to handle them.",
+        "url": "https://docs.stripe.com/api/errors"
+      },
+      {
+        "name": "Stripe Error Codes",
+        "description": "Complete reference for Stripe error codes.",
+        "url": "https://docs.stripe.com/error-codes"
+      }
+    ]
+  }
+]

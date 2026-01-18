@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "LatencyPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "latencyPlugin"
+    },
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "rateLimitingStripe"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "stripeErrors"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.stripe.com/*"
+  ],
+  "latencyPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/latencyplugin.schema.json",
+    "minMs": 200,
+    "maxMs": 1500
+  },
+  "rateLimitingStripe": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/ratelimitingplugin.schema.json",
+    "headerLimit": "RateLimit-Limit",
+    "headerRemaining": "RateLimit-Remaining",
+    "headerReset": "RateLimit-Reset",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 1,
+    "warningThresholdPercent": 80,
+    "rateLimit": 25,
+    "resetFormat": "SecondsLeft",
+    "whenLimitExceeded": "Custom",
+    "customResponseFile": "stripe-rate-limit-response.json"
+  },
+  "stripeErrors": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/genericrandomerrorplugin.schema.json",
+    "errorsFile": "stripe-errors.json",
+    "rate": 50
+  },
+  "logLevel": "information",
+  "newVersionNotification": "stable",
+  "showSkipMessages": true
+}
