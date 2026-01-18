@@ -18,7 +18,7 @@ This sample demonstrates how to simulate various API degradation scenarios to te
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 10, 2026|Initial release
+1.0|January 18, 2026|Initial release
 
 ## Prerequisites
 
@@ -104,6 +104,7 @@ This sample demonstrates how to use Dev Proxy to simulate API degradation scenar
 | `.devproxy/rate-limiting.devproxyrc.json` | Rate limiting at 10 requests/minute |
 | `.devproxy/slow-responses.devproxyrc.json` | Random latency between 3-5 seconds |
 | `.devproxy/errors-503.json` | Error responses for the GenericRandomErrorPlugin |
+| `.devproxy/mocks.json` | Mock responses for successful requests |
 | `index.html` | Monitoring dashboard web app |
 | `package.json` | Node.js configuration to run the sample |
 

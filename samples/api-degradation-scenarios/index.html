@@ -256,6 +256,10 @@
         <div class="metric-value neutral" id="totalRequests">0</div>
       </div>
       <div class="metric-card">
+        <h3>Pending</h3>
+        <div class="metric-value neutral" id="pendingRequests">0</div>
+      </div>
+      <div class="metric-card">
         <h3>Success Rate</h3>
         <div class="metric-value success" id="successRate">100%</div>
       </div>
@@ -270,6 +274,10 @@
       <div class="metric-card">
         <h3>Rate Limited (429)</h3>
         <div class="metric-value warning" id="errors429">0</div>
+      </div>
+      <div class="metric-card">
+        <h3>Other Errors</h3>
+        <div class="metric-value error" id="otherErrors">0</div>
       </div>
       <div class="metric-card">
         <h3>Successful (2xx)</h3>
@@ -308,6 +316,13 @@
         </div>
         <span class="count" id="error429Percent">0%</span>
       </div>
+      <div class="error-bar">
+        <span class="label">Other Errors</span>
+        <div class="bar-container">
+          <div class="bar error-503" id="otherErrorsBar" style="width: 0%"></div>
+        </div>
+        <span class="count" id="otherErrorsPercent">0%</span>
+      </div>
     </div>
 
     <div class="log-container">
@@ -319,9 +334,11 @@
   <script>
     const stats = {
       total: 0,
+      pending: 0,
       success: 0,
       error503: 0,
       error429: 0,
+      otherErrors: 0,
       totalResponseTime: 0,
       responseTimes: []
     };
@@ -330,9 +347,14 @@
 
     function updateUI() {
       document.getElementById('totalRequests').textContent = stats.total;
+      document.getElementById('pendingRequests').textContent = stats.pending;
+      const pendingEl = document.getElementById('pendingRequests');
+      pendingEl.textContent = stats.pending;
+      pendingEl.className = 'metric-value ' + (stats.pending > 0 ? 'warning' : 'neutral');
       document.getElementById('successCount').textContent = stats.success;
       document.getElementById('errors503').textContent = stats.error503;
       document.getElementById('errors429').textContent = stats.error429;
+      document.getElementById('otherErrors').textContent = stats.otherErrors;
 
       const successRate = stats.total > 0 ? ((stats.success / stats.total) * 100).toFixed(1) : 100;
       const successRateEl = document.getElementById('successRate');
@@ -349,14 +371,17 @@
         const successPercent = (stats.success / stats.total) * 100;
         const error503Percent = (stats.error503 / stats.total) * 100;
         const error429Percent = (stats.error429 / stats.total) * 100;
+        const otherErrorsPercent = (stats.otherErrors / stats.total) * 100;
 
         document.getElementById('successBar').style.width = successPercent + '%';
         document.getElementById('error503Bar').style.width = error503Percent + '%';
         document.getElementById('error429Bar').style.width = error429Percent + '%';
+        document.getElementById('otherErrorsBar').style.width = otherErrorsPercent + '%';
 
         document.getElementById('successPercent').textContent = successPercent.toFixed(0) + '%';
         document.getElementById('error503Percent').textContent = error503Percent.toFixed(0) + '%';
         document.getElementById('error429Percent').textContent = error429Percent.toFixed(0) + '%';
+        document.getElementById('otherErrorsPercent').textContent = otherErrorsPercent.toFixed(0) + '%';
       }
     }
 
@@ -387,6 +412,8 @@
 
     async function makeRequest() {
       const startTime = performance.now();
+      stats.pending++;
+      updateUI();
 
       try {
         const response = await fetch('https://api.example.com/data', {
@@ -399,6 +426,7 @@
         const endTime = performance.now();
         const responseTime = Math.round(endTime - startTime);
 
+        stats.pending--;
         stats.total++;
         stats.totalResponseTime += responseTime;
         stats.responseTimes.push(responseTime);
@@ -415,11 +443,13 @@
           const retryAfter = response.headers.get('Retry-After');
           addLogEntry(response.status, responseTime, `Rate limited. Retry after: ${retryAfter || 'unknown'}s`);
         } else {
+          stats.otherErrors++;
           addLogEntry(response.status, responseTime, `HTTP ${response.status}`);
         }
       } catch (error) {
         const endTime = performance.now();
         const responseTime = Math.round(endTime - startTime);
+        stats.pending--;
         stats.total++;
         stats.totalResponseTime += responseTime;
 
@@ -460,9 +490,11 @@
 
     function clearStats() {
       stats.total = 0;
+      stats.pending = 0;
       stats.success = 0;
       stats.error503 = 0;
       stats.error429 = 0;
+      stats.otherErrors = 0;
       stats.totalResponseTime = 0;
       stats.responseTimes = [];
 

@@ -9,8 +9,8 @@
     "longDescription": [
       "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience."
     ],
-    "creationDateTime": "2026-01-10",
-    "updateDateTime": "2026-01-10",
+    "creationDateTime": "2026-01-18",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],
@@ -25,7 +25,7 @@
       },
       {
         "key": "MOCKS",
-        "value": "No"
+        "value": "Yes"
       },
       {
         "key": "PLUGIN",

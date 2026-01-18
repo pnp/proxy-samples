@@ -16,6 +16,10 @@
             {
               "name": "Retry-After",
               "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "body": {
@@ -35,6 +39,10 @@
             {
               "name": "Retry-After",
               "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "body": {
@@ -54,6 +62,10 @@
             {
               "name": "Retry-After",
               "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "body": {

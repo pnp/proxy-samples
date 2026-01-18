@@ -6,6 +6,12 @@
       "enabled": true,
       "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
       "configSection": "latencyPlugin"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "mockResponsePlugin"
     }
   ],
   "urlsToWatch": [
@@ -15,5 +21,9 @@
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/latencyplugin.schema.json",
     "minMs": 3000,
     "maxMs": 5000
+  },
+  "mockResponsePlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.schema.json",
+    "mocksFile": "mocks.json"
   }
 }
