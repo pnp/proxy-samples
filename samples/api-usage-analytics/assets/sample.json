@@ -9,8 +9,8 @@
     "longDescription": [
       "Demonstrates how to use Dev Proxy to track and analyze API usage patterns, showing which endpoints are used most frequently with reports in plain text, JSON, and Markdown formats."
     ],
-    "creationDateTime": "2026-01-10",
-    "updateDateTime": "2026-01-10",
+    "creationDateTime": "2026-01-18",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],
@@ -21,7 +21,7 @@
       },
       {
         "key": "PRESET",
-        "value": "Yes"
+        "value": "No"
       },
       {
         "key": "MOCKS",
