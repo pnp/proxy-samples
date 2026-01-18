@@ -206,3 +206,27 @@ After upgrading, use VS Code's **Problems panel** (or `get_errors` tool) to conf
 - `body: null` may not be allowed (use `body: ""` instead)
 - New required properties may be added
 - Property types may become stricter
+
+## Common Mistakes to Avoid
+
+### PRESET Metadata
+- **PRESET should be "No"** for most samples
+- Only set `"PRESET": "Yes"` if the sample is **reusable for other purposes** (e.g., a generic configuration that developers can apply to their own APIs)
+- Having a `devproxyrc.json` config file does NOT automatically make it a preset
+
+### Startup Commands
+- `.devproxy/devproxyrc.json` is a **default path** that Dev Proxy looks for automatically
+- When config is in `.devproxy/devproxyrc.json`, the startup command should just be `devproxy` (no `--config-file` needed)
+- Only use `--config-file` when the config file is in a non-default location or has a non-default name
+
+### Updating Dates
+- When updating sample dates, **always update both files**:
+  - `assets/sample.json`: Update `updateDateTime` field
+  - `README.md`: Update the version history table with the new date
+- Dates must stay in sync between these two files
+- **Pre-release updates** (sample not yet merged to main):
+  - Update both `creationDateTime` and `updateDateTime` in `sample.json`
+  - Update the v1.0 date in the README version history table
+- **Post-release updates** (sample already in main):
+  - Only update `updateDateTime` in `sample.json`
+  - Add a new version entry (e.g., 1.1) to the README version history table

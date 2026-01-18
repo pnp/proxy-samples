@@ -18,7 +18,7 @@ This sample demonstrates how to simulate API key authentication for mock APIs us
 
 Version|Date|Comments
 -------|----|--------
-1.0|January 10, 2026|Initial release
+1.0|January 18, 2026|Initial release
 
 ## Minimal path to awesome
 
