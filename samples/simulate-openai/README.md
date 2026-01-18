@@ -18,6 +18,7 @@ This sample contains a preset that allows you to easily simulate the OpenAI API 
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated for Dev Proxy v0.29.2
 1.0|June 17, 2024|Initial release
@@ -26,7 +27,7 @@ Version|Date|Comments
 
 - Download the preset using Dev Proxy by running: `devproxy config get simulate-openai`
 - Start Ollama with the llama3.2 model: `ollama run llama3.2`
-- Start Dev Proxy specifying the path to the config file: `devproxy --config-file "~appFolder/config/simulate-openai/simulate-openai.json"`
+- Start Dev Proxy specifying the path to the config file: `devproxy`
 - Use your app
 
 ## Features

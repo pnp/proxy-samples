@@ -19,6 +19,7 @@ This sample contains a preset to simulate rate limiting and random errors on Pos
 
 Version|Date|Comments
 -------|----|--------
+1.6|January 18, 2026|Moved config files to .devproxy folder
 1.5|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.4|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.3|January 25, 2024|Updated schema version
@@ -29,7 +30,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/postmark-rate-limiting-errors) then unzip it)
-- Start Dev Proxy specifying the path to one of the config files, eg. `devproxy --config-file postmark-rate-limiting-rc.json`
+- Start Dev Proxy specifying the path to one of the config files, eg. `devproxy --config-file .devproxy/postmark-rate-limiting-rc.json`
 
 ## Features
 

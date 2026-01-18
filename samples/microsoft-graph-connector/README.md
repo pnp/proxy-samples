@@ -18,6 +18,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 Version|Date|Comments
 -------|----|--------
+1.6|January 18, 2026|Moved config files to .devproxy folder
 1.5|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.4|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.3|January 11, 2024|Updated to new format

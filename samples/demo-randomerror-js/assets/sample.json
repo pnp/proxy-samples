@@ -10,7 +10,7 @@
       "This sample contains a demo web application connected to a placeholder API. Using Dev Proxy, you can simulate random errors returned by the API and see how the app handles them."
     ],
     "creationDateTime": "2024-01-26",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

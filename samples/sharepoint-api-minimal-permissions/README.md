@@ -18,6 +18,7 @@ Preset to detect minimal permissions for SharePoint REST and CSOM APIs.
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|March 31, 2025|Initial release
@@ -25,7 +26,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Get the preset using Dev Proxy by running `devproxy config get sharepoint-api-minimal-permissions`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/sharepoint-api-minimal-permissions/devproxyrc.json" --env tenant=your-tenant-name`. `your-tenant-name` is the name of your Microsoft 365 tenant without `.onmicrosoft.com`, for example `contoso`.
+- Start Dev Proxy with the config file, by running `devproxy --env tenant=your-tenant-name`. `your-tenant-name` is the name of your Microsoft 365 tenant without `.onmicrosoft.com`, for example `contoso`.
 - Call SharePoint APIs.
 - Stop recording, by pressing `s` in the Dev Proxy session.
 - Check out the output in the console and the generated reports for the minimal permissions required by the SharePoint APIs you called.

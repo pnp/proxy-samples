@@ -18,6 +18,7 @@ This sample illustrates how to use Dev Proxy to check if your app is calling API
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|June 17, 2024|Initial release
@@ -35,7 +36,7 @@ Version|Date|Comments
 - Navigate to the Dev Proxy installation folder, and open the `config/demo-apicenter-minimalpermissions` folder
 - In the `devproxyrc.json` file, in the `apiCenterMinimalPermissionsPlugin` update the API Center information
 - In API Center, create a new API and import the OpenAPI spec from the `api.northwind.com.json` file
-- Start Dev Proxy by running `devproxy --config-file "~appFolder/config/demo-apicenter-minimalpermissions/devproxyrc.json" --record`
+- Start Dev Proxy by running `devproxy --record`
 - In VSCode, open the `northwind.http` file and run the requests to the API
 - In the terminal where Dev Proxy is running, press `s` to stop recording
 - Dev Proxy will generate a report of the minimal permissions needed to call the API

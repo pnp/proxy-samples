@@ -10,7 +10,7 @@
       "This sample contains a preset that allows you to easily simulate the OpenAI API using Dev Proxy. Simulating OpenAI using Dev Proxy is useful when you're working on parts of your app that don't require a real-response from an LLM and don't want to incur unnecessary costs."
     ],
     "creationDateTime": "2024-06-17",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

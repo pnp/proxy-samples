@@ -27,6 +27,7 @@ This combination helps developers test their applications' resilience when:
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 18, 2026|Moved config files to .devproxy folder
 1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|January 3, 2026|Initial release
 
@@ -59,7 +60,7 @@ Version|Date|Comments
 
 ```bash
 cd samples/llm-combined-rate-limiting
-devproxy --config-file aggressive-limiting.json
+devproxy --config-file .devproxy/aggressive-limiting.json
 ```
 
 > Dev Proxy automatically registers as a system proxy when started.

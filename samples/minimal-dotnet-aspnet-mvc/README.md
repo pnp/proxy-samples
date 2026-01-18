@@ -18,6 +18,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with an ASP.NET MVC 
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 18, 2026|Fixed sample metadata
 1.0|January 5, 2026|Initial release
 
 ## Prerequisites

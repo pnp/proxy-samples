@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-browser-js",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-browser-js",
     "longDescription": [
-      "This sample demonstrates the minimal setup to use Dev Proxy with JavaScript running in a browser. It shows how to configure Dev Proxy to intercept API requests and mock responses using the MockResponsePlugin with CORS headers. The sample makes a single API call to JSONPlaceholder and returns a mocked response, demonstrating how Dev Proxy intercepts and replaces the real API call in a browser environment. Perfect for getting started with Dev Proxy in browser-based JavaScript projects."
+      "Demonstrates the minimal setup to use Dev Proxy with JavaScript in a browser"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

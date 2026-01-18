@@ -20,13 +20,14 @@ The sample provides a complete working example of API mocking, where all respons
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 18, 2026|Moved config files to .devproxy folder
 1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|July 16, 2025|Initial release
 
 ## Minimal path to awesome
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/jsonplaceholder-mocks) then unzip it)
-* Start Dev Proxy specifying the path to the config file: `devproxy --config-file devproxyrc.json`
+* Start Dev Proxy: `devproxy`
 * Test the mocks by making requests to JSONPlaceholder API endpoints:
   ```bash
   # Test GET requests

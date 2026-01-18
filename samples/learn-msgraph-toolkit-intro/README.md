@@ -6,7 +6,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 ## Compatibility
 
-![Dev Proxy v0.15.0](https://aka.ms/devproxy/badge/v0.15.0)
+![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
 
 ## Contributors
 
@@ -16,6 +16,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 Version|Date|Comments
 -------|----|--------
+1.4|January 18, 2026|Moved config files to .devproxy folder
 1.3|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.2|February 29, 2024|Updated Dev Proxy version to stable
 1.1|February 13, 2024|Updated to use the new EntraMockResponsePlugin
@@ -24,7 +25,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Get the preset using Dev Proxy by running `devproxy config get learn-msgraph-toolkit-intro`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/learn-msgraph-toolkit-intro/devproxyrc.json"`
+- Start Dev Proxy with the config file, by running `devproxy`
 - Follow along with the [Get started with Microsoft Graph Toolkit](https://learn.microsoft.com/training/modules/msgraph-toolkit-intro/) learn module
 
 ## Help

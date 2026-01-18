@@ -7,12 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience",
     "longDescription": [
-      "Sample chat application that demonstrates how to test AI applications against common large language model (LLM) failure modes using Dev Proxy's LanguageModelFailurePlugin.",
-      "The app shows how to build resilient AI applications that gracefully handle unexpected or problematic LLM responses.",
-      "Features an interactive chat UI where Dev Proxy injects failure types like hallucinations, bias, circular reasoning, and more."
+      "Sample chat application that demonstrates how to test AI applications against common LLM failure modes using the LanguageModelFailurePlugin."
     ],
     "creationDateTime": "2026-01-06",
-    "updateDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

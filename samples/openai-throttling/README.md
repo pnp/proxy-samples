@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.9|January 18, 2026|Moved config files to .devproxy folder
 1.8|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.7|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.6|January 9, 2025|Updated to Dev Proxy v0.23
@@ -34,8 +35,8 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-docs-mocks) then unzip it)
-- Start Dev Proxy specifying the path to one of the mock files, eg. `devproxy --config-file openai-config.json`
+- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling) then unzip it)
+- Start Dev Proxy by running `devproxy`
 
 ## Features
 

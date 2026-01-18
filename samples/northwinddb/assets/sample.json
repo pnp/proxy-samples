@@ -10,7 +10,7 @@
       "This sample contains a set of CRUD APIs based on the Northwind database data. Use this API to get mock data in your app. This sample contains mock CRUD APIs for product categories, customers, employees, orders, products, shippers, suppliers and territories. See the sample readme on GitHub for the list of available endpoints."
     ],
     "creationDateTime": "2024-01-16",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

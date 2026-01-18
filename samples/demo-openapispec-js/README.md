@@ -18,6 +18,7 @@ This sample contains a demo web application connected to a placeholder API. Usin
 
 Version|Date|Comments
 -------|----|--------
+1.4|January 18, 2026|Moved config files to .devproxy folder
 1.3|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.2|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.1|January 25, 2024|Updated schema version

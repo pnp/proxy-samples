@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-spfx",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-spfx",
     "longDescription": [
-      "This sample demonstrates the minimal setup to use Dev Proxy with a SharePoint Framework (SPFx) web part. It includes a simple web part that makes an API call to JSONPlaceholder, with Dev Proxy configured to mock the response. This is perfect for learning how to integrate Dev Proxy into your SPFx development workflow for testing API behaviors without hitting real endpoints."
+      "Demonstrates the minimal setup to use Dev Proxy with a SharePoint Framework web part"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

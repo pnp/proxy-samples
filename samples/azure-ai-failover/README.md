@@ -22,6 +22,7 @@ The sample configures Dev Proxy to fail all requests to Azure OpenAI with variou
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 18, 2026|Moved config files to .devproxy folder
 1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|January 5, 2026|Initial release
 

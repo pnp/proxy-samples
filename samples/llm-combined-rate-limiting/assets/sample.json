@@ -10,7 +10,7 @@
       "This sample demonstrates how to combine the LanguageModelRateLimitingPlugin and RateLimitingPlugin to simulate realistic throttling scenarios that developers encounter when building applications that use language models (LLMs) in production. The sample includes an interactive AI Code Review Assistant demo app that uses GitHub Models API for code analysis and a mock API for fetching code snippets. Run it with 'npx http-server' to see both rate limiting types in action. Perfect for testing how your application handles token limits, request limits, or both simultaneously. Includes aggressive limiting config for quick testing and stress-test functionality."
     ],
     "creationDateTime": "2026-01-03",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

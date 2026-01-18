@@ -18,6 +18,7 @@ This sample contains a set of CRUD APIs based on the [Northwind database data](h
 
 Version|Date|Comments
 -------|----|--------
+1.4|January 18, 2026|Moved config files to .devproxy folder
 1.3|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.2|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.1|January 25, 2024|Updated schema version
@@ -26,7 +27,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Get the preset using Dev Proxy by running `devproxy config get northwinddb`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/northwinddb/northwind.json"`
+- Start Dev Proxy with the config file, by running `devproxy`
 
 ## Features
 

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "pnp-devproxy-learn-msgraph-toolkit-intro",
+    "source": "pnp",
+    "title": "Mocks for the \"Get started with Microsoft Graph Toolkit\" learn module",
+    "shortDescription": "This sample contains mocks for the \"Get started with Microsoft Graph Toolkit\" learn module. The mocks allow you to simulate the behavior of the Microsoft Graph API without making actual requests to the service.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/learn-msgraph-toolkit-intro",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/learn-msgraph-toolkit-intro",
+    "longDescription": [
+      "This sample contains mocks for the \"Get started with Microsoft Graph Toolkit\" learn module. The mocks allow you to simulate the behavior of the Microsoft Graph API without making actual requests to the service."
+    ],
+    "creationDateTime": "2024-02-09",
+    "updateDateTime": "2026-01-18",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "learn-msgraph-toolkit-intro"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/learn-msgraph-toolkit-intro/assets/screenshot.png",
+        "alt": "Dev Proxy mocking Microsoft Graph Toolkit learn module"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Microsoft Graph Toolkit",
+        "description": "Learn module for getting started with Microsoft Graph Toolkit.",
+        "url": "https://learn.microsoft.com/training/modules/msgraph-toolkit-intro/"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      }
+    ]
+  }
+]

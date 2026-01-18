@@ -10,7 +10,7 @@
       "Detect minimal permissions for SharePoint REST and CSOM APIs. This preset contains a an OpenAPI spec of SharePoint REST APIs and documentation of permissions required by SharePoint CSOM APIs. Using this information allows you to effortlessly find out the minimal permissions that your app needs to use the select SharePoint APIs."
     ],
     "creationDateTime": "2025-03-31",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

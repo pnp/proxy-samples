@@ -24,6 +24,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 18, 2026|Fixed sample metadata
 1.0|January 5, 2026|Initial release
 
 ## Prerequisites

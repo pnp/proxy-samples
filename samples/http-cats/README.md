@@ -25,6 +25,7 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 Version|Date|Comments
 -------|----|--------
+1.8|January 18, 2026|Moved config files to .devproxy folder
 1.7|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.6|June 27, 2025|Updated to 0.29 schema
 1.5|February 11, 2025|Updated to 0.24 schema
@@ -37,7 +38,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-cats) then unzip it)
-- Start Dev Proxy specifying the path to one of the config file, eg. `devproxy --config-file http-cats-config.json`
+- Start Dev Proxy by running `devproxy`
 
 ## Features
 

@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the GitHub Models inference API
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 18, 2026|Moved config files to .devproxy folder
 1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.0|June 27, 2025|Initial release
 

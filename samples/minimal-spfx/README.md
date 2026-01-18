@@ -21,6 +21,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with a SharePoint Fr
 
 Version|Date|Comments
 -------|----|--------
+1.1|January 18, 2026|Fixed sample metadata
 1.0|January 6, 2026|Initial release
 
 ## Prerequisites

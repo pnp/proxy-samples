@@ -10,7 +10,7 @@
       "This sample contains mock responses that simulate Azure OpenAI's Responsible AI content filtering behavior. It helps developers test how their applications handle filtered, blocked, or modified responses based on Azure's content safety policies. The sample covers all content filter categories including hate, sexual, violence, self-harm, jailbreak attacks, and protected material detection. Using this sample, developers can implement proper error handling for Responsible AI filtered responses without needing to trigger actual content filters."
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

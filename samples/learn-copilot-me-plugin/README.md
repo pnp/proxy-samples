@@ -16,6 +16,7 @@ This sample contains a CRUD API for the [Connect Copilot for Microsoft 365 to yo
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated to Dev Proxy v0.29.1
 1.0|July 23, 2024|Initial release
@@ -23,7 +24,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Get the preset using Dev Proxy by running `devproxy config get learn-copilot-me-plugin`
-- Start Dev Proxy with the config file, by running `devproxy --config-file "~appFolder/config/learn-copilot-me-plugin/products-api-config.json"`
+- Start Dev Proxy with the config file, by running `devproxy`
 - Follow along with the [Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio](https://learn.microsoft.com/training/modules/copilot-message-extension-plugins/) learn module
 
 ## Features

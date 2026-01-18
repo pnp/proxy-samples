@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-python",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-python",
     "longDescription": [
-      "This sample demonstrates the minimal setup to use Dev Proxy with a Python application. It shows how to configure the requests library to route traffic through Dev Proxy and receive mocked API responses. The sample includes a simple Python script that makes an API call to JSONPlaceholder and receives a mocked response from Dev Proxy's MockResponsePlugin."
+      "Demonstrates the minimal setup to use Dev Proxy with a Python application"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

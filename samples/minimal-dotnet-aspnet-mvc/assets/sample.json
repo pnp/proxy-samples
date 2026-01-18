@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspnet-mvc",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspnet-mvc",
     "longDescription": [
-      "This sample demonstrates the minimal setup to use Dev Proxy with an ASP.NET MVC application. It shows how to configure Dev Proxy to intercept API requests and mock responses using the MockResponsePlugin. The sample makes a single API call to JSONPlaceholder from a controller and displays the mocked response in a Razor view, demonstrating how Dev Proxy intercepts and replaces the real API call. Perfect for getting started with Dev Proxy in ASP.NET MVC projects."
+      "Demonstrates the minimal setup to use Dev Proxy with an ASP.NET MVC application"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

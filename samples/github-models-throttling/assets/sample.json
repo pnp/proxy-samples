@@ -10,7 +10,7 @@
       "This sample contains a preset and mocks to simulate the throttling of the GitHub Models inference API. As more and more applications use GitHub Models inference API to use AI, it's important that developers can verify that their apps can properly handle cases when the API is throttled. Using this preset you can simulate throttling of the GitHub Models inference API and see how your app will handle it. The preset includes 2 different throttling scenarios: exceeded requests per minute, and exceeded requests per day. Dev Proxy will simulate throttling the API using one of these modes at random."
     ],
     "creationDateTime": "2025-06-27",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

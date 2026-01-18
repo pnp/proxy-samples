@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
     "longDescription": [
-      "This sample demonstrates the minimal setup to use Dev Proxy with .NET Aspire. It shows how to configure Dev Proxy to intercept API requests and mock responses using the MockResponsePlugin. The sample includes an Aspire AppHost that orchestrates a web API service, which makes a single API call to JSONPlaceholder and displays the mocked response. Perfect for getting started with Dev Proxy in .NET Aspire distributed applications."
+      "Demonstrates the minimal setup to use Dev Proxy with .NET Aspire"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-05",
+    "updateDateTime": "2026-01-18",
     "products": [
       "Dev Proxy"
     ],

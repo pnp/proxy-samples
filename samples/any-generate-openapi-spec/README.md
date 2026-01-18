@@ -19,6 +19,7 @@ This sample contains a preset that allows you to generate an OpenAPI spec for an
 
 Version|Date|Comments
 -------|----|--------
+1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.1|June 27, 2025|Updated to Dev Proxy v0.29.2
 1.0|January 29, 2024|Initial release
@@ -26,7 +27,7 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/any-generate-openapi-spec) then unzip it)
-- Start Dev Proxy specifying the path to the config file and the URL of the API for which you want to generate an OpenAPI spec, eg. `devproxy --config-file generate-openapi-spec.json --urls-to-watch "https://api.contoso.com/*" --record`
+- Start Dev Proxy specifying the URL of the API for which you want to generate an OpenAPI spec, eg. `devproxy --urls-to-watch "https://api.contoso.com/*" --record`
 - Use your application to issue API requests
 - Stop Dev Proxy
 - Open the generated OpenAPI spec in the current working folder
