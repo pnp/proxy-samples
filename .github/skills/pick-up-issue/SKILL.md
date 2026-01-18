@@ -55,8 +55,16 @@ After claiming, proceed with the actual work:
 | `gh issue view <n> --json assignees,labels` | Check if issue is claimed |
 | `gh issue edit <n> --add-label "work in progress"` | Mark as in progress |
 | `gh issue edit <n> --add-assignee @me` | Assign to current user |
-| `gh issue edit <n> --remove-label "work in progress"` | Remove label when done |
+| `gh issue edit <n> --remove-label "work in progress" --remove-assignee @me` | Abandon work on issue |
 
 ## After Completing Work
 
-When the PR is merged, the issue closes automatically if the PR description includes "Fixes #123". Remove the "work in progress" label at that point.
+When the PR is merged, the issue closes automatically if the PR description includes "Fixes #123". No further action needed.
+
+## Abandoning Work
+
+If unable to complete the work, release the issue for others:
+
+```bash
+gh issue edit <issue-number> --remove-label "work in progress" --remove-assignee @me
+```
