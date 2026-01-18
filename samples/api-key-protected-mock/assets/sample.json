@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-api-key-protected-mock",
+    "source": "pnp",
+    "title": "Simulating API key authentication",
+    "shortDescription": "Demonstrates how to simulate API key authentication for mock APIs using Dev Proxy with AuthPlugin and MockResponsePlugin.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock",
+    "longDescription": [
+      "Demonstrates how to simulate API key authentication for mock APIs using Dev Proxy with AuthPlugin and MockResponsePlugin."
+    ],
+    "creationDateTime": "2026-01-18",
+    "updateDateTime": "2026-01-18",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "api-key-protected-mock"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/api-key-protected-mock/assets/screenshot.png",
+        "alt": "Dev Proxy simulating API key authentication"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "AuthPlugin documentation",
+        "description": "The documentation of the AuthPlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/authplugin"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      }
+    ]
+  }
+]

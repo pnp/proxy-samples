@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "AuthPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "auth"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "mockResponsePlugin"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "auth": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/authplugin.schema.json",
+    "type": "apiKey",
+    "apiKey": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "x-api-key"
+        },
+        {
+          "in": "query",
+          "name": "code"
+        },
+        {
+          "in": "cookie",
+          "name": "api_key"
+        }
+      ],
+      "allowedKeys": [
+        "secret-key-123",
+        "dev-key-456"
+      ]
+    }
+  },
+  "mockResponsePlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/mockresponseplugin.schema.json",
+    "mocksFile": "mocks.json"
+  }
+}
