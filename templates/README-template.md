@@ -29,7 +29,7 @@ You can add multiple screenshots to help users understand your samples without h
 What's the minimal proxy version required to use this sample?
 -->
 
-![Dev Proxy v0.10](https://img.shields.io/badge/devproxy-v0.10-green.svg)
+![Dev Proxy v0.10](https://aka.ms/devproxy/badge/v2.0.0)
 
 ## Contributors
 <!--
