@@ -1,0 +1,87 @@
+[
+  {
+    "name": "pnp-devproxy-api-degradation-scenarios",
+    "source": "pnp",
+    "title": "Simulate API degradation scenarios",
+    "shortDescription": "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios",
+    "longDescription": [
+      "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience."
+    ],
+    "creationDateTime": "2026-01-18",
+    "updateDateTime": "2026-01-18",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "api-degradation-scenarios"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/api-degradation-scenarios/assets/screenshot.png",
+        "alt": "Dev Proxy simulating API degradation scenarios"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "GenericRandomErrorPlugin",
+        "description": "Technical reference for the GenericRandomErrorPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin"
+      },
+      {
+        "name": "RateLimitingPlugin",
+        "description": "Technical reference for the RateLimitingPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin"
+      },
+      {
+        "name": "LatencyPlugin",
+        "description": "Technical reference for the LatencyPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/latencyplugin"
+      },
+      {
+        "name": "Test my app with random errors",
+        "description": "How to test your app with random errors.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/test-my-app-with-random-errors"
+      }
+    ]
+  }
+]

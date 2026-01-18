@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://api.example.com/*"
+      },
+      "responses": [
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "ServiceUnavailable",
+              "message": "Service is temporarily unavailable. Please retry later."
+            }
+          }
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "ServerBusy",
+              "message": "The server is currently busy. Please try again in a few moments."
+            }
+          }
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "CapacityExceeded",
+              "message": "Server capacity exceeded. Please wait before retrying."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
