@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Usage Analytics - Dev Proxy Sample</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .description {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .api-btn {
+      background: #0078d4;
+      color: white;
+    }
+    .api-btn:hover {
+      background: #106ebe;
+    }
+    .action-btn {
+      background: #107c10;
+      color: white;
+    }
+    .action-btn:hover {
+      background: #0b5c0b;
+    }
+    .clear-btn {
+      background: #d83b01;
+      color: white;
+    }
+    .clear-btn:hover {
+      background: #a52c00;
+    }
+    .log-container {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .log-entry {
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      padding: 4px 0;
+      border-bottom: 1px solid #333;
+    }
+    .log-entry:last-child {
+      border-bottom: none;
+    }
+    .log-method {
+      display: inline-block;
+      width: 50px;
+      font-weight: bold;
+    }
+    .log-method.GET { color: #4ec9b0; }
+    .log-method.POST { color: #dcdcaa; }
+    .log-method.PUT { color: #ce9178; }
+    .log-method.DELETE { color: #f14c4c; }
+    .log-url {
+      color: #9cdcfe;
+    }
+    .log-status {
+      float: right;
+      font-weight: bold;
+    }
+    .log-status.success { color: #4ec9b0; }
+    .log-status.error { color: #f14c4c; }
+    .log-time {
+      color: #666;
+      font-size: 11px;
+    }
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .stat-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #0078d4;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+    }
+    .instructions {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .instructions h3 {
+      margin-top: 0;
+      color: #856404;
+    }
+    .instructions code {
+      background: #f8f9fa;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Consolas', monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 API Usage Analytics</h1>
+  <p class="description">Make API requests to different endpoints and see Dev Proxy track your usage patterns.</p>
+
+  <div class="instructions">
+    <h3>📋 How to use</h3>
+    <ol>
+      <li>Start Dev Proxy: <code>devproxy</code></li>
+      <li>Open this page and click the API buttons to make requests</li>
+      <li>Stop Dev Proxy (<kbd>Ctrl</kbd>+<kbd>C</kbd>) to see the execution summary</li>
+    </ol>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-value" id="totalRequests">0</div>
+      <div class="stat-label">Total Requests</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="successCount">0</div>
+      <div class="stat-label">Successful (2xx)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="errorCount">0</div>
+      <div class="stat-label">Errors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="uniqueEndpoints">0</div>
+      <div class="stat-label">Unique Endpoints</div>
+    </div>
+  </div>
+
+  <h2>📡 API Endpoints</h2>
+  <div class="button-grid">
+    <button class="api-btn" onclick="makeRequest('GET', '/posts')">GET /posts</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/posts/1')">GET /posts/1</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/users')">GET /users</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/users/1')">GET /users/1</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/comments')">GET /comments</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/todos')">GET /todos</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/albums')">GET /albums</button>
+    <button class="api-btn" onclick="makeRequest('GET', '/photos?_limit=10')">GET /photos</button>
+  </div>
+
+  <h2>⚡ Quick Actions</h2>
+  <div class="button-grid">
+    <button class="action-btn" onclick="simulateUserSession()">Simulate User Session</button>
+    <button class="action-btn" onclick="burstRequests()">Burst 10 Requests</button>
+    <button class="clear-btn" onclick="clearLog()">Clear Log</button>
+  </div>
+
+  <h2>📜 Request Log</h2>
+  <div class="log-container" id="logContainer">
+    <div class="log-entry" style="color: #666; font-style: italic;">No requests yet. Click a button above to start.</div>
+  </div>
+
+  <script>
+    const API_BASE = 'https://jsonplaceholder.typicode.com';
+    let requestLog = [];
+    let stats = {
+      total: 0,
+      success: 0,
+      error: 0,
+      endpoints: new Set()
+    };
+
+    function updateStats() {
+      document.getElementById('totalRequests').textContent = stats.total;
+      document.getElementById('successCount').textContent = stats.success;
+      document.getElementById('errorCount').textContent = stats.error;
+      document.getElementById('uniqueEndpoints').textContent = stats.endpoints.size;
+    }
+
+    function addLogEntry(method, path, status, duration) {
+      const container = document.getElementById('logContainer');
+      
+      // Remove placeholder if present
+      if (requestLog.length === 0) {
+        container.innerHTML = '';
+      }
+
+      const statusClass = status >= 200 && status < 300 ? 'success' : 'error';
+      const time = new Date().toLocaleTimeString();
+      
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      entry.innerHTML = `
+        <span class="log-time">${time}</span>
+        <span class="log-method ${method}">${method}</span>
+        <span class="log-url">${path}</span>
+        <span class="log-status ${statusClass}">${status} (${duration}ms)</span>
+      `;
+      
+      container.insertBefore(entry, container.firstChild);
+      requestLog.push({ method, path, status, duration, time });
+
+      // Update stats
+      stats.total++;
+      if (status >= 200 && status < 300) {
+        stats.success++;
+      } else {
+        stats.error++;
+      }
+      stats.endpoints.add(path.split('?')[0]);
+      updateStats();
+    }
+
+    async function makeRequest(method, path) {
+      const startTime = performance.now();
+      
+      try {
+        const response = await fetch(`${API_BASE}${path}`, { method });
+        const duration = Math.round(performance.now() - startTime);
+        addLogEntry(method, path, response.status, duration);
+      } catch (error) {
+        const duration = Math.round(performance.now() - startTime);
+        addLogEntry(method, path, 0, duration);
+        console.error('Request failed:', error);
+      }
+    }
+
+    async function simulateUserSession() {
+      // Simulate a typical user browsing pattern
+      const endpoints = [
+        '/posts',
+        '/posts/1',
+        '/posts/1',
+        '/users/1',
+        '/comments',
+        '/posts',
+        '/todos',
+        '/users',
+        '/posts/2',
+        '/posts'
+      ];
+
+      for (const endpoint of endpoints) {
+        await makeRequest('GET', endpoint);
+        await new Promise(resolve => setTimeout(resolve, 300));
+      }
+    }
+
+    async function burstRequests() {
+      // Make 10 rapid requests to different endpoints
+      const endpoints = ['/posts', '/users', '/comments', '/todos', '/albums'];
+      const promises = [];
+      
+      for (let i = 0; i < 10; i++) {
+        const endpoint = endpoints[i % endpoints.length];
+        promises.push(makeRequest('GET', endpoint));
+      }
+      
+      await Promise.all(promises);
+    }
+
+    function clearLog() {
+      requestLog = [];
+      stats = { total: 0, success: 0, error: 0, endpoints: new Set() };
+      updateStats();
+      document.getElementById('logContainer').innerHTML = 
+        '<div class="log-entry" style="color: #666; font-style: italic;">No requests yet. Click a button above to start.</div>';
+    }
+  </script>
+</body>
+</html>
