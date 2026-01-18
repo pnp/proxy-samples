@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "https://api.tasks.local/tasks",
+  "dataFile": "tasks-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{task-id}",
+      "query": "$.[?(@.id == {task-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{task-id}",
+      "query": "$.[?(@.id == {task-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{task-id}",
+      "query": "$.[?(@.id == {task-id})]"
+    }
+  ]
+}
