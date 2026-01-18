@@ -1,0 +1,87 @@
+[
+  {
+    "name": "pnp-devproxy-ci-cd-api-validation",
+    "source": "pnp",
+    "title": "Integrate Dev Proxy in CI/CD pipelines for API validation",
+    "shortDescription": "This sample demonstrates how to integrate Dev Proxy in CI/CD pipelines for API validation. It includes configurations for shadow API detection, permission validation, and OpenAPI spec generation, along with example GitHub Actions workflows and Azure Pipelines YAML files.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/ci-cd-api-validation",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ci-cd-api-validation",
+    "longDescription": [
+      "This sample demonstrates how to integrate Dev Proxy in CI/CD pipelines for API validation. It includes configurations for shadow API detection, permission validation, and OpenAPI spec generation, along with example GitHub Actions workflows and Azure Pipelines YAML files."
+    ],
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "ci-cd-api-validation"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/ci-cd-api-validation/assets/screenshot.png",
+        "alt": "Dev Proxy CI/CD API validation showing GitHub Actions workflow results"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use Dev Proxy in CI/CD scenarios",
+        "description": "Learn how to use Dev Proxy with GitHub Actions and Azure Pipelines.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-in-ci-cd-overview"
+      },
+      {
+        "name": "Use Dev Proxy with GitHub Actions",
+        "description": "Instructions on how to integrate Dev Proxy into your GitHub Actions workflows.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-github-actions"
+      },
+      {
+        "name": "Use Dev Proxy with Azure Pipelines",
+        "description": "Instructions on how to use Dev Proxy with Azure Pipelines.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-azure-pipelines"
+      },
+      {
+        "name": "ApiCenterOnboardingPlugin reference",
+        "description": "Learn more about the ApiCenterOnboardingPlugin for shadow API detection.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/apicenteronboardingplugin"
+      },
+      {
+        "name": "MinimalPermissionsPlugin reference",
+        "description": "Learn more about the MinimalPermissionsPlugin for permission validation.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/minimalpermissionsplugin"
+      }
+    ]
+  }
+]
