@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.contoso.com/*",
+        "method": "OPTIONS"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          { "name": "Access-Control-Allow-Origin", "value": "*" },
+          { "name": "Access-Control-Allow-Methods", "value": "GET, POST, PATCH, DELETE, OPTIONS" },
+          { "name": "Access-Control-Allow-Headers", "value": "Content-Type, x-api-key" },
+          { "name": "Access-Control-Max-Age", "value": "86400" }
+        ]
+      }
+    }
+  ]
+}

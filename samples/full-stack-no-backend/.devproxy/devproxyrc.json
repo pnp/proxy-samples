@@ -1,6 +1,12 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
   "plugins": [
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "corsPlugin"
+    },
     {
       "name": "LatencyPlugin",
       "enabled": true,
@@ -26,15 +32,19 @@
     }
   ],
   "urlsToWatch": [
-    "https://api.tasks.local/*"
+    "https://api.contoso.com/*"
   ],
+  "corsPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.schema.json",
+    "mocksFile": "cors-mocks.json"
+  },
   "latencyPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/latencyplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/latencyplugin.schema.json",
     "minMs": 200,
     "maxMs": 800
   },
   "authPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/authplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/authplugin.schema.json",
     "type": "apiKey",
     "apiKey": {
       "parameters": [
@@ -49,7 +59,7 @@
     }
   },
   "tasksApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/crudapiplugin.schema.json",
     "apiFile": "tasks-api.json"
   }
 }
