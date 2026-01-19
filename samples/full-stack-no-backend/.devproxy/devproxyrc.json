@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "corsPlugin"
+    },
+    {
+      "name": "LatencyPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "latencyPlugin"
+    },
+    {
+      "name": "AuthPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "authPlugin"
+    },
+    {
+      "name": "CrudApiPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "tasksApi"
+    },
+    {
+      "name": "DevToolsPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "corsPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.schema.json",
+    "mocksFile": "cors-mocks.json"
+  },
+  "latencyPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/latencyplugin.schema.json",
+    "minMs": 200,
+    "maxMs": 800
+  },
+  "authPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/authplugin.schema.json",
+    "type": "apiKey",
+    "apiKey": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "x-api-key"
+        }
+      ],
+      "allowedKeys": [
+        "dev-proxy-demo-key"
+      ]
+    }
+  },
+  "tasksApi": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/crudapiplugin.schema.json",
+    "apiFile": "tasks-api.json"
+  }
+}

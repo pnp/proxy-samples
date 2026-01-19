@@ -1,0 +1,87 @@
+[
+  {
+    "name": "pnp-devproxy-full-stack-no-backend",
+    "source": "pnp",
+    "title": "Build complete app with zero backend",
+    "shortDescription": "Demonstrates building a complete task manager application with zero backend using Dev Proxy. Features a vanilla JavaScript frontend with full CRUD operations, API key authentication, realistic latency simulation, and Chrome DevTools integration.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/full-stack-no-backend",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/full-stack-no-backend",
+    "longDescription": [
+      "Demonstrates building a complete task manager application with zero backend using Dev Proxy. Features a vanilla JavaScript frontend with full CRUD operations, API key authentication, realistic latency simulation, and Chrome DevTools integration."
+    ],
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-19",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "full-stack-no-backend"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/full-stack-no-backend/assets/screenshot.png",
+        "alt": "Task Manager app running with Dev Proxy"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Simulate a CRUD API",
+        "description": "Learn how to use the Dev Proxy to simulate a CRUD API.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api"
+      },
+      {
+        "name": "CrudApiPlugin documentation",
+        "description": "Technical reference for the CrudApiPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/crudapiplugin"
+      },
+      {
+        "name": "AuthPlugin documentation",
+        "description": "Technical reference for the AuthPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/authplugin"
+      },
+      {
+        "name": "LatencyPlugin documentation",
+        "description": "Technical reference for the LatencyPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/latencyplugin"
+      },
+      {
+        "name": "DevToolsPlugin documentation",
+        "description": "Technical reference for the DevToolsPlugin.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/devtoolsplugin"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      }
+    ]
+  }
+]

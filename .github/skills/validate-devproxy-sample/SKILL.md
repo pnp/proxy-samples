@@ -215,6 +215,30 @@ Acceptable curl when:
 - Single request/response
 - Quick verification
 
+### 10. URL Domain Validation
+
+**Check**: Do URLs use proxy-friendly domains?
+
+**Avoid these TLDs** — they're often excluded from system proxy settings:
+- `.local` — Reserved for mDNS/Bonjour, typically bypasses proxy
+- `.localhost` — Loopback, excluded by most systems
+- `.internal` — Often excluded in enterprise environments
+- `.test` — Reserved TLD, may have issues
+
+**Use instead:**
+- `.contoso.com` — Microsoft's example domain (safe, won't resolve)
+- `.example.com` — IANA reserved for documentation
+- `.fabrikam.com` — Another Microsoft example domain
+- Real API domains you're mocking
+
+**Why this matters**: When browsers/apps detect `.local` domains, they often skip the proxy entirely, making Dev Proxy unable to intercept requests.
+
+**Check in files:**
+- `urlsToWatch` in `devproxyrc.json`
+- `baseUrl` in CRUD API files
+- API URLs in frontend code (JavaScript, HTML)
+- Mock response URLs
+
 ## Common Mistakes Summary
 
 | Mistake | How to Fix |
@@ -230,6 +254,7 @@ Acceptable curl when:
 | curl without proxy | Add `-ikx http://127.0.0.1:8000` |
 | Wrong schema type | Match schema to file purpose |
 | Missing tracking pixel | Add at end of README |
+| Using `.local` TLD | Change to `.contoso.com` or similar |
 
 ## Validation Script
 
@@ -281,4 +306,5 @@ Before creating a PR:
 8. [ ] curl commands include proxy flag
 9. [ ] README has tracking pixel
 10. [ ] Badge version matches PROXY VERSION
-11. [ ] VS Code shows no Problems
+11. [ ] URLs don't use `.local` or other excluded TLDs
+12. [ ] VS Code shows no Problems
