@@ -7,6 +7,8 @@ description: This skill should be used when the user asks to "validate a sample"
 
 This skill guides validation of Dev Proxy samples to catch common mistakes before submission. Run through these checks to ensure the sample meets repository standards.
 
+> **⚠️ MANDATORY**: You MUST run `ajv` to validate all JSON files against their schemas. Do NOT skip this step or rely on VS Code's JSON validation alone — it misses errors that Dev Proxy will catch at runtime. Install ajv-cli first: `npm install -g ajv-cli`
+
 ## Quick Validation Command
 
 To validate schemas programmatically (Dev Proxy uses JSON Schema 2020-12):
@@ -147,7 +149,7 @@ samples/{sample-name}/
 | Title | Descriptive, not technical |
 | Summary | Explains what and why |
 | Screenshot | Exists or has placeholder |
-| Badge | `![Dev Proxy vX.X.X](https://aka.ms/devproxy/badge/vX.X.X)` |
+| Badge URL | Must use `https://aka.ms/devproxy/badge/vX.X.X` (not shields.io) |
 | Badge version | Matches `PROXY VERSION` in sample.json |
 | Contributors | GitHub profile links |
 | Version history | Date matches `updateDateTime` in sample.json |
@@ -255,6 +257,7 @@ Acceptable curl when:
 | Wrong schema type | Match schema to file purpose |
 | Missing tracking pixel | Add at end of README |
 | Using `.local` TLD | Change to `.contoso.com` or similar |
+| Wrong badge URL (shields.io) | Use `https://aka.ms/devproxy/badge/vX.X.X` |
 
 ## Validation Script
 
@@ -290,21 +293,27 @@ long=$(grep -A1 '"longDescription"' "$sample/assets/sample.json" | tail -1 | tr 
 # Check tracking pixel
 echo -e "\n=== Tracking Pixel ==="
 grep -q "m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-devproxy-$folder" "$sample/README.md" && echo "✓ Tracking pixel OK" || echo "✗ Missing/wrong tracking pixel"
+
+# Check badge URL uses aka.ms
+echo -e "\n=== Badge URL ==="
+grep -q "https://aka.ms/devproxy/badge/" "$sample/README.md" && echo "✓ Badge uses aka.ms" || echo "✗ Badge should use https://aka.ms/devproxy/badge/vX.X.X"
 ```
 
 ## Pre-Submission Final Check
 
 Before creating a PR:
 
-1. [ ] Dev Proxy config files are in `.devproxy/` folder
-2. [ ] All JSON files pass schema validation
-3. [ ] Metadata name = `pnp-devproxy-{folder-name}`
-4. [ ] Descriptions match (short = long[0])
-5. [ ] Dates are in correct format and match
-6. [ ] PRESET is correct (usually "No")
-7. [ ] Startup command is correct
-8. [ ] curl commands include proxy flag
-9. [ ] README has tracking pixel
-10. [ ] Badge version matches PROXY VERSION
-11. [ ] URLs don't use `.local` or other excluded TLDs
-12. [ ] VS Code shows no Problems
+1. [ ] **Run ajv validation on ALL JSON files** (mandatory — don't skip!)
+2. [ ] Dev Proxy config files are in `.devproxy/` folder
+3. [ ] All JSON files pass schema validation
+4. [ ] Metadata name = `pnp-devproxy-{folder-name}`
+5. [ ] Descriptions match (short = long[0])
+6. [ ] Dates are in correct format and match
+7. [ ] PRESET is correct (usually "No")
+8. [ ] Startup command is correct
+9. [ ] curl commands include proxy flag
+10. [ ] README has tracking pixel
+11. [ ] Badge uses `https://aka.ms/devproxy/badge/vX.X.X`
+12. [ ] Badge version matches PROXY VERSION
+13. [ ] URLs don't use `.local` or other excluded TLDs
+14. [ ] VS Code shows no Problems
