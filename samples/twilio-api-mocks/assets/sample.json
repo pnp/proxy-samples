@@ -1,0 +1,73 @@
+[
+  {
+    "name": "pnp-devproxy-twilio-api-mocks",
+    "source": "pnp",
+    "title": "Twilio API Mocks",
+    "shortDescription": "Comprehensive mock responses for Twilio REST API to test messaging, voice, and phone number operations without live API calls",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/twilio-api-mocks",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/twilio-api-mocks",
+    "longDescription": [
+      "Comprehensive mock responses for Twilio REST API to test messaging, voice, and phone number operations without live API calls"
+    ],
+    "creationDateTime": "2026-01-19",
+    "updateDateTime": "2026-01-19",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "twilio-api-mocks"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "name": "screenshot.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/proxy-samples/main/samples/twilio-api-mocks/assets/screenshot.png",
+        "alt": "Dev Proxy simulating Twilio API responses"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "Learn how to install and run Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Twilio REST API Documentation",
+        "description": "Official Twilio REST API documentation",
+        "url": "https://www.twilio.com/docs/usage/api"
+      },
+      {
+        "name": "Mock responses",
+        "description": "Learn how to mock API responses with Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses"
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-twilio-resilience-testing",
+    "source": "pnp",
+    "title": "Twilio API resilience testing",
+    "shortDescription": "Test how your app handles Twilio API errors, rate limiting, and slow responses using Dev Proxy",
+    "longDescription": [
+      "Test how your app handles Twilio API errors, rate limiting, and slow responses using Dev Proxy"
+    ],
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/twilio-resilience-testing",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/twilio-resilience-testing",
+    "creationDateTime": "2026-01-19",
+    "updateDateTime": "2026-01-19",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "twilio-resilience-testing"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/twilio-resilience-testing/assets/screenshot.png",
+        "alt": "Dev Proxy simulating Twilio API errors"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "Learn how to install and run Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Twilio REST API Documentation",
+        "description": "Official Twilio REST API documentation",
+        "url": "https://www.twilio.com/docs/usage/api"
+      },
+      {
+        "name": "Simulate errors",
+        "description": "Learn how to simulate API errors with Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-errors"
+      }
+    ]
+  }
+]

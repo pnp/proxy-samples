@@ -1,0 +1,1888 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "AC00000000000000000000000000000001",
+          "friendly_name": "New Subaccount",
+          "status": "active",
+          "type": "Full",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "auth_token": "auth_token_placeholder",
+          "owner_account_sid": "AC00000000000000000000000000000000",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000001.json",
+          "subresource_uris": {
+            "available_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000001/AvailablePhoneNumbers.json",
+            "calls": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Calls.json",
+            "conferences": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Conferences.json",
+            "incoming_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000001/IncomingPhoneNumbers.json",
+            "messages": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Messages.json",
+            "queues": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Queues.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Recordings.json",
+            "transcriptions": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Transcriptions.json",
+            "usage": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Usage.json",
+            "applications": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Applications.json",
+            "keys": "/2010-04-01/Accounts/AC00000000000000000000000000000001/Keys.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "AC00000000000000000000000000000000",
+          "friendly_name": "My Twilio Account",
+          "status": "active",
+          "type": "Full",
+          "date_created": "Thu, 01 Jan 2024 00:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "auth_token": "auth_token_placeholder",
+          "owner_account_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "available_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers.json",
+            "calls": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json",
+            "conferences": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences.json",
+            "incoming_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json",
+            "messages": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json",
+            "queues": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings.json",
+            "transcriptions": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Transcriptions.json",
+            "usage": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Usage.json",
+            "applications": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Applications.json",
+            "keys": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Keys.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "accounts": [
+            {
+              "sid": "AC00000000000000000000000000000000",
+              "friendly_name": "My Twilio Account",
+              "status": "active",
+              "type": "Full",
+              "date_created": "Thu, 01 Jan 2024 00:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "owner_account_sid": null,
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000.json"
+            },
+            {
+              "sid": "AC00000000000000000000000000000001",
+              "friendly_name": "Subaccount One",
+              "status": "active",
+              "type": "Full",
+              "date_created": "Mon, 15 Jul 2024 14:30:00 +0000",
+              "date_updated": "Sat, 18 Jan 2026 09:15:00 +0000",
+              "owner_account_sid": "AC00000000000000000000000000000000",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000001.json"
+            }
+          ],
+          "end": 1,
+          "first_page_uri": "/2010-04-01/Accounts.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "AC00000000000000000000000000000000",
+          "friendly_name": "Updated Account Name",
+          "status": "active",
+          "type": "Full",
+          "date_created": "Thu, 01 Jan 2024 00:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:00 +0000",
+          "auth_token": "auth_token_placeholder",
+          "owner_account_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "available_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers.json",
+            "calls": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json",
+            "conferences": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences.json",
+            "incoming_phone_numbers": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json",
+            "messages": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json",
+            "queues": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings.json",
+            "transcriptions": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Transcriptions.json",
+            "usage": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Usage.json",
+            "applications": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Applications.json",
+            "keys": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Keys.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "SM00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "api_version": "2010-04-01",
+          "body": "Hello from Twilio!",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_sent": null,
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "direction": "outbound-api",
+          "error_code": null,
+          "error_message": null,
+          "from": "+15551234567",
+          "num_media": "0",
+          "num_segments": "1",
+          "price": null,
+          "price_unit": "USD",
+          "messaging_service_sid": null,
+          "status": "queued",
+          "to": "+15559876543",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "media": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "SM00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "api_version": "2010-04-01",
+          "body": "Hello from Twilio!",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_sent": "Sun, 19 Jan 2026 10:00:01 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:02 +0000",
+          "direction": "outbound-api",
+          "error_code": null,
+          "error_message": null,
+          "from": "+15551234567",
+          "num_media": "0",
+          "num_segments": "1",
+          "price": "-0.00750",
+          "price_unit": "USD",
+          "messaging_service_sid": null,
+          "status": "delivered",
+          "to": "+15559876543",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "media": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "messages": [
+            {
+              "sid": "SM00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "api_version": "2010-04-01",
+              "body": "Hello from Twilio!",
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_sent": "Sun, 19 Jan 2026 10:00:01 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:02 +0000",
+              "direction": "outbound-api",
+              "error_code": null,
+              "error_message": null,
+              "from": "+15551234567",
+              "num_media": "0",
+              "num_segments": "1",
+              "price": "-0.00750",
+              "price_unit": "USD",
+              "status": "delivered",
+              "to": "+15559876543",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json"
+            },
+            {
+              "sid": "SM00000000000000000000000000000001",
+              "account_sid": "AC00000000000000000000000000000000",
+              "api_version": "2010-04-01",
+              "body": "Another message",
+              "date_created": "Sat, 18 Jan 2026 15:30:00 +0000",
+              "date_sent": "Sat, 18 Jan 2026 15:30:01 +0000",
+              "date_updated": "Sat, 18 Jan 2026 15:30:02 +0000",
+              "direction": "inbound",
+              "error_code": null,
+              "error_message": null,
+              "from": "+15559876543",
+              "num_media": "0",
+              "num_segments": "1",
+              "price": "-0.00750",
+              "price_unit": "USD",
+              "status": "received",
+              "to": "+15551234567",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000001.json"
+            }
+          ],
+          "end": 1,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "SM00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "api_version": "2010-04-01",
+          "body": "",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_sent": "Sun, 19 Jan 2026 10:00:01 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:00 +0000",
+          "direction": "outbound-api",
+          "error_code": null,
+          "error_message": null,
+          "from": "+15551234567",
+          "num_media": "0",
+          "num_segments": "1",
+          "price": "-0.00750",
+          "price_unit": "USD",
+          "messaging_service_sid": null,
+          "status": "delivered",
+          "to": "+15559876543",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "media_list": [
+            {
+              "sid": "ME00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "parent_sid": "SM00000000000000000000000000000000",
+              "content_type": "image/jpeg",
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media/ME00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media/ME00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "ME00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "parent_sid": "SM00000000000000000000000000000000",
+          "content_type": "image/jpeg",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media/ME00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Messages/SM00000000000000000000000000000000/Media/ME00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "CA00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "annotation": null,
+          "answered_by": null,
+          "api_version": "2010-04-01",
+          "caller_name": null,
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "direction": "outbound-api",
+          "duration": null,
+          "end_time": null,
+          "forwarded_from": null,
+          "from": "+15551234567",
+          "from_formatted": "(555) 123-4567",
+          "group_sid": null,
+          "parent_call_sid": null,
+          "phone_number_sid": "PN00000000000000000000000000000000",
+          "price": null,
+          "price_unit": "USD",
+          "queue_time": "0",
+          "start_time": null,
+          "status": "queued",
+          "to": "+15559876543",
+          "to_formatted": "(555) 987-6543",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "notifications": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Notifications.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Recordings.json",
+            "payments": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Payments.json",
+            "events": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Events.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "CA00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "annotation": null,
+          "answered_by": "human",
+          "api_version": "2010-04-01",
+          "caller_name": "John Doe",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:30 +0000",
+          "direction": "outbound-api",
+          "duration": "325",
+          "end_time": "Sun, 19 Jan 2026 10:05:25 +0000",
+          "forwarded_from": null,
+          "from": "+15551234567",
+          "from_formatted": "(555) 123-4567",
+          "group_sid": null,
+          "parent_call_sid": null,
+          "phone_number_sid": "PN00000000000000000000000000000000",
+          "price": "-0.01300",
+          "price_unit": "USD",
+          "queue_time": "0",
+          "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "status": "completed",
+          "to": "+15559876543",
+          "to_formatted": "(555) 987-6543",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "notifications": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Notifications.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Recordings.json",
+            "payments": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Payments.json",
+            "events": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Events.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "calls": [
+            {
+              "sid": "CA00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "annotation": null,
+              "answered_by": "human",
+              "api_version": "2010-04-01",
+              "caller_name": "John Doe",
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:05:30 +0000",
+              "direction": "outbound-api",
+              "duration": "325",
+              "end_time": "Sun, 19 Jan 2026 10:05:25 +0000",
+              "from": "+15551234567",
+              "from_formatted": "(555) 123-4567",
+              "parent_call_sid": null,
+              "phone_number_sid": "PN00000000000000000000000000000000",
+              "price": "-0.01300",
+              "price_unit": "USD",
+              "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "status": "completed",
+              "to": "+15559876543",
+              "to_formatted": "(555) 987-6543",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json"
+            },
+            {
+              "sid": "CA00000000000000000000000000000001",
+              "account_sid": "AC00000000000000000000000000000000",
+              "annotation": null,
+              "answered_by": null,
+              "api_version": "2010-04-01",
+              "caller_name": null,
+              "date_created": "Sat, 18 Jan 2026 14:00:00 +0000",
+              "date_updated": "Sat, 18 Jan 2026 14:00:30 +0000",
+              "direction": "inbound",
+              "duration": "28",
+              "end_time": "Sat, 18 Jan 2026 14:00:28 +0000",
+              "from": "+15559876543",
+              "from_formatted": "(555) 987-6543",
+              "parent_call_sid": null,
+              "phone_number_sid": "PN00000000000000000000000000000000",
+              "price": "-0.00850",
+              "price_unit": "USD",
+              "start_time": "Sat, 18 Jan 2026 14:00:00 +0000",
+              "status": "completed",
+              "to": "+15551234567",
+              "to_formatted": "(555) 123-4567",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000001.json"
+            }
+          ],
+          "end": 1,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "CA00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "annotation": null,
+          "answered_by": "human",
+          "api_version": "2010-04-01",
+          "caller_name": "John Doe",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:02:00 +0000",
+          "direction": "outbound-api",
+          "duration": null,
+          "end_time": null,
+          "forwarded_from": null,
+          "from": "+15551234567",
+          "from_formatted": "(555) 123-4567",
+          "group_sid": null,
+          "parent_call_sid": null,
+          "phone_number_sid": "PN00000000000000000000000000000000",
+          "price": null,
+          "price_unit": "USD",
+          "queue_time": "0",
+          "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "status": "in-progress",
+          "to": "+15559876543",
+          "to_formatted": "(555) 987-6543",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Recordings.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "recordings": [
+            {
+              "sid": "RE00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "call_sid": "CA00000000000000000000000000000000",
+              "conference_sid": null,
+              "channels": 1,
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:05:30 +0000",
+              "duration": "325",
+              "price": "-0.0025",
+              "price_unit": "USD",
+              "source": "RecordVerb",
+              "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "status": "completed",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Recordings.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Calls/CA00000000000000000000000000000000/Recordings.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "PN00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "address_requirements": "none",
+          "address_sid": null,
+          "api_version": "2010-04-01",
+          "beta": false,
+          "capabilities": {
+            "voice": true,
+            "sms": true,
+            "mms": true,
+            "fax": false
+          },
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "emergency_address_sid": null,
+          "emergency_address_status": "unregistered",
+          "emergency_status": "Inactive",
+          "friendly_name": "(555) 123-4567",
+          "identity_sid": null,
+          "origin": "twilio",
+          "phone_number": "+15551234567",
+          "sms_application_sid": null,
+          "sms_fallback_method": "POST",
+          "sms_fallback_url": null,
+          "sms_method": "POST",
+          "sms_url": null,
+          "status": "in-use",
+          "status_callback": null,
+          "status_callback_method": "POST",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+          "voice_application_sid": null,
+          "voice_caller_id_lookup": false,
+          "voice_fallback_method": "POST",
+          "voice_fallback_url": null,
+          "voice_method": "POST",
+          "voice_receive_mode": "voice",
+          "voice_url": null
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "PN00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "address_requirements": "none",
+          "address_sid": null,
+          "api_version": "2010-04-01",
+          "beta": false,
+          "capabilities": {
+            "voice": true,
+            "sms": true,
+            "mms": true,
+            "fax": false
+          },
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "emergency_address_sid": null,
+          "emergency_address_status": "unregistered",
+          "emergency_status": "Inactive",
+          "friendly_name": "(555) 123-4567",
+          "identity_sid": null,
+          "origin": "twilio",
+          "phone_number": "+15551234567",
+          "sms_application_sid": null,
+          "sms_fallback_method": "POST",
+          "sms_fallback_url": null,
+          "sms_method": "POST",
+          "sms_url": "https://example.com/sms",
+          "status": "in-use",
+          "status_callback": "https://example.com/status",
+          "status_callback_method": "POST",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+          "voice_application_sid": null,
+          "voice_caller_id_lookup": false,
+          "voice_fallback_method": "POST",
+          "voice_fallback_url": null,
+          "voice_method": "POST",
+          "voice_receive_mode": "voice",
+          "voice_url": "https://example.com/voice"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "incoming_phone_numbers": [
+            {
+              "sid": "PN00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "address_requirements": "none",
+              "api_version": "2010-04-01",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "sms": true,
+                "mms": true,
+                "fax": false
+              },
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "friendly_name": "(555) 123-4567",
+              "origin": "twilio",
+              "phone_number": "+15551234567",
+              "status": "in-use",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "PN00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "address_requirements": "none",
+          "address_sid": null,
+          "api_version": "2010-04-01",
+          "beta": false,
+          "capabilities": {
+            "voice": true,
+            "sms": true,
+            "mms": true,
+            "fax": false
+          },
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:00 +0000",
+          "emergency_address_sid": null,
+          "emergency_address_status": "unregistered",
+          "emergency_status": "Inactive",
+          "friendly_name": "My Updated Number",
+          "identity_sid": null,
+          "origin": "twilio",
+          "phone_number": "+15551234567",
+          "sms_application_sid": null,
+          "sms_fallback_method": "POST",
+          "sms_fallback_url": "https://fallback.example.com/sms",
+          "sms_method": "POST",
+          "sms_url": "https://example.com/sms-handler",
+          "status": "in-use",
+          "status_callback": "https://example.com/status",
+          "status_callback_method": "POST",
+          "trunk_sid": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+          "voice_application_sid": null,
+          "voice_caller_id_lookup": true,
+          "voice_fallback_method": "POST",
+          "voice_fallback_url": "https://fallback.example.com/voice",
+          "voice_method": "POST",
+          "voice_receive_mode": "voice",
+          "voice_url": "https://example.com/voice-handler"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Local.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "incoming_phone_numbers": [
+            {
+              "sid": "PN00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "address_requirements": "none",
+              "api_version": "2010-04-01",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "sms": true,
+                "mms": true,
+                "fax": false
+              },
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "friendly_name": "(555) 123-4567",
+              "origin": "twilio",
+              "phone_number": "+15551234567",
+              "status": "in-use",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/PN00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Local.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Local.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/TollFree.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "incoming_phone_numbers": [],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/TollFree.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/TollFree.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Mobile.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "incoming_phone_numbers": [],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Mobile.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/IncomingPhoneNumbers/Mobile.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "countries": [
+            {
+              "country_code": "US",
+              "country": "United States",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US.json",
+              "beta": false,
+              "subresource_uris": {
+                "local": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Local.json",
+                "toll_free": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/TollFree.json",
+                "mobile": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Mobile.json"
+              }
+            },
+            {
+              "country_code": "CA",
+              "country": "Canada",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/CA.json",
+              "beta": false,
+              "subresource_uris": {
+                "local": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/CA/Local.json",
+                "toll_free": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/CA/TollFree.json",
+                "mobile": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/CA/Mobile.json"
+              }
+            },
+            {
+              "country_code": "GB",
+              "country": "United Kingdom",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/GB.json",
+              "beta": false,
+              "subresource_uris": {
+                "local": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/GB/Local.json",
+                "toll_free": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/GB/TollFree.json",
+                "mobile": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/GB/Mobile.json"
+              }
+            }
+          ],
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "country_code": "US",
+          "country": "United States",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US.json",
+          "beta": false,
+          "subresource_uris": {
+            "local": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Local.json",
+            "toll_free": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/TollFree.json",
+            "mobile": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Mobile.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Local.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "available_phone_numbers": [
+            {
+              "friendly_name": "(415) 555-0100",
+              "phone_number": "+14155550100",
+              "lata": "722",
+              "locality": "SAN FRANCISCO",
+              "rate_center": "SNFCCA01",
+              "latitude": "37.7749",
+              "longitude": "-122.4194",
+              "region": "CA",
+              "postal_code": "94102",
+              "iso_country": "US",
+              "address_requirements": "none",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "SMS": true,
+                "MMS": true
+              }
+            },
+            {
+              "friendly_name": "(415) 555-0101",
+              "phone_number": "+14155550101",
+              "lata": "722",
+              "locality": "SAN FRANCISCO",
+              "rate_center": "SNFCCA01",
+              "latitude": "37.7749",
+              "longitude": "-122.4194",
+              "region": "CA",
+              "postal_code": "94102",
+              "iso_country": "US",
+              "address_requirements": "none",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "SMS": true,
+                "MMS": true
+              }
+            },
+            {
+              "friendly_name": "(212) 555-0200",
+              "phone_number": "+12125550200",
+              "lata": "132",
+              "locality": "NEW YORK",
+              "rate_center": "NYCMNY01",
+              "latitude": "40.7128",
+              "longitude": "-74.0060",
+              "region": "NY",
+              "postal_code": "10001",
+              "iso_country": "US",
+              "address_requirements": "none",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "SMS": true,
+                "MMS": true
+              }
+            }
+          ],
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/Local.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/TollFree.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "available_phone_numbers": [
+            {
+              "friendly_name": "(800) 555-0100",
+              "phone_number": "+18005550100",
+              "lata": null,
+              "locality": null,
+              "rate_center": null,
+              "latitude": null,
+              "longitude": null,
+              "region": null,
+              "postal_code": null,
+              "iso_country": "US",
+              "address_requirements": "none",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "SMS": true,
+                "MMS": false
+              }
+            },
+            {
+              "friendly_name": "(888) 555-0200",
+              "phone_number": "+18885550200",
+              "lata": null,
+              "locality": null,
+              "rate_center": null,
+              "latitude": null,
+              "longitude": null,
+              "region": null,
+              "postal_code": null,
+              "iso_country": "US",
+              "address_requirements": "none",
+              "beta": false,
+              "capabilities": {
+                "voice": true,
+                "SMS": true,
+                "MMS": false
+              }
+            }
+          ],
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/AvailablePhoneNumbers/US/TollFree.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "CF00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "friendly_name": "MyConference",
+          "status": "in-progress",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "api_version": "2010-04-01",
+          "region": "us1",
+          "reason_conference_ended": null,
+          "call_sid_ending_conference": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "participants": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Recordings.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "conferences": [
+            {
+              "sid": "CF00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "friendly_name": "MyConference",
+              "status": "in-progress",
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "api_version": "2010-04-01",
+              "region": "us1",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000.json",
+              "subresource_uris": {
+                "participants": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json",
+                "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Recordings.json"
+              }
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "CF00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "friendly_name": "MyConference",
+          "status": "completed",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:30:00 +0000",
+          "api_version": "2010-04-01",
+          "region": "us1",
+          "reason_conference_ended": "conference-ended-via-api",
+          "call_sid_ending_conference": null,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "participants": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json",
+            "recordings": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Recordings.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "account_sid": "AC00000000000000000000000000000000",
+          "call_sid": "CA00000000000000000000000000000000",
+          "call_sid_to_coach": null,
+          "coaching": false,
+          "conference_sid": "CF00000000000000000000000000000000",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "end_conference_on_exit": false,
+          "hold": false,
+          "label": null,
+          "muted": false,
+          "start_conference_on_enter": true,
+          "status": "connected",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "account_sid": "AC00000000000000000000000000000000",
+          "call_sid": "CA00000000000000000000000000000000",
+          "call_sid_to_coach": null,
+          "coaching": false,
+          "conference_sid": "CF00000000000000000000000000000000",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "end_conference_on_exit": false,
+          "hold": false,
+          "label": "customer",
+          "muted": false,
+          "start_conference_on_enter": true,
+          "status": "connected",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "participants": [
+            {
+              "account_sid": "AC00000000000000000000000000000000",
+              "call_sid": "CA00000000000000000000000000000000",
+              "call_sid_to_coach": null,
+              "coaching": false,
+              "conference_sid": "CF00000000000000000000000000000000",
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "end_conference_on_exit": false,
+              "hold": false,
+              "label": "customer",
+              "muted": false,
+              "start_conference_on_enter": true,
+              "status": "connected",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json"
+            },
+            {
+              "account_sid": "AC00000000000000000000000000000000",
+              "call_sid": "CA00000000000000000000000000000001",
+              "call_sid_to_coach": null,
+              "coaching": false,
+              "conference_sid": "CF00000000000000000000000000000000",
+              "date_created": "Sun, 19 Jan 2026 10:01:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:01:00 +0000",
+              "end_conference_on_exit": true,
+              "hold": false,
+              "label": "agent",
+              "muted": false,
+              "start_conference_on_enter": false,
+              "status": "connected",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000001.json"
+            }
+          ],
+          "end": 1,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "account_sid": "AC00000000000000000000000000000000",
+          "call_sid": "CA00000000000000000000000000000000",
+          "call_sid_to_coach": null,
+          "coaching": false,
+          "conference_sid": "CF00000000000000000000000000000000",
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:00 +0000",
+          "end_conference_on_exit": false,
+          "hold": true,
+          "label": "customer",
+          "muted": true,
+          "start_conference_on_enter": true,
+          "status": "connected",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Conferences/CF00000000000000000000000000000000/Participants/CA00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 201,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "QU00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "friendly_name": "Support Queue",
+          "current_size": 0,
+          "average_wait_time": 0,
+          "max_size": 1000,
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "QU00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "friendly_name": "Support Queue",
+          "current_size": 5,
+          "average_wait_time": 120,
+          "max_size": 1000,
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:15:00 +0000",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "queues": [
+            {
+              "sid": "QU00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "friendly_name": "Support Queue",
+              "current_size": 5,
+              "average_wait_time": 120,
+              "max_size": 1000,
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:15:00 +0000",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "QU00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "friendly_name": "Updated Support Queue",
+          "current_size": 5,
+          "average_wait_time": 120,
+          "max_size": 500,
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:20:00 +0000",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "queue_members": [
+            {
+              "call_sid": "CA00000000000000000000000000000000",
+              "date_enqueued": "Sun, 19 Jan 2026 10:10:00 +0000",
+              "position": 1,
+              "wait_time": 300,
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json"
+            },
+            {
+              "call_sid": "CA00000000000000000000000000000001",
+              "date_enqueued": "Sun, 19 Jan 2026 10:12:00 +0000",
+              "position": 2,
+              "wait_time": 180,
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000001.json"
+            }
+          ],
+          "end": 1,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "call_sid": "CA00000000000000000000000000000000",
+          "date_enqueued": "Sun, 19 Jan 2026 10:10:00 +0000",
+          "position": 1,
+          "wait_time": 300,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/Front.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "call_sid": "CA00000000000000000000000000000000",
+          "date_enqueued": "Sun, 19 Jan 2026 10:10:00 +0000",
+          "position": 1,
+          "wait_time": 300,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "call_sid": "CA00000000000000000000000000000000",
+          "date_enqueued": "Sun, 19 Jan 2026 10:10:00 +0000",
+          "position": 1,
+          "wait_time": 300,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/Front.json",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "call_sid": "CA00000000000000000000000000000000",
+          "date_enqueued": "Sun, 19 Jan 2026 10:10:00 +0000",
+          "position": 1,
+          "wait_time": 300,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Queues/QU00000000000000000000000000000000/Members/CA00000000000000000000000000000000.json"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "sid": "RE00000000000000000000000000000000",
+          "account_sid": "AC00000000000000000000000000000000",
+          "call_sid": "CA00000000000000000000000000000000",
+          "conference_sid": null,
+          "channels": 1,
+          "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "date_updated": "Sun, 19 Jan 2026 10:05:30 +0000",
+          "duration": "325",
+          "encryption_details": null,
+          "error_code": null,
+          "price": "-0.0025",
+          "price_unit": "USD",
+          "source": "RecordVerb",
+          "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+          "status": "completed",
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000.json",
+          "subresource_uris": {
+            "transcriptions": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000/Transcriptions.json"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings.json",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "recordings": [
+            {
+              "sid": "RE00000000000000000000000000000000",
+              "account_sid": "AC00000000000000000000000000000000",
+              "call_sid": "CA00000000000000000000000000000000",
+              "conference_sid": null,
+              "channels": 1,
+              "date_created": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "date_updated": "Sun, 19 Jan 2026 10:05:30 +0000",
+              "duration": "325",
+              "price": "-0.0025",
+              "price_unit": "USD",
+              "source": "RecordVerb",
+              "start_time": "Sun, 19 Jan 2026 10:00:00 +0000",
+              "status": "completed",
+              "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000.json"
+            }
+          ],
+          "end": 0,
+          "first_page_uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings.json?PageSize=50&Page=0",
+          "next_page_uri": null,
+          "page": 0,
+          "page_size": 50,
+          "previous_page_uri": null,
+          "start": 0,
+          "uri": "/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings.json?PageSize=50&Page=0"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.twilio.com/2010-04-01/Accounts/AC00000000000000000000000000000000/Recordings/RE00000000000000000000000000000000.json",
+        "method": "DELETE"
+      },
+      "response": {
+        "statusCode": 204,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "LatencyPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "latencyPlugin"
+    },
+    {
+      "name": "RateLimitingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "rateLimitingTwilio"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "twilioErrors"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.twilio.com/*"
+  ],
+  "latencyPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/latencyplugin.schema.json",
+    "minMs": 200,
+    "maxMs": 1500
+  },
+  "rateLimitingTwilio": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/ratelimitingplugin.schema.json",
+    "costPerRequest": 1,
+    "resetTimeWindowSeconds": 1,
+    "warningThresholdPercent": 80,
+    "rateLimit": 100,
+    "resetFormat": "SecondsLeft",
+    "whenLimitExceeded": "Custom",
+    "customResponseFile": "twilio-rate-limit-response.json"
+  },
+  "twilioErrors": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/genericrandomerrorplugin.schema.json",
+    "errorsFile": "twilio-errors.json",
+    "rate": 50
+  },
+  "logLevel": "information",
+  "newVersionNotification": "stable",
+  "showSkipMessages": true
+}

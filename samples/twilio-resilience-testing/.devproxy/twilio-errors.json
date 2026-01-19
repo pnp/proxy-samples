@@ -1,0 +1,151 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://api.twilio.com/*"
+      },
+      "responses": [
+        {
+          "statusCode": 401,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 20003,
+            "message": "Authenticate",
+            "more_info": "https://www.twilio.com/docs/errors/20003",
+            "status": 401
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 21211,
+            "message": "Invalid 'To' Phone Number",
+            "more_info": "https://www.twilio.com/docs/errors/21211",
+            "status": 400
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 21608,
+            "message": "The 'From' phone number is not a valid, SMS-capable inbound phone number or short code for your account.",
+            "more_info": "https://www.twilio.com/docs/errors/21608",
+            "status": 400
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 21602,
+            "message": "Message body is required",
+            "more_info": "https://www.twilio.com/docs/errors/21602",
+            "status": 400
+          }
+        },
+        {
+          "statusCode": 400,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 30004,
+            "message": "Message blocked",
+            "more_info": "https://www.twilio.com/docs/errors/30004",
+            "status": 400
+          }
+        },
+        {
+          "statusCode": 403,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 20005,
+            "message": "Account not active",
+            "more_info": "https://www.twilio.com/docs/errors/20005",
+            "status": 403
+          }
+        },
+        {
+          "statusCode": 404,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 20404,
+            "message": "The requested resource was not found",
+            "more_info": "https://www.twilio.com/docs/errors/20404",
+            "status": 404
+          }
+        },
+        {
+          "statusCode": 500,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "code": 20500,
+            "message": "Internal Server Error",
+            "more_info": "https://www.twilio.com/docs/errors/20500",
+            "status": 500
+          }
+        },
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "30"
+            }
+          ],
+          "body": {
+            "code": 20503,
+            "message": "Service Unavailable",
+            "more_info": "https://www.twilio.com/docs/errors/20503",
+            "status": 503
+          }
+        }
+      ]
+    }
+  ]
+}
