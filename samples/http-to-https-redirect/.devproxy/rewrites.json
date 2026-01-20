@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rewriteplugin.rewritesfile.schema.json",
+  "rewrites": [
+    {
+      "in": {
+        "url": "^http://(.*)"
+      },
+      "out": {
+        "url": "https://$1"
+      }
+    }
+  ]
+}
