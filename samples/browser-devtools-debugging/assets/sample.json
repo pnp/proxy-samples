@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-browser-devtools-debugging",
+    "source": "pnp",
+    "title": "Inspect API traffic in Chrome DevTools",
+    "shortDescription": "Use Chrome DevTools to inspect API traffic intercepted by Dev Proxy, viewing requests, responses, headers, and timing in the familiar Network tab.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/browser-devtools-debugging",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/browser-devtools-debugging",
+    "longDescription": [
+      "Use Chrome DevTools to inspect API traffic intercepted by Dev Proxy, viewing requests, responses, headers, and timing in the familiar Network tab."
+    ],
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "browser-devtools-debugging"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/browser-devtools-debugging/assets/screenshot.png",
+        "alt": "Dev Proxy messages and requests shown in Chrome DevTools"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "DevToolsPlugin documentation",
+        "description": "Technical reference for the DevToolsPlugin in Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/devtoolsplugin"
+      },
+      {
+        "name": "Inspect requests and responses using Chrome DevTools",
+        "description": "How-to guide for using Chrome DevTools with Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/inspect-requests-responses-chrome-devtools"
+      }
+    ]
+  }
+]
