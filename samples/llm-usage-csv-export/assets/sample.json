@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-llm-usage-csv-export",
+    "source": "pnp",
+    "title": "Export LLM usage metrics to CSV",
+    "shortDescription": "This sample demonstrates how to use Dev Proxy to export LLM usage metrics to a CSV file for detailed analysis. The OpenAIUsageDebuggingPlugin captures usage data from OpenAI-compatible API requests and writes them to a CSV file, enabling offline analysis in spreadsheets or BI tools.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/llm-usage-csv-export",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/llm-usage-csv-export",
+    "longDescription": [
+      "This sample demonstrates how to use Dev Proxy to export LLM usage metrics to a CSV file for detailed analysis. The OpenAIUsageDebuggingPlugin captures usage data from OpenAI-compatible API requests and writes them to a CSV file, enabling offline analysis in spreadsheets or BI tools."
+    ],
+    "creationDateTime": "2026-01-10",
+    "updateDateTime": "2026-01-10",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "llm-usage-csv-export"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/llm-usage-csv-export/assets/screenshot.png",
+        "alt": "Dev Proxy exporting LLM usage metrics to CSV file"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "The tutorial will introduce you to Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "OpenAIUsageDebuggingPlugin",
+        "description": "Learn how to use the OpenAIUsageDebuggingPlugin to export LLM usage metrics to CSV.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/openaiusagedebuggingplugin"
+      },
+      {
+        "name": "Understand language model usage",
+        "description": "Learn how to understand and analyze language model usage with Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage"
+      }
+    ]
+  }
+]
