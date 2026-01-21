@@ -1,0 +1,143 @@
+name: API validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  shadow-api-detection:
+    name: Shadow API detection
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Dev Proxy
+        uses: dev-proxy-tools/actions/setup@v1
+
+      - name: Start Dev Proxy
+        uses: dev-proxy-tools/actions/start@v1
+        with:
+          config-file: .devproxy/shadow-api-detection.json
+          auto-record: true
+
+      # Replace with your test commands
+      - name: Run API tests
+        run: |
+          # Example: make requests through Dev Proxy
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/customers
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/orders
+        env:
+          AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP_NAME: ${{ vars.AZURE_RESOURCE_GROUP_NAME }}
+          AZURE_APIC_INSTANCE_NAME: ${{ vars.AZURE_APIC_INSTANCE_NAME }}
+
+      - name: Stop Dev Proxy
+        uses: dev-proxy-tools/actions/stop@v1
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-api-reports
+          path: ./*Reporter*
+
+      - name: Write summary
+        run: |
+          if [ -f "ApiCenterOnboardingPlugin_MarkdownReporter.md" ]; then
+            cat ApiCenterOnboardingPlugin_MarkdownReporter.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+  permission-validation:
+    name: Permission validation
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Dev Proxy
+        uses: dev-proxy-tools/actions/setup@v1
+
+      - name: Start Dev Proxy
+        uses: dev-proxy-tools/actions/start@v1
+        with:
+          config-file: .devproxy/permission-validation.json
+          auto-record: true
+
+      # Replace with your test commands
+      - name: Run API tests
+        run: |
+          # Example: make requests through Dev Proxy
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/customers
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/customers/1
+
+      - name: Stop Dev Proxy
+        uses: dev-proxy-tools/actions/stop@v1
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: permission-reports
+          path: ./*Reporter*
+
+      - name: Write summary
+        run: |
+          if [ -f "MinimalPermissionsPlugin_MarkdownReporter.md" ]; then
+            cat MinimalPermissionsPlugin_MarkdownReporter.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+  openapi-generation:
+    name: Generate OpenAPI spec
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Dev Proxy
+        uses: dev-proxy-tools/actions/setup@v1
+
+      - name: Start Dev Proxy
+        uses: dev-proxy-tools/actions/start@v1
+        with:
+          config-file: .devproxy/openapi-generation.json
+          auto-record: true
+
+      # Replace with your test commands
+      - name: Run API tests
+        run: |
+          # Example: make requests through Dev Proxy
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/customers
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/customers/1
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/orders
+          curl -ikx http://127.0.0.1:8000 https://api.contoso.com/orders/1
+
+      - name: Stop Dev Proxy
+        uses: dev-proxy-tools/actions/stop@v1
+
+      - name: Collect OpenAPI specs
+        run: |
+          mkdir -p generated-specs
+          for file in *.json; do
+            if [ -f "$file" ]; then
+              cp "$file" generated-specs/
+            fi
+          done
+
+      - name: Upload OpenAPI spec
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-spec
+          path: generated-specs/
+
+      # Optional: Commit generated spec to repository
+      # - name: Commit OpenAPI spec
+      #   run: |
+      #     git config user.name "GitHub Actions"
+      #     git config user.email "actions@github.com"
+      #     git add ./*.json
+      #     git commit -m "chore: update generated OpenAPI spec" || echo "No changes to commit"
+      #     git push

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "ApiCenterOnboardingPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "apiCenterOnboardingPlugin"
+    },
+    {
+      "name": "JsonReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "MarkdownReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "apiCenterOnboardingPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.0.0/apicenteronboardingplugin.schema.json",
+    "subscriptionId": "@AZURE_SUBSCRIPTION_ID",
+    "resourceGroupName": "@AZURE_RESOURCE_GROUP_NAME",
+    "serviceName": "@AZURE_APIC_INSTANCE_NAME",
+    "createApicEntryForNewApis": false
+  }
+}
