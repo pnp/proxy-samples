@@ -8,7 +8,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 ## Compatibility
 
-![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
+![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a Dev Proxy mock file that simulates responses for creating
 
 Version|Date|Comments
 -------|----|--------
+1.7|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.6|January 18, 2026|Moved config files to .devproxy folder
 1.5|January 5, 2026|Updated to Dev Proxy v2.0.0
 1.4|June 27, 2025|Updated to Dev Proxy v0.29.2

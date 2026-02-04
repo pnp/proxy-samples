@@ -8,7 +8,7 @@ This sample demonstrates how to simulate various API degradation scenarios to te
 
 ## Compatibility
 
-![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
+![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample demonstrates how to simulate various API degradation scenarios to te
 
 Version|Date|Comments
 -------|----|--------
+1.1|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.0|January 18, 2026|Initial release
 
 ## Prerequisites

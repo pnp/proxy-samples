@@ -10,7 +10,7 @@
       "Demonstrates how Dev Proxy can mock API responses using the popular JSONPlaceholder API as an example. Perfect for learning how Dev Proxy intercepts and replaces API calls with mock responses."
     ],
     "creationDateTime": "2025-07-16",
-    "updateDateTime": "2026-01-18",
+    "updateDateTime": "2026-02-04",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.0.0"
+        "value": "v2.1.0"
       }
     ],
     "thumbnails": [

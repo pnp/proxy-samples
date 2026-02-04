@@ -10,7 +10,7 @@
       "Demonstrates the minimal setup to use Dev Proxy with a Java console application"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-01-18",
+    "updateDateTime": "2026-02-04",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.0.0"
+        "value": "v2.1.0"
       }
     ],
     "thumbnails": [

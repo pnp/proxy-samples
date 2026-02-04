@@ -8,7 +8,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with a Python applic
 
 ## Compatibility
 
-![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
+![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with a Python applic
 
 Version|Date|Comments
 -------|----|--------
+1.2|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.1|January 18, 2026|Fixed sample metadata
 1.0|January 5, 2026|Initial release
 

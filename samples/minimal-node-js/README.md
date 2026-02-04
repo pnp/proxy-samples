@@ -15,7 +15,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 ## Compatibility
 
-![Dev Proxy v2.0.0](https://aka.ms/devproxy/badge/v2.0.0)
+![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
 
 ## Contributors
 
@@ -25,6 +25,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 Version|Date|Comments
 -------|----|--------
+1.3|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.2|January 18, 2026|Fixed sample metadata
 1.1|January 6, 2026|Updated to use Node.js 24 built-in proxy support
 1.0|January 5, 2026|Initial release
