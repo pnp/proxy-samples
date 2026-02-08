@@ -1,0 +1,82 @@
+[
+  {
+    "name": "pnp-devproxy-anthropic-throttling",
+    "source": "pnp",
+    "title": "Simulate throttling of the Anthropic Claude API",
+    "shortDescription": "This sample contains a preset and error responses to simulate the throttling of the Anthropic Claude API. As more and more applications use the Claude API for AI-powered features, it's important that developers can verify that their apps properly handle cases when the API is throttled. The preset includes 5 different throttling scenarios: requests per minute exceeded, input tokens per minute exceeded, output tokens per minute exceeded, acceleration limit with dynamic Retry-After, and API overloaded (529). The proxy simulates throttling using one of these modes at random.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/anthropic-throttling",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/anthropic-throttling",
+    "longDescription": [
+      "This sample contains a preset and error responses to simulate the throttling of the Anthropic Claude API. As more and more applications use the Claude API for AI-powered features, it's important that developers can verify that their apps properly handle cases when the API is throttled. The preset includes 5 different throttling scenarios: requests per minute exceeded, input tokens per minute exceeded, output tokens per minute exceeded, acceleration limit with dynamic Retry-After, and API overloaded (529). The proxy simulates throttling using one of these modes at random."
+    ],
+    "creationDateTime": "2026-02-08",
+    "updateDateTime": "2026-02-08",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "anthropic-throttling"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/anthropic-throttling/assets/screenshot.png",
+        "alt": "Dev Proxy simulating throttling of the Anthropic Claude API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "Anthropic Claude API errors",
+        "description": "The Anthropic Claude API error reference documentation.",
+        "url": "https://docs.anthropic.com/en/api/errors"
+      },
+      {
+        "name": "Anthropic Claude API rate limits",
+        "description": "Information about rate limits for the Anthropic Claude API.",
+        "url": "https://docs.anthropic.com/en/api/rate-limits"
+      }
+    ]
+  }
+]
