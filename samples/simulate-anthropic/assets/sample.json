@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-simulate-anthropic",
+    "source": "pnp",
+    "title": "Simulate the Anthropic Claude API",
+    "shortDescription": "This sample contains a preset and mock responses that allow you to simulate the Anthropic Claude Messages API using Dev Proxy. Simulating the Claude API is useful when you're working on parts of your app that don't require a real response from Claude and don't want to incur unnecessary API costs.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/simulate-anthropic",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-anthropic",
+    "longDescription": [
+      "This sample contains a preset and mock responses that allow you to simulate the Anthropic Claude Messages API using Dev Proxy. Simulating the Claude API is useful when you're working on parts of your app that don't require a real response from Claude and don't want to incur unnecessary API costs."
+    ],
+    "creationDateTime": "2026-02-08",
+    "updateDateTime": "2026-02-08",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "simulate-anthropic"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/simulate-anthropic/assets/screenshot.png",
+        "alt": "Dev Proxy simulating a response for a request to the Anthropic Claude API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "Anthropic Claude API reference",
+        "description": "The Anthropic Claude API reference documentation.",
+        "url": "https://docs.anthropic.com/en/api/messages"
+      }
+    ]
+  }
+]
