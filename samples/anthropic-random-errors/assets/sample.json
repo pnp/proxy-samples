@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-anthropic-random-errors",
+    "source": "pnp",
+    "title": "Simulate random errors on the Anthropic Claude API",
+    "shortDescription": "This sample contains a preset and error responses to simulate random API errors on the Anthropic Claude API. The preset includes all documented error types: invalid request (400), authentication error (401), permission error (403), not found (404), request too large (413), rate limit (429), internal server error (500), and overloaded (529). The proxy randomly fails requests with one of these errors to help you verify your app's error handling.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/anthropic-random-errors",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/anthropic-random-errors",
+    "longDescription": [
+      "This sample contains a preset and error responses to simulate random API errors on the Anthropic Claude API. The preset includes all documented error types: invalid request (400), authentication error (401), permission error (403), not found (404), request too large (413), rate limit (429), internal server error (500), and overloaded (529). The proxy randomly fails requests with one of these errors to help you verify your app's error handling."
+    ],
+    "creationDateTime": "2026-02-08",
+    "updateDateTime": "2026-02-08",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "anthropic-random-errors"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/anthropic-random-errors/assets/screenshot.png",
+        "alt": "Dev Proxy simulating random errors on the Anthropic Claude API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "Anthropic Claude API errors",
+        "description": "The Anthropic Claude API error reference documentation.",
+        "url": "https://docs.anthropic.com/en/api/errors"
+      }
+    ]
+  }
+]

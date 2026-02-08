@@ -1,0 +1,188 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://api.anthropic.com/*"
+      },
+      "responses": [
+        {
+          "statusCode": 400,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_01A1Bc2DeFgHiJkLmNoPqR"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "invalid_request_error",
+              "message": "messages: Input should be a valid list"
+            },
+            "request_id": "req_01A1Bc2DeFgHiJkLmNoPqR"
+          }
+        },
+        {
+          "statusCode": 401,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_02B2Cd3EfGhIjKlMnOpQr"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "authentication_error",
+              "message": "Invalid API Key"
+            },
+            "request_id": "req_02B2Cd3EfGhIjKlMnOpQr"
+          }
+        },
+        {
+          "statusCode": 403,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_03C3De4FgHiJkLmNoPqRs"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "permission_error",
+              "message": "Your API key does not have permission to use the specified resource."
+            },
+            "request_id": "req_03C3De4FgHiJkLmNoPqRs"
+          }
+        },
+        {
+          "statusCode": 404,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_04D4Ef5GhIjKlMnOpQrSt"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "not_found_error",
+              "message": "The requested resource could not be found."
+            },
+            "request_id": "req_04D4Ef5GhIjKlMnOpQrSt"
+          }
+        },
+        {
+          "statusCode": 413,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_05E5Fg6HiJkLmNoPqRsTu"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "request_too_large",
+              "message": "Request exceeds the maximum allowed number of bytes. The maximum request size is 32 MB."
+            },
+            "request_id": "req_05E5Fg6HiJkLmNoPqRsTu"
+          }
+        },
+        {
+          "statusCode": 429,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_06F6Gh7IjKlMnOpQrStUv"
+            },
+            {
+              "name": "retry-after",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "rate_limit_error",
+              "message": "Number of requests has exceeded your rate limit (50 requests per minute). Please reduce your request rate."
+            },
+            "request_id": "req_06F6Gh7IjKlMnOpQrStUv"
+          }
+        },
+        {
+          "statusCode": 500,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_07G7Hi8JkLmNoPqRsTuVw"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "api_error",
+              "message": "An unexpected error has occurred internal to Anthropic's systems."
+            },
+            "request_id": "req_07G7Hi8JkLmNoPqRsTuVw"
+          }
+        },
+        {
+          "statusCode": 529,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_08H8Ij9KlMnOpQrStUvWx"
+            },
+            {
+              "name": "retry-after",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "overloaded_error",
+              "message": "Anthropic's API is temporarily overloaded. Please try again later."
+            },
+            "request_id": "req_08H8Ij9KlMnOpQrStUvWx"
+          }
+        }
+      ]
+    }
+  ]
+}
