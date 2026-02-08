@@ -7,59 +7,38 @@ description: This skill should be used when the user asks to "validate a sample"
 
 This skill guides validation of Dev Proxy samples to catch common mistakes before submission. Run through these checks to ensure the sample meets repository standards.
 
-> **⚠️ MANDATORY**: You MUST run `ajv` to validate all JSON files against their schemas. Do NOT skip this step or rely on VS Code's JSON validation alone — it misses errors that Dev Proxy will catch at runtime. Install ajv-cli first: `npm install -g ajv-cli`
+> **⚠️ MANDATORY**: You MUST run `jsonck` to validate all JSON files against their schemas. Do NOT skip this step or rely on VS Code's JSON validation alone — it misses errors that Dev Proxy will catch at runtime. Install jsonck first: `npm install -g jsonck`
 
 ## Quick Validation Command
 
-To validate schemas programmatically (Dev Proxy uses JSON Schema 2020-12):
+`jsonck` reads the `$schema` property from JSON files automatically, downloads remote schemas, and validates in one step — no temp files or manual schema wrangling needed.
+
 ```bash
-# Validate main config file against its schema
+# Validate all standalone config files at once
 sample="samples/{sample-name}"
-f="$sample/.devproxy/devproxyrc.json"
-schema_url=$(grep -m1 '"\$schema"' "$f" | grep -o 'https://[^"]*')
-curl -s "$schema_url" > "$sample/.devproxy/.tmp-schema.json"
-ajv validate --spec=draft2020 --strict=false -s "$sample/.devproxy/.tmp-schema.json" -d "$f"
-rm "$sample/.devproxy/.tmp-schema.json"
+jsonck "$sample"/.devproxy/*.json
 ```
 
-**Note**: Install ajv-cli first with `npm install -g ajv-cli`. The `--spec=draft2020 --strict=false` flags are required for Dev Proxy schemas.
+For structured output (useful in CI or scripts), add `--json`:
+
+```bash
+jsonck "$sample"/.devproxy/*.json --json
+```
+
+**Note**: Install jsonck first with `npm install -g jsonck`. Requires Node.js >= 20.
 
 ### Validating Plugin Config Sections
 
-Dev Proxy configs have embedded plugin config sections with their own `$schema`. Extract and validate each:
+Dev Proxy configs have embedded plugin config sections with their own `$schema`. Extract each section with `jq` and pipe to `jsonck` — it picks up the `$schema` from the piped JSON automatically:
 
 ```bash
 sample="samples/{sample-name}"
 f="$sample/.devproxy/devproxyrc.json"
 
-# List all config section names that end with "Plugin"
-jq -r 'keys[] | select(endswith("Plugin"))' "$f" | while read -r section; do
-  schema_url=$(jq -r ".\"$section\".\"\$schema\" // empty" "$f")
-  if [[ -n "$schema_url" ]]; then
-    echo "Validating $section..."
-    jq ".\"$section\"" "$f" > "$sample/.devproxy/.tmp-config.json"
-    curl -s "$schema_url" > "$sample/.devproxy/.tmp-schema.json"
-    ajv validate --spec=draft2020 --strict=false -s "$sample/.devproxy/.tmp-schema.json" -d "$sample/.devproxy/.tmp-config.json" || echo "❌ FAILED: $section"
-    rm "$sample/.devproxy/.tmp-config.json" "$sample/.devproxy/.tmp-schema.json"
-  fi
-done
-```
-
-### Validate All Standalone Files
-
-```bash
-sample="samples/{sample-name}"
-
-for f in "$sample"/.devproxy/*.json; do
-  [[ "$(basename "$f")" == "devproxyrc.json" ]] && continue  # Skip main config
-  [[ "$(basename "$f")" == .tmp-* ]] && continue  # Skip temp files
-  schema_url=$(grep -m1 '"\$schema"' "$f" 2>/dev/null | grep -o 'https://[^"]*')
-  if [[ "$schema_url" == *"dev-proxy"* ]]; then
-    echo "Validating $f..."
-    curl -s "$schema_url" > "$sample/.devproxy/.tmp-schema.json"
-    ajv validate --spec=draft2020 --strict=false -s "$sample/.devproxy/.tmp-schema.json" -d "$f" || echo "❌ FAILED: $f"
-    rm "$sample/.devproxy/.tmp-schema.json"
-  fi
+# Find all config sections that have a $schema and validate each
+jq -r '[keys[] as $k | select((.[$k] | type) == "object" and (.[$k]["$schema"] // null) != null) | $k] | .[]' "$f" | while read -r section; do
+  echo "Validating $section..."
+  jq ".\"$section\"" "$f" | jsonck - || echo "❌ FAILED: $section"
 done
 ```
 
@@ -103,7 +82,7 @@ samples/{sample-name}/
 }
 ```
 
-**Check**: All `$schema` URLs validate against their schemas.
+**Check**: All `$schema` URLs validate against their schemas. Run `jsonck` on all files and plugin config sections.
 
 **Common issues:**
 - Missing `$schema` on main config file
@@ -303,7 +282,7 @@ grep -q "https://aka.ms/devproxy/badge/" "$sample/README.md" && echo "✓ Badge 
 
 Before creating a PR:
 
-1. [ ] **Run ajv validation on ALL JSON files** (mandatory — don't skip!)
+1. [ ] **Run jsonck validation on ALL JSON files** (mandatory — don't skip!)
 2. [ ] Dev Proxy config files are in `.devproxy/` folder
 3. [ ] All JSON files pass schema validation
 4. [ ] Metadata name = `pnp-devproxy-{folder-name}`
