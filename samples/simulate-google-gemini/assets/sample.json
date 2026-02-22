@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-simulate-google-gemini",
+    "source": "pnp",
+    "title": "Simulate the Google Gemini API",
+    "shortDescription": "This sample contains mock responses that allow you to simulate the Google Gemini API using Dev Proxy. Simulating the Gemini API is useful when you're working on parts of your app that don't require a real response from Gemini and don't want to incur unnecessary API costs.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/simulate-google-gemini",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-google-gemini",
+    "longDescription": [
+      "This sample contains mock responses that allow you to simulate the Google Gemini API using Dev Proxy. Simulating the Gemini API is useful when you're working on parts of your app that don't require a real response from Gemini and don't want to incur unnecessary API costs."
+    ],
+    "creationDateTime": "2026-02-22",
+    "updateDateTime": "2026-02-22",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "simulate-google-gemini"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/simulate-google-gemini/assets/screenshot.png",
+        "alt": "Dev Proxy simulating a response for a request to the Google Gemini API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "Use preset configurations",
+        "description": "Instructions on how to configure the Dev Proxy to use a different configuration file.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-preset-configurations"
+      },
+      {
+        "name": "Google Gemini API reference",
+        "description": "The Google Gemini API reference documentation.",
+        "url": "https://ai.google.dev/api/generate-content"
+      }
+    ]
+  }
+]

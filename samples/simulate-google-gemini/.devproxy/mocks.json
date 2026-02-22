@@ -1,0 +1,256 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "candidates": [
+            {
+              "content": {
+                "parts": [
+                  {
+                    "text": "Hello! I'm Gemini, a large language model created by Google. I'm here to help you with a wide variety of tasks, from answering questions and generating creative content to assisting with analysis and coding. How can I help you today?"
+                  }
+                ],
+                "role": "model"
+              },
+              "finishReason": "STOP",
+              "safetyRatings": [
+                {
+                  "category": "HARM_CATEGORY_HARASSMENT",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_HATE_SPEECH",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                  "probability": "NEGLIGIBLE"
+                }
+              ],
+              "index": 0
+            }
+          ],
+          "usageMetadata": {
+            "promptTokenCount": 4,
+            "candidatesTokenCount": 46,
+            "totalTokenCount": 50
+          },
+          "modelVersion": "gemini-2.0-flash",
+          "responseId": "resp_abc123def456"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/*:generateContent*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "candidates": [
+            {
+              "content": {
+                "parts": [
+                  {
+                    "text": "Hello! I'm Gemini, a large language model created by Google. I'm here to help you with a wide variety of tasks, from answering questions and generating creative content to assisting with analysis and coding. How can I help you today?"
+                  }
+                ],
+                "role": "model"
+              },
+              "finishReason": "STOP",
+              "safetyRatings": [
+                {
+                  "category": "HARM_CATEGORY_HARASSMENT",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_HATE_SPEECH",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                  "probability": "NEGLIGIBLE"
+                },
+                {
+                  "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                  "probability": "NEGLIGIBLE"
+                }
+              ],
+              "index": 0
+            }
+          ],
+          "usageMetadata": {
+            "promptTokenCount": 4,
+            "candidatesTokenCount": 46,
+            "totalTokenCount": 50
+          },
+          "modelVersion": "gemini-2.0-flash",
+          "responseId": "resp_abc123def456"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/*:countTokens*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "totalTokens": 7
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/*:embedContent*",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "embedding": {
+            "values": [
+              0.0123, -0.0456, 0.0789, -0.0234, 0.0567, -0.0891, 0.0345,
+              -0.0678, 0.0912, -0.0147, 0.0483, -0.0729, 0.0261, -0.0594,
+              0.0837, -0.0173, 0.0506, -0.0842, 0.0315, -0.0651
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models?*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "models": [
+            {
+              "name": "models/gemini-2.0-flash",
+              "baseModelId": "gemini-2.0-flash",
+              "version": "2.0",
+              "displayName": "Gemini 2.0 Flash",
+              "description": "Fast and versatile multimodal model for scaling across diverse tasks",
+              "inputTokenLimit": 1048576,
+              "outputTokenLimit": 8192,
+              "supportedGenerationMethods": [
+                "generateContent",
+                "countTokens"
+              ],
+              "temperature": 1.0,
+              "topP": 0.95,
+              "topK": 40,
+              "maxTemperature": 2.0
+            },
+            {
+              "name": "models/gemini-2.0-flash-lite",
+              "baseModelId": "gemini-2.0-flash-lite",
+              "version": "2.0",
+              "displayName": "Gemini 2.0 Flash-Lite",
+              "description": "Lite version of Gemini 2.0 Flash",
+              "inputTokenLimit": 1048576,
+              "outputTokenLimit": 8192,
+              "supportedGenerationMethods": [
+                "generateContent",
+                "countTokens"
+              ],
+              "temperature": 1.0,
+              "topP": 0.95,
+              "topK": 40,
+              "maxTemperature": 2.0
+            },
+            {
+              "name": "models/text-embedding-004",
+              "baseModelId": "text-embedding-004",
+              "version": "004",
+              "displayName": "Text Embedding 004",
+              "description": "Obtains a distributed representation of a text",
+              "inputTokenLimit": 2048,
+              "outputTokenLimit": 1,
+              "supportedGenerationMethods": [
+                "embedContent"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash?*",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "name": "models/gemini-2.0-flash",
+          "baseModelId": "gemini-2.0-flash",
+          "version": "2.0",
+          "displayName": "Gemini 2.0 Flash",
+          "description": "Fast and versatile multimodal model for scaling across diverse tasks",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": [
+            "generateContent",
+            "countTokens"
+          ],
+          "temperature": 1.0,
+          "topP": 0.95,
+          "topK": 40,
+          "maxTemperature": 2.0
+        }
+      }
+    }
+  ]
+}
