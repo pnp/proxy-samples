@@ -23,7 +23,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock) then unzip it)
+* Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-key-protected-mock) and unzip it, or
+  - Clone this repository
 * Start Dev Proxy: `devproxy`
 * Test the API key authentication by making requests:
 

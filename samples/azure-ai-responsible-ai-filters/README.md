@@ -27,7 +27,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-responsible-ai-filters) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-responsible-ai-filters
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-responsible-ai-filters) and unzip it, or
+  - Clone this repository
 - Change to the sample directory: `cd samples/azure-ai-responsible-ai-filters`
 - Start Dev Proxy: `devproxy`
 - In a new terminal, start a local web server: `npx http-server -p 3000`

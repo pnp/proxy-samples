@@ -31,7 +31,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience) then unzip it)
+1. Get the sample:
+   - Download just this sample:
+
+       ```bash
+       npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience
+       ```
+
+     or
+
+   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/ai-failure-resilience) and unzip it, or
+   - Clone this repository
 1. Open the sample folder in Visual Studio Code
 1. Install the [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) extension
 1. [Generate a fine-grained personal access token](https://github.com/settings/tokens?type=beta) with `models:read` permission granted

@@ -33,7 +33,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/entra-secured-crud-api) and unzip it, or
+  - Clone this repository
 - Navigate to the sample folder: `cd samples/entra-secured-crud-api`
 - Run `npm install` to install dependencies
 - Run `npm start` to start Dev Proxy and the web server

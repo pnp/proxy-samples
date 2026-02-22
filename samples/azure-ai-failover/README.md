@@ -52,7 +52,17 @@ Version|Date|Comments
 
 ### Run the Demo
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-failover) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-failover
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/azure-ai-failover) and unzip it, or
+  - Clone this repository
 - Start Dev Proxy: `devproxy`
 - In a new terminal, start the web server: `npx http-server -p 3000`
 - Open http://localhost:3000 in your browser

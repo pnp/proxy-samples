@@ -35,7 +35,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-powershell) and unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/minimal-powershell
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-powershell) and unzip it, or
+  - Clone this repository
 - Navigate to the sample folder: `cd samples/minimal-powershell`
 - In one terminal, start Dev Proxy: `devproxy`
 - In another terminal, run the script: `pwsh app.ps1`

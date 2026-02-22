@@ -68,7 +68,17 @@ We have basic documentation for using mocks, presets and plugins that you can re
 
 -->
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
+* Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/YOUR-SOLUTION-NAME
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/YOUR-SOLUTION-NAME) and unzip it, or
+  - Clone this repository
 * ...provide further instructions
 
 ## Features

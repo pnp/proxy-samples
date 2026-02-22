@@ -27,7 +27,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) then unzip it)
+1. Get the sample:
+   - Download just this sample:
+
+       ```bash
+       npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph
+       ```
+
+     or
+
+   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) and unzip it, or
+   - Clone this repository
 1. [Install](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started) Dev Proxy
 1. In a terminal session, open the sample folder
     1. If you cloned the repository, `cd samples/improve-app-security-graph`

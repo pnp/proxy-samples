@@ -36,7 +36,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire) and unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire) and unzip it, or
+  - Clone this repository
 - Navigate to the sample folder: `cd samples/minimal-dotnet-aspire`
 - Run the app: `dotnet run --project MinimalDotnetAspire.AppHost`
 - Open the Aspire dashboard (URL shown in the terminal output, e.g., `http://localhost:15170/login?t=...`)

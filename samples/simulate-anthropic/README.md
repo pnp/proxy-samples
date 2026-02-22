@@ -22,7 +22,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-anthropic) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/simulate-anthropic
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-anthropic) and unzip it, or
+  - Clone this repository
 - Start Dev Proxy by running `devproxy`
 - Test with: `curl -ikx http://127.0.0.1:8000 https://api.anthropic.com/v1/messages -d '{"model":"claude-sonnet-4-20250514","max_tokens":1024,"messages":[{"role":"user","content":"Hello"}]}' -H "content-type: application/json" -H "x-api-key: sk-ant-test" -H "anthropic-version: 2023-06-01"`
 

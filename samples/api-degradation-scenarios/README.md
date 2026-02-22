@@ -27,7 +27,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-degradation-scenarios) and unzip it, or
+  - Clone this repository
 - Start the sample app and Dev Proxy by running `npm start`
 - In a web browser, navigate to `http://localhost:3000` and use the dashboard to test API degradation scenarios
 

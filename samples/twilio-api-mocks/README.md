@@ -28,7 +28,17 @@ For error simulation, rate limiting, and chaos engineering, see the [twilio-resi
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/twilio-api-mocks) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/twilio-api-mocks
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/twilio-api-mocks) and unzip it, or
+  - Clone this repository
 - Start Dev Proxy with the configuration file from the sample:
 
   ```bash

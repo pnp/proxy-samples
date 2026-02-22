@@ -22,7 +22,17 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-- Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-google-gemini) then unzip it)
+- Get the sample:
+  - Download just this sample:
+
+      ```bash
+      npx gitload-cli https://github.com/pnp/proxy-samples/tree/main/samples/simulate-google-gemini
+      ```
+
+    or
+
+  - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/simulate-google-gemini) and unzip it, or
+  - Clone this repository
 - Start Dev Proxy by running `devproxy`
 - Test with: `curl -ikx http://127.0.0.1:8000 "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=test-api-key" -d '{"contents":[{"parts":[{"text":"Hello"}]}]}' -H "content-type: application/json"`
 
