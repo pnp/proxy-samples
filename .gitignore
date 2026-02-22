@@ -56,10 +56,6 @@ Thumbs.db
 Desktop.ini
 
 # IDE
-.vscode/
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/tasks.json
 .idea/
 *.swp
 *.swo
