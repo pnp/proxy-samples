@@ -44,7 +44,7 @@ Version|Date|Comments
 - Open your browser to `http://localhost:3000`
 - Select different test scenarios to see how Azure OpenAI's Responsible AI filters respond
 
-![Demo app showing content filter results](assets/demo-app.png)
+![Demo app showing content filter results](assets/screenshot.png)
 
 ## Features
 
