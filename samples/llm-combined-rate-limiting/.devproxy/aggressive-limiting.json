@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.2.0/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
@@ -39,14 +39,14 @@
     "https://api.devproxy.example.com/*"
   ],
   "llmRateLimiting": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/languagemodelratelimitingplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.2.0/languagemodelratelimitingplugin.schema.json",
     "promptTokenLimit": 100,
     "completionTokenLimit": 50,
     "resetTimeWindowSeconds": 30,
     "whenLimitExceeded": "Throttle"
   },
   "apiRateLimiting": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/ratelimitingplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.2.0/ratelimitingplugin.schema.json",
     "headerLimit": "X-RateLimit-Limit",
     "headerRemaining": "X-RateLimit-Remaining",
     "headerReset": "X-RateLimit-Reset",
@@ -58,7 +58,7 @@
     "whenLimitExceeded": "Throttle"
   },
   "apiMocks": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.2.0/mockresponseplugin.schema.json",
     "mocksFile": "api-mocks.json"
   },
   "languageModel": {

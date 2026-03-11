@@ -12,7 +12,7 @@ Using this preset you can simulate throttling of the Anthropic Claude API and se
 
 ## Compatibility
 
-![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
+![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the Anthropic Claude API and se
 
 Version|Date|Comments
 -------|----|--------
+1.1|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.0|February 8, 2026|Initial release
 
 ## Minimal path to awesome

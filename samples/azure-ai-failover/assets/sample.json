@@ -10,7 +10,7 @@
       "This sample demonstrates how to test failover logic from Azure OpenAI to GitHub Models using Dev Proxy. The sample includes a chat app that attempts to use Azure OpenAI as the primary provider and automatically fails over to GitHub Models when Azure OpenAI is unavailable. Key benefit: You don't need an actual Azure OpenAI deployment to test failover! Dev Proxy simulates Azure OpenAI failures, and the app falls back to GitHub Models using just your GitHub token."
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-02-04",
+    "updateDateTime": "2026-03-11",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.1.0"
+        "value": "v2.2.0"
       }
     ],
     "thumbnails": [

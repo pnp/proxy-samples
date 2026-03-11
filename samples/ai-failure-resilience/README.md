@@ -15,7 +15,7 @@ The sample showcases:
 
 ## Compatibility
 
-![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
+![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
 
 ## Contributors
 
@@ -25,6 +25,7 @@ The sample showcases:
 
 Version|Date|Comments
 -------|----|--------
+1.3|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.2|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.1|January 18, 2026|Fixed sample metadata
 1.0|January 6, 2026|Initial release
@@ -77,7 +78,7 @@ To test specific failure scenarios, edit the `.devproxy/devproxyrc.json` file an
 ```json
 {
   "languageModelFailurePlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/languagemodelfailureplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.2.0/languagemodelfailureplugin.schema.json",
     "failures": [
       "Hallucination",
       "PlausibleIncorrect",

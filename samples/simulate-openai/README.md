@@ -8,7 +8,7 @@ This sample contains a preset that allows you to easily simulate the OpenAI API 
 
 ## Compatibility
 
-![Dev Proxy v2.1.0](https://aka.ms/devproxy/badge/v2.1.0)
+![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset that allows you to easily simulate the OpenAI API 
 
 Version|Date|Comments
 -------|----|--------
+1.5|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.4|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.3|January 18, 2026|Moved config files to .devproxy folder
 1.2|January 5, 2026|Updated to Dev Proxy v2.0.0

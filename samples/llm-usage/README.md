@@ -27,6 +27,7 @@ The sample showcases:
 
 Version|Date|Comments
 -------|----|--------
+1.4|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.3|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.2|January 18, 2026|Moved config files to .devproxy folder
 1.1|January 5, 2026|Updated to Dev Proxy v2.0.0
