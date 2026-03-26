@@ -10,7 +10,7 @@
       "This sample contains a preset and mock responses that allow you to simulate the Anthropic Claude Messages API using Dev Proxy. Simulating the Claude API is useful when you're working on parts of your app that don't require a real response from Claude and don't want to incur unnecessary API costs."
     ],
     "creationDateTime": "2026-02-08",
-    "updateDateTime": "2026-03-11",
+    "updateDateTime": "2026-03-26",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.2.0"
+        "value": "v2.3.0"
       }
     ],
     "thumbnails": [

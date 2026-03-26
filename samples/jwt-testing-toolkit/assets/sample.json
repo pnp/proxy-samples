@@ -10,7 +10,7 @@
       "Demonstrates how to use devproxy jwt create to generate JSON Web Tokens for testing API authentication scenarios with a simulated CRUD API secured by JWT validation."
     ],
     "creationDateTime": "2026-01-10",
-    "updateDateTime": "2026-03-11",
+    "updateDateTime": "2026-03-26",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.2.0"
+        "value": "v2.3.0"
       }
     ],
     "thumbnails": [

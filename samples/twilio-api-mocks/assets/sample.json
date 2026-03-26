@@ -10,7 +10,7 @@
       "Comprehensive mock responses for Twilio REST API to test messaging, voice, and phone number operations without live API calls"
     ],
     "creationDateTime": "2026-01-19",
-    "updateDateTime": "2026-03-11",
+    "updateDateTime": "2026-03-26",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "2.1.0"
+        "value": "v2.3.0"
       }
     ],
     "thumbnails": [

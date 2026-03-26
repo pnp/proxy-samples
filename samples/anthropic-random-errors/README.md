@@ -10,7 +10,7 @@ When building apps that integrate with the Claude API, it's important to verify 
 
 ## Compatibility
 
-![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
+![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
 
 ## Contributors
 
@@ -20,6 +20,7 @@ When building apps that integrate with the Claude API, it's important to verify 
 
 Version|Date|Comments
 -------|----|--------
+1.2|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.1|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.0|February 8, 2026|Initial release
 

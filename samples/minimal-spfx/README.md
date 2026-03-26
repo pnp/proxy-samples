@@ -8,7 +8,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with a SharePoint Fr
 
 ## Compatibility
 
-![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
+![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
 
 ![SPFx 1.22.1](https://img.shields.io/badge/SPFx-1.22.1-green.svg)
 ![Node.js v22](https://img.shields.io/badge/Node.js-v22-green.svg)
@@ -21,6 +21,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with a SharePoint Fr
 
 Version|Date|Comments
 -------|----|--------
+1.4|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.3|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.2|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.1|January 18, 2026|Fixed sample metadata

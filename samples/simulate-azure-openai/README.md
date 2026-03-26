@@ -8,7 +8,7 @@ This sample contains a preset that allows you to easily simulate the Azure OpenA
 
 ## Compatibility
 
-![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
+![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset that allows you to easily simulate the Azure OpenA
 
 Version|Date|Comments
 -------|----|--------
+1.6|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.5|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.4|February 4, 2026|Updated to Dev Proxy v2.1.0
 1.3|January 18, 2026|Moved config files to .devproxy folder

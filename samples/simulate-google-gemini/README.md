@@ -8,7 +8,7 @@ This sample contains mock responses that allow you to simulate the Google Gemini
 
 ## Compatibility
 
-![Dev Proxy v2.2.0](https://aka.ms/devproxy/badge/v2.2.0)
+![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains mock responses that allow you to simulate the Google Gemini
 
 Version|Date|Comments
 -------|----|--------
+1.2|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.1|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.0|February 22, 2026|Initial release
 
