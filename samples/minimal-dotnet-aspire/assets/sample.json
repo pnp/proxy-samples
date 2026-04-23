@@ -2,15 +2,15 @@
   {
     "name": "pnp-devproxy-minimal-dotnet-aspire",
     "source": "pnp",
-    "title": "Minimal .NET Aspire app using Dev Proxy",
-    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with .NET Aspire",
+    "title": "Minimal Aspire app using Dev Proxy",
+    "shortDescription": "Demonstrates the minimal setup to use Dev Proxy with Aspire",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/minimal-dotnet-aspire",
     "longDescription": [
-      "Demonstrates the minimal setup to use Dev Proxy with .NET Aspire"
+      "Demonstrates the minimal setup to use Dev Proxy with Aspire"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-03-26",
+    "updateDateTime": "2026-04-23",
     "products": [
       "Dev Proxy"
     ],
@@ -41,7 +41,7 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/proxy-samples/raw/main/samples/minimal-dotnet-aspire/assets/screenshot.png",
-        "alt": "Dev Proxy mocking a .NET Aspire app API request"
+        "alt": "Dev Proxy mocking an Aspire app API request"
       }
     ],
     "authors": [
@@ -58,8 +58,8 @@
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
       },
       {
-        "name": "Use Dev Proxy with .NET Aspire applications",
-        "description": "Learn how to integrate Dev Proxy into your .NET Aspire application.",
+        "name": "Use Dev Proxy with Aspire applications",
+        "description": "Learn how to integrate Dev Proxy into your Aspire application.",
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-with-dotnet-aspire"
       },
       {
@@ -73,18 +73,18 @@
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
       },
       {
-        "name": ".NET Aspire overview",
-        "description": "Learn about .NET Aspire and how to build cloud-native applications.",
+        "name": "Aspire overview",
+        "description": "Learn about Aspire and how to build cloud-native applications.",
         "url": "https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview"
       },
       {
-        "name": ".NET Aspire setup and tooling",
-        "description": "Learn how to install and set up .NET Aspire workload.",
+        "name": "Aspire setup and tooling",
+        "description": "Learn how to install and set up Aspire workload.",
         "url": "https://learn.microsoft.com/dotnet/aspire/fundamentals/setup-tooling"
       },
       {
         "name": "DevProxy.Hosting NuGet package",
-        "description": "Dev Proxy .NET Aspire extensions for seamless integration.",
+        "description": "Dev Proxy Aspire extensions for seamless integration.",
         "url": "https://www.nuget.org/packages/DevProxy.Hosting"
       }
     ]

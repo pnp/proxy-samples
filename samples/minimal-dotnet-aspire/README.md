@@ -1,17 +1,17 @@
-# Minimal .NET Aspire app using Dev Proxy
+# Minimal Aspire app using Dev Proxy
 
 ## Summary
 
-This sample demonstrates the minimal setup to use Dev Proxy with .NET Aspire using the [DevProxy.Hosting](https://www.nuget.org/packages/DevProxy.Hosting) package. It shows how to:
+This sample demonstrates the minimal setup to use Dev Proxy with Aspire using the [DevProxy.Hosting](https://www.nuget.org/packages/DevProxy.Hosting) package. It shows how to:
 
 - Add Dev Proxy as an Aspire resource using `AddDevProxyExecutable`
 - Configure Dev Proxy to intercept API requests
 - Mock API responses using the MockResponsePlugin
 - Set up an Aspire AppHost that orchestrates Dev Proxy and a web API service
 
-The sample makes a single API call to JSONPlaceholder and returns a mocked response, demonstrating how Dev Proxy intercepts and replaces the real API call in a distributed .NET Aspire application.
+The sample makes a single API call to JSONPlaceholder and returns a mocked response, demonstrating how Dev Proxy intercepts and replaces the real API call in a distributed Aspire application.
 
-![Dev Proxy mocking a .NET Aspire app API request](assets/screenshot.png)
+![Dev Proxy mocking an Aspire app API request](assets/screenshot.png)
 
 ## Compatibility
 
@@ -25,6 +25,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 Version|Date|Comments
 -------|----|--------
+1.5|April 23, 2026|Renamed .NET Aspire to Aspire
 1.4|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.3|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.2|February 4, 2026|Updated to Dev Proxy v2.1.0
@@ -59,11 +60,11 @@ Version|Date|Comments
 
 This sample illustrates the following concepts:
 
-- Using the `DevProxy.Hosting` NuGet package to integrate Dev Proxy with .NET Aspire
+- Using the `DevProxy.Hosting` NuGet package to integrate Dev Proxy with Aspire
 - Adding Dev Proxy as an executable resource with `AddDevProxyExecutable`
 - Configuring Dev Proxy with a `.devproxy/devproxyrc.json` file
 - Using MockResponsePlugin to return custom API responses
-- Setting up .NET Aspire AppHost to orchestrate Dev Proxy and services
+- Setting up Aspire AppHost to orchestrate Dev Proxy and services
 - Using `HTTPS_PROXY` environment variable to route requests through Dev Proxy
 - Adding custom headers to mocked responses
 

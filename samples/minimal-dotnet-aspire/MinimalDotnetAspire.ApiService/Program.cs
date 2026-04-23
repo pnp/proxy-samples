@@ -8,7 +8,7 @@ builder.Services.AddHttpClient("ApiClient", client =>
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Minimal .NET Aspire app using Dev Proxy. Call /posts to see the mocked response.");
+app.MapGet("/", () => "Minimal Aspire app using Dev Proxy. Call /posts to see the mocked response.");
 
 app.MapGet("/posts", async (IHttpClientFactory httpClientFactory) =>
 {
