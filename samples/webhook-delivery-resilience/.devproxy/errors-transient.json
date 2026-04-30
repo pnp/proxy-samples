@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.3.0/genericrandomerrorplugin.errorsfile.schema.json",
+  "errors": [
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/transient"
+      },
+      "responses": [
+        {
+          "statusCode": 503,
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Retry-After",
+              "value": "@dynamic"
+            }
+          ],
+          "body": {
+            "error": {
+              "code": "delivery_backpressure",
+              "message": "Receiver is temporarily overloaded. Retry later."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

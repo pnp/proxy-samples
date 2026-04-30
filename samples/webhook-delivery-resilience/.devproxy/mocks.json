@@ -1,0 +1,129 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.3.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/success",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "accepted": true,
+          "result": "processed",
+          "message": "Webhook accepted and processed."
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/duplicate",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 409,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "error": {
+            "code": "duplicate_event",
+            "message": "Event ID already processed."
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/out-of-order",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 409,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "error": {
+            "code": "out_of_order",
+            "message": "Event sequence is invalid for current resource state."
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/invalid-signature",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 401,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "error": {
+            "code": "invalid_signature",
+            "message": "Signature validation failed."
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/replayed",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 409,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "error": {
+            "code": "replay_detected",
+            "message": "Replay attack detected: timestamp outside accepted window."
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://webhooks.contoso.com/deliveries/transient",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 202,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "accepted": true,
+          "result": "queued",
+          "message": "Webhook queued for asynchronous processing."
+        }
+      }
+    }
+  ]
+}

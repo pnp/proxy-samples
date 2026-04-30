@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-webhook-delivery-resilience",
+    "source": "pnp",
+    "title": "Webhook Delivery Resilience",
+    "shortDescription": "Simulate duplicate events, out-of-order delivery, signature failures, and transient webhook receiver failures to test robust webhook handling.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/webhook-delivery-resilience",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/webhook-delivery-resilience",
+    "longDescription": [
+      "Simulate duplicate events, out-of-order delivery, signature failures, and transient webhook receiver failures to test robust webhook handling."
+    ],
+    "creationDateTime": "2026-04-25",
+    "updateDateTime": "2026-04-30",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "webhook-delivery-resilience"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v2.3.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/webhook-delivery-resilience/assets/snap-1.png",
+        "alt": "Dev Proxy simulating webhook delivery resilience scenarios"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "lovyjain",
+        "pictureUrl": "https://github.com/lovyjain.png",
+        "name": "Lovy Jain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "Learn how to install and run Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Mock responses",
+        "description": "Learn how to mock API responses with Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses"
+      },
+      {
+        "name": "Retry-after handling",
+        "description": "Learn how to test retry behavior with Retry-After.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/retryafterplugin"
+      }
+    ]
+  }
+]
