@@ -1,29 +1,35 @@
 # Webhook delivery resilience testing
 
-Test how your webhook receiver handles duplicate events, out-of-order deliveries, invalid signatures, replay attempts, and transient failures by using Dev Proxy.
+Test how your app handles it when the webhook endpoint you're calling rejects duplicates, returns auth errors, or is temporarily unavailable — using Dev Proxy.
 
 ![Dev Proxy simulating webhook delivery resilience scenarios](assets/snap-1.png)
 
 ## Summary
 
-This sample provides realistic webhook delivery scenarios that frequently break production integrations. You can use it to validate idempotency handling, event sequencing checks, signature verification, and retry behavior.
+This sample simulates how a remote webhook endpoint can respond to your delivery attempts. Use it to validate how your sender handles duplicate-rejection errors, sequence conflicts, signature failures, and transient overloads.
 
-In simple terms: this sample helps you test what your app does when the same notification arrives twice, arrives in the wrong order, has a bad security signature, or the receiving system is temporarily unavailable.
+Dev Proxy intercepts calls to `https://webhooks.contoso.com/deliveries/*` and 
+returns the configured responses, so you can test locally before these failures 
+surface in production.
 
 ## Typical use case
 
-Imagine you run an online store and your payment provider sends webhook events such as payment.created and payment.succeeded. In real life:
+Imagine your app is a platform that notifies downstream services, like a merchant 
+dashboard or a fulfilment system whenever key events occur. Your app sends events 
+like `payment.created` or `payment.succeeded` to an external webhook endpoint it 
+owns or manages. In real life, that endpoint may:
 
-- The same event can be delivered more than once
-- Events can arrive out of order
-- Some requests can fail security checks
-- Your server can be temporarily overloaded
+- Reject a delivery because it already processed that event ID
+- Reject a delivery because events arrived out of order
+- Reject a delivery because the signature doesn't match
+- Be temporarily overloaded and ask you to retry later
 
-This sample lets you test those situations locally before they happen in production.
+This sample lets you test how your delivery code handles those responses locally 
+before they happen in production.
 
 ## Compatibility
 
-![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
+![Dev Proxy v2.3.4](https://img.shields.io/badge/devproxy-v2.3.4-green.svg)
 
 ## Contributors
 
@@ -76,7 +82,7 @@ Version|Date|Comments
   curl -ikx http://127.0.0.1:8000 -X POST https://webhooks.contoso.com/deliveries/transient
 
   # Run transient several times to see both outcomes (503 and 202)
-  for /L %i in (1,1,10) do curl -ikx http://127.0.0.1:8000 -X POST https://webhooks.contoso.com/deliveries/transient
+  for i in {1..10}; do curl -ikx http://127.0.0.1:8000 -X POST https://webhooks.contoso.com/deliveries/transient; done
   ```
 
 ## Features

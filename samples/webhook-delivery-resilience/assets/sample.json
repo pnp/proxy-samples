@@ -3,14 +3,14 @@
     "name": "pnp-devproxy-webhook-delivery-resilience",
     "source": "pnp",
     "title": "Webhook Delivery Resilience",
-    "shortDescription": "Simulate duplicate events, out-of-order delivery, signature failures, and transient webhook receiver failures to test robust webhook handling.",
+    "shortDescription": "Test how your app handles it when the webhook endpoint you're calling rejects duplicates, returns auth errors, or is temporarily unavailable.",
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/webhook-delivery-resilience",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/webhook-delivery-resilience",
     "longDescription": [
-      "Simulate duplicate events, out-of-order delivery, signature failures, and transient webhook receiver failures to test robust webhook handling."
+      "Test how your app handles it when the webhook endpoint you're calling rejects duplicates, returns auth errors, or is temporarily unavailable."
     ],
     "creationDateTime": "2026-04-25",
-    "updateDateTime": "2026-04-30",
+    "updateDateTime": "2026-05-01",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.3.0"
+        "value": "v2.3.4"
       }
     ],
     "thumbnails": [
