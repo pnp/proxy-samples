@@ -6,7 +6,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 ## Compatibility
 
-![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
+![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
 
 ## Contributors
 
@@ -16,6 +16,7 @@ This sample contains mocks for the "Get started with Microsoft Graph Toolkit" le
 
 Version|Date|Comments
 -------|----|--------
+1.8|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.7|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.6|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.5|February 4, 2026|Updated to Dev Proxy v2.1.0

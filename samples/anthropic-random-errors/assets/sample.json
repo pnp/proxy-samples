@@ -10,7 +10,7 @@
       "This sample contains a preset and error responses to simulate random API errors on the Anthropic Claude API. The preset includes all documented error types: invalid request (400), authentication error (401), permission error (403), not found (404), request too large (413), rate limit (429), internal server error (500), and overloaded (529). The proxy randomly fails requests with one of these errors to help you verify your app's error handling."
     ],
     "creationDateTime": "2026-02-08",
-    "updateDateTime": "2026-03-26",
+    "updateDateTime": "2026-05-30",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v2.3.0"
+        "value": "v3.0.0"
       }
     ],
     "thumbnails": [

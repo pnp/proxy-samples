@@ -14,7 +14,7 @@ The sample includes:
 
 ## Compatibility
 
-![Dev Proxy v2.3.0](https://aka.ms/devproxy/badge/v2.3.0)
+![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
 
 ## Contributors
 
@@ -24,6 +24,7 @@ The sample includes:
 
 Version|Date|Comments
 -------|----|--------
+1.0.3|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.0.2|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.0.1|March 11, 2026|Updated to Dev Proxy v2.2.0
 1.0.0|January 19, 2026|Initial release
