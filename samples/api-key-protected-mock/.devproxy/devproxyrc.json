@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/rc.schema.json",
   "plugins": [
     {
       "name": "AuthPlugin",
@@ -18,7 +18,7 @@
     "https://api.contoso.com/*"
   ],
   "auth": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/authplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/authplugin.schema.json",
     "type": "apiKey",
     "apiKey": {
       "parameters": [
@@ -42,7 +42,7 @@
     }
   },
   "mockResponsePlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/mockresponseplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/mockresponseplugin.schema.json",
     "mocksFile": "mocks.json"
   }
 }

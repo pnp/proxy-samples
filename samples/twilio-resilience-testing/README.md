@@ -10,7 +10,7 @@ Test how your app handles Twilio API errors, rate limiting, and slow responses u
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 

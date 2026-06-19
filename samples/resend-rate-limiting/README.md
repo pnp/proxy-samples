@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on Resend APIs. Resend A
 
 Version|Date|Comments
 -------|----|--------
+1.20|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.10|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.9|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.8|March 11, 2026|Updated to Dev Proxy v2.2.0

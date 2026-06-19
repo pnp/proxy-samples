@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/rc.schema.json",
   "plugins": [
     {
       "name": "MockResponsePlugin",
@@ -35,16 +35,16 @@
     "https://api.contoso.com/*"
   ],
   "corsPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/mockresponseplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/mockresponseplugin.schema.json",
     "mocksFile": "cors-mocks.json"
   },
   "latencyPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/latencyplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/latencyplugin.schema.json",
     "minMs": 200,
     "maxMs": 800
   },
   "authPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/authplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/authplugin.schema.json",
     "type": "apiKey",
     "apiKey": {
       "parameters": [
@@ -59,7 +59,7 @@
     }
   },
   "tasksApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/crudapiplugin.schema.json",
     "apiFile": "tasks-api.json"
   }
 }

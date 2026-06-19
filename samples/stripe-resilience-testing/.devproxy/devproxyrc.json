@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
@@ -29,12 +29,12 @@
     "https://api.stripe.com/*"
   ],
   "latencyPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/latencyplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/latencyplugin.schema.json",
     "minMs": 200,
     "maxMs": 1500
   },
   "rateLimitingStripe": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/ratelimitingplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/ratelimitingplugin.schema.json",
     "headerLimit": "RateLimit-Limit",
     "headerRemaining": "RateLimit-Remaining",
     "headerReset": "RateLimit-Reset",
@@ -47,7 +47,7 @@
     "customResponseFile": "stripe-rate-limit-response.json"
   },
   "stripeErrors": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/genericrandomerrorplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/genericrandomerrorplugin.schema.json",
     "errorsFile": "stripe-errors.json",
     "rate": 50
   },

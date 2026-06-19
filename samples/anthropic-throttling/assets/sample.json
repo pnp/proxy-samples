@@ -10,7 +10,7 @@
       "This sample contains a preset and error responses to simulate the throttling of the Anthropic Claude API. As more and more applications use the Claude API for AI-powered features, it's important that developers can verify that their apps properly handle cases when the API is throttled. The preset includes 5 different throttling scenarios: requests per minute exceeded, input tokens per minute exceeded, output tokens per minute exceeded, acceleration limit with dynamic Retry-After, and API overloaded (529). The proxy simulates throttling using one of these modes at random."
     ],
     "creationDateTime": "2026-02-08",
-    "updateDateTime": "2026-05-30",
+    "updateDateTime": "2026-06-17",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.0.0"
+        "value": "v3.0.1"
       }
     ],
     "thumbnails": [

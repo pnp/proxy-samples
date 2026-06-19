@@ -10,7 +10,7 @@
       "Test how your app handles Stripe API errors, rate limiting, and slow responses"
     ],
     "creationDateTime": "2026-01-18",
-    "updateDateTime": "2026-05-30",
+    "updateDateTime": "2026-06-17",
     "products": [
       "Dev Proxy",
       "Stripe"
@@ -34,7 +34,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.0.0"
+        "value": "v3.0.1"
       }
     ],
     "thumbnails": [

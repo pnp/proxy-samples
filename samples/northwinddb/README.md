@@ -8,7 +8,7 @@ This sample contains a set of CRUD APIs based on the [Northwind database data](h
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a set of CRUD APIs based on the [Northwind database data](h
 
 Version|Date|Comments
 -------|----|--------
+1.9|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.8|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.7|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.6|March 11, 2026|Updated to Dev Proxy v2.2.0

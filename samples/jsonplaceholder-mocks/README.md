@@ -10,7 +10,7 @@ The sample provides a complete working example of API mocking, where all respons
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 
@@ -20,6 +20,7 @@ The sample provides a complete working example of API mocking, where all respons
 
 Version|Date|Comments
 -------|----|--------
+1.7|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.6|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.5|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.4|March 11, 2026|Updated to Dev Proxy v2.2.0

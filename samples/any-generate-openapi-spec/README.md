@@ -8,7 +8,7 @@ This sample contains a preset that allows you to generate an OpenAPI spec for an
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 
@@ -19,6 +19,7 @@ This sample contains a preset that allows you to generate an OpenAPI spec for an
 
 Version|Date|Comments
 -------|----|--------
+1.8|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.7|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.6|March 26, 2026|Updated to Dev Proxy v2.3.0
 1.5|March 11, 2026|Updated to Dev Proxy v2.2.0

@@ -14,7 +14,7 @@ For error simulation, rate limiting, and chaos engineering, see the [twilio-resi
 
 ## Compatibility
 
-![Dev Proxy v3.0.0](https://aka.ms/devproxy/badge/v3.0.0)
+![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
 
 ## Contributors
 

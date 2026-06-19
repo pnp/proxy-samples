@@ -10,7 +10,7 @@
       "This sample demonstrates how to simulate various API degradation scenarios including intermittent errors, rate limiting, and slow responses to test your application's resilience."
     ],
     "creationDateTime": "2026-01-18",
-    "updateDateTime": "2026-05-30",
+    "updateDateTime": "2026-06-17",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.0.0"
+        "value": "v3.0.1"
       }
     ],
     "thumbnails": [
