@@ -10,7 +10,7 @@ Test how your app handles Twilio API errors, rate limiting, and slow responses u
 
 ## Compatibility
 
-![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
+![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
 
 ## Contributors
 
@@ -20,6 +20,7 @@ Test how your app handles Twilio API errors, rate limiting, and slow responses u
 
 | Version | Date | Comments |
 | ------- | ---------------- | --------------- |
+| 1.4 | July 1, 2026 | Updated to Dev Proxy v3.1.0 |
 | 1.3 | May 30, 2026 | Updated to Dev Proxy v3.0.0 |
 | 1.2 | March 26, 2026 | Updated to Dev Proxy v2.3.0 |
 | 1.1 | March 11, 2026 | Updated to Dev Proxy v2.2.0 |

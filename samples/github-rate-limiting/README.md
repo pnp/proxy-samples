@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 ## Compatibility
 
-![Dev Proxy v3.0.1](https://aka.ms/devproxy/badge/v3.0.1)
+![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 Version|Date|Comments
 -------|----|--------
+1.22|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.21|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.11|May 30, 2026|Updated to Dev Proxy v3.0.0
 1.10|March 26, 2026|Updated to Dev Proxy v2.3.0

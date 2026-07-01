@@ -10,7 +10,7 @@
     "url": "https://github.com/pnp/proxy-samples/tree/main/samples/twilio-resilience-testing",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/twilio-resilience-testing",
     "creationDateTime": "2026-01-19",
-    "updateDateTime": "2026-06-17",
+    "updateDateTime": "2026-07-01",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.0.1"
+        "value": "v3.1.0"
       }
     ],
     "thumbnails": [

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.1.0/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
@@ -29,12 +29,12 @@
     "https://api.twilio.com/*"
   ],
   "latencyPlugin": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/latencyplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.1.0/latencyplugin.schema.json",
     "minMs": 200,
     "maxMs": 1500
   },
   "rateLimitingTwilio": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/ratelimitingplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.1.0/ratelimitingplugin.schema.json",
     "costPerRequest": 1,
     "resetTimeWindowSeconds": 1,
     "warningThresholdPercent": 80,
@@ -44,7 +44,7 @@
     "customResponseFile": "twilio-rate-limit-response.json"
   },
   "twilioErrors": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/genericrandomerrorplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.1.0/genericrandomerrorplugin.schema.json",
     "errorsFile": "twilio-errors.json",
     "rate": 50
   },

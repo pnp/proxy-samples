@@ -10,7 +10,7 @@
       "Demonstrates the minimal setup to use Dev Proxy with a PowerShell script"
     ],
     "creationDateTime": "2026-01-05",
-    "updateDateTime": "2026-06-17",
+    "updateDateTime": "2026-07-01",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.0.1"
+        "value": "v3.1.0"
       }
     ],
     "thumbnails": [
