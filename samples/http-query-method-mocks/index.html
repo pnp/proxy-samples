@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP QUERY method demo &middot; Dev Proxy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 860px;
+      padding: 2rem 1.5rem 4rem;
+      line-height: 1.5;
+    }
+
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+
+    p.lead {
+      margin-top: 0;
+      color: #666;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+      border: 1px solid #0067b8;
+      background: #0067b8;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: transparent;
+      color: #0067b8;
+    }
+
+    button:hover {
+      filter: brightness(1.1);
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      padding: 1rem;
+    }
+
+    legend {
+      font-weight: 600;
+      padding: 0 0.4rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 0.4rem;
+      border-radius: 6px;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code {
+      background: rgba(127, 127, 127, 0.15);
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HTTP <code>QUERY</code> method demo</h1>
+  <p class="lead">
+    This app talks to <code>https://api.contoso.com</code>, an API that doesn't
+    exist yet. Dev Proxy intercepts the requests and returns mock responses so
+    you can build against the new <code>QUERY</code> method before the API is
+    ready.
+  </p>
+
+  <fieldset>
+    <legend>Search products with <code>QUERY</code></legend>
+    <label for="category">Category filter (sent in the request body)</label>
+    <select id="category">
+      <option value="">All categories</option>
+      <option value="electronics">electronics</option>
+      <option value="books">books</option>
+    </select>
+    <div class="actions">
+      <button id="queryProducts">Search products (QUERY)</button>
+      <button id="getProducts" class="secondary">Get all products (GET)</button>
+      <button id="queryCustomers" class="secondary">Search customers (QUERY)</button>
+    </div>
+  </fieldset>
+
+  <h2 id="requestTitle">Request</h2>
+  <pre id="request">Choose an action above.</pre>
+
+  <h2>Response</h2>
+  <pre id="response">&nbsp;</pre>
+
+  <script>
+    const API_BASE = 'https://api.contoso.com';
+    const requestEl = document.getElementById('request');
+    const responseEl = document.getElementById('response');
+    const categoryEl = document.getElementById('category');
+
+    async function send(method, path, body) {
+      const url = `${API_BASE}${path}`;
+      const options = { method };
+      if (body !== undefined) {
+        options.headers = { 'content-type': 'application/json' };
+        options.body = JSON.stringify(body);
+      }
+
+      const lines = [`${method} ${url}`];
+      if (body !== undefined) {
+        lines.push('content-type: application/json', '', JSON.stringify(body, null, 2));
+      }
+      requestEl.textContent = lines.join('\n');
+      responseEl.textContent = 'Loading…';
+
+      try {
+        const res = await fetch(url, options);
+        const text = await res.text();
+        let pretty = text;
+        try {
+          pretty = JSON.stringify(JSON.parse(text), null, 2);
+        } catch {
+          /* not JSON, show as-is */
+        }
+        responseEl.textContent = `HTTP ${res.status} ${res.statusText}\n\n${pretty}`;
+      } catch (err) {
+        responseEl.textContent =
+          `Request failed: ${err}\n\n` +
+          'Make sure Dev Proxy is running and configured as your system proxy.';
+      }
+    }
+
+    document.getElementById('queryProducts').addEventListener('click', () => {
+      const category = categoryEl.value;
+      const body = category ? { category } : {};
+      send('QUERY', '/products', body);
+    });
+
+    document.getElementById('getProducts').addEventListener('click', () => {
+      send('GET', '/products');
+    });
+
+    document.getElementById('queryCustomers').addEventListener('click', () => {
+      send('QUERY', '/customers', { city: 'Seattle' });
+    });
+  </script>
+</body>
+
+</html>

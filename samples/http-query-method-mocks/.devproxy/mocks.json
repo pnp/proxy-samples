@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.2.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://api.contoso.com/products",
+        "method": "QUERY",
+        "bodyFragment": "electronics"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "accept-query",
+            "value": "application/json"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "query": {
+            "category": "electronics"
+          },
+          "count": 2,
+          "results": [
+            {
+              "id": "prod-1001",
+              "name": "Contoso Noise-Cancelling Headphones",
+              "category": "electronics",
+              "price": 149.99,
+              "inStock": true
+            },
+            {
+              "id": "prod-1002",
+              "name": "Contoso 4K Webcam",
+              "category": "electronics",
+              "price": 89.0,
+              "inStock": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/products",
+        "method": "QUERY",
+        "bodyFragment": "books"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "accept-query",
+            "value": "application/json"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "query": {
+            "category": "books"
+          },
+          "count": 1,
+          "results": [
+            {
+              "id": "prod-2001",
+              "name": "Contoso Guide to Modern APIs",
+              "category": "books",
+              "price": 34.5,
+              "inStock": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/products",
+        "method": "QUERY"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "accept-query",
+            "value": "application/json"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "query": {},
+          "count": 3,
+          "results": [
+            {
+              "id": "prod-1001",
+              "name": "Contoso Noise-Cancelling Headphones",
+              "category": "electronics",
+              "price": 149.99,
+              "inStock": true
+            },
+            {
+              "id": "prod-1002",
+              "name": "Contoso 4K Webcam",
+              "category": "electronics",
+              "price": 89.0,
+              "inStock": false
+            },
+            {
+              "id": "prod-2001",
+              "name": "Contoso Guide to Modern APIs",
+              "category": "books",
+              "price": 34.5,
+              "inStock": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/customers",
+        "method": "QUERY"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "accept-query",
+            "value": "application/json"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": {
+          "count": 2,
+          "results": [
+            {
+              "id": "cust-501",
+              "displayName": "Adele Vance",
+              "city": "Seattle",
+              "loyaltyTier": "gold"
+            },
+            {
+              "id": "cust-502",
+              "displayName": "Alex Wilber",
+              "city": "Seattle",
+              "loyaltyTier": "silver"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://api.contoso.com/products",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "content-type",
+            "value": "application/json; charset=utf-8"
+          },
+          {
+            "name": "accept-query",
+            "value": "application/json"
+          },
+          {
+            "name": "x-mocked-by",
+            "value": "Dev Proxy MockResponsePlugin"
+          }
+        ],
+        "body": [
+          {
+            "id": "prod-1001",
+            "name": "Contoso Noise-Cancelling Headphones",
+            "category": "electronics",
+            "price": 149.99,
+            "inStock": true
+          },
+          {
+            "id": "prod-1002",
+            "name": "Contoso 4K Webcam",
+            "category": "electronics",
+            "price": 89.0,
+            "inStock": false
+          },
+          {
+            "id": "prod-2001",
+            "name": "Contoso Guide to Modern APIs",
+            "category": "books",
+            "price": 34.5,
+            "inStock": true
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "pnp-devproxy-http-query-method-mocks",
+    "source": "pnp",
+    "title": "Mock the HTTP QUERY method",
+    "shortDescription": "Prototype and test apps against the new HTTP QUERY method by mocking its responses with Dev Proxy, before the API is built.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/http-query-method-mocks",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/http-query-method-mocks",
+    "longDescription": [
+      "Prototype and test apps against the new HTTP QUERY method by mocking its responses with Dev Proxy, before the API is built."
+    ],
+    "creationDateTime": "2026-07-06",
+    "updateDateTime": "2026-07-06",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "http-query-method-mocks"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v3.2.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/http-query-method-mocks/assets/screenshot.png",
+        "alt": "Dev Proxy mocking an HTTP QUERY request to a product catalog API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "MockResponsePlugin documentation",
+        "description": "The documentation of the MockResponsePlugin for the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/mockresponseplugin"
+      },
+      {
+        "name": "Change mocks file",
+        "description": "Instructions on how to change the mocks file used by the Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/change-mocks-file"
+      },
+      {
+        "name": "The HTTP QUERY Method (IETF draft)",
+        "description": "The specification that defines the new HTTP QUERY method as a safe, idempotent request that can carry content.",
+        "url": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-safe-method-w-body/"
+      }
+    ]
+  }
+]
