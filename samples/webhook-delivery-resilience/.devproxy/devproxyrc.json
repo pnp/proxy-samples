@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.3.4/rc.schema.json",
+  "plugins": [
+    {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "GenericRandomErrorPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "transientWebhookErrors"
+    },
+    {
+      "name": "MockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "mockResponsePlugin"
+    }
+  ],
+  "urlsToWatch": [
+    "https://webhooks.contoso.com/*"
+  ],
+  "mockResponsePlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.3.4/mockresponseplugin.schema.json",
+    "mocksFile": "mocks.json"
+  },
+  "transientWebhookErrors": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.3.4/genericrandomerrorplugin.schema.json",
+    "errorsFile": "errors-transient.json",
+    "rate": 50
+  },
+  "logLevel": "information",
+  "newVersionNotification": "stable",
+  "showSkipMessages": true
+}
