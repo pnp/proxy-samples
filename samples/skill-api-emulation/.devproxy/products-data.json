@@ -1,0 +1,42 @@
+[
+  {
+    "ProductID": 1,
+    "ProductName": "Contoso Widget",
+    "Category": "Hardware",
+    "UnitPrice": 29.99,
+    "UnitsInStock": 150,
+    "Discontinued": false
+  },
+  {
+    "ProductID": 2,
+    "ProductName": "Contoso Gadget Pro",
+    "Category": "Hardware",
+    "UnitPrice": 49.99,
+    "UnitsInStock": 75,
+    "Discontinued": false
+  },
+  {
+    "ProductID": 3,
+    "ProductName": "Contoso Cloud Connector",
+    "Category": "Software",
+    "UnitPrice": 99.99,
+    "UnitsInStock": 500,
+    "Discontinued": false
+  },
+  {
+    "ProductID": 4,
+    "ProductName": "Contoso Legacy Adapter",
+    "Category": "Hardware",
+    "UnitPrice": 15.00,
+    "UnitsInStock": 10,
+    "Discontinued": true
+  },
+  {
+    "ProductID": 5,
+    "ProductName": "Contoso Analytics Suite",
+    "Category": "Software",
+    "UnitPrice": 199.99,
+    "UnitsInStock": 200,
+    "Discontinued": false
+  }
+]

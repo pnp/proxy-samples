@@ -1,0 +1,79 @@
+[
+  {
+    "name": "pnp-devproxy-skill-api-emulation",
+    "source": "pnp",
+    "title": "Emulate an API used by an agent skill",
+    "shortDescription": "This sample shows how to use Dev Proxy to emulate a CRUD API that an agent skill interacts with. By emulating the API, you can develop and test your skill without needing access to the real backend.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/skill-api-emulation",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/skill-api-emulation",
+    "longDescription": [
+      "This sample shows how to use Dev Proxy to emulate a CRUD API that an agent skill interacts with. By emulating the API, you can develop and test your skill without needing access to the real backend."
+    ],
+    "creationDateTime": "2026-07-17",
+    "updateDateTime": "2026-07-17",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "skill-api-emulation"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v3.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/skill-api-emulation/assets/copilot.png",
+        "alt": "Copilot skill using the emulated Contoso API"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/skill-api-emulation/assets/claude.png",
+        "alt": "Claude skill using the emulated Contoso API"
+      },
+      {
+        "type": "image",
+        "order": 300,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/skill-api-emulation/assets/codex.png",
+        "alt": "Codex skill using the emulated Contoso API"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Simulate a CRUD API",
+        "description": "Learn how to use the Dev Proxy to simulate a CRUD API.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api"
+      },
+      {
+        "name": "Get started with the Dev Proxy",
+        "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      }
+    ]
+  }
+]

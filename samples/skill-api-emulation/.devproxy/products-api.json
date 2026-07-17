@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.1.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "https://api.contoso.com/products",
+  "dataFile": "products-data.json",
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    },
+    {
+      "action": "create"
+    },
+    {
+      "action": "merge",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    },
+    {
+      "action": "delete",
+      "url": "/{product-id}",
+      "query": "$.[?(@.ProductID == {product-id})]"
+    }
+  ]
+}
