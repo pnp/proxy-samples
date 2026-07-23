@@ -1,0 +1,73 @@
+[
+  {
+    "name": "pnp-devproxy-slack-api-mocks",
+    "source": "pnp",
+    "title": "Slack API Mocks",
+    "shortDescription": "Mock responses for the Slack Web API to test bot development, messaging, channel management, and interactive components without a live workspace",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/slack-api-mocks",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/slack-api-mocks",
+    "longDescription": [
+      "Mock responses for the Slack Web API to test bot development, messaging, channel management, and interactive components without a live workspace"
+    ],
+    "creationDateTime": "2026-02-26",
+    "updateDateTime": "2026-02-26",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "slack-api-mocks"
+      },
+      {
+        "key": "PRESET",
+        "value": "No"
+      },
+      {
+        "key": "MOCKS",
+        "value": "Yes"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "2.1.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "name": "screenshot.png",
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/proxy-samples/main/samples/slack-api-mocks/assets/screenshot.png",
+        "alt": "Dev Proxy simulating Slack API responses"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "Learn how to install and run Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Slack Web API Documentation",
+        "description": "Official Slack Web API documentation",
+        "url": "https://api.slack.com/web"
+      },
+      {
+        "name": "Mock responses",
+        "description": "Learn how to mock API responses with Dev Proxy",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/mock-responses"
+      }
+    ]
+  }
+]
