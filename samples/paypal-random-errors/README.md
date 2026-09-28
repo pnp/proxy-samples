@@ -8,7 +8,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 Version|Date|Comments
 -------|----|--------
+1.11|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.10|September 28, 2026|Fixed the capture order rule so it matches `POST /v2/checkout/orders/{id}/capture`
 1.9|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.8|June 17, 2026|Updated to Dev Proxy v3.0.1

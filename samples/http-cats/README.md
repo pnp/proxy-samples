@@ -14,7 +14,7 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -25,6 +25,7 @@ Use this preset to return funny cat images when simulating erroneous HTTP status
 
 Version|Date|Comments
 -------|----|--------
+1.24|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.23|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.22|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.12|May 30, 2026|Updated to Dev Proxy v3.0.0

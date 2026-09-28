@@ -29,7 +29,7 @@ before they happen in production.
 
 ## Compatibility
 
-![Dev Proxy v2.3.4](https://img.shields.io/badge/devproxy-v2.3.4-green.svg)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -39,6 +39,7 @@ before they happen in production.
 
 Version|Date|Comments
 -------|----|--------
+1.1|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.0|April 30, 2026|Initial release
 
 ## Minimal path to awesome

@@ -12,7 +12,7 @@ This sample shows how to use Dev Proxy to emulate a CRUD API that an agent skill
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ This sample shows how to use Dev Proxy to emulate a CRUD API that an agent skill
 
 Version|Date|Comments
 -------|----|--------
+1.1|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.0|July 17, 2026|Initial release
 
 ## Minimal path to awesome

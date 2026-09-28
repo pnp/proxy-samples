@@ -10,7 +10,7 @@ When building apps that integrate with the Claude API, it's important to verify 
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -20,6 +20,7 @@ When building apps that integrate with the Claude API, it's important to verify 
 
 Version|Date|Comments
 -------|----|--------
+1.7|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.6|September 28, 2026|Added 402 billing, 409 conflict, and 504 timeout errors
 1.5|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.4|June 17, 2026|Updated to Dev Proxy v3.0.1

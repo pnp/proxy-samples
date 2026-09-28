@@ -10,7 +10,7 @@
       "Prototype and test apps against the new HTTP QUERY method by mocking its responses with Dev Proxy, before the API is built."
     ],
     "creationDateTime": "2026-07-06",
-    "updateDateTime": "2026-07-06",
+    "updateDateTime": "2026-09-28",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.2.0"
+        "value": "v3.3.1"
       }
     ],
     "thumbnails": [

@@ -14,7 +14,7 @@ The sample includes a small browser app that sends `QUERY` and `GET` requests so
 
 ## Compatibility
 
-![Dev Proxy v3.2.0](https://aka.ms/devproxy/badge/v3.2.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 Support for the `QUERY` method was added in Dev Proxy v3.2.0-beta.1.
 
@@ -26,6 +26,7 @@ Support for the `QUERY` method was added in Dev Proxy v3.2.0-beta.1.
 
 Version|Date|Comments
 -------|----|--------
+1.1|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.0|July 6, 2026|Initial release
 
 ## Minimal path to awesome

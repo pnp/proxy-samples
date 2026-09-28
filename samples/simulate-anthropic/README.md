@@ -8,7 +8,7 @@ This sample contains a preset and mock responses that allow you to simulate the 
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset and mock responses that allow you to simulate the 
 
 Version|Date|Comments
 -------|----|--------
+1.6|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.5|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.4|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.3|May 30, 2026|Updated to Dev Proxy v3.0.0

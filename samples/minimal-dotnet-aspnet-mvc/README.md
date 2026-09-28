@@ -8,7 +8,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with an ASP.NET MVC 
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample demonstrates the minimal setup to use Dev Proxy with an ASP.NET MVC 
 
 Version|Date|Comments
 -------|----|--------
+1.8|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.7|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.6|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.5|May 30, 2026|Updated to Dev Proxy v3.0.0

@@ -10,7 +10,7 @@
       "This sample shows how to use Dev Proxy to emulate a CRUD API that an agent skill interacts with. By emulating the API, you can develop and test your skill without needing access to the real backend."
     ],
     "creationDateTime": "2026-07-17",
-    "updateDateTime": "2026-07-17",
+    "updateDateTime": "2026-09-28",
     "products": [
       "Dev Proxy"
     ],
@@ -33,7 +33,7 @@
       },
       {
         "key": "PROXY VERSION",
-        "value": "v3.1.0"
+        "value": "v3.3.1"
       }
     ],
     "thumbnails": [

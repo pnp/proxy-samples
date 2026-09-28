@@ -8,7 +8,7 @@ This sample contains a preset to simulate rate limiting on Microsoft Graph APIs.
 
 ## Compatibility
 
-![Dev Proxy v3.1.0](https://aka.ms/devproxy/badge/v3.1.0)
+![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on Microsoft Graph APIs.
 
 Version|Date|Comments
 -------|----|--------
+2.2|September 28, 2026|Updated to Dev Proxy v3.3.1
 2.1|July 1, 2026|Updated to Dev Proxy v3.1.0
 2.0|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.9|May 30, 2026|Updated to Dev Proxy v3.0.0
