@@ -49,6 +49,27 @@
           }
         },
         {
+          "statusCode": 402,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_09I9Jk0LmNoPqRsTuVwXy"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "billing_error",
+              "message": "There's an issue with your billing or payment information. Check your payment details in the Claude Console."
+            },
+            "request_id": "req_09I9Jk0LmNoPqRsTuVwXy"
+          }
+        },
+        {
           "statusCode": 403,
           "headers": [
             {
@@ -88,6 +109,27 @@
               "message": "The requested resource could not be found."
             },
             "request_id": "req_04D4Ef5GhIjKlMnOpQrSt"
+          }
+        },
+        {
+          "statusCode": 409,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_10J0Kl1MnOpQrStUvWxYz"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "conflict_error",
+              "message": "The request conflicts with the current state of the resource."
+            },
+            "request_id": "req_10J0Kl1MnOpQrStUvWxYz"
           }
         },
         {
@@ -155,6 +197,27 @@
               "message": "An unexpected error has occurred internal to Anthropic's systems."
             },
             "request_id": "req_07G7Hi8JkLmNoPqRsTuVw"
+          }
+        },
+        {
+          "statusCode": 504,
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "request-id",
+              "value": "req_11K1Lm2NoPqRsTuVwXyZa"
+            }
+          ],
+          "body": {
+            "type": "error",
+            "error": {
+              "type": "timeout_error",
+              "message": "The request timed out while processing. Consider using streaming for long-running requests."
+            },
+            "request_id": "req_11K1Lm2NoPqRsTuVwXyZa"
           }
         },
         {

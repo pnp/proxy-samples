@@ -20,6 +20,7 @@ When building apps that integrate with the Claude API, it's important to verify 
 
 Version|Date|Comments
 -------|----|--------
+1.6|September 28, 2026|Added 402 billing, 409 conflict, and 504 timeout errors
 1.5|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.4|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.3|May 30, 2026|Updated to Dev Proxy v3.0.0
@@ -45,15 +46,18 @@ Version|Date|Comments
 
 ## Features
 
-This preset includes all documented Anthropic Claude API error types:
+This preset includes all documented Anthropic Claude API error types (as of September 2026, see [Claude API errors](https://platform.claude.com/docs/en/api/errors)):
 
 - **400 Invalid Request** — malformed request body or parameters
 - **401 Authentication Error** — invalid or missing API key
+- **402 Billing Error** — issue with billing or payment information
 - **403 Permission Error** — API key lacks permission for the resource
 - **404 Not Found** — requested resource doesn't exist
+- **409 Conflict** — request conflicts with the current state of a resource
 - **413 Request Too Large** — request exceeds the 32 MB size limit
 - **429 Rate Limit** — rate limit exceeded, includes dynamic Retry-After header
 - **500 API Error** — unexpected internal server error
+- **504 Timeout** — request timed out while processing
 - **529 Overloaded** — API temporarily overloaded, includes dynamic Retry-After header
 
 The proxy randomly fails 50% of intercepted requests with one of these errors. You can adjust the failure rate by changing the `rate` property in the [.devproxy/devproxyrc.json](.devproxy/devproxyrc.json) file.
