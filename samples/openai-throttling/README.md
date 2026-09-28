@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.25|September 28, 2026|Updated error responses to match the current OpenAI API: overload is a 503, added `slow_down` and `credit_balance_exhausted`
 1.24|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.23|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.13|May 30, 2026|Updated to Dev Proxy v3.0.0
@@ -56,22 +57,26 @@ Version|Date|Comments
 
 ## Features
 
-This preset includes configuration for simulating 3 different throttling scenarios:
+This preset simulates the throttling and capacity errors that the OpenAI API currently documents:
 
-- exceeded tokens per minute
+- `429` exceeded tokens per minute (`rate_limit_exceeded`), with a `Retry-After` header
   ![Dev Proxy simulating throttling of the OpenAI API when exceeded the number of tokens per minute](assets/throttling-tokens.png)
-- exceeded number of requests per minute
+- `429` exceeded requests per minute (`rate_limit_exceeded`), with a `Retry-After` header
   ![Dev Proxy simulating throttling of the OpenAI API when exceeded the number of requests per minute](assets/throttling-requests.png)
-- service overload, which includes dynamic simulation of handling retry-after
+- `429` request rate increased too quickly (`slow_down`), with a `Retry-After` header
+- `429` no prepaid credits remaining (`credit_balance_exhausted`). Retrying doesn't help, so your app shouldn't retry it.
+- `503` model temporarily overloaded (`server_is_overloaded`), with a `Retry-After` header
   ![Dev Proxy simulating throttling of the OpenAI API when the server is overloaded](assets/throttling-overloaded.png)
 
-Proxy will simulate throttling the API using one of these modes at random.
+Proxy will simulate one of these errors at random. The `RetryAfterPlugin` checks that your app waits for the time specified in the `Retry-After` header before retrying.
+
+The error responses are modeled after the [OpenAI API error codes](https://developers.openai.com/api/docs/guides/error-codes).
 
 ## Help
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/proxy-samples/issues?q=label%3A%22sample%3A%20microsoft-graph-docs-mocks%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/proxy-samples/issues?q=label%3A%22sample%3A%20openai-throttling%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/proxy-samples/issues/new).
 
