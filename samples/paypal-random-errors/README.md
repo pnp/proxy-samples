@@ -18,6 +18,7 @@ This sample contains a preset to simulate random errors on PayPal APIs. Sample e
 
 Version|Date|Comments
 -------|----|--------
+1.10|September 28, 2026|Fixed the capture order rule so it matches `POST /v2/checkout/orders/{id}/capture`
 1.9|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.8|June 17, 2026|Updated to Dev Proxy v3.0.1
 1.7|May 30, 2026|Updated to Dev Proxy v3.0.0

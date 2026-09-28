@@ -12646,7 +12646,7 @@
     },
     {
       "request": {
-        "url": "https://api*.sandbox.paypal.com/v2/checkout/orders/*/capture/",
+        "url": "https://api*.sandbox.paypal.com/v2/checkout/orders/*/capture",
         "method": "POST"
       },
       "responses": [
