@@ -2,7 +2,11 @@
 
 ## Summary
 
-This sample contains a preset to simulate rate limiting on Microsoft Graph APIs. Selected Microsoft Graph endpoints support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.
+This sample contains a preset to simulate rate limiting on Microsoft Graph APIs.
+
+Your app syncs files from OneDrive or SharePoint through Microsoft Graph. It works with a small test library, and then gets throttled in production, where a large library sends many more requests.
+
+Using this preset, you can see how your app handles Microsoft Graph throttling on your machine. Dev Proxy limits requests to the Microsoft Graph drive, shares, and sites endpoints on all Microsoft clouds to 40 requests in 20 seconds, and then answers with a `429` and a `Retry-After` header. Your app keeps calling the real Microsoft Graph URLs.
 
 ![Dev Proxy simulating rate limiting on Microsoft Graph APIs](assets/screenshot.png)
 
@@ -18,6 +22,7 @@ This sample contains a preset to simulate rate limiting on Microsoft Graph APIs.
 
 Version|Date|Comments
 -------|----|--------
+2.3|October 3, 2026|Rewrote the summary around the problem the preset solves, added `devproxy config get` steps
 2.2|September 28, 2026|Updated to Dev Proxy v3.3.1
 2.1|July 1, 2026|Updated to Dev Proxy v3.1.0
 2.0|June 17, 2026|Updated to Dev Proxy v3.0.1
@@ -45,13 +50,20 @@ Version|Date|Comments
 
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/microsoft-graph-rate-limiting) and unzip it, or
   - Clone this repository
-- Start Dev Proxy by running `devproxy`
+- Start Dev Proxy by running `devproxy` in the sample's folder
+
+Alternatively, download the preset with Dev Proxy and start it from any folder:
+
+```bash
+devproxy config get microsoft-graph-rate-limiting
+devproxy --config-file "~dataFolder/configs/microsoft-graph-rate-limiting/.devproxy/devproxyrc.json"
+```
 
 ## Features
 
 This preset simulates rate limiting on Microsoft Graph drive and shares endpoints on all Microsoft Clouds.
 
-For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin).
+For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin?WT.mc_id=devproxy-samples-microsoft-graph-rate-limiting).
 
 ## Help
 

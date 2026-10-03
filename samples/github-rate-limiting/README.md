@@ -2,7 +2,11 @@
 
 ## Summary
 
-This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.
+This sample contains a preset to simulate rate limiting on GitHub APIs.
+
+Your GitHub script, bot, or integration works until it hits GitHub's rate limit: 60 requests per hour without authentication, or 5,000 with a personal access token. Then GitHub answers with a `403` or `429`, and code that doesn't read the `x-ratelimit-*` headers fails or keeps retrying.
+
+Using this preset, you can see what your code does at the limit without using up your real one. Dev Proxy counts your requests to `api.github.com`, returns the `x-ratelimit-limit`, `x-ratelimit-remaining`, and `x-ratelimit-reset` headers, and answers with a `429` after 60 requests. Your code keeps calling the real GitHub API URLs.
 
 ![Dev Proxy simulating rate limiting on GitHub APIs](assets/screenshot.png)
 
@@ -18,6 +22,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 Version|Date|Comments
 -------|----|--------
+1.25|October 3, 2026|Rewrote the summary around the problem the preset solves, added `devproxy config get` steps
 1.24|October 3, 2026|Aligned with GitHub primary rate limit response, added RetryAfterPlugin and secondary rate limit config
 1.23|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.22|July 1, 2026|Updated to Dev Proxy v3.1.0
@@ -48,7 +53,14 @@ Version|Date|Comments
 
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/github-rate-limiting) and unzip it, or
   - Clone this repository
-- Start Dev Proxy by running `devproxy`
+- Start Dev Proxy by running `devproxy` in the sample's folder
+
+Alternatively, download the preset with Dev Proxy and start it from any folder:
+
+```bash
+devproxy config get github-rate-limiting
+devproxy --config-file "~dataFolder/configs/github-rate-limiting/.devproxy/devproxyrc.json"
+```
 - Send more than 60 requests to the GitHub API, for example:
 
     ```bash
@@ -69,7 +81,7 @@ Using this sample you can use Dev Proxy to:
 
 For more information about GitHub API rate limits, see [Rate limits for the REST API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
-For more information about the configuration options, see the documentation of the [RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin), [RetryAfterPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/retryafterplugin), and [GenericRandomErrorPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin).
+For more information about the configuration options, see the documentation of the [RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin?WT.mc_id=devproxy-samples-github-rate-limiting), [RetryAfterPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/retryafterplugin?WT.mc_id=devproxy-samples-github-rate-limiting), and [GenericRandomErrorPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin?WT.mc_id=devproxy-samples-github-rate-limiting).
 
 ## Help
 

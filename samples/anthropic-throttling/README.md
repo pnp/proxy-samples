@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the Anthropic Claude API and se
 
 Version|Date|Comments
 -------|----|--------
+1.7|October 3, 2026|Added `devproxy config get` steps
 1.6|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.5|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.4|June 17, 2026|Updated to Dev Proxy v3.0.1
@@ -43,7 +44,14 @@ Version|Date|Comments
 
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/anthropic-throttling) and unzip it, or
   - Clone this repository
-- Start Dev Proxy by running `devproxy`
+- Start Dev Proxy by running `devproxy` in the sample's folder
+
+Alternatively, download the preset with Dev Proxy and start it from any folder:
+
+```bash
+devproxy config get anthropic-throttling
+devproxy --config-file "~dataFolder/configs/anthropic-throttling/.devproxy/devproxyrc.json"
+```
 - Test with: `curl -ikx http://127.0.0.1:8000 https://api.anthropic.com/v1/messages`
 
 ## Features

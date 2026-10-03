@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.27|October 3, 2026|Added `devproxy config get` steps
 1.26|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.25|September 28, 2026|Updated error responses to match the current OpenAI API: overload is a 503, added `slow_down` and `credit_balance_exhausted`
 1.24|July 1, 2026|Updated to Dev Proxy v3.1.0
@@ -54,7 +55,14 @@ Version|Date|Comments
 
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/openai-throttling) and unzip it, or
   - Clone this repository
-- Start Dev Proxy by running `devproxy`
+- Start Dev Proxy by running `devproxy` in the sample's folder
+
+Alternatively, download the preset with Dev Proxy and start it from any folder:
+
+```bash
+devproxy config get openai-throttling
+devproxy --config-file "~dataFolder/configs/openai-throttling/.devproxy/devproxyrc.json"
+```
 
 ## Features
 
