@@ -10,7 +10,7 @@
       "This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling."
     ],
     "creationDateTime": "2023-09-16",
-    "updateDateTime": "2026-09-28",
+    "updateDateTime": "2026-10-03",
     "products": [
       "Dev Proxy"
     ],
@@ -70,7 +70,7 @@
       {
         "name": "Rate limiting",
         "description": "Rate limiting documentation for GitHub API",
-        "url": "https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#rate-limiting"
+        "url": "https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api"
       }
     ]
   }

@@ -4,7 +4,7 @@
 
 This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub APIs support rate limiting, which is a mechanism that informs developers of the available server resources and allows them to increase the data throughput by staying under the rate limits and avoiding throttling.
 
-![Dev Proxy simulating rate limiting on Microsoft Graph APIs](assets/screenshot.png)
+![Dev Proxy simulating rate limiting on GitHub APIs](assets/screenshot.png)
 
 ## Compatibility
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate rate limiting on GitHub APIs. GitHub A
 
 Version|Date|Comments
 -------|----|--------
+1.24|October 3, 2026|Aligned with GitHub primary rate limit response, added RetryAfterPlugin and secondary rate limit config
 1.23|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.22|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.21|June 17, 2026|Updated to Dev Proxy v3.0.1
@@ -48,12 +49,27 @@ Version|Date|Comments
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/github-rate-limiting) and unzip it, or
   - Clone this repository
 - Start Dev Proxy by running `devproxy`
+- Send more than 60 requests to the GitHub API, for example:
+
+    ```bash
+    curl -ikx http://127.0.0.1:8000 https://api.github.com/users/octocat
+    ```
+
+To simulate GitHub's secondary rate limits instead, start Dev Proxy by running `devproxy --config-file .devproxy/devproxyrc-secondary.json`.
 
 ## Features
 
 This preset simulates rate limiting on GitHub APIs.
 
-For more information about the configuration options, see the [documentation of the RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin).
+Using this sample you can use Dev Proxy to:
+
+- Simulate GitHub's primary rate limit of 60 requests per hour. Each response includes the `x-ratelimit-limit`, `x-ratelimit-remaining`, and `x-ratelimit-reset` headers. After you exceed the limit, Dev Proxy returns a `429 Too Many Requests` response with the `API rate limit exceeded` message that GitHub sends.
+- Detect when your app retries a request before the rate limit resets, using the `RetryAfterPlugin`.
+- Simulate GitHub's secondary rate limits, using the `devproxyrc-secondary.json` config. Dev Proxy randomly returns a `429 Too Many Requests` response with a `retry-after` header and detects when your app retries too early.
+
+For more information about GitHub API rate limits, see [Rate limits for the REST API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api).
+
+For more information about the configuration options, see the documentation of the [RateLimitingPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/ratelimitingplugin), [RetryAfterPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/retryafterplugin), and [GenericRandomErrorPlugin](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/genericrandomerrorplugin).
 
 ## Help
 

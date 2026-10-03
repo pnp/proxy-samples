@@ -2,6 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/rc.schema.json",
   "plugins": [
     {
+      "name": "RetryAfterPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
       "name": "RateLimitingPlugin",
       "enabled": true,
       "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
@@ -12,9 +17,10 @@
     "https://api.github.com/*"
   ],
   "rateLimiting": {
-    "headerLimit": "X-RateLimit-Limit",
-    "headerRemaining": "X-RateLimit-Remaining",
-    "headerReset": "X-RateLimit-Reset",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/ratelimitingplugin.schema.json",
+    "headerLimit": "x-ratelimit-limit",
+    "headerRemaining": "x-ratelimit-remaining",
+    "headerReset": "x-ratelimit-reset",
     "costPerRequest": 1,
     "resetTimeWindowSeconds": 3600,
     "warningThresholdPercent": 0,

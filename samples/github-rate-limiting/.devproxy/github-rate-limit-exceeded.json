@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/ratelimitingplugin.customresponsefile.schema.json",
-  "statusCode": 403,
+  "statusCode": 429,
   "headers": [
     {
-      "name": "Content-Type",
+      "name": "content-type",
       "value": "application/json; charset=utf-8"
     }
   ],
   "body": {
-    "message": "You have exceeded a secondary rate limit and have been temporarily blocked from content creation. Please retry your request again later.",
-    "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits"
+    "message": "API rate limit exceeded for user ID 1.",
+    "documentation_url": "https://docs.github.com/rest/overview/rate-limits-for-the-rest-api"
   }
 }
