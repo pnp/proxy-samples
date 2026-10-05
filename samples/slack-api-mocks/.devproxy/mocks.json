@@ -1,0 +1,1893 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.1.0/mockresponseplugin.mocksfile.schema.json",
+  "mocks": [
+    {
+      "request": {
+        "url": "https://slack.com/api/auth.test",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "url": "https://devproxy-workspace.slack.com/",
+          "team": "Dev Proxy Workspace",
+          "user": "devproxybot",
+          "team_id": "T00000000",
+          "user_id": "U00000001",
+          "bot_id": "B00000001",
+          "is_enterprise_install": false
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/chat.postMessage",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": "C00000001",
+          "ts": "1700000000.000100",
+          "message": {
+            "user": "U00000001",
+            "type": "message",
+            "subtype": "bot_message",
+            "text": "Hello from Dev Proxy!",
+            "ts": "1700000000.000100",
+            "bot_id": "B00000001",
+            "blocks": [
+              {
+                "type": "rich_text",
+                "block_id": "blk01",
+                "elements": [
+                  {
+                    "type": "rich_text_section",
+                    "elements": [
+                      {
+                        "type": "text",
+                        "text": "Hello from Dev Proxy!"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/chat.update",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": "C00000001",
+          "ts": "1700000000.000100",
+          "text": "Updated message from Dev Proxy!",
+          "message": {
+            "text": "Updated message from Dev Proxy!",
+            "user": "U00000001",
+            "type": "message",
+            "subtype": "bot_message",
+            "ts": "1700000000.000100",
+            "bot_id": "B00000001"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/chat.delete",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": "C00000001",
+          "ts": "1700000000.000100"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/chat.scheduleMessage",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": "C00000001",
+          "scheduled_message_id": "Q00000001",
+          "post_at": 1700003600,
+          "message": {
+            "text": "Scheduled message from Dev Proxy!",
+            "bot_id": "B00000001",
+            "type": "delayed_message",
+            "subtype": "bot_message"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/users.list",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "members": [
+            {
+              "id": "U00000001",
+              "team_id": "T00000000",
+              "name": "devproxybot",
+              "deleted": false,
+              "real_name": "Dev Proxy Bot",
+              "is_bot": true,
+              "is_app_user": false,
+              "profile": {
+                "display_name": "Dev Proxy Bot",
+                "real_name": "Dev Proxy Bot",
+                "email": "",
+                "image_24": "https://example.com/avatar_24.png",
+                "image_48": "https://example.com/avatar_48.png",
+                "image_72": "https://example.com/avatar_72.png"
+              },
+              "updated": 1700000000
+            },
+            {
+              "id": "U00000002",
+              "team_id": "T00000000",
+              "name": "alice",
+              "deleted": false,
+              "real_name": "Alice Johnson",
+              "is_bot": false,
+              "is_app_user": false,
+              "is_admin": true,
+              "is_owner": true,
+              "profile": {
+                "display_name": "Alice",
+                "real_name": "Alice Johnson",
+                "email": "alice@example.com",
+                "image_24": "https://example.com/alice_24.png",
+                "image_48": "https://example.com/alice_48.png",
+                "image_72": "https://example.com/alice_72.png"
+              },
+              "updated": 1700000000
+            },
+            {
+              "id": "U00000003",
+              "team_id": "T00000000",
+              "name": "bob",
+              "deleted": false,
+              "real_name": "Bob Smith",
+              "is_bot": false,
+              "is_app_user": false,
+              "is_admin": false,
+              "is_owner": false,
+              "profile": {
+                "display_name": "Bob",
+                "real_name": "Bob Smith",
+                "email": "bob@example.com",
+                "image_24": "https://example.com/bob_24.png",
+                "image_48": "https://example.com/bob_48.png",
+                "image_72": "https://example.com/bob_72.png"
+              },
+              "updated": 1700000000
+            }
+          ],
+          "cache_ts": 1700000000,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/users.list",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "members": [
+            {
+              "id": "U00000001",
+              "team_id": "T00000000",
+              "name": "devproxybot",
+              "deleted": false,
+              "real_name": "Dev Proxy Bot",
+              "is_bot": true,
+              "is_app_user": false,
+              "profile": {
+                "display_name": "Dev Proxy Bot",
+                "real_name": "Dev Proxy Bot",
+                "email": "",
+                "image_24": "https://example.com/avatar_24.png",
+                "image_48": "https://example.com/avatar_48.png",
+                "image_72": "https://example.com/avatar_72.png"
+              },
+              "updated": 1700000000
+            },
+            {
+              "id": "U00000002",
+              "team_id": "T00000000",
+              "name": "alice",
+              "deleted": false,
+              "real_name": "Alice Johnson",
+              "is_bot": false,
+              "is_app_user": false,
+              "is_admin": true,
+              "is_owner": true,
+              "profile": {
+                "display_name": "Alice",
+                "real_name": "Alice Johnson",
+                "email": "alice@example.com",
+                "image_24": "https://example.com/alice_24.png",
+                "image_48": "https://example.com/alice_48.png",
+                "image_72": "https://example.com/alice_72.png"
+              },
+              "updated": 1700000000
+            },
+            {
+              "id": "U00000003",
+              "team_id": "T00000000",
+              "name": "bob",
+              "deleted": false,
+              "real_name": "Bob Smith",
+              "is_bot": false,
+              "is_app_user": false,
+              "is_admin": false,
+              "is_owner": false,
+              "profile": {
+                "display_name": "Bob",
+                "real_name": "Bob Smith",
+                "email": "bob@example.com",
+                "image_24": "https://example.com/bob_24.png",
+                "image_48": "https://example.com/bob_48.png",
+                "image_72": "https://example.com/bob_72.png"
+              },
+              "updated": 1700000000
+            }
+          ],
+          "cache_ts": 1700000000,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/users.info",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "user": {
+            "id": "U00000002",
+            "team_id": "T00000000",
+            "name": "alice",
+            "deleted": false,
+            "real_name": "Alice Johnson",
+            "tz": "America/New_York",
+            "tz_label": "Eastern Standard Time",
+            "tz_offset": -18000,
+            "is_bot": false,
+            "is_app_user": false,
+            "is_admin": true,
+            "is_owner": true,
+            "profile": {
+              "display_name": "Alice",
+              "real_name": "Alice Johnson",
+              "email": "alice@example.com",
+              "status_text": "Working on Dev Proxy",
+              "status_emoji": ":computer:",
+              "image_24": "https://example.com/alice_24.png",
+              "image_48": "https://example.com/alice_48.png",
+              "image_72": "https://example.com/alice_72.png",
+              "image_192": "https://example.com/alice_192.png"
+            },
+            "updated": 1700000000
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/users.info",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "user": {
+            "id": "U00000002",
+            "team_id": "T00000000",
+            "name": "alice",
+            "deleted": false,
+            "real_name": "Alice Johnson",
+            "tz": "America/New_York",
+            "tz_label": "Eastern Standard Time",
+            "tz_offset": -18000,
+            "is_bot": false,
+            "is_app_user": false,
+            "is_admin": true,
+            "is_owner": true,
+            "profile": {
+              "display_name": "Alice",
+              "real_name": "Alice Johnson",
+              "email": "alice@example.com",
+              "status_text": "Working on Dev Proxy",
+              "status_emoji": ":computer:",
+              "image_24": "https://example.com/alice_24.png",
+              "image_48": "https://example.com/alice_48.png",
+              "image_72": "https://example.com/alice_72.png",
+              "image_192": "https://example.com/alice_192.png"
+            },
+            "updated": 1700000000
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/users.identity",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "user": {
+            "name": "Alice Johnson",
+            "id": "U00000002",
+            "email": "alice@example.com",
+            "image_24": "https://example.com/alice_24.png",
+            "image_48": "https://example.com/alice_48.png"
+          },
+          "team": {
+            "id": "T00000000"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.list",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channels": [
+            {
+              "id": "C00000001",
+              "name": "general",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": true,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "general",
+              "topic": {
+                "value": "General discussion",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "This channel is for workspace-wide communication.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 3
+            },
+            {
+              "id": "C00000002",
+              "name": "random",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": false,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "random",
+              "topic": {
+                "value": "Non-work conversations",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "A place for non-work-related conversations.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 3
+            },
+            {
+              "id": "C00000003",
+              "name": "dev-proxy",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": false,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "dev-proxy",
+              "topic": {
+                "value": "Dev Proxy discussion",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "Discussion about Dev Proxy configurations and samples.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 2
+            }
+          ],
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.list",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channels": [
+            {
+              "id": "C00000001",
+              "name": "general",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": true,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "general",
+              "topic": {
+                "value": "General discussion",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "This channel is for workspace-wide communication.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 3
+            },
+            {
+              "id": "C00000002",
+              "name": "random",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": false,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "random",
+              "topic": {
+                "value": "Non-work conversations",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "A place for non-work-related conversations.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 3
+            },
+            {
+              "id": "C00000003",
+              "name": "dev-proxy",
+              "is_channel": true,
+              "is_group": false,
+              "is_im": false,
+              "is_mpim": false,
+              "is_private": false,
+              "is_archived": false,
+              "is_general": false,
+              "created": 1700000000,
+              "creator": "U00000002",
+              "name_normalized": "dev-proxy",
+              "topic": {
+                "value": "Dev Proxy discussion",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "purpose": {
+                "value": "Discussion about Dev Proxy configurations and samples.",
+                "creator": "U00000002",
+                "last_set": 1700000000
+              },
+              "num_members": 2
+            }
+          ],
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.info",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": {
+            "id": "C00000001",
+            "name": "general",
+            "is_channel": true,
+            "is_group": false,
+            "is_im": false,
+            "is_mpim": false,
+            "is_private": false,
+            "is_archived": false,
+            "is_general": true,
+            "created": 1700000000,
+            "creator": "U00000002",
+            "name_normalized": "general",
+            "topic": {
+              "value": "General discussion",
+              "creator": "U00000002",
+              "last_set": 1700000000
+            },
+            "purpose": {
+              "value": "This channel is for workspace-wide communication.",
+              "creator": "U00000002",
+              "last_set": 1700000000
+            },
+            "num_members": 3,
+            "unlinked": 0,
+            "is_member": true,
+            "last_read": "1700000000.000100"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.info",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": {
+            "id": "C00000001",
+            "name": "general",
+            "is_channel": true,
+            "is_group": false,
+            "is_im": false,
+            "is_mpim": false,
+            "is_private": false,
+            "is_archived": false,
+            "is_general": true,
+            "created": 1700000000,
+            "creator": "U00000002",
+            "name_normalized": "general",
+            "topic": {
+              "value": "General discussion",
+              "creator": "U00000002",
+              "last_set": 1700000000
+            },
+            "purpose": {
+              "value": "This channel is for workspace-wide communication.",
+              "creator": "U00000002",
+              "last_set": 1700000000
+            },
+            "num_members": 3,
+            "unlinked": 0,
+            "is_member": true,
+            "last_read": "1700000000.000100"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.create",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": {
+            "id": "C00000004",
+            "name": "new-channel",
+            "is_channel": true,
+            "is_group": false,
+            "is_im": false,
+            "is_mpim": false,
+            "is_private": false,
+            "is_archived": false,
+            "is_general": false,
+            "created": 1700000000,
+            "creator": "U00000002",
+            "name_normalized": "new-channel",
+            "topic": {
+              "value": "",
+              "creator": "",
+              "last_set": 0
+            },
+            "purpose": {
+              "value": "",
+              "creator": "",
+              "last_set": 0
+            },
+            "num_members": 1
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.invite",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "channel": {
+            "id": "C00000001",
+            "name": "general",
+            "is_channel": true,
+            "is_group": false,
+            "is_im": false,
+            "is_mpim": false,
+            "is_private": false,
+            "is_archived": false,
+            "num_members": 4
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.members",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "members": [
+            "U00000001",
+            "U00000002",
+            "U00000003"
+          ],
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.members",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "members": [
+            "U00000001",
+            "U00000002",
+            "U00000003"
+          ],
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.history",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "messages": [
+            {
+              "type": "message",
+              "user": "U00000002",
+              "text": "Has anyone tried the new Dev Proxy mock sample?",
+              "ts": "1700000000.000300",
+              "blocks": [
+                {
+                  "type": "rich_text",
+                  "block_id": "blk03",
+                  "elements": [
+                    {
+                      "type": "rich_text_section",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Has anyone tried the new Dev Proxy mock sample?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "message",
+              "user": "U00000003",
+              "text": "Yes! It works great for testing our Slack bot.",
+              "ts": "1700000000.000200",
+              "blocks": [
+                {
+                  "type": "rich_text",
+                  "block_id": "blk02",
+                  "elements": [
+                    {
+                      "type": "rich_text_section",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Yes! It works great for testing our Slack bot."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "message",
+              "subtype": "bot_message",
+              "bot_id": "B00000001",
+              "text": "Hello from Dev Proxy!",
+              "ts": "1700000000.000100"
+            }
+          ],
+          "has_more": false,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.history",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "messages": [
+            {
+              "type": "message",
+              "user": "U00000002",
+              "text": "Has anyone tried the new Dev Proxy mock sample?",
+              "ts": "1700000000.000300",
+              "blocks": [
+                {
+                  "type": "rich_text",
+                  "block_id": "blk03",
+                  "elements": [
+                    {
+                      "type": "rich_text_section",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Has anyone tried the new Dev Proxy mock sample?"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "message",
+              "user": "U00000003",
+              "text": "Yes! It works great for testing our Slack bot.",
+              "ts": "1700000000.000200",
+              "blocks": [
+                {
+                  "type": "rich_text",
+                  "block_id": "blk02",
+                  "elements": [
+                    {
+                      "type": "rich_text_section",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Yes! It works great for testing our Slack bot."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "message",
+              "subtype": "bot_message",
+              "bot_id": "B00000001",
+              "text": "Hello from Dev Proxy!",
+              "ts": "1700000000.000100"
+            }
+          ],
+          "has_more": false,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.replies",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "messages": [
+            {
+              "type": "message",
+              "user": "U00000002",
+              "text": "Has anyone tried the new Dev Proxy mock sample?",
+              "ts": "1700000000.000300",
+              "thread_ts": "1700000000.000300",
+              "reply_count": 1,
+              "reply_users_count": 1,
+              "reply_users": [
+                "U00000003"
+              ]
+            },
+            {
+              "type": "message",
+              "user": "U00000003",
+              "text": "Yes, it's awesome! The mocks are very realistic.",
+              "ts": "1700000000.000400",
+              "thread_ts": "1700000000.000300"
+            }
+          ],
+          "has_more": false,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/conversations.replies",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "messages": [
+            {
+              "type": "message",
+              "user": "U00000002",
+              "text": "Has anyone tried the new Dev Proxy mock sample?",
+              "ts": "1700000000.000300",
+              "thread_ts": "1700000000.000300",
+              "reply_count": 1,
+              "reply_users_count": 1,
+              "reply_users": [
+                "U00000003"
+              ]
+            },
+            {
+              "type": "message",
+              "user": "U00000003",
+              "text": "Yes, it's awesome! The mocks are very realistic.",
+              "ts": "1700000000.000400",
+              "thread_ts": "1700000000.000300"
+            }
+          ],
+          "has_more": false,
+          "response_metadata": {
+            "next_cursor": ""
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/reactions.add",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/reactions.remove",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/reactions.get",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "type": "message",
+          "channel": "C00000001",
+          "message": {
+            "type": "message",
+            "text": "Hello from Dev Proxy!",
+            "user": "U00000001",
+            "ts": "1700000000.000100",
+            "reactions": [
+              {
+                "name": "thumbsup",
+                "users": [
+                  "U00000002",
+                  "U00000003"
+                ],
+                "count": 2
+              },
+              {
+                "name": "rocket",
+                "users": [
+                  "U00000002"
+                ],
+                "count": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/reactions.get",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "type": "message",
+          "channel": "C00000001",
+          "message": {
+            "type": "message",
+            "text": "Hello from Dev Proxy!",
+            "user": "U00000001",
+            "ts": "1700000000.000100",
+            "reactions": [
+              {
+                "name": "thumbsup",
+                "users": [
+                  "U00000002",
+                  "U00000003"
+                ],
+                "count": 2
+              },
+              {
+                "name": "rocket",
+                "users": [
+                  "U00000002"
+                ],
+                "count": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/views.open",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "view": {
+            "id": "V00000001",
+            "team_id": "T00000000",
+            "type": "modal",
+            "title": {
+              "type": "plain_text",
+              "text": "Sample Modal",
+              "emoji": true
+            },
+            "submit": {
+              "type": "plain_text",
+              "text": "Submit",
+              "emoji": true
+            },
+            "close": {
+              "type": "plain_text",
+              "text": "Cancel",
+              "emoji": true
+            },
+            "blocks": [
+              {
+                "type": "input",
+                "block_id": "input_block",
+                "label": {
+                  "type": "plain_text",
+                  "text": "What do you think?"
+                },
+                "element": {
+                  "type": "plain_text_input",
+                  "action_id": "input_action"
+                }
+              }
+            ],
+            "private_metadata": "",
+            "callback_id": "modal_callback",
+            "state": {
+              "values": {}
+            },
+            "hash": "1700000000.abc12345",
+            "root_view_id": "V00000001",
+            "app_id": "A00000001",
+            "external_id": "",
+            "app_installed_team_id": "T00000000",
+            "bot_id": "B00000001"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/views.update",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "view": {
+            "id": "V00000001",
+            "team_id": "T00000000",
+            "type": "modal",
+            "title": {
+              "type": "plain_text",
+              "text": "Updated Modal",
+              "emoji": true
+            },
+            "submit": {
+              "type": "plain_text",
+              "text": "Submit",
+              "emoji": true
+            },
+            "close": {
+              "type": "plain_text",
+              "text": "Cancel",
+              "emoji": true
+            },
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Modal updated successfully!"
+                }
+              }
+            ],
+            "private_metadata": "",
+            "callback_id": "modal_callback",
+            "state": {
+              "values": {}
+            },
+            "hash": "1700000001.def67890",
+            "root_view_id": "V00000001",
+            "app_id": "A00000001",
+            "external_id": "",
+            "app_installed_team_id": "T00000000",
+            "bot_id": "B00000001"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/views.push",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "view": {
+            "id": "V00000002",
+            "team_id": "T00000000",
+            "type": "modal",
+            "title": {
+              "type": "plain_text",
+              "text": "Pushed Modal",
+              "emoji": true
+            },
+            "close": {
+              "type": "plain_text",
+              "text": "Back",
+              "emoji": true
+            },
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "This is a pushed view on the modal stack."
+                }
+              }
+            ],
+            "private_metadata": "",
+            "callback_id": "pushed_modal_callback",
+            "state": {
+              "values": {}
+            },
+            "hash": "1700000002.ghi12345",
+            "root_view_id": "V00000001",
+            "app_id": "A00000001",
+            "external_id": "",
+            "app_installed_team_id": "T00000000",
+            "bot_id": "B00000001"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/views.publish",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "view": {
+            "id": "V00000003",
+            "team_id": "T00000000",
+            "type": "home",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Welcome to the *Dev Proxy Bot* home tab! :house:"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Use this bot to test your Slack integrations without needing a live workspace."
+                }
+              }
+            ],
+            "private_metadata": "",
+            "callback_id": "",
+            "state": {
+              "values": {}
+            },
+            "hash": "1700000003.jkl67890",
+            "root_view_id": "V00000003",
+            "app_id": "A00000001",
+            "external_id": "",
+            "app_installed_team_id": "T00000000",
+            "bot_id": "B00000001"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/oauth.v2.access",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "access_token": "xoxb-fake-bot-token-for-dev-proxy-mock",
+          "token_type": "bot",
+          "scope": "chat:write,users:read,channels:read,reactions:read,reactions:write,commands",
+          "bot_user_id": "U00000001",
+          "app_id": "A00000001",
+          "team": {
+            "name": "Dev Proxy Workspace",
+            "id": "T00000000"
+          },
+          "enterprise": null,
+          "is_enterprise_install": false,
+          "authed_user": {
+            "id": "U00000002",
+            "scope": "identity.basic,identity.email",
+            "access_token": "xoxp-fake-user-token-for-dev-proxy-mock",
+            "token_type": "user"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/team.info",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "team": {
+            "id": "T00000000",
+            "name": "Dev Proxy Workspace",
+            "domain": "devproxy-workspace",
+            "email_domain": "example.com",
+            "icon": {
+              "image_34": "https://example.com/team_34.png",
+              "image_44": "https://example.com/team_44.png",
+              "image_68": "https://example.com/team_68.png",
+              "image_88": "https://example.com/team_88.png",
+              "image_102": "https://example.com/team_102.png",
+              "image_132": "https://example.com/team_132.png",
+              "image_default": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/team.info",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "team": {
+            "id": "T00000000",
+            "name": "Dev Proxy Workspace",
+            "domain": "devproxy-workspace",
+            "email_domain": "example.com",
+            "icon": {
+              "image_34": "https://example.com/team_34.png",
+              "image_44": "https://example.com/team_44.png",
+              "image_68": "https://example.com/team_68.png",
+              "image_88": "https://example.com/team_88.png",
+              "image_102": "https://example.com/team_102.png",
+              "image_132": "https://example.com/team_132.png",
+              "image_default": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/pins.add",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/pins.remove",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/pins.list",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "items": [
+            {
+              "type": "message",
+              "created": 1700000000,
+              "created_by": "U00000002",
+              "channel": "C00000001",
+              "message": {
+                "type": "message",
+                "text": "Important announcement: Dev Proxy mocks are now available!",
+                "user": "U00000002",
+                "ts": "1700000000.000100"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/pins.list",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "items": [
+            {
+              "type": "message",
+              "created": 1700000000,
+              "created_by": "U00000002",
+              "channel": "C00000001",
+              "message": {
+                "type": "message",
+                "text": "Important announcement: Dev Proxy mocks are now available!",
+                "user": "U00000002",
+                "ts": "1700000000.000100"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/files.upload",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "file": {
+            "id": "F00000001",
+            "created": 1700000000,
+            "name": "sample.txt",
+            "title": "Sample File",
+            "mimetype": "text/plain",
+            "filetype": "text",
+            "size": 1024,
+            "user": "U00000001",
+            "user_team": "T00000000",
+            "channels": [
+              "C00000001"
+            ],
+            "shares": {
+              "public": {
+                "C00000001": [
+                  {
+                    "ts": "1700000000.000500"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/files.info",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "file": {
+            "id": "F00000001",
+            "created": 1700000000,
+            "name": "sample.txt",
+            "title": "Sample File",
+            "mimetype": "text/plain",
+            "filetype": "text",
+            "size": 1024,
+            "user": "U00000001",
+            "user_team": "T00000000",
+            "channels": [
+              "C00000001"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/files.info",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "file": {
+            "id": "F00000001",
+            "created": 1700000000,
+            "name": "sample.txt",
+            "title": "Sample File",
+            "mimetype": "text/plain",
+            "filetype": "text",
+            "size": 1024,
+            "user": "U00000001",
+            "user_team": "T00000000",
+            "channels": [
+              "C00000001"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/files.delete",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/bookmarks.add",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "bookmark": {
+            "id": "Bk00000001",
+            "channel_id": "C00000001",
+            "title": "Dev Proxy Docs",
+            "link": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/",
+            "emoji": ":books:",
+            "type": "link",
+            "date_created": 1700000000,
+            "date_updated": 0,
+            "rank": "U"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/bookmarks.list",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "bookmarks": [
+            {
+              "id": "Bk00000001",
+              "channel_id": "C00000001",
+              "title": "Dev Proxy Docs",
+              "link": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/",
+              "emoji": ":books:",
+              "type": "link",
+              "date_created": 1700000000,
+              "date_updated": 0,
+              "rank": "U"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/bookmarks.list",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "bookmarks": [
+            {
+              "id": "Bk00000001",
+              "channel_id": "C00000001",
+              "title": "Dev Proxy Docs",
+              "link": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/",
+              "emoji": ":books:",
+              "type": "link",
+              "date_created": 1700000000,
+              "date_updated": 0,
+              "rank": "U"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/emoji.list",
+        "method": "GET"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "emoji": {
+            "devproxy": "https://example.com/custom_emoji/devproxy.png",
+            "shipit": "https://example.com/custom_emoji/shipit.png"
+          },
+          "cache_ts": "1700000000.000000"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "https://slack.com/api/emoji.list",
+        "method": "POST"
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "body": {
+          "ok": true,
+          "emoji": {
+            "devproxy": "https://example.com/custom_emoji/devproxy.png",
+            "shipit": "https://example.com/custom_emoji/shipit.png"
+          },
+          "cache_ts": "1700000000.000000"
+        }
+      }
+    }
+  ]
+}
