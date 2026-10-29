@@ -12,7 +12,7 @@ Using this preset, you can see how your app handles Microsoft Graph throttling o
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset, you can see how your app handles Microsoft Graph throttling o
 
 Version|Date|Comments
 -------|----|--------
+2.4|October 29, 2026|Updated to Dev Proxy v4.0.0
 2.3|October 3, 2026|Rewrote the summary around the problem the preset solves, added `devproxy config get` steps
 2.2|September 28, 2026|Updated to Dev Proxy v3.3.1
 2.1|July 1, 2026|Updated to Dev Proxy v3.1.0

@@ -8,7 +8,7 @@ This sample contains a preset to simulate the rate limit policy for an API publi
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample contains a preset to simulate the rate limit policy for an API publi
 
 Version|Date|Comments
 -------|----|--------
+1.12|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.11|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.10|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.9|June 17, 2026|Updated to Dev Proxy v3.0.1

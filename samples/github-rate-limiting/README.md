@@ -12,7 +12,7 @@ Using this preset, you can see what your code does at the limit without using up
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset, you can see what your code does at the limit without using up
 
 Version|Date|Comments
 -------|----|--------
+1.26|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.25|October 3, 2026|Rewrote the summary around the problem the preset solves, added `devproxy config get` steps
 1.24|October 3, 2026|Aligned with GitHub primary rate limit response, added RetryAfterPlugin and secondary rate limit config
 1.23|September 28, 2026|Updated to Dev Proxy v3.3.1

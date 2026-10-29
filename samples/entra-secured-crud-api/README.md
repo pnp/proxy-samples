@@ -14,7 +14,7 @@ Use this sample to build frontend applications before the backend API exists, wi
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -24,6 +24,7 @@ Use this sample to build frontend applications before the backend API exists, wi
 
 Version|Date|Comments
 -------|----|--------
+1.7|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.6|September 28, 2026|Updated to Dev Proxy v3.3.1, added Dev Proxy API token support
 1.5|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.4|June 17, 2026|Updated to Dev Proxy v3.0.1

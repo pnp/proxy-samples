@@ -1,16 +1,16 @@
 {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/rc.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/rc.schema.json",
     "plugins": [
         {
             "name": "GraphMinimalPermissionsPlugin",
             "enabled": true,
-            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
             "configSection": "graphMinimalPermissionsPlugin"
         },
         {
             "name": "GraphMockResponsePlugin",
             "enabled": true,
-            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
             "configSection": "mocksPlugin"
         }
     ],

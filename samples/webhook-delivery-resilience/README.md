@@ -29,7 +29,7 @@ before they happen in production.
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -39,6 +39,7 @@ before they happen in production.
 
 Version|Date|Comments
 -------|----|--------
+1.2|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.1|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.0|April 30, 2026|Initial release
 

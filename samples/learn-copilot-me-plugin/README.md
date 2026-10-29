@@ -6,7 +6,7 @@ This sample contains a CRUD API for the [Connect Copilot for Microsoft 365 to yo
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -16,6 +16,7 @@ This sample contains a CRUD API for the [Connect Copilot for Microsoft 365 to yo
 
 Version|Date|Comments
 -------|----|--------
+1.11|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.10|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.9|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.8|June 17, 2026|Updated to Dev Proxy v3.0.1

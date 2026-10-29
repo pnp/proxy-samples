@@ -1,10 +1,10 @@
 {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/rc.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/rc.schema.json",
     "plugins": [
         {
             "name": "MockGeneratorPlugin",
             "enabled": true,
-            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
+            "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
         }
     ],
     "urlsToWatch": [

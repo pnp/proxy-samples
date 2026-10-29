@@ -8,7 +8,7 @@ This sample demonstrates how to use the `devproxy jwt create` command to generat
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -18,6 +18,7 @@ This sample demonstrates how to use the `devproxy jwt create` command to generat
 
 Version|Date|Comments
 -------|----|--------
+1.8|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.7|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.6|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.5|June 17, 2026|Updated to Dev Proxy v3.0.1

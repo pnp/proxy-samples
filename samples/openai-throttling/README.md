@@ -12,7 +12,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -22,6 +22,7 @@ Using this preset you can simulate throttling of the OpenAI API and see how your
 
 Version|Date|Comments
 -------|----|--------
+1.28|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.27|October 3, 2026|Added `devproxy config get` steps
 1.26|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.25|September 28, 2026|Updated error responses to match the current OpenAI API: overload is a 503, added `slow_down` and `credit_balance_exhausted`

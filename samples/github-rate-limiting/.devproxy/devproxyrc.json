@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/rc.schema.json",
   "plugins": [
     {
       "name": "RetryAfterPlugin",
@@ -17,7 +17,7 @@
     "https://api.github.com/*"
   ],
   "rateLimiting": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.3.1/ratelimitingplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/ratelimitingplugin.schema.json",
     "headerLimit": "x-ratelimit-limit",
     "headerRemaining": "x-ratelimit-remaining",
     "headerReset": "x-ratelimit-reset",

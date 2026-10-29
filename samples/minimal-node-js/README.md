@@ -15,7 +15,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 ## Compatibility
 
-![Dev Proxy v3.3.1](https://aka.ms/devproxy/badge/v3.3.1)
+![Dev Proxy v4.0.0](https://aka.ms/devproxy/badge/v4.0.0)
 
 ## Contributors
 
@@ -25,6 +25,7 @@ The sample makes a single API call to JSONPlaceholder and returns a mocked respo
 
 Version|Date|Comments
 -------|----|--------
+1.10|October 29, 2026|Updated to Dev Proxy v4.0.0
 1.9|September 28, 2026|Updated to Dev Proxy v3.3.1
 1.8|July 1, 2026|Updated to Dev Proxy v3.1.0
 1.7|June 17, 2026|Updated to Dev Proxy v3.0.1
