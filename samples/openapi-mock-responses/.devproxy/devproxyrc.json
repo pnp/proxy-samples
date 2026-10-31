@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.1.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "OpenApiMockResponsePlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "openApiMock"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "openApiMock": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.1.0/openapimockresponseplugin.schema.json",
+    "specFile": "contoso-api.yaml"
+  },
+  "languageModel": {
+    "enabled": true
+  },
+  "logLevel": "information",
+  "newVersionNotification": "stable"
+}
