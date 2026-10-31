@@ -42,6 +42,7 @@ The sample includes the OpenAPI spec for a fictional Contoso Store API (`https:/
 
   - [Download as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/openapi-mock-responses) and unzip it, or
   - Clone this repository
+- Open a terminal in the sample folder, for example, if you cloned the repository: `cd samples/openapi-mock-responses`
 - Optionally, start your local language model, for example Ollama:
 
   ```bash
