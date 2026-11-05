@@ -29,14 +29,20 @@ PID=$(echo "$DEVPROXY_INFO" | jq -r '.data.pid')
 PROXY_URL=$(echo "$DEVPROXY_INFO" | jq -r '.data.proxyUrl')
 API_URL=$(echo "$DEVPROXY_INFO" | jq -r '.data.apiUrl')
 
+# Stop Dev Proxy when the script exits. Use the API when possible and fall
+# back to the CLI, for example, when getting the API token failed.
+AUTH_HEADER=""
+stop_devproxy() {
+  if [ -z "$AUTH_HEADER" ] || \
+    ! curl -sf -X POST -H "$AUTH_HEADER" "$API_URL/proxy/stopProxy" > /dev/null; then
+    devproxy stop --pid "$PID" > /dev/null 2>&1 || true
+  fi
+}
+trap stop_devproxy EXIT
+
 # Every call to the Dev Proxy API requires a token
 TOKEN=$(devproxy api token --pid "$PID")
 AUTH_HEADER="Authorization: Bearer $TOKEN"
-
-stop_devproxy() {
-  curl -sf -X POST -H "$AUTH_HEADER" "$API_URL/proxy/stopProxy" > /dev/null || true
-}
-trap stop_devproxy EXIT
 
 # Get Dev Proxy's root certificate so that your app trusts it
 CA_FILE="$(pwd)/devproxy-ca.pem"
@@ -54,7 +60,13 @@ HTTP_PROXY="$PROXY_URL" HTTPS_PROXY="$PROXY_URL" \
   "$@" || APP_EXIT_CODE=$?
 
 # Stop recording. Dev Proxy writes the reports before it responds.
-curl -sf -X POST -H "$AUTH_HEADER" -H "Content-Type: application/json" \
-  -d '{"recording":false}' "$API_URL/proxy" > /dev/null
+if ! curl -sf -X POST -H "$AUTH_HEADER" -H "Content-Type: application/json" \
+  -d '{"recording":false}' "$API_URL/proxy" > /dev/null; then
+  echo "Failed to stop recording. Dev Proxy didn't write the reports." >&2
+  # Keep the app's exit code if the app failed
+  if [ "$APP_EXIT_CODE" -eq 0 ]; then
+    APP_EXIT_CODE=1
+  fi
+fi
 
 exit "$APP_EXIT_CODE"
