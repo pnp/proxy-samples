@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/rc.schema.json",
+  "plugins": [
+    {
+      "name": "UrlDiscoveryPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "ExecutionSummaryPlugin",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "executionSummaryPlugin"
+    },
+    {
+      "name": "HarGeneratorPlugin",
+      "enabled": false,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll",
+      "configSection": "harGeneratorPlugin"
+    },
+    {
+      "name": "JsonReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    },
+    {
+      "name": "MarkdownReporter",
+      "enabled": true,
+      "pluginPath": "~appFolder/plugins/DevProxy.Plugins.dll"
+    }
+  ],
+  "urlsToWatch": [
+    "https://api.contoso.com/*"
+  ],
+  "executionSummaryPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/executionsummaryplugin.schema.json",
+    "groupBy": "url"
+  },
+  "harGeneratorPlugin": {
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v4.0.0/hargeneratorplugin.schema.json",
+    "includeSensitiveInformation": false,
+    "includeResponse": false
+  },
+  "asSystemProxy": false,
+  "logLevel": "information",
+  "newVersionNotification": "none",
+  "showSkipMessages": false,
+  "showTimestamps": false
+}
