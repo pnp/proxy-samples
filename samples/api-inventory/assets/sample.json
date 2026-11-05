@@ -1,0 +1,72 @@
+[
+  {
+    "name": "pnp-devproxy-api-inventory",
+    "source": "pnp",
+    "title": "Record your app's API calls in CI",
+    "shortDescription": "This sample contains a preset to record which APIs your app calls, for example in a CI pipeline.",
+    "url": "https://github.com/pnp/proxy-samples/tree/main/samples/api-inventory",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/api-inventory",
+    "longDescription": [
+      "This sample contains a preset to record which APIs your app calls, for example in a CI pipeline."
+    ],
+    "creationDateTime": "2026-11-05",
+    "updateDateTime": "2026-11-05",
+    "products": [
+      "Dev Proxy"
+    ],
+    "metadata": [
+      {
+        "key": "SAMPLE ID",
+        "value": "api-inventory"
+      },
+      {
+        "key": "PRESET",
+        "value": "Yes"
+      },
+      {
+        "key": "MOCKS",
+        "value": "No"
+      },
+      {
+        "key": "PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "PROXY VERSION",
+        "value": "v4.0.0"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/proxy-samples/raw/main/samples/api-inventory/assets/screenshot.png",
+        "alt": "Dev Proxy report listing the URLs that an app called"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
+      }
+    ],
+    "references": [
+      {
+        "name": "Get started with Dev Proxy",
+        "description": "The tutorial will introduce you to Dev Proxy and show you how to use its features.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+      },
+      {
+        "name": "Use Dev Proxy in CI/CD scenarios",
+        "description": "Learn how to use Dev Proxy in CI/CD pipelines.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-in-ci-cd-overview"
+      },
+      {
+        "name": "Dev Proxy API",
+        "description": "Learn how to control Dev Proxy using its API.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/technical-reference/proxy-api"
+      }
+    ]
+  }
+]
