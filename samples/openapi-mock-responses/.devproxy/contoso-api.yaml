@@ -1,0 +1,190 @@
+openapi: 3.0.3
+info:
+  title: Contoso Store API
+  description: Sample API used to demonstrate generating mock responses from an OpenAPI spec with Dev Proxy.
+  version: 1.0.0
+servers:
+  - url: https://api.contoso.com/v1
+paths:
+  /products:
+    get:
+      operationId: listProducts
+      summary: List products
+      responses:
+        '200':
+          description: List of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              example:
+                - id: 1
+                  name: Contoso Trail Backpack
+                  description: Water-resistant 30L backpack for day hikes.
+                  price: 89.99
+                  currency: USD
+                  inStock: true
+                - id: 2
+                  name: Contoso Insulated Bottle
+                  description: Stainless steel bottle that keeps drinks cold for 24 hours.
+                  price: 24.5
+                  currency: USD
+                  inStock: false
+    post:
+      operationId: createProduct
+      summary: Create a product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Product created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid product
+  /products/{productId}:
+    get:
+      operationId: getProduct
+      summary: Get a product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+    delete:
+      operationId: deleteProduct
+      summary: Delete a product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Product deleted
+  /customers:
+    get:
+      operationId: listCustomers
+      summary: List customers
+      responses:
+        '200':
+          description: List of customers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+  /customers/{customerId}/orders:
+    get:
+      operationId: listCustomerOrders
+      summary: List orders for a customer
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        currency:
+          type: string
+        inStock:
+          type: boolean
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        customerId:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+            - pending
+            - shipped
+            - delivered
+            - cancelled
+        orderDate:
+          type: string
+          format: date-time
+        total:
+          type: number
+          format: double
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: integer
+              productName:
+                type: string
+              quantity:
+                type: integer
+              unitPrice:
+                type: number
+                format: double
